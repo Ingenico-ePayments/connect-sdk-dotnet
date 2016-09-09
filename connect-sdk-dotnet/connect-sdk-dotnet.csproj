@@ -1,0 +1,360 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0F1D918A-EC59-4217-808B-5FF141D8387C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Ingenico.Connect.Sdk</RootNamespace>
+    <AssemblyName>connect-sdk-dotnet</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <ReleaseVersion>1.0.0</ReleaseVersion>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <DocumentationFile>bin\Debug\connect-sdk-dotnet.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <DocumentationFile>bin\Release\connect-sdk-dotnet.XML</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Immutable, Version=1.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.1.2.0\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Extensions">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="NLog">
+      <HintPath>..\packages\NLog.4.3.7\lib\net45\NLog.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Ingenico\Connect\Sdk\StringBuilderUtils.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\AbstractParamRequest.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\ApiException.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\ApiResource.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\AuthorizationException.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\CallContext.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\CommunicationException.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Communicator.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\CommunicatorConfiguration.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\DeclinedPaymentException.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\DeclinedPayoutException.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\DeclinedRefundException.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\DeclinedTransactionException.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\GlobalCollectException.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\IAuthenticator.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\IConnection.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\IMarshaller.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\IPooledConnection.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\IdempotenceException.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\MarshallerSyntaxException.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\MetaDataProvider.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\MetaDataProviderBuilder.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\NotFoundException.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\ProxyConfiguration.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\ReferenceException.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\RequestHeader.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\RequestParam.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Response.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\ResponseException.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\EntityHeader.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Session.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\SessionBuilder.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\ValidationException.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\DefaultImpl\AuthorizationType.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\DefaultImpl\DefaultAuthenticator.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\DefaultImpl\DefaultMarshaller.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Logging\ICommunicatorLogger.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Logging\ILoggingCapable.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Logging\SystemConsoleCommunicatorLogger.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Logging\ValueObfuscator.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Logging\Obfuscator.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Logging\LoggingUtil.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Logging\HeaderObfuscator.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Logging\PropertyObfuscator.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Logging\LogMessageBuilder.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Logging\ResponseLogMessageBuilder.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Logging\RequestLogMessageBuilder.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\DefaultImpl\DefaultConnection.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\StringUtils.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Definitions\AbstractOrderStatus.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Definitions\AbstractPaymentMethodSpecificInput.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Definitions\AdditionalOrderInputAirlineData.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Definitions\Address.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Definitions\AirlineData.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Definitions\AirlineFlightLeg.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Definitions\AmountOfMoney.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Definitions\BankAccount.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Definitions\BankAccountBban.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Definitions\BankAccountIban.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Definitions\Card.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Definitions\CardEssentials.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Definitions\CardFraudResults.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Definitions\CardWithoutCvv.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Definitions\CompanyInformation.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Definitions\ContactDetailsBase.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Definitions\CustomerBase.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Definitions\FraudFields.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Definitions\FraudResults.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Definitions\FraudResultsRetailDecisions.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Definitions\KeyValuePair.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Definitions\OrderStatusOutput.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Definitions\PersonalNameBase.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Definitions\ResultDoRiskAssessment.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Definitions\RetailDecisionsCCFraudCheckOutput.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Definitions\ValidationBankAccountCheck.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Definitions\ValidationBankAccountOutput.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Errors\Definitions\APIError.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Errors\ErrorResponse.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Hostedcheckout\CreateHostedCheckoutRequest.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Hostedcheckout\CreateHostedCheckoutResponse.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Hostedcheckout\Definitions\CreatedPaymentOutput.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Hostedcheckout\Definitions\DisplayedData.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Hostedcheckout\Definitions\HostedCheckoutSpecificInput.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Hostedcheckout\GetHostedCheckoutResponse.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\ApprovePaymentRequest.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\CancelApprovalPaymentResponse.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\CancelPaymentResponse.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\CreatePaymentRequest.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\CreatePaymentResponse.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\AbstractPaymentMethodSpecificOutput.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\AdditionalOrderInput.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\AddressPersonal.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\ApprovePaymentCardPaymentMethodSpecificOutput.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\ApprovePaymentNonSepaDirectDebitPaymentMethodSpecificInput.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\ApprovePaymentPaymentMethodSpecificInput.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\ApprovePaymentSepaDirectDebitPaymentMethodSpecificInput.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\BankTransferPaymentMethodSpecificInput.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\BankTransferPaymentMethodSpecificInputBase.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\BankTransferPaymentMethodSpecificOutput.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\CancelPaymentCardPaymentMethodSpecificOutput.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\CardPaymentMethodSpecificInput.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\CardPaymentMethodSpecificInputBase.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\CardPaymentMethodSpecificOutput.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\CashPaymentMethodSpecificInput.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\CashPaymentMethodSpecificInputBase.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\CashPaymentMethodSpecificOutput.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\CashPaymentProduct1503SpecificInput.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\CashPaymentProduct1504SpecificInput.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\ContactDetails.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\CreatePaymentResult.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\Customer.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\ExternalCardholderAuthenticationData.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\InvoicePaymentMethodSpecificInput.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\InvoicePaymentMethodSpecificOutput.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\Level3SummaryData.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\LineItem.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\LineItemInvoiceData.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\LineItemLevel3InterchangeInformation.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\MerchantAction.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\NonSepaDirectDebitPaymentMethodSpecificInput.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\NonSepaDirectDebitPaymentMethodSpecificOutput.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\NonSepaDirectDebitPaymentProduct705SpecificInput.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\NonSepaDirectDebitPaymentProduct707SpecificInput.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\Order.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\OrderApprovePayment.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\OrderInvoiceData.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\OrderOutput.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\OrderReferences.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\OrderReferencesApprovePayment.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\OrderTypeInformation.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\Payment.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\PaymentCreationOutput.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\PaymentCreationReferences.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\PaymentOutput.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\PaymentProduct836SpecificOutput.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\PaymentProduct840CustomerAccount.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\PaymentProduct840SpecificOutput.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\PaymentReferences.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\PaymentStatusOutput.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\PersonalInformation.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\PersonalName.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\RedirectData.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\RedirectPaymentMethodSpecificInput.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\RedirectPaymentMethodSpecificInputBase.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\RedirectPaymentMethodSpecificOutput.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\RedirectPaymentProduct809SpecificInput.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\RedirectPaymentProduct816SpecificInput.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\RedirectPaymentProduct882SpecificInput.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\RefundBankMethodSpecificOutput.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\RefundCardMethodSpecificOutput.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\RefundEWalletMethodSpecificOutput.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\RefundMethodSpecificOutput.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\RefundOutput.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\RefundPaymentProduct840CustomerAccount.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\RefundPaymentProduct840SpecificOutput.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\SepaDirectDebitPaymentMethodSpecificInput.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\SepaDirectDebitPaymentMethodSpecificOutput.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\ThreeDSecureResults.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\PaymentApprovalResponse.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\PaymentErrorResponse.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\PaymentResponse.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\TokenizePaymentRequest.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payout\ApprovePayoutRequest.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payout\CreatePayoutRequest.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payout\Definitions\PayoutCustomer.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payout\Definitions\PayoutReferences.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payout\Definitions\PayoutResult.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payout\PayoutErrorResponse.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payout\PayoutResponse.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Product\Definitions\AccountOnFile.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Product\Definitions\AccountOnFileAttribute.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Product\Definitions\AccountOnFileDisplayHints.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Product\Definitions\DirectoryEntry.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Product\Definitions\EmptyValidator.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Product\Definitions\FixedListValidator.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Product\Definitions\LabelTemplateElement.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Product\Definitions\LengthValidator.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Product\Definitions\PaymentProduct.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Product\Definitions\PaymentProductDisplayHints.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Product\Definitions\PaymentProductField.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Product\Definitions\PaymentProductFieldDataRestrictions.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Product\Definitions\PaymentProductFieldDisplayHints.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Product\Definitions\PaymentProductFieldFormElement.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Product\Definitions\PaymentProductFieldTooltip.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Product\Definitions\PaymentProductFieldValidators.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Product\Definitions\PaymentProductGroup.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Product\Definitions\RangeValidator.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Product\Definitions\RegularExpressionValidator.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Product\Definitions\ValueMappingElement.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Product\Directory.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Product\PaymentProductGroupResponse.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Product\PaymentProductGroups.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Product\PaymentProductResponse.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Product\PaymentProducts.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Refund\ApproveRefundRequest.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Refund\Definitions\BankAccountBbanRefund.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Refund\Definitions\BankRefundMethodSpecificInput.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Refund\Definitions\RefundCustomer.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Refund\Definitions\RefundReferences.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Refund\Definitions\RefundResult.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Refund\RefundErrorResponse.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Refund\RefundRequest.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Refund\RefundResponse.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Riskassessments\Definitions\CustomerRiskAssessment.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Riskassessments\Definitions\OrderRiskAssessment.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Riskassessments\Definitions\PersonalInformationRiskAssessment.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Riskassessments\Definitions\PersonalNameRiskAssessment.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Riskassessments\Definitions\RiskAssessment.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Riskassessments\RiskAssessmentBankAccount.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Riskassessments\RiskAssessmentCard.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Riskassessments\RiskAssessmentResponse.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Services\BankDetailsRequest.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Services\BankDetailsResponse.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Services\ConvertAmount.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Services\Definitions\BankData.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Services\Definitions\BankDetails.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Services\Definitions\IINDetail.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Services\Definitions\PaymentContext.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Services\Definitions\Swift.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Services\GetIINDetailsRequest.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Services\GetIINDetailsResponse.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Services\TestConnection.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Sessions\SessionRequest.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Sessions\SessionResponse.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Token\ApproveTokenRequest.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Token\CreateTokenRequest.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Token\CreateTokenResponse.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Token\Definitions\AbstractToken.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Token\Definitions\ContactDetailsToken.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Token\Definitions\Creditor.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Token\Definitions\CustomerToken.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Token\Definitions\CustomerTokenWithContactDetails.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Token\Definitions\Debtor.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Token\Definitions\MandateApproval.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Token\Definitions\MandateNonSepaDirectDebit.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Token\Definitions\MandateSepaDirectDebit.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Token\Definitions\MandateSepaDirectDebitWithMandateId.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Token\Definitions\MandateSepaDirectDebitWithoutCreditor.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Token\Definitions\PersonalInformationToken.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Token\Definitions\PersonalNameToken.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Token\Definitions\TokenCard.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Token\Definitions\TokenCardData.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Token\Definitions\TokenEWallet.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Token\Definitions\TokenEWalletData.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Token\Definitions\TokenNonSepaDirectDebit.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Token\Definitions\TokenNonSepaDirectDebitPaymentProduct705SpecificData.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Token\Definitions\TokenNonSepaDirectDebitPaymentProduct707SpecificData.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Token\Definitions\TokenSepaDirectDebit.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Token\Definitions\TokenSepaDirectDebitWithoutCreditor.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Token\TokenResponse.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Token\UpdateTokenRequest.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Merchant\Hostedcheckouts\HostedcheckoutsClient.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Merchant\MerchantClient.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Merchant\Payments\PaymentsClient.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Merchant\Payouts\PayoutsClient.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Merchant\Productgroups\FindProductgroupsParams.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Merchant\Productgroups\GetProductgroupParams.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Merchant\Productgroups\ProductgroupsClient.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Merchant\Products\DirectoryParams.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Merchant\Products\FindProductsParams.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Merchant\Products\GetProductParams.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Merchant\Products\ProductsClient.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Merchant\Refunds\RefundsClient.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Merchant\Riskassessments\RiskassessmentsClient.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Merchant\Services\ConvertAmountParams.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Merchant\Services\ServicesClient.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Merchant\Sessions\SessionsClient.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Merchant\Tokens\DeleteTokenParams.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Merchant\Tokens\TokensClient.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Client.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Factory.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\ResponseHeader.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\IRequestHeader.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\IResponseHeader.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\UriConfiguration.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Logging\NLogCommunicatorLogger.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\CommunicatorConfigurationSection.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Metadata\ShoppingCartExtension.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\ShoppingCartExtensionConfiguration.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\IEnumerableUtils.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\DefaultImpl\CamelCaseKeepFullCapsNamingStrategy.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\UriBuilderExtensions.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Proxy.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup />
+  <ProjectExtensions>
+    <MonoDevelop>
+      <Properties>
+        <Policies>
+          <TextStylePolicy inheritsSet="VisualStudio" inheritsScope="text/plain" scope="text/x-csharp" />
+          <CSharpFormattingPolicy IndentSwitchSection="True" NewLinesForBracesInProperties="True" NewLinesForBracesInAccessors="True" NewLinesForBracesInAnonymousMethods="True" NewLinesForBracesInControlBlocks="True" NewLinesForBracesInAnonymousTypes="True" NewLinesForBracesInObjectCollectionArrayInitializers="True" NewLinesForBracesInLambdaExpressionBody="True" NewLineForElse="True" NewLineForCatch="True" NewLineForFinally="True" NewLineForMembersInObjectInit="True" NewLineForMembersInAnonymousTypes="True" NewLineForClausesInQuery="True" SpacingAfterMethodDeclarationName="False" SpaceAfterMethodCallName="False" SpaceBeforeOpenSquareBracket="False" inheritsSet="Mono" inheritsScope="text/x-csharp" scope="text/x-csharp" />
+        </Policies>
+      </Properties>
+    </MonoDevelop>
+  </ProjectExtensions>
+</Project>

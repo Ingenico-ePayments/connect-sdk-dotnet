@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>.\connect-sdk-dotnet\connect-sdk-dotnet.csproj</id>
+    <version>1.0.0</version>
+    <authors>Ingenico ePayments</authors>
+    <owners>Ingenico ePayments</owners>
+    <licenseUrl>https://github.com/Ingenico-ePayments/connect-sdk-dotnet/blob/master/LICENSE.txt</licenseUrl>
+    <projectUrl>https://github.com/Ingenico-ePayments/connect-sdk-dotnet</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>SDK to communicate with the GlobalCollect platform using the Ingenico Connect Server API</description>
+    <releaseNotes>Summary of changes made in this release of the package.</releaseNotes>
+    <copyright>Copyright (c) 2016 Global Collect Services B.V.</copyright>
+    <tags>Ingenico ePayments Connect SDK</tags>
+    <dependencies>
+      <dependency id="SampleDependency" version="1.0" />
+    </dependencies>
+  </metadata>
+</package>

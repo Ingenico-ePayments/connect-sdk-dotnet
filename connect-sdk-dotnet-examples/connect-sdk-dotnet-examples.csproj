@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{86D9672B-FDEA-4328-A325-26AA6A90838E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Ingenico.Connect.Sdk</RootNamespace>
+    <AssemblyName>connect-sdk-dotnet-examples</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <ReleaseVersion>1.0.0</ReleaseVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Ingenico\Connect\Sdk\Merchant\Hostedcheckouts\CreateHostedCheckoutExample.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Merchant\Hostedcheckouts\GetHostedCheckoutExample.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Merchant\Payments\ApprovePaymentExample.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Merchant\Payments\CancelApprovalPaymentExample.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Merchant\Payments\CancelPaymentExample.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Merchant\Payments\CreatePaymentExample.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Merchant\Payments\GetPaymentExample.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Merchant\Payments\ProcessChallengedPaymentExample.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Merchant\Payments\RefundPaymentExample.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Merchant\Payments\TokenizePaymentExample.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Merchant\Payouts\ApprovePayoutExample.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Merchant\Payouts\CancelApprovalPayoutExample.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Merchant\Payouts\CancelPayoutExample.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Merchant\Payouts\CreatePayoutExample.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Merchant\Payouts\GetPayoutExample.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Merchant\Productgroups\GetPaymentProductGroupExample.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Merchant\Productgroups\GetPaymentProductGroupsExample.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Merchant\Products\GetDirectoryExample.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Merchant\Products\GetPaymentProductExample.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Merchant\Products\GetPaymentProductsExample.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Merchant\Refunds\ApproveRefundExample.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Merchant\Refunds\CancelApprovalRefundExample.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Merchant\Refunds\CancelRefundExample.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Merchant\Refunds\GetRefundExample.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Merchant\Riskassessments\RiskAssessmentBankAccountExample.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Merchant\Riskassessments\RiskAssessmentCardsExample.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Merchant\Services\ConvertAmountExample.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Merchant\Services\ConvertBankAccountExample.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Merchant\Services\IINDetailsExample.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Merchant\Services\TestConnectionExample.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Merchant\Sessions\CreateSessionExample.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Merchant\Tokens\ApproveSepaDirectDebitTokenExample.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Merchant\Tokens\CreateTokenExample.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Merchant\Tokens\DeleteTokenExample.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Merchant\Tokens\GetTokenExample.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Merchant\Tokens\UpdateTokenExample.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\connect-sdk-dotnet\connect-sdk-dotnet.csproj">
+      <Project>{0F1D918A-EC59-4217-808B-5FF141D8387C}</Project>
+      <Name>connect-sdk-dotnet</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>
