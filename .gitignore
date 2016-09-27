@@ -38,3 +38,9 @@ Thumbs.db
 
 #dotCover
 *.dotCover
+
+#NuGet package
+/connect-sdk-dotnet*.nupkg
+
+# test results/
+**/TestResult.xml
