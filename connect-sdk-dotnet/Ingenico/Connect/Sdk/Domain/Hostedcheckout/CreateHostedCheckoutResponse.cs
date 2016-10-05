@@ -3,6 +3,7 @@
  * https://developer.globalcollect.com/documentation/api/server/
  */
 using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace Ingenico.Connect.Sdk.Domain.Hostedcheckout
 {
@@ -15,6 +16,8 @@ namespace Ingenico.Connect.Sdk.Domain.Hostedcheckout
         public string RETURNMAC { get; set; } = null;
 
         public string HostedCheckoutId { get; set; } = null;
+
+        public IList<string> InvalidTokens { get; set; } = null;
 
         public string PartialRedirectUrl { get; set; } = null;
     }

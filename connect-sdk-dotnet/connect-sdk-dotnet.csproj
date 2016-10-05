@@ -8,7 +8,7 @@
     <RootNamespace>Ingenico.Connect.Sdk</RootNamespace>
     <AssemblyName>connect-sdk-dotnet</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <ReleaseVersion>1.0.1</ReleaseVersion>
+    <ReleaseVersion>1.1.0</ReleaseVersion>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>
@@ -55,6 +55,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Definitions\PaymentProductFilter.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Hostedcheckout\Definitions\PaymentProductFiltersHostedCheckout.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Sessions\Definitions\PaymentProductFiltersClientSession.cs" />
     <Compile Include="Ingenico\Connect\Sdk\StringBuilderUtils.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Ingenico\Connect\Sdk\AbstractParamRequest.cs" />

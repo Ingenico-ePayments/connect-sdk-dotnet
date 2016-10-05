@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>connect-sdk-dotnet</id>
-    <version>1.0.1</version>
+    <version>1.1.0</version>
     <authors>Ingenico ePayments</authors>
     <owners>Ingenico ePayments</owners>
     <description>SDK to communicate with the GlobalCollect platform using the Ingenico Connect Server API</description>

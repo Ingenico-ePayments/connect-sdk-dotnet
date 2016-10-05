@@ -12,5 +12,7 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
     public class PaymentStatusOutput : OrderStatusOutput
     {
         public bool? IsAuthorized { get; set; } = null;
+
+        public bool? IsRefundable { get; set; } = null;
     }
 }

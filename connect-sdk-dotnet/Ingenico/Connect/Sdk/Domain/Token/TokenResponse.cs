@@ -15,6 +15,8 @@ namespace Ingenico.Connect.Sdk.Domain.Token
 
         public TokenEWallet EWallet { get; set; } = null;
 
+        public string Id { get; set; } = null;
+
         public TokenNonSepaDirectDebit NonSepaDirectDebit { get; set; } = null;
 
         public int? PaymentProductId { get; set; } = null;
