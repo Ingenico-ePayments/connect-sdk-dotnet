@@ -19,8 +19,6 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
 
         public NonSepaDirectDebitPaymentProduct705SpecificInput PaymentProduct705SpecificInput { get; set; } = null;
 
-        public NonSepaDirectDebitPaymentProduct707SpecificInput PaymentProduct707SpecificInput { get; set; } = null;
-
         public string RecurringPaymentSequenceIndicator { get; set; } = null;
 
         public string Token { get; set; } = null;

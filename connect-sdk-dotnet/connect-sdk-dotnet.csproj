@@ -8,7 +8,7 @@
     <RootNamespace>Ingenico.Connect.Sdk</RootNamespace>
     <AssemblyName>connect-sdk-dotnet</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <ReleaseVersion>1.1.0</ReleaseVersion>
+    <ReleaseVersion>2.0.0</ReleaseVersion>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>
@@ -181,7 +181,6 @@
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\NonSepaDirectDebitPaymentMethodSpecificInput.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\NonSepaDirectDebitPaymentMethodSpecificOutput.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\NonSepaDirectDebitPaymentProduct705SpecificInput.cs" />
-    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\NonSepaDirectDebitPaymentProduct707SpecificInput.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\Order.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\OrderApprovePayment.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\OrderInvoiceData.cs" />
@@ -305,7 +304,6 @@
     <Compile Include="Ingenico\Connect\Sdk\Domain\Token\Definitions\TokenEWalletData.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Token\Definitions\TokenNonSepaDirectDebit.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Token\Definitions\TokenNonSepaDirectDebitPaymentProduct705SpecificData.cs" />
-    <Compile Include="Ingenico\Connect\Sdk\Domain\Token\Definitions\TokenNonSepaDirectDebitPaymentProduct707SpecificData.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Token\Definitions\TokenSepaDirectDebit.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Token\Definitions\TokenSepaDirectDebitWithoutCreditor.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Token\TokenResponse.cs" />

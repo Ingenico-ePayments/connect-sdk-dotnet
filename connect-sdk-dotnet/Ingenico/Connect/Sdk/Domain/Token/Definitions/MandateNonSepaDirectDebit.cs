@@ -10,7 +10,5 @@ namespace Ingenico.Connect.Sdk.Domain.Token.Definitions
     public class MandateNonSepaDirectDebit
     {
         public TokenNonSepaDirectDebitPaymentProduct705SpecificData PaymentProduct705SpecificData { get; set; } = null;
-
-        public TokenNonSepaDirectDebitPaymentProduct707SpecificData PaymentProduct707SpecificData { get; set; } = null;
     }
 }
