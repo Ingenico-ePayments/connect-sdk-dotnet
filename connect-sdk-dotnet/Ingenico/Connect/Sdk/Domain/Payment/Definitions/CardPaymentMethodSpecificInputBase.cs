@@ -11,9 +11,13 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
     /// </summary>
     public class CardPaymentMethodSpecificInputBase : AbstractPaymentMethodSpecificInput
     {
+        public string AuthorizationMode { get; set; } = null;
+
         public string CustomerReference { get; set; } = null;
 
         public string RecurringPaymentSequenceIndicator { get; set; } = null;
+
+        public bool? RequiresApproval { get; set; } = null;
 
         public bool? SkipAuthentication { get; set; } = null;
 

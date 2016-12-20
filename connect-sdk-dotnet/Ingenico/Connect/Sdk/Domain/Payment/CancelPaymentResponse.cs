@@ -13,6 +13,8 @@ namespace Ingenico.Connect.Sdk.Domain.Payment
     {
         public CancelPaymentCardPaymentMethodSpecificOutput CardPaymentMethodSpecificOutput { get; set; } = null;
 
+        public CancelPaymentMobilePaymentMethodSpecificOutput MobilePaymentMethodSpecificOutput { get; set; } = null;
+
         public Definitions.Payment Payment { get; set; } = null;
     }
 }

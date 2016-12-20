@@ -8,7 +8,7 @@
     <RootNamespace>Ingenico.Connect.Sdk</RootNamespace>
     <AssemblyName>connect-sdk-dotnet</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <ReleaseVersion>2.0.0</ReleaseVersion>
+    <ReleaseVersion>2.1.0</ReleaseVersion>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>
@@ -152,6 +152,7 @@
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\AdditionalOrderInput.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\AddressPersonal.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\ApprovePaymentCardPaymentMethodSpecificOutput.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\ApprovePaymentMobilePaymentMethodSpecificOutput.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\ApprovePaymentNonSepaDirectDebitPaymentMethodSpecificInput.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\ApprovePaymentPaymentMethodSpecificInput.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\ApprovePaymentSepaDirectDebitPaymentMethodSpecificInput.cs" />
@@ -159,6 +160,7 @@
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\BankTransferPaymentMethodSpecificInputBase.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\BankTransferPaymentMethodSpecificOutput.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\CancelPaymentCardPaymentMethodSpecificOutput.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\CancelPaymentMobilePaymentMethodSpecificOutput.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\CardPaymentMethodSpecificInput.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\CardPaymentMethodSpecificInputBase.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\CardPaymentMethodSpecificOutput.cs" />
@@ -170,6 +172,7 @@
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\ContactDetails.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\CreatePaymentResult.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\Customer.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\DecryptedPaymentData.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\ExternalCardholderAuthenticationData.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\InvoicePaymentMethodSpecificInput.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\InvoicePaymentMethodSpecificOutput.cs" />
@@ -178,6 +181,10 @@
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\LineItemInvoiceData.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\LineItemLevel3InterchangeInformation.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\MerchantAction.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\MobilePaymentData.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\MobilePaymentMethodSpecificInput.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\MobilePaymentMethodSpecificOutput.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\MobilePaymentProduct320SpecificInput.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\NonSepaDirectDebitPaymentMethodSpecificInput.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\NonSepaDirectDebitPaymentMethodSpecificOutput.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\NonSepaDirectDebitPaymentProduct705SpecificInput.cs" />
@@ -210,6 +217,7 @@
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\RefundCardMethodSpecificOutput.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\RefundEWalletMethodSpecificOutput.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\RefundMethodSpecificOutput.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\RefundMobileMethodSpecificOutput.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\RefundOutput.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\RefundPaymentProduct840CustomerAccount.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\RefundPaymentProduct840SpecificOutput.cs" />
@@ -250,8 +258,10 @@
     <Compile Include="Ingenico\Connect\Sdk\Domain\Product\Directory.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Product\PaymentProductGroupResponse.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Product\PaymentProductGroups.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Product\PaymentProductNetworksResponse.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Product\PaymentProductResponse.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Product\PaymentProducts.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Publickey\PublicKey.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Refund\ApproveRefundRequest.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Refund\Definitions\BankAccountBbanRefund.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Refund\Definitions\BankRefundMethodSpecificInput.cs" />
@@ -318,6 +328,7 @@
     <Compile Include="Ingenico\Connect\Sdk\Merchant\Products\DirectoryParams.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Merchant\Products\FindProductsParams.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Merchant\Products\GetProductParams.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Merchant\Products\NetworksParams.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Merchant\Products\ProductsClient.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Merchant\Refunds\RefundsClient.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Merchant\Riskassessments\RiskassessmentsClient.cs" />

@@ -46,6 +46,8 @@ To install the latest .NET SDK release, run the following command in the Package
 
 To install the latest .NET SDK source in a solution, clone the repository, and add the file `connect-sdk-dotnet.csproj` to the current solution. On the project depending on the Ingenico Connect SDK, add a reference to the `connect-sdk-dotnet` project.
 
+Note that you will need an IDE that supports version 6.0 of the C# language, such as Visual Studio 2015. Older versions will not be able to compile the SDK code, but they will be able to use the SDK as a dependency, e.g. through NuGet.
+
 ## Building the repository
 
-This repository uses [Visual Studio](https://www.visualstudio.com/) to build. Open `connect-sdk-dotnet.sln` in Visual Studio, and click build.
+This repository uses [Visual Studio](https://www.visualstudio.com/) 2015 or up to build. Open `connect-sdk-dotnet.sln` in Visual Studio, and click build.

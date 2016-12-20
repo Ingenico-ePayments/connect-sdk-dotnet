@@ -24,148 +24,6 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
         }
 
         /// <summary>
-        /// Resource /{merchantId}/payments/{paymentId}/refund
-        /// <a href="https://developer.globalcollect.com/documentation/api/server/#__merchantId__payments__paymentId__refund_post">Create refund</a>
-        /// </summary>
-        /// <param name="paymentId">string</param>
-        /// <param name="body">RefundRequest</param>
-        /// <param name="context">CallContext</param>
-        /// <returns>RefundResponse</returns>
-        /// <exception cref="DeclinedRefundException">if the GlobalCollect platform declined / rejected the refund. The refund result will be available from the exception.</exception>
-        /// <exception cref="ValidationException">if the request was not correct and couldn't be processed (HTTP status code BadRequest)</exception>
-        /// <exception cref="AuthorizationException">if the request was not allowed (HTTP status code Forbidden)</exception>
-        /// <exception cref="IdempotenceException">if an idempotent request caused a conflict (HTTP status code Conflict)</exception>
-        /// <exception cref="ReferenceException">if an object was attempted to be referenced that doesn't exist or has been removed,
-        ///            or there was a conflict (HTTP status code NotFound, Conflict or Gone)</exception>
-        /// <exception cref="GlobalCollectException">if something went wrong at the GlobalCollect platform,
-        ///            the GlobalCollect platform was unable to process a message from a downstream partner/acquirer,
-        ///            or the service that you're trying to reach is temporary unavailable (HTTP status code InternalServerError, BadGateway or ServiceUnavailable)</exception>
-        /// <exception cref="ApiException">if the GlobalCollect platform returned any other error</exception>
-        public async Task<RefundResponse> Refund(string paymentId, RefundRequest body, CallContext context = null)
-        {
-            IDictionary<string, string> pathContext = new Dictionary<string, string>();
-            pathContext.Add("paymentId", paymentId);
-            string uri = InstantiateUri("/{apiVersion}/{merchantId}/payments/{paymentId}/refund", pathContext);
-            try
-            {
-                return await _communicator.Post<RefundResponse>(
-                        uri,
-                        ClientHeaders,
-                        null,
-                        body,
-                        context);
-            }
-            catch (ResponseException e)
-            {
-                object errorObject;
-                switch (e.StatusCode)
-                {
-                    case HttpStatusCode.BadRequest:
-                        errorObject = _communicator.Marshaller.Unmarshal<RefundErrorResponse>(e.Body);
-                        break;
-                    case HttpStatusCode.NotFound:
-                        errorObject = _communicator.Marshaller.Unmarshal<RefundErrorResponse>(e.Body);
-                        break;
-                    default:
-                        errorObject = _communicator.Marshaller.Unmarshal<ErrorResponse>(e.Body);
-                        break;
-                }
-                throw CreateException(e.StatusCode, e.Body, errorObject, context);
-            }
-        }
-
-        /// <summary>
-        /// Resource /{merchantId}/payments/{paymentId}/processchallenged
-        /// <a href="https://developer.globalcollect.com/documentation/api/server/#__merchantId__payments__paymentId__processchallenged_post">Approves challenged payment</a>
-        /// </summary>
-        /// <param name="paymentId">string</param>
-        /// <param name="context">CallContext</param>
-        /// <returns>PaymentResponse</returns>
-        /// <exception cref="ValidationException">if the request was not correct and couldn't be processed (HTTP status code BadRequest)</exception>
-        /// <exception cref="AuthorizationException">if the request was not allowed (HTTP status code Forbidden)</exception>
-        /// <exception cref="IdempotenceException">if an idempotent request caused a conflict (HTTP status code Conflict)</exception>
-        /// <exception cref="ReferenceException">if an object was attempted to be referenced that doesn't exist or has been removed,
-        ///            or there was a conflict (HTTP status code NotFound, Conflict or Gone)</exception>
-        /// <exception cref="GlobalCollectException">if something went wrong at the GlobalCollect platform,
-        ///            the GlobalCollect platform was unable to process a message from a downstream partner/acquirer,
-        ///            or the service that you're trying to reach is temporary unavailable (HTTP status code InternalServerError, BadGateway or ServiceUnavailable)</exception>
-        /// <exception cref="ApiException">if the GlobalCollect platform returned any other error</exception>
-        public async Task<PaymentResponse> Processchallenged(string paymentId, CallContext context = null)
-        {
-            IDictionary<string, string> pathContext = new Dictionary<string, string>();
-            pathContext.Add("paymentId", paymentId);
-            string uri = InstantiateUri("/{apiVersion}/{merchantId}/payments/{paymentId}/processchallenged", pathContext);
-            try
-            {
-                return await _communicator.Post<PaymentResponse>(
-                        uri,
-                        ClientHeaders,
-                        null,
-                        null,
-                        context);
-            }
-            catch (ResponseException e)
-            {
-                object errorObject;
-                switch (e.StatusCode)
-                {
-                    case HttpStatusCode.NotFound:
-                        errorObject = _communicator.Marshaller.Unmarshal<ErrorResponse>(e.Body);
-                        break;
-                    case HttpStatusCode.MethodNotAllowed:
-                        errorObject = _communicator.Marshaller.Unmarshal<ErrorResponse>(e.Body);
-                        break;
-                    default:
-                        errorObject = _communicator.Marshaller.Unmarshal<ErrorResponse>(e.Body);
-                        break;
-                }
-                throw CreateException(e.StatusCode, e.Body, errorObject, context);
-            }
-        }
-
-        /// <summary>
-        /// Resource /{merchantId}/payments/{paymentId}
-        /// <a href="https://developer.globalcollect.com/documentation/api/server/#__merchantId__payments__paymentId__get">Get payment</a>
-        /// </summary>
-        /// <param name="paymentId">string</param>
-        /// <param name="context">CallContext</param>
-        /// <returns>PaymentResponse</returns>
-        /// <exception cref="ValidationException">if the request was not correct and couldn't be processed (HTTP status code BadRequest)</exception>
-        /// <exception cref="AuthorizationException">if the request was not allowed (HTTP status code Forbidden)</exception>
-        /// <exception cref="IdempotenceException">if an idempotent request caused a conflict (HTTP status code Conflict)</exception>
-        /// <exception cref="ReferenceException">if an object was attempted to be referenced that doesn't exist or has been removed,
-        ///            or there was a conflict (HTTP status code NotFound, Conflict or Gone)</exception>
-        /// <exception cref="GlobalCollectException">if something went wrong at the GlobalCollect platform,
-        ///            the GlobalCollect platform was unable to process a message from a downstream partner/acquirer,
-        ///            or the service that you're trying to reach is temporary unavailable (HTTP status code InternalServerError, BadGateway or ServiceUnavailable)</exception>
-        /// <exception cref="ApiException">if the GlobalCollect platform returned any other error</exception>
-        public async Task<PaymentResponse> Get(string paymentId, CallContext context = null)
-        {
-            IDictionary<string, string> pathContext = new Dictionary<string, string>();
-            pathContext.Add("paymentId", paymentId);
-            string uri = InstantiateUri("/{apiVersion}/{merchantId}/payments/{paymentId}", pathContext);
-            try
-            {
-                return await _communicator.Get<PaymentResponse>(
-                        uri,
-                        ClientHeaders,
-                        null,
-                        context);
-            }
-            catch (ResponseException e)
-            {
-                object errorObject;
-                switch (e.StatusCode)
-                {
-                    default:
-                        errorObject = _communicator.Marshaller.Unmarshal<ErrorResponse>(e.Body);
-                        break;
-                }
-                throw CreateException(e.StatusCode, e.Body, errorObject, context);
-            }
-        }
-
-        /// <summary>
         /// Resource /{merchantId}/payments
         /// <a href="https://developer.globalcollect.com/documentation/api/server/#__merchantId__payments_post">Create payment</a>
         /// </summary>
@@ -223,13 +81,12 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
         }
 
         /// <summary>
-        /// Resource /{merchantId}/payments/{paymentId}/tokenize
-        /// <a href="https://developer.globalcollect.com/documentation/api/server/#__merchantId__payments__paymentId__tokenize_post">Create a token from payment</a>
+        /// Resource /{merchantId}/payments/{paymentId}
+        /// <a href="https://developer.globalcollect.com/documentation/api/server/#__merchantId__payments__paymentId__get">Get payment</a>
         /// </summary>
         /// <param name="paymentId">string</param>
-        /// <param name="body">TokenizePaymentRequest</param>
         /// <param name="context">CallContext</param>
-        /// <returns>CreateTokenResponse</returns>
+        /// <returns>PaymentResponse</returns>
         /// <exception cref="ValidationException">if the request was not correct and couldn't be processed (HTTP status code BadRequest)</exception>
         /// <exception cref="AuthorizationException">if the request was not allowed (HTTP status code Forbidden)</exception>
         /// <exception cref="IdempotenceException">if an idempotent request caused a conflict (HTTP status code Conflict)</exception>
@@ -239,63 +96,16 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
         ///            the GlobalCollect platform was unable to process a message from a downstream partner/acquirer,
         ///            or the service that you're trying to reach is temporary unavailable (HTTP status code InternalServerError, BadGateway or ServiceUnavailable)</exception>
         /// <exception cref="ApiException">if the GlobalCollect platform returned any other error</exception>
-        public async Task<CreateTokenResponse> Tokenize(string paymentId, TokenizePaymentRequest body, CallContext context = null)
+        public async Task<PaymentResponse> Get(string paymentId, CallContext context = null)
         {
             IDictionary<string, string> pathContext = new Dictionary<string, string>();
             pathContext.Add("paymentId", paymentId);
-            string uri = InstantiateUri("/{apiVersion}/{merchantId}/payments/{paymentId}/tokenize", pathContext);
+            string uri = InstantiateUri("/{apiVersion}/{merchantId}/payments/{paymentId}", pathContext);
             try
             {
-                return await _communicator.Post<CreateTokenResponse>(
+                return await _communicator.Get<PaymentResponse>(
                         uri,
                         ClientHeaders,
-                        null,
-                        body,
-                        context);
-            }
-            catch (ResponseException e)
-            {
-                object errorObject;
-                switch (e.StatusCode)
-                {
-                    case HttpStatusCode.NotFound:
-                        errorObject = _communicator.Marshaller.Unmarshal<ErrorResponse>(e.Body);
-                        break;
-                    default:
-                        errorObject = _communicator.Marshaller.Unmarshal<ErrorResponse>(e.Body);
-                        break;
-                }
-                throw CreateException(e.StatusCode, e.Body, errorObject, context);
-            }
-        }
-
-        /// <summary>
-        /// Resource /{merchantId}/payments/{paymentId}/cancel
-        /// <a href="https://developer.globalcollect.com/documentation/api/server/#__merchantId__payments__paymentId__cancel_post">Cancel payment</a>
-        /// </summary>
-        /// <param name="paymentId">string</param>
-        /// <param name="context">CallContext</param>
-        /// <returns>CancelPaymentResponse</returns>
-        /// <exception cref="ValidationException">if the request was not correct and couldn't be processed (HTTP status code BadRequest)</exception>
-        /// <exception cref="AuthorizationException">if the request was not allowed (HTTP status code Forbidden)</exception>
-        /// <exception cref="IdempotenceException">if an idempotent request caused a conflict (HTTP status code Conflict)</exception>
-        /// <exception cref="ReferenceException">if an object was attempted to be referenced that doesn't exist or has been removed,
-        ///            or there was a conflict (HTTP status code NotFound, Conflict or Gone)</exception>
-        /// <exception cref="GlobalCollectException">if something went wrong at the GlobalCollect platform,
-        ///            the GlobalCollect platform was unable to process a message from a downstream partner/acquirer,
-        ///            or the service that you're trying to reach is temporary unavailable (HTTP status code InternalServerError, BadGateway or ServiceUnavailable)</exception>
-        /// <exception cref="ApiException">if the GlobalCollect platform returned any other error</exception>
-        public async Task<CancelPaymentResponse> Cancel(string paymentId, CallContext context = null)
-        {
-            IDictionary<string, string> pathContext = new Dictionary<string, string>();
-            pathContext.Add("paymentId", paymentId);
-            string uri = InstantiateUri("/{apiVersion}/{merchantId}/payments/{paymentId}/cancel", pathContext);
-            try
-            {
-                return await _communicator.Post<CancelPaymentResponse>(
-                        uri,
-                        ClientHeaders,
-                        null,
                         null,
                         context);
             }
@@ -304,9 +114,6 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
                 object errorObject;
                 switch (e.StatusCode)
                 {
-                    case HttpStatusCode.PaymentRequired:
-                        errorObject = _communicator.Marshaller.Unmarshal<ErrorResponse>(e.Body);
-                        break;
                     default:
                         errorObject = _communicator.Marshaller.Unmarshal<ErrorResponse>(e.Body);
                         break;
@@ -366,6 +173,52 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
         }
 
         /// <summary>
+        /// Resource /{merchantId}/payments/{paymentId}/cancel
+        /// <a href="https://developer.globalcollect.com/documentation/api/server/#__merchantId__payments__paymentId__cancel_post">Cancel payment</a>
+        /// </summary>
+        /// <param name="paymentId">string</param>
+        /// <param name="context">CallContext</param>
+        /// <returns>CancelPaymentResponse</returns>
+        /// <exception cref="ValidationException">if the request was not correct and couldn't be processed (HTTP status code BadRequest)</exception>
+        /// <exception cref="AuthorizationException">if the request was not allowed (HTTP status code Forbidden)</exception>
+        /// <exception cref="IdempotenceException">if an idempotent request caused a conflict (HTTP status code Conflict)</exception>
+        /// <exception cref="ReferenceException">if an object was attempted to be referenced that doesn't exist or has been removed,
+        ///            or there was a conflict (HTTP status code NotFound, Conflict or Gone)</exception>
+        /// <exception cref="GlobalCollectException">if something went wrong at the GlobalCollect platform,
+        ///            the GlobalCollect platform was unable to process a message from a downstream partner/acquirer,
+        ///            or the service that you're trying to reach is temporary unavailable (HTTP status code InternalServerError, BadGateway or ServiceUnavailable)</exception>
+        /// <exception cref="ApiException">if the GlobalCollect platform returned any other error</exception>
+        public async Task<CancelPaymentResponse> Cancel(string paymentId, CallContext context = null)
+        {
+            IDictionary<string, string> pathContext = new Dictionary<string, string>();
+            pathContext.Add("paymentId", paymentId);
+            string uri = InstantiateUri("/{apiVersion}/{merchantId}/payments/{paymentId}/cancel", pathContext);
+            try
+            {
+                return await _communicator.Post<CancelPaymentResponse>(
+                        uri,
+                        ClientHeaders,
+                        null,
+                        null,
+                        context);
+            }
+            catch (ResponseException e)
+            {
+                object errorObject;
+                switch (e.StatusCode)
+                {
+                    case HttpStatusCode.PaymentRequired:
+                        errorObject = _communicator.Marshaller.Unmarshal<ErrorResponse>(e.Body);
+                        break;
+                    default:
+                        errorObject = _communicator.Marshaller.Unmarshal<ErrorResponse>(e.Body);
+                        break;
+                }
+                throw CreateException(e.StatusCode, e.Body, errorObject, context);
+            }
+        }
+
+        /// <summary>
         /// Resource /{merchantId}/payments/{paymentId}/cancelapproval
         /// <a href="https://developer.globalcollect.com/documentation/api/server/#__merchantId__payments__paymentId__cancelapproval_post">Undo capture payment request</a>
         /// </summary>
@@ -393,6 +246,153 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
                         ClientHeaders,
                         null,
                         null,
+                        context);
+            }
+            catch (ResponseException e)
+            {
+                object errorObject;
+                switch (e.StatusCode)
+                {
+                    case HttpStatusCode.NotFound:
+                        errorObject = _communicator.Marshaller.Unmarshal<ErrorResponse>(e.Body);
+                        break;
+                    default:
+                        errorObject = _communicator.Marshaller.Unmarshal<ErrorResponse>(e.Body);
+                        break;
+                }
+                throw CreateException(e.StatusCode, e.Body, errorObject, context);
+            }
+        }
+
+        /// <summary>
+        /// Resource /{merchantId}/payments/{paymentId}/processchallenged
+        /// <a href="https://developer.globalcollect.com/documentation/api/server/#__merchantId__payments__paymentId__processchallenged_post">Approves challenged payment</a>
+        /// </summary>
+        /// <param name="paymentId">string</param>
+        /// <param name="context">CallContext</param>
+        /// <returns>PaymentResponse</returns>
+        /// <exception cref="ValidationException">if the request was not correct and couldn't be processed (HTTP status code BadRequest)</exception>
+        /// <exception cref="AuthorizationException">if the request was not allowed (HTTP status code Forbidden)</exception>
+        /// <exception cref="IdempotenceException">if an idempotent request caused a conflict (HTTP status code Conflict)</exception>
+        /// <exception cref="ReferenceException">if an object was attempted to be referenced that doesn't exist or has been removed,
+        ///            or there was a conflict (HTTP status code NotFound, Conflict or Gone)</exception>
+        /// <exception cref="GlobalCollectException">if something went wrong at the GlobalCollect platform,
+        ///            the GlobalCollect platform was unable to process a message from a downstream partner/acquirer,
+        ///            or the service that you're trying to reach is temporary unavailable (HTTP status code InternalServerError, BadGateway or ServiceUnavailable)</exception>
+        /// <exception cref="ApiException">if the GlobalCollect platform returned any other error</exception>
+        public async Task<PaymentResponse> Processchallenged(string paymentId, CallContext context = null)
+        {
+            IDictionary<string, string> pathContext = new Dictionary<string, string>();
+            pathContext.Add("paymentId", paymentId);
+            string uri = InstantiateUri("/{apiVersion}/{merchantId}/payments/{paymentId}/processchallenged", pathContext);
+            try
+            {
+                return await _communicator.Post<PaymentResponse>(
+                        uri,
+                        ClientHeaders,
+                        null,
+                        null,
+                        context);
+            }
+            catch (ResponseException e)
+            {
+                object errorObject;
+                switch (e.StatusCode)
+                {
+                    case HttpStatusCode.NotFound:
+                        errorObject = _communicator.Marshaller.Unmarshal<ErrorResponse>(e.Body);
+                        break;
+                    case HttpStatusCode.MethodNotAllowed:
+                        errorObject = _communicator.Marshaller.Unmarshal<ErrorResponse>(e.Body);
+                        break;
+                    default:
+                        errorObject = _communicator.Marshaller.Unmarshal<ErrorResponse>(e.Body);
+                        break;
+                }
+                throw CreateException(e.StatusCode, e.Body, errorObject, context);
+            }
+        }
+
+        /// <summary>
+        /// Resource /{merchantId}/payments/{paymentId}/refund
+        /// <a href="https://developer.globalcollect.com/documentation/api/server/#__merchantId__payments__paymentId__refund_post">Create refund</a>
+        /// </summary>
+        /// <param name="paymentId">string</param>
+        /// <param name="body">RefundRequest</param>
+        /// <param name="context">CallContext</param>
+        /// <returns>RefundResponse</returns>
+        /// <exception cref="DeclinedRefundException">if the GlobalCollect platform declined / rejected the refund. The refund result will be available from the exception.</exception>
+        /// <exception cref="ValidationException">if the request was not correct and couldn't be processed (HTTP status code BadRequest)</exception>
+        /// <exception cref="AuthorizationException">if the request was not allowed (HTTP status code Forbidden)</exception>
+        /// <exception cref="IdempotenceException">if an idempotent request caused a conflict (HTTP status code Conflict)</exception>
+        /// <exception cref="ReferenceException">if an object was attempted to be referenced that doesn't exist or has been removed,
+        ///            or there was a conflict (HTTP status code NotFound, Conflict or Gone)</exception>
+        /// <exception cref="GlobalCollectException">if something went wrong at the GlobalCollect platform,
+        ///            the GlobalCollect platform was unable to process a message from a downstream partner/acquirer,
+        ///            or the service that you're trying to reach is temporary unavailable (HTTP status code InternalServerError, BadGateway or ServiceUnavailable)</exception>
+        /// <exception cref="ApiException">if the GlobalCollect platform returned any other error</exception>
+        public async Task<RefundResponse> Refund(string paymentId, RefundRequest body, CallContext context = null)
+        {
+            IDictionary<string, string> pathContext = new Dictionary<string, string>();
+            pathContext.Add("paymentId", paymentId);
+            string uri = InstantiateUri("/{apiVersion}/{merchantId}/payments/{paymentId}/refund", pathContext);
+            try
+            {
+                return await _communicator.Post<RefundResponse>(
+                        uri,
+                        ClientHeaders,
+                        null,
+                        body,
+                        context);
+            }
+            catch (ResponseException e)
+            {
+                object errorObject;
+                switch (e.StatusCode)
+                {
+                    case HttpStatusCode.BadRequest:
+                        errorObject = _communicator.Marshaller.Unmarshal<RefundErrorResponse>(e.Body);
+                        break;
+                    case HttpStatusCode.NotFound:
+                        errorObject = _communicator.Marshaller.Unmarshal<RefundErrorResponse>(e.Body);
+                        break;
+                    default:
+                        errorObject = _communicator.Marshaller.Unmarshal<ErrorResponse>(e.Body);
+                        break;
+                }
+                throw CreateException(e.StatusCode, e.Body, errorObject, context);
+            }
+        }
+
+        /// <summary>
+        /// Resource /{merchantId}/payments/{paymentId}/tokenize
+        /// <a href="https://developer.globalcollect.com/documentation/api/server/#__merchantId__payments__paymentId__tokenize_post">Create a token from payment</a>
+        /// </summary>
+        /// <param name="paymentId">string</param>
+        /// <param name="body">TokenizePaymentRequest</param>
+        /// <param name="context">CallContext</param>
+        /// <returns>CreateTokenResponse</returns>
+        /// <exception cref="ValidationException">if the request was not correct and couldn't be processed (HTTP status code BadRequest)</exception>
+        /// <exception cref="AuthorizationException">if the request was not allowed (HTTP status code Forbidden)</exception>
+        /// <exception cref="IdempotenceException">if an idempotent request caused a conflict (HTTP status code Conflict)</exception>
+        /// <exception cref="ReferenceException">if an object was attempted to be referenced that doesn't exist or has been removed,
+        ///            or there was a conflict (HTTP status code NotFound, Conflict or Gone)</exception>
+        /// <exception cref="GlobalCollectException">if something went wrong at the GlobalCollect platform,
+        ///            the GlobalCollect platform was unable to process a message from a downstream partner/acquirer,
+        ///            or the service that you're trying to reach is temporary unavailable (HTTP status code InternalServerError, BadGateway or ServiceUnavailable)</exception>
+        /// <exception cref="ApiException">if the GlobalCollect platform returned any other error</exception>
+        public async Task<CreateTokenResponse> Tokenize(string paymentId, TokenizePaymentRequest body, CallContext context = null)
+        {
+            IDictionary<string, string> pathContext = new Dictionary<string, string>();
+            pathContext.Add("paymentId", paymentId);
+            string uri = InstantiateUri("/{apiVersion}/{merchantId}/payments/{paymentId}/tokenize", pathContext);
+            try
+            {
+                return await _communicator.Post<CreateTokenResponse>(
+                        uri,
+                        ClientHeaders,
+                        null,
+                        body,
                         context);
             }
             catch (ResponseException e)

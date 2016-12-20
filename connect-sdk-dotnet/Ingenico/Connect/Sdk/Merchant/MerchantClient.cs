@@ -28,6 +28,26 @@ namespace Ingenico.Connect.Sdk.Merchant
         }
 
         /// <summary>
+        /// Resource /{merchantId}/hostedcheckouts
+        /// Create new hosted checkout
+        /// </summary>
+        /// <returns>HostedcheckoutsClient</returns>
+        public HostedcheckoutsClient Hostedcheckouts()
+        {
+            return new HostedcheckoutsClient(this, null);
+        }
+
+        /// <summary>
+        /// Resource /{merchantId}/payments
+        /// Create, cancel and approve payments
+        /// </summary>
+        /// <returns>PaymentsClient</returns>
+        public PaymentsClient Payments()
+        {
+            return new PaymentsClient(this, null);
+        }
+
+        /// <summary>
         /// Resource /{merchantId}/payouts
         /// Create, cancel and approve payouts
         /// </summary>
@@ -38,6 +58,26 @@ namespace Ingenico.Connect.Sdk.Merchant
         }
 
         /// <summary>
+        /// Resource /{merchantId}/productgroups
+        /// Get information about payment product groups
+        /// </summary>
+        /// <returns>ProductgroupsClient</returns>
+        public ProductgroupsClient Productgroups()
+        {
+            return new ProductgroupsClient(this, null);
+        }
+
+        /// <summary>
+        /// Resource /{merchantId}/products
+        /// Get information about payment products
+        /// </summary>
+        /// <returns>ProductsClient</returns>
+        public ProductsClient Products()
+        {
+            return new ProductsClient(this, null);
+        }
+
+        /// <summary>
         /// Resource /{merchantId}/refunds
         /// Create, cancel and approve refunds
         /// </summary>
@@ -45,6 +85,26 @@ namespace Ingenico.Connect.Sdk.Merchant
         public RefundsClient Refunds()
         {
             return new RefundsClient(this, null);
+        }
+
+        /// <summary>
+        /// Resource /{merchantId}/riskassessments
+        /// Perform risk assessments on your customer data
+        /// </summary>
+        /// <returns>RiskassessmentsClient</returns>
+        public RiskassessmentsClient Riskassessments()
+        {
+            return new RiskassessmentsClient(this, null);
+        }
+
+        /// <summary>
+        /// Resource /{merchantId}/services
+        /// Several services to help you
+        /// </summary>
+        /// <returns>ServicesClient</returns>
+        public ServicesClient Services()
+        {
+            return new ServicesClient(this, null);
         }
 
         /// <summary>
@@ -65,66 +125,6 @@ namespace Ingenico.Connect.Sdk.Merchant
         public TokensClient Tokens()
         {
             return new TokensClient(this, null);
-        }
-
-        /// <summary>
-        /// Resource /{merchantId}/services
-        /// Several services to help you
-        /// </summary>
-        /// <returns>ServicesClient</returns>
-        public ServicesClient Services()
-        {
-            return new ServicesClient(this, null);
-        }
-
-        /// <summary>
-        /// Resource /{merchantId}/hostedcheckouts
-        /// Create new hosted checkout
-        /// </summary>
-        /// <returns>HostedcheckoutsClient</returns>
-        public HostedcheckoutsClient Hostedcheckouts()
-        {
-            return new HostedcheckoutsClient(this, null);
-        }
-
-        /// <summary>
-        /// Resource /{merchantId}/products
-        /// Get information about payment products
-        /// </summary>
-        /// <returns>ProductsClient</returns>
-        public ProductsClient Products()
-        {
-            return new ProductsClient(this, null);
-        }
-
-        /// <summary>
-        /// Resource /{merchantId}/payments
-        /// Create, cancel and approve payments
-        /// </summary>
-        /// <returns>PaymentsClient</returns>
-        public PaymentsClient Payments()
-        {
-            return new PaymentsClient(this, null);
-        }
-
-        /// <summary>
-        /// Resource /{merchantId}/productgroups
-        /// Get information about payment product groups
-        /// </summary>
-        /// <returns>ProductgroupsClient</returns>
-        public ProductgroupsClient Productgroups()
-        {
-            return new ProductgroupsClient(this, null);
-        }
-
-        /// <summary>
-        /// Resource /{merchantId}/riskassessments
-        /// Perform risk assessments on your customer data
-        /// </summary>
-        /// <returns>RiskassessmentsClient</returns>
-        public RiskassessmentsClient Riskassessments()
-        {
-            return new RiskassessmentsClient(this, null);
         }
     }
 }

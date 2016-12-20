@@ -21,6 +21,8 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
 
         public InvoicePaymentMethodSpecificOutput InvoicePaymentMethodSpecificOutput { get; set; } = null;
 
+        public MobilePaymentMethodSpecificOutput MobilePaymentMethodSpecificOutput { get; set; } = null;
+
         public string PaymentMethod { get; set; } = null;
 
         public RedirectPaymentMethodSpecificOutput RedirectPaymentMethodSpecificOutput { get; set; } = null;

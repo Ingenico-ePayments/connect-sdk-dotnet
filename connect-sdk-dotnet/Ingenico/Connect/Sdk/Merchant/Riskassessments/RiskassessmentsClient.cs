@@ -21,10 +21,10 @@ namespace Ingenico.Connect.Sdk.Merchant.Riskassessments
         }
 
         /// <summary>
-        /// Resource /{merchantId}/riskassessments/cards
-        /// <a href="https://developer.globalcollect.com/documentation/api/server/#__merchantId__riskassessments_cards_post">Risk-assess card</a>
+        /// Resource /{merchantId}/riskassessments/bankaccounts
+        /// <a href="https://developer.globalcollect.com/documentation/api/server/#__merchantId__riskassessments_bankaccounts_post">Risk-assess bank account</a>
         /// </summary>
-        /// <param name="body">RiskAssessmentCard</param>
+        /// <param name="body">RiskAssessmentBankAccount</param>
         /// <param name="context">CallContext</param>
         /// <returns>RiskAssessmentResponse</returns>
         /// <exception cref="ValidationException">if the request was not correct and couldn't be processed (HTTP status code BadRequest)</exception>
@@ -36,9 +36,9 @@ namespace Ingenico.Connect.Sdk.Merchant.Riskassessments
         ///            the GlobalCollect platform was unable to process a message from a downstream partner/acquirer,
         ///            or the service that you're trying to reach is temporary unavailable (HTTP status code InternalServerError, BadGateway or ServiceUnavailable)</exception>
         /// <exception cref="ApiException">if the GlobalCollect platform returned any other error</exception>
-        public async Task<RiskAssessmentResponse> Cards(RiskAssessmentCard body, CallContext context = null)
+        public async Task<RiskAssessmentResponse> Bankaccounts(RiskAssessmentBankAccount body, CallContext context = null)
         {
-            string uri = InstantiateUri("/{apiVersion}/{merchantId}/riskassessments/cards", null);
+            string uri = InstantiateUri("/{apiVersion}/{merchantId}/riskassessments/bankaccounts", null);
             try
             {
                 return await _communicator.Post<RiskAssessmentResponse>(
@@ -62,10 +62,10 @@ namespace Ingenico.Connect.Sdk.Merchant.Riskassessments
         }
 
         /// <summary>
-        /// Resource /{merchantId}/riskassessments/bankaccounts
-        /// <a href="https://developer.globalcollect.com/documentation/api/server/#__merchantId__riskassessments_bankaccounts_post">Risk-assess bank account</a>
+        /// Resource /{merchantId}/riskassessments/cards
+        /// <a href="https://developer.globalcollect.com/documentation/api/server/#__merchantId__riskassessments_cards_post">Risk-assess card</a>
         /// </summary>
-        /// <param name="body">RiskAssessmentBankAccount</param>
+        /// <param name="body">RiskAssessmentCard</param>
         /// <param name="context">CallContext</param>
         /// <returns>RiskAssessmentResponse</returns>
         /// <exception cref="ValidationException">if the request was not correct and couldn't be processed (HTTP status code BadRequest)</exception>
@@ -77,9 +77,9 @@ namespace Ingenico.Connect.Sdk.Merchant.Riskassessments
         ///            the GlobalCollect platform was unable to process a message from a downstream partner/acquirer,
         ///            or the service that you're trying to reach is temporary unavailable (HTTP status code InternalServerError, BadGateway or ServiceUnavailable)</exception>
         /// <exception cref="ApiException">if the GlobalCollect platform returned any other error</exception>
-        public async Task<RiskAssessmentResponse> Bankaccounts(RiskAssessmentBankAccount body, CallContext context = null)
+        public async Task<RiskAssessmentResponse> Cards(RiskAssessmentCard body, CallContext context = null)
         {
-            string uri = InstantiateUri("/{apiVersion}/{merchantId}/riskassessments/bankaccounts", null);
+            string uri = InstantiateUri("/{apiVersion}/{merchantId}/riskassessments/cards", null);
             try
             {
                 return await _communicator.Post<RiskAssessmentResponse>(

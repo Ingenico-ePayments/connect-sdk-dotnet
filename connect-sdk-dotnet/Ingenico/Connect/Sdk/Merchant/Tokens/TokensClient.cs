@@ -66,55 +66,11 @@ namespace Ingenico.Connect.Sdk.Merchant.Tokens
         }
 
         /// <summary>
-        /// Resource /{merchantId}/tokens/{tokenId}/approvesepadirectdebit
-        /// <a href="https://developer.globalcollect.com/documentation/api/server/#__merchantId__tokens__tokenId__approvesepadirectdebit_post">Approve SEPA DD mandate</a>
-        /// </summary>
-        /// <param name="tokenId">string</param>
-        /// <param name="body">ApproveTokenRequest</param>
-        /// <param name="context">CallContext</param>
-        /// <returns>void</returns>
-        /// <exception cref="ValidationException">if the request was not correct and couldn't be processed (HTTP status code BadRequest)</exception>
-        /// <exception cref="AuthorizationException">if the request was not allowed (HTTP status code Forbidden)</exception>
-        /// <exception cref="IdempotenceException">if an idempotent request caused a conflict (HTTP status code Conflict)</exception>
-        /// <exception cref="ReferenceException">if an object was attempted to be referenced that doesn't exist or has been removed,
-        ///            or there was a conflict (HTTP status code NotFound, Conflict or Gone)</exception>
-        /// <exception cref="GlobalCollectException">if something went wrong at the GlobalCollect platform,
-        ///            the GlobalCollect platform was unable to process a message from a downstream partner/acquirer,
-        ///            or the service that you're trying to reach is temporary unavailable (HTTP status code InternalServerError, BadGateway or ServiceUnavailable)</exception>
-        /// <exception cref="ApiException">if the GlobalCollect platform returned any other error</exception>
-        public async Task Approvesepadirectdebit(string tokenId, ApproveTokenRequest body, CallContext context = null)
-        {
-            IDictionary<string, string> pathContext = new Dictionary<string, string>();
-            pathContext.Add("tokenId", tokenId);
-            string uri = InstantiateUri("/{apiVersion}/{merchantId}/tokens/{tokenId}/approvesepadirectdebit", pathContext);
-            try
-            {
-                await _communicator.Post<object>(
-                        uri,
-                        ClientHeaders,
-                        null,
-                        body,
-                        context);
-            }
-            catch (ResponseException e)
-            {
-                object errorObject;
-                switch (e.StatusCode)
-                {
-                    default:
-                        errorObject = _communicator.Marshaller.Unmarshal<ErrorResponse>(e.Body);
-                        break;
-                }
-                throw CreateException(e.StatusCode, e.Body, errorObject, context);
-            }
-        }
-
-        /// <summary>
         /// Resource /{merchantId}/tokens/{tokenId}
-        /// <a href="https://developer.globalcollect.com/documentation/api/server/#__merchantId__tokens__tokenId__put">Update token</a>
+        /// <a href="https://developer.globalcollect.com/documentation/api/server/#__merchantId__tokens__tokenId__delete">Delete token</a>
         /// </summary>
         /// <param name="tokenId">string</param>
-        /// <param name="body">UpdateTokenRequest</param>
+        /// <param name="query">DeleteTokenParams</param>
         /// <param name="context">CallContext</param>
         /// <returns>void</returns>
         /// <exception cref="ValidationException">if the request was not correct and couldn't be processed (HTTP status code BadRequest)</exception>
@@ -126,18 +82,17 @@ namespace Ingenico.Connect.Sdk.Merchant.Tokens
         ///            the GlobalCollect platform was unable to process a message from a downstream partner/acquirer,
         ///            or the service that you're trying to reach is temporary unavailable (HTTP status code InternalServerError, BadGateway or ServiceUnavailable)</exception>
         /// <exception cref="ApiException">if the GlobalCollect platform returned any other error</exception>
-        public async Task Update(string tokenId, UpdateTokenRequest body, CallContext context = null)
+        public async Task Delete(string tokenId, DeleteTokenParams query, CallContext context = null)
         {
             IDictionary<string, string> pathContext = new Dictionary<string, string>();
             pathContext.Add("tokenId", tokenId);
             string uri = InstantiateUri("/{apiVersion}/{merchantId}/tokens/{tokenId}", pathContext);
             try
             {
-                await _communicator.Put<object>(
+                await _communicator.Delete<object>(
                         uri,
                         ClientHeaders,
-                        null,
-                        body,
+                        query,
                         context);
             }
             catch (ResponseException e)
@@ -145,6 +100,9 @@ namespace Ingenico.Connect.Sdk.Merchant.Tokens
                 object errorObject;
                 switch (e.StatusCode)
                 {
+                    case HttpStatusCode.NotFound:
+                        errorObject = _communicator.Marshaller.Unmarshal<ErrorResponse>(e.Body);
+                        break;
                     default:
                         errorObject = _communicator.Marshaller.Unmarshal<ErrorResponse>(e.Body);
                         break;
@@ -200,10 +158,10 @@ namespace Ingenico.Connect.Sdk.Merchant.Tokens
 
         /// <summary>
         /// Resource /{merchantId}/tokens/{tokenId}
-        /// <a href="https://developer.globalcollect.com/documentation/api/server/#__merchantId__tokens__tokenId__delete">Delete token</a>
+        /// <a href="https://developer.globalcollect.com/documentation/api/server/#__merchantId__tokens__tokenId__put">Update token</a>
         /// </summary>
         /// <param name="tokenId">string</param>
-        /// <param name="query">DeleteTokenParams</param>
+        /// <param name="body">UpdateTokenRequest</param>
         /// <param name="context">CallContext</param>
         /// <returns>void</returns>
         /// <exception cref="ValidationException">if the request was not correct and couldn't be processed (HTTP status code BadRequest)</exception>
@@ -215,17 +173,18 @@ namespace Ingenico.Connect.Sdk.Merchant.Tokens
         ///            the GlobalCollect platform was unable to process a message from a downstream partner/acquirer,
         ///            or the service that you're trying to reach is temporary unavailable (HTTP status code InternalServerError, BadGateway or ServiceUnavailable)</exception>
         /// <exception cref="ApiException">if the GlobalCollect platform returned any other error</exception>
-        public async Task Delete(string tokenId, DeleteTokenParams query, CallContext context = null)
+        public async Task Update(string tokenId, UpdateTokenRequest body, CallContext context = null)
         {
             IDictionary<string, string> pathContext = new Dictionary<string, string>();
             pathContext.Add("tokenId", tokenId);
             string uri = InstantiateUri("/{apiVersion}/{merchantId}/tokens/{tokenId}", pathContext);
             try
             {
-                await _communicator.Delete<object>(
+                await _communicator.Put<object>(
                         uri,
                         ClientHeaders,
-                        query,
+                        null,
+                        body,
                         context);
             }
             catch (ResponseException e)
@@ -233,9 +192,50 @@ namespace Ingenico.Connect.Sdk.Merchant.Tokens
                 object errorObject;
                 switch (e.StatusCode)
                 {
-                    case HttpStatusCode.NotFound:
+                    default:
                         errorObject = _communicator.Marshaller.Unmarshal<ErrorResponse>(e.Body);
                         break;
+                }
+                throw CreateException(e.StatusCode, e.Body, errorObject, context);
+            }
+        }
+
+        /// <summary>
+        /// Resource /{merchantId}/tokens/{tokenId}/approvesepadirectdebit
+        /// <a href="https://developer.globalcollect.com/documentation/api/server/#__merchantId__tokens__tokenId__approvesepadirectdebit_post">Approve SEPA DD mandate</a>
+        /// </summary>
+        /// <param name="tokenId">string</param>
+        /// <param name="body">ApproveTokenRequest</param>
+        /// <param name="context">CallContext</param>
+        /// <returns>void</returns>
+        /// <exception cref="ValidationException">if the request was not correct and couldn't be processed (HTTP status code BadRequest)</exception>
+        /// <exception cref="AuthorizationException">if the request was not allowed (HTTP status code Forbidden)</exception>
+        /// <exception cref="IdempotenceException">if an idempotent request caused a conflict (HTTP status code Conflict)</exception>
+        /// <exception cref="ReferenceException">if an object was attempted to be referenced that doesn't exist or has been removed,
+        ///            or there was a conflict (HTTP status code NotFound, Conflict or Gone)</exception>
+        /// <exception cref="GlobalCollectException">if something went wrong at the GlobalCollect platform,
+        ///            the GlobalCollect platform was unable to process a message from a downstream partner/acquirer,
+        ///            or the service that you're trying to reach is temporary unavailable (HTTP status code InternalServerError, BadGateway or ServiceUnavailable)</exception>
+        /// <exception cref="ApiException">if the GlobalCollect platform returned any other error</exception>
+        public async Task Approvesepadirectdebit(string tokenId, ApproveTokenRequest body, CallContext context = null)
+        {
+            IDictionary<string, string> pathContext = new Dictionary<string, string>();
+            pathContext.Add("tokenId", tokenId);
+            string uri = InstantiateUri("/{apiVersion}/{merchantId}/tokens/{tokenId}/approvesepadirectdebit", pathContext);
+            try
+            {
+                await _communicator.Post<object>(
+                        uri,
+                        ClientHeaders,
+                        null,
+                        body,
+                        context);
+            }
+            catch (ResponseException e)
+            {
+                object errorObject;
+                switch (e.StatusCode)
+                {
                     default:
                         errorObject = _communicator.Marshaller.Unmarshal<ErrorResponse>(e.Body);
                         break;
