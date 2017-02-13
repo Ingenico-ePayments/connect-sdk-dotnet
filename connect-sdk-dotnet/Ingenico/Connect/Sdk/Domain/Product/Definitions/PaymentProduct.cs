@@ -19,6 +19,8 @@ namespace Ingenico.Connect.Sdk.Domain.Product.Definitions
 
         public bool? AutoTokenized { get; set; } = null;
 
+        public bool? CanBeIframed { get; set; } = null;
+
         public PaymentProductDisplayHints DisplayHints { get; set; } = null;
 
         public IList<PaymentProductField> Fields { get; set; } = null;

@@ -109,7 +109,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
                 item2AmountOfMoney.CurrencyCode = "EUR";
 
                 LineItemInvoiceData item2InvoiceData = new LineItemInvoiceData();
-                item2InvoiceData.Description = "Asperin";
+                item2InvoiceData.Description = "Aspirin";
                 item2InvoiceData.NrOfItems = "12";
                 item2InvoiceData.PricePerItem = 40L;
 
