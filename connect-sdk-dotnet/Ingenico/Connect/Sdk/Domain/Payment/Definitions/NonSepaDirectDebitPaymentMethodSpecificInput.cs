@@ -22,5 +22,7 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
         public string RecurringPaymentSequenceIndicator { get; set; } = null;
 
         public string Token { get; set; } = null;
+
+        public bool? Tokenize { get; set; } = null;
     }
 }

@@ -24,6 +24,10 @@ namespace Ingenico.Connect.Sdk
                 {
                     ub.Scheme = Scheme;
                 }
+                else
+                {
+                    ub.Scheme = "https";
+                }
                 if (Port > 0)
                 {
                     ub.Port = Port;

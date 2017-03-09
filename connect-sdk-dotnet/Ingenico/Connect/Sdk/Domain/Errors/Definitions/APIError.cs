@@ -9,9 +9,13 @@ namespace Ingenico.Connect.Sdk.Domain.Errors.Definitions
     /// </summary>
     public class APIError
     {
+        public string Category { get; set; } = null;
+
         public string Code { get; set; } = null;
 
         public int? HttpStatusCode { get; set; } = null;
+
+        public string Id { get; set; } = null;
 
         public string Message { get; set; } = null;
 

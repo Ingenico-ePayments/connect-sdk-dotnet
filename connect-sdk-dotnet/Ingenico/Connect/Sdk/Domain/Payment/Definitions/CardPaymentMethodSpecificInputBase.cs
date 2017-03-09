@@ -24,5 +24,7 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
         public bool? SkipFraudService { get; set; } = null;
 
         public string Token { get; set; } = null;
+
+        public bool? Tokenize { get; set; } = null;
     }
 }
