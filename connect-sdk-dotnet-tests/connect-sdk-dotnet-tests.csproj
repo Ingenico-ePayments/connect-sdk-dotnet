@@ -10,7 +10,7 @@
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <ReleaseVersion>2.3.0</ReleaseVersion>
+    <ReleaseVersion>2.4.0</ReleaseVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -102,26 +102,26 @@
     <Compile Include="Ingenico\Connect\Sdk\ClientTest.cs" />
     <Compile Include="Ingenico\Connect\Sdk\CommunicatorTest.cs" />
     <Compile Include="Ingenico\Connect\Sdk\CommunitatorConfigurationTest.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\FactoryTest.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\MetaDataProviderBuilderTest.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\MetaDataProviderTest.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Defaultimpl\DefaultAuthenticatorTest.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Defaultimpl\DefaultConnectionIdempotenceTest.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Defaultimpl\DefaultConnectionLoggerTest.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Defaultimpl\DefaultConnectionTest.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Defaultimpl\DefaultMarshallerTest.cs" />
-    <Compile Include="Ingenico\Connect\Sdk\FactoryTest.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Logging\LoggingUtilTest.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Logging\NLogCommunicatorLoggerTest.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Logging\SysOutCommunicatorLoggerTest.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Merchant\Payments\PaymentsClientTest.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Merchant\Productgroups\FindProductgroupsParamsTest.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Merchant\Productgroups\GetProductgroupParamsTest.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Merchant\Products\DirectoryParamsTest.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Merchant\Products\FindProductsParamsTest.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Merchant\Products\GetProductParamsTest.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Merchant\Services\ConvertAmountParamsTest.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Merchant\Tokens\DeleteTokenParamsTest.cs" />
-    <Compile Include="Ingenico\Connect\Sdk\MetaDataProviderBuilderTest.cs" />
-    <Compile Include="Ingenico\Connect\Sdk\MetaDataProviderTest.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Util\ReflectionUtil.cs" />
-    <Compile Include="Ingenico\Connect\Sdk\Merchant\Products\FindProductsParamsTest.cs" />
-    <Compile Include="Ingenico\Connect\Sdk\Logging\NLogCommunicatorLoggerTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />

@@ -9,6 +9,8 @@ namespace Ingenico.Connect.Sdk.Domain.Product.Definitions
     /// </summary>
     public class PaymentProductFieldValidators
     {
+        public BoletoBancarioRequirednessValidator BoletoBancarioRequiredness { get; set; } = null;
+
         public EmptyValidator EmailAddress { get; set; } = null;
 
         public EmptyValidator ExpirationDate { get; set; } = null;
