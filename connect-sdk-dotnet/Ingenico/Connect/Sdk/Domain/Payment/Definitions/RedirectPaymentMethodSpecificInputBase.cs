@@ -11,6 +11,8 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
     /// </summary>
     public class RedirectPaymentMethodSpecificInputBase : AbstractPaymentMethodSpecificInput
     {
+        public int? ExpirationPeriod { get; set; } = null;
+
         public string RecurringPaymentSequenceIndicator { get; set; } = null;
 
         public string Token { get; set; } = null;

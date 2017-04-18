@@ -3,6 +3,7 @@
  * https://developer.globalcollect.com/documentation/api/server/
  */
 using Ingenico.Connect.Sdk.Domain.Definitions;
+using System;
 
 namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
 {
@@ -13,6 +14,7 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
     {
         public AirlineData AirlineData { get; set; } = null;
 
+        [ObsoleteAttribute("Use Order.shoppingCart instead")]
         public Level3SummaryData Level3SummaryData { get; set; } = null;
 
         public long? NumberOfInstallments { get; set; } = null;

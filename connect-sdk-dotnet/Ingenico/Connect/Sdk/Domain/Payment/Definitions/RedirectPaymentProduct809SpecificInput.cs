@@ -2,6 +2,8 @@
  * This class was auto-generated from the API references found at
  * https://developer.globalcollect.com/documentation/api/server/
  */
+using System;
+
 namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
 {
     /// <summary>
@@ -9,6 +11,7 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
     /// </summary>
     public class RedirectPaymentProduct809SpecificInput
     {
+        [ObsoleteAttribute("Use RedirectPaymentMethodSpecificInput.expirationPeriod instead")]
         public string ExpirationPeriod { get; set; } = null;
 
         public string IssuerId { get; set; } = null;

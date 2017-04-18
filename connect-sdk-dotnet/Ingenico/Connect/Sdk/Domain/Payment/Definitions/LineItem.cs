@@ -3,6 +3,7 @@
  * https://developer.globalcollect.com/documentation/api/server/
  */
 using Ingenico.Connect.Sdk.Domain.Definitions;
+using System;
 
 namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
 {
@@ -15,6 +16,9 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
 
         public LineItemInvoiceData InvoiceData { get; set; } = null;
 
+        [ObsoleteAttribute("Use orderLineDetails instead")]
         public LineItemLevel3InterchangeInformation Level3InterchangeInformation { get; set; } = null;
+
+        public OrderLineDetails OrderLineDetails { get; set; } = null;
     }
 }

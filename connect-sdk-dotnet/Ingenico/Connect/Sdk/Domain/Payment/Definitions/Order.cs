@@ -21,5 +21,7 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
         public IList<LineItem> Items { get; set; } = null;
 
         public OrderReferences References { get; set; } = null;
+
+        public ShoppingCart ShoppingCart { get; set; } = null;
     }
 }
