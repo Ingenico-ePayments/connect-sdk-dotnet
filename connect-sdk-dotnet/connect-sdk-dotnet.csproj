@@ -8,7 +8,7 @@
     <RootNamespace>Ingenico.Connect.Sdk</RootNamespace>
     <AssemblyName>connect-sdk-dotnet</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <ReleaseVersion>2.5.0</ReleaseVersion>
+    <ReleaseVersion>2.5.1</ReleaseVersion>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>
@@ -75,12 +75,12 @@
     <Compile Include="Ingenico\Connect\Sdk\GlobalCollectException.cs" />
     <Compile Include="Ingenico\Connect\Sdk\IAuthenticator.cs" />
     <Compile Include="Ingenico\Connect\Sdk\IConnection.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\IdempotenceException.cs" />
     <Compile Include="Ingenico\Connect\Sdk\IEnumerableUtils.cs" />
     <Compile Include="Ingenico\Connect\Sdk\IMarshaller.cs" />
     <Compile Include="Ingenico\Connect\Sdk\IPooledConnection.cs" />
     <Compile Include="Ingenico\Connect\Sdk\IRequestHeader.cs" />
     <Compile Include="Ingenico\Connect\Sdk\IResponseHeader.cs" />
-    <Compile Include="Ingenico\Connect\Sdk\IdempotenceException.cs" />
     <Compile Include="Ingenico\Connect\Sdk\MarshallerSyntaxException.cs" />
     <Compile Include="Ingenico\Connect\Sdk\MetaDataProvider.cs" />
     <Compile Include="Ingenico\Connect\Sdk\MetaDataProviderBuilder.cs" />

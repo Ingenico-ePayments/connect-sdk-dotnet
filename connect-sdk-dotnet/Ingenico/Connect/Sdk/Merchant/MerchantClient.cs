@@ -28,16 +28,6 @@ namespace Ingenico.Connect.Sdk.Merchant
         }
 
         /// <summary>
-        /// Resource /{merchantId}/hostedcheckouts
-        /// Create new hosted checkout
-        /// </summary>
-        /// <returns>HostedcheckoutsClient</returns>
-        public HostedcheckoutsClient Hostedcheckouts()
-        {
-            return new HostedcheckoutsClient(this, null);
-        }
-
-        /// <summary>
         /// Resource /{merchantId}/payments
         /// Create, cancel and approve payments
         /// </summary>
@@ -58,16 +48,6 @@ namespace Ingenico.Connect.Sdk.Merchant
         }
 
         /// <summary>
-        /// Resource /{merchantId}/productgroups
-        /// Get information about payment product groups
-        /// </summary>
-        /// <returns>ProductgroupsClient</returns>
-        public ProductgroupsClient Productgroups()
-        {
-            return new ProductgroupsClient(this, null);
-        }
-
-        /// <summary>
         /// Resource /{merchantId}/products
         /// Get information about payment products
         /// </summary>
@@ -75,6 +55,16 @@ namespace Ingenico.Connect.Sdk.Merchant
         public ProductsClient Products()
         {
             return new ProductsClient(this, null);
+        }
+
+        /// <summary>
+        /// Resource /{merchantId}/productgroups
+        /// Get information about payment product groups
+        /// </summary>
+        /// <returns>ProductgroupsClient</returns>
+        public ProductgroupsClient Productgroups()
+        {
+            return new ProductgroupsClient(this, null);
         }
 
         /// <summary>
@@ -125,6 +115,16 @@ namespace Ingenico.Connect.Sdk.Merchant
         public TokensClient Tokens()
         {
             return new TokensClient(this, null);
+        }
+
+        /// <summary>
+        /// Resource /{merchantId}/hostedcheckouts
+        /// Create new hosted checkout
+        /// </summary>
+        /// <returns>HostedcheckoutsClient</returns>
+        public HostedcheckoutsClient Hostedcheckouts()
+        {
+            return new HostedcheckoutsClient(this, null);
         }
     }
 }

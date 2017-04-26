@@ -26,7 +26,7 @@ namespace Ingenico.Connect.Sdk.DefaultImpl
 
         string convertAmountRequest = Regex.Escape(@"Outgoing request (requestId='") + @"([-a-zA-Z0-9]+)" + Regex.Escape(@"'):
   method:       'GET'
-  uri:          '/v1/1234/services/convert/amount?source=EUR&amount=1000&target=USD'
+  uri:          '/v1/1234/services/convert/amount?source=EUR&target=USD&amount=1000'
   headers:      'X-GCS-ServerMetaInfo=""") + @"[^""]*" + Regex.Escape(@""", Date=""") + @"[^""]+" + Regex.Escape(@""", Authorization=""********""") + @"[^']*" + Regex.Escape(@"'");
 
         string convertAmountResponse = Regex.Escape(@"Incoming response (requestId='") + @"([-a-zA-Z0-9]+)" + Regex.Escape(@"' + '") + @"[0-9]*" + Regex.Escape(@"' ms):

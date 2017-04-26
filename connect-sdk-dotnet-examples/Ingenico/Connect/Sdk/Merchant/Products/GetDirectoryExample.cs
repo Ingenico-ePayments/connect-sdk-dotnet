@@ -16,8 +16,8 @@ namespace Ingenico.Connect.Sdk.Merchant.Products
             using (Client client = GetClient())
             {
                 DirectoryParams query = new DirectoryParams();
-                query.CurrencyCode = "EUR";
                 query.CountryCode = "NL";
+                query.CurrencyCode = "EUR";
 
                 Directory response = await client.Merchant("merchantId").Products().Directory(809, query);
             }

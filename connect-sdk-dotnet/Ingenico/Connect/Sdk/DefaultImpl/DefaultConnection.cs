@@ -118,7 +118,6 @@ namespace Ingenico.Connect.Sdk.DefaultImpl
                 LogException(guid, exception);
                 throw new CommunicationException(exception);
             }
-
         }
 
         #region IPooledConnection implementation

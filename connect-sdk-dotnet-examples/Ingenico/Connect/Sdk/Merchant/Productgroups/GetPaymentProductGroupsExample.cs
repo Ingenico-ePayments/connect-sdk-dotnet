@@ -16,11 +16,11 @@ namespace Ingenico.Connect.Sdk.Merchant.Productgroups
             using (Client client = GetClient())
             {
                 FindProductgroupsParams query = new FindProductgroupsParams();
+                query.CountryCode = "NL";
+                query.CurrencyCode = "EUR";
+                query.Locale = "en_US";
                 query.Amount = 1000L;
                 query.IsRecurring = true;
-                query.CountryCode = "NL";
-                query.Locale = "en_US";
-                query.CurrencyCode = "EUR";
                 query.AddHide("fields");
 
                 PaymentProductGroups response = await client.Merchant("merchantId").Productgroups().Find(query);

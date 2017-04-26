@@ -50,13 +50,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Riskassessments
             }
             catch (ResponseException e)
             {
-                object errorObject;
-                switch (e.StatusCode)
-                {
-                    default:
-                        errorObject = _communicator.Marshaller.Unmarshal<ErrorResponse>(e.Body);
-                        break;
-                }
+                object errorObject = _communicator.Marshaller.Unmarshal<ErrorResponse>(e.Body);
                 throw CreateException(e.StatusCode, e.Body, errorObject, context);
             }
         }
@@ -91,13 +85,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Riskassessments
             }
             catch (ResponseException e)
             {
-                object errorObject;
-                switch (e.StatusCode)
-                {
-                    default:
-                        errorObject = _communicator.Marshaller.Unmarshal<ErrorResponse>(e.Body);
-                        break;
-                }
+                object errorObject = _communicator.Marshaller.Unmarshal<ErrorResponse>(e.Body);
                 throw CreateException(e.StatusCode, e.Body, errorObject, context);
             }
         }

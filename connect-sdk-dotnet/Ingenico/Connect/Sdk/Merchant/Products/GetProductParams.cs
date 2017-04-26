@@ -13,7 +13,15 @@ namespace Ingenico.Connect.Sdk.Merchant.Products
     /// </summary>
     public class GetProductParams : AbstractParamRequest
     {
+        public string CountryCode { get; set; } = null;
+
+        public string CurrencyCode { get; set; } = null;
+
+        public string Locale { get; set; } = null;
+
         public long? Amount { get; set; } = null;
+
+        public bool? IsRecurring { get; set; } = null;
 
         public IList<string> Hide { get; set; } = null;
 
@@ -28,23 +36,15 @@ namespace Ingenico.Connect.Sdk.Merchant.Products
             hide.Add(value);
         }
 
-        public bool? IsRecurring { get; set; } = null;
-
-        public string CountryCode { get; set; } = null;
-
-        public string Locale { get; set; } = null;
-
-        public string CurrencyCode { get; set; } = null;
-
         public override IEnumerable<RequestParam> ToRequestParameters()
         {
             IList<RequestParam> result = new List<RequestParam>();
-            AddParameter(result, "amount", Amount);
-            AddParameter(result, "hide", Hide);
-            AddParameter(result, "isRecurring", IsRecurring);
             AddParameter(result, "countryCode", CountryCode);
-            AddParameter(result, "locale", Locale);
             AddParameter(result, "currencyCode", CurrencyCode);
+            AddParameter(result, "locale", Locale);
+            AddParameter(result, "amount", Amount);
+            AddParameter(result, "isRecurring", IsRecurring);
+            AddParameter(result, "hide", Hide);
             return result;
         }
     }

@@ -17,8 +17,8 @@ namespace Ingenico.Connect.Sdk.Merchant.Services
             {
                 ConvertAmountParams query = new ConvertAmountParams();
                 query.Source = "EUR";
-                query.Amount = 100L;
                 query.Target = "USD";
+                query.Amount = 100L;
 
                 ConvertAmount response = await client.Merchant("merchantId").Services().ConvertAmount(query);
             }

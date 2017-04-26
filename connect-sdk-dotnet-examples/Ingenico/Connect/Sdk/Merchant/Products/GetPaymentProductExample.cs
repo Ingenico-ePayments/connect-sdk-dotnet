@@ -16,11 +16,11 @@ namespace Ingenico.Connect.Sdk.Merchant.Products
             using (Client client = GetClient())
             {
                 GetProductParams query = new GetProductParams();
+                query.CountryCode = "US";
+                query.CurrencyCode = "USD";
+                query.Locale = "en_US";
                 query.Amount = 1000L;
                 query.IsRecurring = true;
-                query.CountryCode = "US";
-                query.Locale = "en_US";
-                query.CurrencyCode = "USD";
                 query.AddHide("fields");
 
                 PaymentProductResponse response = await client.Merchant("merchantId").Products().Get(1, query);

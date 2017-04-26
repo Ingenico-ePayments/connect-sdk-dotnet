@@ -13,15 +13,15 @@ namespace Ingenico.Connect.Sdk.Merchant.Products
     /// </summary>
     public class DirectoryParams : AbstractParamRequest
     {
-        public string CurrencyCode { get; set; } = null;
-
         public string CountryCode { get; set; } = null;
+
+        public string CurrencyCode { get; set; } = null;
 
         public override IEnumerable<RequestParam> ToRequestParameters()
         {
             IList<RequestParam> result = new List<RequestParam>();
-            AddParameter(result, "currencyCode", CurrencyCode);
             AddParameter(result, "countryCode", CountryCode);
+            AddParameter(result, "currencyCode", CurrencyCode);
             return result;
         }
     }

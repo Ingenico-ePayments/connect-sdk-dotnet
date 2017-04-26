@@ -8,7 +8,7 @@
     <RootNamespace>Ingenico.Connect.Sdk</RootNamespace>
     <AssemblyName>connect-sdk-dotnet-examples</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <ReleaseVersion>2.5.0</ReleaseVersion>
+    <ReleaseVersion>2.5.1</ReleaseVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -32,6 +32,7 @@
     <Reference Include="System.Configuration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Merchant\Hostedcheckouts\CreateHostedCheckoutExample.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Merchant\Hostedcheckouts\GetHostedCheckoutExample.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Merchant\Payments\ApprovePaymentExample.cs" />
@@ -70,7 +71,6 @@
     <Compile Include="Ingenico\Connect\Sdk\Merchant\Tokens\DeleteTokenExample.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Merchant\Tokens\GetTokenExample.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Merchant\Tokens\UpdateTokenExample.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

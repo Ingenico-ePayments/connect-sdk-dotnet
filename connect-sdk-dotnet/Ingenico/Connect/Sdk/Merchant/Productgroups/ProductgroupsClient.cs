@@ -6,7 +6,6 @@ using Ingenico.Connect.Sdk;
 using Ingenico.Connect.Sdk.Domain.Errors;
 using Ingenico.Connect.Sdk.Domain.Product;
 using System.Collections.Generic;
-using System.Net;
 using System.Threading.Tasks;
 
 namespace Ingenico.Connect.Sdk.Merchant.Productgroups
@@ -50,13 +49,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Productgroups
             }
             catch (ResponseException e)
             {
-                object errorObject;
-                switch (e.StatusCode)
-                {
-                    default:
-                        errorObject = _communicator.Marshaller.Unmarshal<ErrorResponse>(e.Body);
-                        break;
-                }
+                object errorObject = _communicator.Marshaller.Unmarshal<ErrorResponse>(e.Body);
                 throw CreateException(e.StatusCode, e.Body, errorObject, context);
             }
         }
@@ -93,16 +86,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Productgroups
             }
             catch (ResponseException e)
             {
-                object errorObject;
-                switch (e.StatusCode)
-                {
-                    case HttpStatusCode.NotFound:
-                        errorObject = _communicator.Marshaller.Unmarshal<ErrorResponse>(e.Body);
-                        break;
-                    default:
-                        errorObject = _communicator.Marshaller.Unmarshal<ErrorResponse>(e.Body);
-                        break;
-                }
+                object errorObject = _communicator.Marshaller.Unmarshal<ErrorResponse>(e.Body);
                 throw CreateException(e.StatusCode, e.Body, errorObject, context);
             }
         }

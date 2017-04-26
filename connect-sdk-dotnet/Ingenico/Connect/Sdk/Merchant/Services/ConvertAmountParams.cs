@@ -15,16 +15,16 @@ namespace Ingenico.Connect.Sdk.Merchant.Services
     {
         public string Source { get; set; } = null;
 
-        public long? Amount { get; set; } = null;
-
         public string Target { get; set; } = null;
+
+        public long? Amount { get; set; } = null;
 
         public override IEnumerable<RequestParam> ToRequestParameters()
         {
             IList<RequestParam> result = new List<RequestParam>();
             AddParameter(result, "source", Source);
-            AddParameter(result, "amount", Amount);
             AddParameter(result, "target", Target);
+            AddParameter(result, "amount", Amount);
             return result;
         }
     }
