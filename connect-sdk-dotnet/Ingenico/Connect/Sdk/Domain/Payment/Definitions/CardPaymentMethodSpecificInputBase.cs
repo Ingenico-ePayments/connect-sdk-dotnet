@@ -1,14 +1,11 @@
 /*
  * This class was auto-generated from the API references found at
- * https://developer.globalcollect.com/documentation/api/server/
+ * https://epayments-api.developer-ingenico.com/s2sapi/v1/
  */
 using Ingenico.Connect.Sdk.Domain.Definitions;
 
 namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
 {
-    /// <summary>
-    /// Class <a href="https://developer.globalcollect.com/documentation/api/server/#schema_CardPaymentMethodSpecificInputBase">CardPaymentMethodSpecificInputBase</a>
-    /// </summary>
     public class CardPaymentMethodSpecificInputBase : AbstractPaymentMethodSpecificInput
     {
         public string AuthorizationMode { get; set; } = null;
@@ -26,5 +23,7 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
         public string Token { get; set; } = null;
 
         public bool? Tokenize { get; set; } = null;
+
+        public string TransactionChannel { get; set; } = null;
     }
 }

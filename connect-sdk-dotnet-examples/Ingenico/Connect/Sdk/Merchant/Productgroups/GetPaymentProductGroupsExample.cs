@@ -1,6 +1,6 @@
 /*
  * This class was auto-generated from the API references found at
- * https://developer.globalcollect.com/documentation/api/server/
+ * https://epayments-api.developer-ingenico.com/s2sapi/v1/
  */
 using Ingenico.Connect.Sdk;
 using Ingenico.Connect.Sdk.Domain.Product;
@@ -16,8 +16,8 @@ namespace Ingenico.Connect.Sdk.Merchant.Productgroups
             using (Client client = GetClient())
             {
                 FindProductgroupsParams query = new FindProductgroupsParams();
-                query.CountryCode = "NL";
-                query.CurrencyCode = "EUR";
+                query.CountryCode = "US";
+                query.CurrencyCode = "USD";
                 query.Locale = "en_US";
                 query.Amount = 1000L;
                 query.IsRecurring = true;

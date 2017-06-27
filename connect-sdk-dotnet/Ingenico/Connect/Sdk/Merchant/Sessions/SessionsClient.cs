@@ -1,6 +1,6 @@
 /*
  * This class was auto-generated from the API references found at
- * https://developer.globalcollect.com/documentation/api/server/
+ * https://epayments-api.developer-ingenico.com/s2sapi/v1/
  */
 using Ingenico.Connect.Sdk;
 using Ingenico.Connect.Sdk.Domain.Errors;
@@ -22,7 +22,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Sessions
 
         /// <summary>
         /// Resource /{merchantId}/sessions
-        /// <a href="https://developer.globalcollect.com/documentation/api/server/#__merchantId__sessions_post">Create Session</a>
+        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/sessions/create.html">Create session</a>
         /// </summary>
         /// <param name="body">SessionRequest</param>
         /// <param name="context">CallContext</param>

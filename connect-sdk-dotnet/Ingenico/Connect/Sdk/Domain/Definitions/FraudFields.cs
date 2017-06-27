@@ -1,19 +1,24 @@
 /*
  * This class was auto-generated from the API references found at
- * https://developer.globalcollect.com/documentation/api/server/
+ * https://epayments-api.developer-ingenico.com/s2sapi/v1/
  */
 using System.Collections.Generic;
 
 namespace Ingenico.Connect.Sdk.Domain.Definitions
 {
-    /// <summary>
-    /// Class <a href="https://developer.globalcollect.com/documentation/api/server/#schema_FraudFields">FraudFields</a>
-    /// </summary>
     public class FraudFields
     {
+        public bool? AddressesAreIdentical { get; set; } = null;
+
+        public string BlackListData { get; set; } = null;
+
+        public Address CardOwnerAddress { get; set; } = null;
+
         public string CustomerIpAddress { get; set; } = null;
 
         public string DefaultFormFill { get; set; } = null;
+
+        public bool? FingerPrintActivated { get; set; } = null;
 
         public string GiftCardType { get; set; } = null;
 
@@ -30,6 +35,8 @@ namespace Ingenico.Connect.Sdk.Domain.Definitions
         public string ShipComments { get; set; } = null;
 
         public string ShipmentTrackingNumber { get; set; } = null;
+
+        public FraudFieldsShippingDetails ShippingDetails { get; set; } = null;
 
         public IList<string> UserData { get; set; } = null;
 

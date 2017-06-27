@@ -1,12 +1,9 @@
 /*
  * This class was auto-generated from the API references found at
- * https://developer.globalcollect.com/documentation/api/server/
+ * https://epayments-api.developer-ingenico.com/s2sapi/v1/
  */
 namespace Ingenico.Connect.Sdk.Domain.Definitions
 {
-    /// <summary>
-    /// Class <a href="https://developer.globalcollect.com/documentation/api/server/#schema_ResultDoRiskAssessment">ResultDoRiskAssessment</a>
-    /// </summary>
     public class ResultDoRiskAssessment
     {
         public string Category { get; set; } = null;

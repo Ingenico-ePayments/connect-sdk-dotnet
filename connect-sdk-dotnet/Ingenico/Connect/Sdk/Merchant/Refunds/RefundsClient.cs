@@ -1,6 +1,6 @@
 /*
  * This class was auto-generated from the API references found at
- * https://developer.globalcollect.com/documentation/api/server/
+ * https://epayments-api.developer-ingenico.com/s2sapi/v1/
  */
 using Ingenico.Connect.Sdk;
 using Ingenico.Connect.Sdk.Domain.Errors;
@@ -22,7 +22,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Refunds
 
         /// <summary>
         /// Resource /{merchantId}/refunds/{refundId}
-        /// <a href="https://developer.globalcollect.com/documentation/api/server/#__merchantId__refunds__refundId__get">Get refund</a>
+        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/refunds/get.html">Get refund</a>
         /// </summary>
         /// <param name="refundId">string</param>
         /// <param name="context">CallContext</param>
@@ -58,7 +58,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Refunds
 
         /// <summary>
         /// Resource /{merchantId}/refunds/{refundId}/approve
-        /// <a href="https://developer.globalcollect.com/documentation/api/server/#__merchantId__refunds__refundId__approve_post">Approve refund</a>
+        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/refunds/approve.html">Approve refund</a>
         /// </summary>
         /// <param name="refundId">string</param>
         /// <param name="body">ApproveRefundRequest</param>
@@ -96,7 +96,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Refunds
 
         /// <summary>
         /// Resource /{merchantId}/refunds/{refundId}/cancel
-        /// <a href="https://developer.globalcollect.com/documentation/api/server/#__merchantId__refunds__refundId__cancel_post">Cancel refund</a>
+        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/refunds/cancel.html">Cancel refund</a>
         /// </summary>
         /// <param name="refundId">string</param>
         /// <param name="context">CallContext</param>
@@ -133,7 +133,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Refunds
 
         /// <summary>
         /// Resource /{merchantId}/refunds/{refundId}/cancelapproval
-        /// <a href="https://developer.globalcollect.com/documentation/api/server/#__merchantId__refunds__refundId__cancelapproval_post">Undo approve refund</a>
+        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/refunds/cancelapproval.html">Undo approve refund</a>
         /// </summary>
         /// <param name="refundId">string</param>
         /// <param name="context">CallContext</param>

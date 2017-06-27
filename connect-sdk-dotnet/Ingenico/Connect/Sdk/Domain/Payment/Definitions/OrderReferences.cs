@@ -1,12 +1,9 @@
 /*
  * This class was auto-generated from the API references found at
- * https://developer.globalcollect.com/documentation/api/server/
+ * https://epayments-api.developer-ingenico.com/s2sapi/v1/
  */
 namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
 {
-    /// <summary>
-    /// Class <a href="https://developer.globalcollect.com/documentation/api/server/#schema_OrderReferences">OrderReferences</a>
-    /// </summary>
     public class OrderReferences
     {
         public string Descriptor { get; set; } = null;

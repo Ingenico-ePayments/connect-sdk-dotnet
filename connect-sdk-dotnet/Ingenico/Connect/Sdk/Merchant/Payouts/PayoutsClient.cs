@@ -1,6 +1,6 @@
 /*
  * This class was auto-generated from the API references found at
- * https://developer.globalcollect.com/documentation/api/server/
+ * https://epayments-api.developer-ingenico.com/s2sapi/v1/
  */
 using Ingenico.Connect.Sdk;
 using Ingenico.Connect.Sdk.Domain.Errors;
@@ -23,7 +23,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Payouts
 
         /// <summary>
         /// Resource /{merchantId}/payouts
-        /// <a href="https://developer.globalcollect.com/documentation/api/server/#__merchantId__payouts_post">Create payout</a>
+        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/payouts/create.html">Create payout</a>
         /// </summary>
         /// <param name="body">CreatePayoutRequest</param>
         /// <param name="context">CallContext</param>
@@ -68,7 +68,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Payouts
 
         /// <summary>
         /// Resource /{merchantId}/payouts/{payoutId}
-        /// <a href="https://developer.globalcollect.com/documentation/api/server/#__merchantId__payouts__payoutId__get">Get payout</a>
+        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/payouts/get.html">Get payout</a>
         /// </summary>
         /// <param name="payoutId">string</param>
         /// <param name="context">CallContext</param>
@@ -104,7 +104,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Payouts
 
         /// <summary>
         /// Resource /{merchantId}/payouts/{payoutId}/approve
-        /// <a href="https://developer.globalcollect.com/documentation/api/server/#__merchantId__payouts__payoutId__approve_post">Approve payout</a>
+        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/payouts/approve.html">Approve payout</a>
         /// </summary>
         /// <param name="payoutId">string</param>
         /// <param name="body">ApprovePayoutRequest</param>
@@ -142,7 +142,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Payouts
 
         /// <summary>
         /// Resource /{merchantId}/payouts/{payoutId}/cancel
-        /// <a href="https://developer.globalcollect.com/documentation/api/server/#__merchantId__payouts__payoutId__cancel_post">Cancel payout</a>
+        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/payouts/cancel.html">Cancel payout</a>
         /// </summary>
         /// <param name="payoutId">string</param>
         /// <param name="context">CallContext</param>
@@ -179,7 +179,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Payouts
 
         /// <summary>
         /// Resource /{merchantId}/payouts/{payoutId}/cancelapproval
-        /// <a href="https://developer.globalcollect.com/documentation/api/server/#__merchantId__payouts__payoutId__cancelapproval_post">Undo approve payout</a>
+        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/payouts/cancelapproval.html">Undo approve payout</a>
         /// </summary>
         /// <param name="payoutId">string</param>
         /// <param name="context">CallContext</param>

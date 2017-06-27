@@ -1,8 +1,9 @@
 /*
  * This class was auto-generated from the API references found at
- * https://developer.globalcollect.com/documentation/api/server/
+ * https://epayments-api.developer-ingenico.com/s2sapi/v1/
  */
 using Ingenico.Connect.Sdk;
+using Ingenico.Connect.Sdk.Merchant.Captures;
 using Ingenico.Connect.Sdk.Merchant.Hostedcheckouts;
 using Ingenico.Connect.Sdk.Merchant.Payments;
 using Ingenico.Connect.Sdk.Merchant.Payouts;
@@ -35,6 +36,16 @@ namespace Ingenico.Connect.Sdk.Merchant
         public PaymentsClient Payments()
         {
             return new PaymentsClient(this, null);
+        }
+
+        /// <summary>
+        /// Resource /{merchantId}/captures
+        /// Get capture
+        /// </summary>
+        /// <returns>CapturesClient</returns>
+        public CapturesClient Captures()
+        {
+            return new CapturesClient(this, null);
         }
 
         /// <summary>

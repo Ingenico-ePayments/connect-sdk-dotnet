@@ -238,6 +238,102 @@ namespace Ingenico.Connect.Sdk.DefaultImpl
         }
     }
 }'");
+        string createPaymentUnicodeJson = @"{
+    ""creationOutput"": {
+        ""additionalReference"": ""00000012341000059598"",
+        ""externalReference"": ""000000123410000595980000100001""
+    },
+    ""payment"": {
+        ""id"": ""000000123410000595980000100001"",
+        ""paymentOutput"": {
+            ""amountOfMoney"": {
+                ""amount"": 2345,
+                ""currencyCode"": ""CAD""
+            },
+            ""references"": {
+                ""paymentReference"": ""0""
+            },
+            ""paymentMethod"": ""redirect"",
+            ""redirectPaymentMethodSpecificOutput"":{
+               ""paymentProductId"":840,
+               ""paymentProduct840SpecificOutput"":{
+                  ""customerAccount"":{
+                     ""firstName"":""Theresa"",
+                     ""surname"":""Schröder""
+                  },
+                  ""customerAddress"":{
+                     ""city"":""sittensen"",
+                     ""countryCode"":""DE"",
+                     ""street"":""Westerberg 25"",
+                     ""zip"":""27419""
+                  }
+               }
+            }
+        },
+        ""status"": ""PENDING_APPROVAL"",
+        ""statusOutput"": {
+            ""isCancellable"": true,
+            ""statusCategory"": ""PENDING_MERCHANT"",
+            ""statusCode"": 600,
+            ""statusCodeChangeDateTime"": ""20160310094054"",
+            ""isAuthorized"": true
+        }
+    }
+}";
+
+        string createPaymentUnicodeRequest = Regex.Escape(@"Outgoing request (requestId='") + @"([-a-zA-Z0-9]+)" + Regex.Escape(@"'):
+  method:       'POST'
+  uri:          '/v1/1234/payments'
+  headers:      'X-GCS-ServerMetaInfo=""") + @"[^""]*" + Regex.Escape(@""", Date=""") + @"[^""]+" + Regex.Escape(@""", Authorization=""********"", Content-Type=""application/json""") + @"[^']*" + Regex.Escape(@"'
+  content-type: 'application/json'
+  body:         '{""cardPaymentMethodSpecificInput"":{""card"":{""cvv"":""***"",""cardNumber"":""************3456"",""expiryDate"":""**20""},""paymentProductId"":1},""order"":{""amountOfMoney"":{""amount"":2345,""currencyCode"":""CAD""},""customer"":{""billingAddress"":{""countryCode"":""CA""}}}}'");
+
+        string createPaymentUnicodeResponse = Regex.Escape(@"Incoming response (requestId='") + @"([-a-zA-Z0-9]+)" + Regex.Escape(@"' + '") + @"[0-9]*" + Regex.Escape(@"' ms):
+  status-code:  '201'
+  headers:      'Dummy=""""") + @"(, Date=""[^""]+"")?" + Regex.Escape(@", Location=""http://localhost/v1/1234/payments/000000123410000595980000100001""") + @"(,\ Server=""[^""]*"")?" + @"(, Date=""[^""]+"")?" + @"[^']*" + Regex.Escape(@"'
+  content-type: 'application/json'
+  body:         '{
+    ""creationOutput"": {
+        ""additionalReference"": ""00000012341000059598"",
+        ""externalReference"": ""000000123410000595980000100001""
+    },
+    ""payment"": {
+        ""id"": ""000000123410000595980000100001"",
+        ""paymentOutput"": {
+            ""amountOfMoney"": {
+                ""amount"": 2345,
+                ""currencyCode"": ""CAD""
+            },
+            ""references"": {
+                ""paymentReference"": ""0""
+            },
+            ""paymentMethod"": ""redirect"",
+            ""redirectPaymentMethodSpecificOutput"":{
+               ""paymentProductId"":840,
+               ""paymentProduct840SpecificOutput"":{
+                  ""customerAccount"":{
+                     ""firstName"":""Theresa"",
+                     ""surname"":""Schröder""
+                  },
+                  ""customerAddress"":{
+                     ""city"":""sittensen"",
+                     ""countryCode"":""DE"",
+                     ""street"":""Westerberg 25"",
+                     ""zip"":""27419""
+                  }
+               }
+            }
+        },
+        ""status"": ""PENDING_APPROVAL"",
+        ""statusOutput"": {
+            ""isCancellable"": true,
+            ""statusCategory"": ""PENDING_MERCHANT"",
+            ""statusCode"": 600,
+            ""statusCodeChangeDateTime"": ""20160310094054"",
+            ""isAuthorized"": true
+        }
+    }
+}'");
         string createPaymentFailureInvalidCardNumberJson = @"{
     ""errorId"": ""0953f236-9e54-4f23-9556-d66bc757dda8"",
     ""errors"": [
@@ -506,6 +602,70 @@ namespace Ingenico.Connect.Sdk.DefaultImpl
             Assert.That(responseEntry.Thrown, Is.Null);
 
             AssertRequestAndResponse(requestEntry.Message, responseEntry.Message, createPaymentRequest, createPaymentResponse);
+        }
+
+        [TestCase]
+        public async Task TestLoggingCreatePaymentUnicode()
+        {
+            // POST with a success (201) response
+            TestLogger logger = new TestLogger();
+
+            using (MockServer host = new MockServer(Port, "/v1/1234/payments", (request, response, arg3) =>
+                   {
+                       AssignResponse((HttpStatusCode)201, new Dictionary<string, string>(), response, "http://localhost/v1/1234/payments/000000123410000595980000100001");
+
+                       return createPaymentUnicodeJson;
+                   }))
+            using (Client client = CreateClient())
+            {
+                client.EnableLogging(logger);
+
+                AmountOfMoney amountOfMoney = new AmountOfMoney();
+                amountOfMoney.CurrencyCode = "CAD";
+                amountOfMoney.Amount = 2345L;
+
+                Address billingAddress = new Address();
+                billingAddress.CountryCode = "CA";
+
+                Customer customer = new Customer();
+                customer.BillingAddress = billingAddress;
+
+                Order order = new Order();
+                order.AmountOfMoney = amountOfMoney;
+                order.Customer = customer;
+
+                Card card = new Card();
+                card.Cvv = "123";
+                card.CardNumber = "1234567890123456";
+                card.ExpiryDate = "1220";
+
+                CardPaymentMethodSpecificInput paymentMethodSpecificInput = new CardPaymentMethodSpecificInput();
+                paymentMethodSpecificInput.PaymentProductId = 1;
+                paymentMethodSpecificInput.Card = card;
+
+                CreatePaymentRequest request = new CreatePaymentRequest();
+                request.Order = order;
+                request.CardPaymentMethodSpecificInput = paymentMethodSpecificInput;
+
+                CreatePaymentResponse response = await client.Merchant("1234").Payments().Create(request);
+
+                Assert.NotNull(response);
+                Assert.NotNull(response.Payment);
+                Assert.NotNull(response.Payment.Id);
+            }
+            Assert.That(logger.Entries, Has.Count.EqualTo(2));
+
+            TestLoggerEntry requestEntry = logger.Entries.First();
+
+            Assert.That(requestEntry.Message, Is.Not.Null);
+            Assert.That(requestEntry.Thrown, Is.Null);
+
+            TestLoggerEntry responseEntry = logger.Entries.ElementAt(1);
+
+            Assert.That(responseEntry.Message, Is.Not.Null);
+            Assert.That(responseEntry.Thrown, Is.Null);
+
+            AssertRequestAndResponse(requestEntry.Message, responseEntry.Message, createPaymentUnicodeRequest, createPaymentUnicodeResponse);
         }
 
         [TestCase]

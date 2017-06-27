@@ -8,7 +8,7 @@
     <RootNamespace>Ingenico.Connect.Sdk</RootNamespace>
     <AssemblyName>connect-sdk-dotnet</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <ReleaseVersion>2.5.1</ReleaseVersion>
+    <ReleaseVersion>2.6.0</ReleaseVersion>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>
@@ -106,6 +106,11 @@
     <Compile Include="Ingenico\Connect\Sdk\DefaultImpl\DefaultAuthenticator.cs" />
     <Compile Include="Ingenico\Connect\Sdk\DefaultImpl\DefaultConnection.cs" />
     <Compile Include="Ingenico\Connect\Sdk\DefaultImpl\DefaultMarshaller.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Capture\CaptureResponse.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Capture\CapturesResponse.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Capture\Definitions\Capture.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Capture\Definitions\CaptureOutput.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Capture\Definitions\CaptureStatusOutput.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Definitions\AbstractOrderStatus.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Definitions\AbstractPaymentMethodSpecificInput.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Definitions\AdditionalOrderInputAirlineData.cs" />
@@ -124,6 +129,7 @@
     <Compile Include="Ingenico\Connect\Sdk\Domain\Definitions\ContactDetailsBase.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Definitions\CustomerBase.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Definitions\FraudFields.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Definitions\FraudFieldsShippingDetails.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Definitions\FraudResults.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Definitions\FraudResultsRetailDecisions.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Definitions\KeyValuePair.cs" />
@@ -147,6 +153,7 @@
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\ApprovePaymentRequest.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\CancelApprovalPaymentResponse.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\CancelPaymentResponse.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\CapturePaymentRequest.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\CreatePaymentRequest.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\CreatePaymentResponse.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\PaymentApprovalResponse.cs" />
@@ -236,6 +243,9 @@
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payout\CreatePayoutRequest.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payout\PayoutErrorResponse.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payout\PayoutResponse.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payout\Definitions\AbstractPayoutMethodSpecificInput.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payout\Definitions\BankTransferPayoutMethodSpecificInput.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payout\Definitions\CardPayoutMethodSpecificInput.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payout\Definitions\PayoutCustomer.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payout\Definitions\PayoutReferences.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payout\Definitions\PayoutResult.cs" />
@@ -337,6 +347,7 @@
     <Compile Include="Ingenico\Connect\Sdk\Logging\SystemConsoleCommunicatorLogger.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Logging\ValueObfuscator.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Merchant\MerchantClient.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Merchant\Captures\CapturesClient.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Merchant\Hostedcheckouts\HostedcheckoutsClient.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Merchant\Payments\PaymentsClient.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Merchant\Payouts\PayoutsClient.cs" />

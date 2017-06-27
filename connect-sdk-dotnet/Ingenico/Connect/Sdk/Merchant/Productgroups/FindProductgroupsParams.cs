@@ -1,6 +1,6 @@
 /*
  * This class was auto-generated from the API references found at
- * https://developer.globalcollect.com/documentation/api/server/
+ * https://epayments-api.developer-ingenico.com/s2sapi/v1/
  */
 using Ingenico.Connect.Sdk;
 using System.Collections.Generic;
@@ -9,7 +9,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Productgroups
 {
     /// <summary>
     /// Query parameters for
-    /// <a href="https://developer.globalcollect.com/documentation/api/server/#__merchantId__productgroups_get">Get payment product groups</a>
+    /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/productgroups/find.html">Get payment product groups</a>
     /// </summary>
     public class FindProductgroupsParams : AbstractParamRequest
     {

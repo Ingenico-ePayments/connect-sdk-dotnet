@@ -1,6 +1,6 @@
 /*
  * This class was auto-generated from the API references found at
- * https://developer.globalcollect.com/documentation/api/server/
+ * https://epayments-api.developer-ingenico.com/s2sapi/v1/
  */
 using Ingenico.Connect.Sdk;
 using Ingenico.Connect.Sdk.Domain.Errors;
@@ -22,7 +22,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Hostedcheckouts
 
         /// <summary>
         /// Resource /{merchantId}/hostedcheckouts
-        /// <a href="https://developer.globalcollect.com/documentation/api/server/#__merchantId__hostedcheckouts_post">Create hosted checkout</a>
+        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/hostedcheckouts/create.html">Create hosted checkout</a>
         /// </summary>
         /// <param name="body">CreateHostedCheckoutRequest</param>
         /// <param name="context">CallContext</param>
@@ -57,7 +57,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Hostedcheckouts
 
         /// <summary>
         /// Resource /{merchantId}/hostedcheckouts/{hostedCheckoutId}
-        /// <a href="https://developer.globalcollect.com/documentation/api/server/#__merchantId__hostedcheckouts__hostedCheckoutId__get">Get hosted checkout status</a>
+        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/hostedcheckouts/get.html">Get hosted checkout status</a>
         /// </summary>
         /// <param name="hostedCheckoutId">string</param>
         /// <param name="context">CallContext</param>

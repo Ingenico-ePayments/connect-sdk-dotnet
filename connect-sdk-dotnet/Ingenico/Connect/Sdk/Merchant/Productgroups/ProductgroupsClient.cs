@@ -1,6 +1,6 @@
 /*
  * This class was auto-generated from the API references found at
- * https://developer.globalcollect.com/documentation/api/server/
+ * https://epayments-api.developer-ingenico.com/s2sapi/v1/
  */
 using Ingenico.Connect.Sdk;
 using Ingenico.Connect.Sdk.Domain.Errors;
@@ -22,7 +22,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Productgroups
 
         /// <summary>
         /// Resource /{merchantId}/productgroups
-        /// <a href="https://developer.globalcollect.com/documentation/api/server/#__merchantId__productgroups_get">Get payment product groups</a>
+        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/productgroups/find.html">Get payment product groups</a>
         /// </summary>
         /// <param name="query">FindProductgroupsParams</param>
         /// <param name="context">CallContext</param>
@@ -56,7 +56,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Productgroups
 
         /// <summary>
         /// Resource /{merchantId}/productgroups/{paymentProductGroupId}
-        /// <a href="https://developer.globalcollect.com/documentation/api/server/#__merchantId__productgroups__paymentProductGroupId__get">Get payment product group</a>
+        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/productgroups/get.html">Get payment product group</a>
         /// </summary>
         /// <param name="paymentProductGroupId">string</param>
         /// <param name="query">GetProductgroupParams</param>

@@ -1,8 +1,9 @@
 /*
  * This class was auto-generated from the API references found at
- * https://developer.globalcollect.com/documentation/api/server/
+ * https://epayments-api.developer-ingenico.com/s2sapi/v1/
  */
 using Ingenico.Connect.Sdk;
+using Ingenico.Connect.Sdk.Domain.Capture;
 using Ingenico.Connect.Sdk.Domain.Errors;
 using Ingenico.Connect.Sdk.Domain.Payment;
 using Ingenico.Connect.Sdk.Domain.Refund;
@@ -25,7 +26,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
 
         /// <summary>
         /// Resource /{merchantId}/payments
-        /// <a href="https://developer.globalcollect.com/documentation/api/server/#__merchantId__payments_post">Create payment</a>
+        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/payments/create.html">Create payment</a>
         /// </summary>
         /// <param name="body">CreatePaymentRequest</param>
         /// <param name="context">CallContext</param>
@@ -82,7 +83,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
 
         /// <summary>
         /// Resource /{merchantId}/payments/{paymentId}
-        /// <a href="https://developer.globalcollect.com/documentation/api/server/#__merchantId__payments__paymentId__get">Get payment</a>
+        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/payments/get.html">Get payment</a>
         /// </summary>
         /// <param name="paymentId">string</param>
         /// <param name="context">CallContext</param>
@@ -118,7 +119,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
 
         /// <summary>
         /// Resource /{merchantId}/payments/{paymentId}/approve
-        /// <a href="https://developer.globalcollect.com/documentation/api/server/#__merchantId__payments__paymentId__approve_post">Capture payment</a>
+        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/payments/approve.html">Approve payment</a>
         /// </summary>
         /// <param name="paymentId">string</param>
         /// <param name="body">ApprovePaymentRequest</param>
@@ -155,8 +156,82 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
         }
 
         /// <summary>
+        /// Resource /{merchantId}/payments/{paymentId}/capture
+        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/payments/capture.html">Capture payment</a>
+        /// </summary>
+        /// <param name="paymentId">string</param>
+        /// <param name="body">CapturePaymentRequest</param>
+        /// <param name="context">CallContext</param>
+        /// <returns>CaptureResponse</returns>
+        /// <exception cref="ValidationException">if the request was not correct and couldn't be processed (HTTP status code BadRequest)</exception>
+        /// <exception cref="AuthorizationException">if the request was not allowed (HTTP status code Forbidden)</exception>
+        /// <exception cref="IdempotenceException">if an idempotent request caused a conflict (HTTP status code Conflict)</exception>
+        /// <exception cref="ReferenceException">if an object was attempted to be referenced that doesn't exist or has been removed,
+        ///            or there was a conflict (HTTP status code NotFound, Conflict or Gone)</exception>
+        /// <exception cref="GlobalCollectException">if something went wrong at the GlobalCollect platform,
+        ///            the GlobalCollect platform was unable to process a message from a downstream partner/acquirer,
+        ///            or the service that you're trying to reach is temporary unavailable (HTTP status code InternalServerError, BadGateway or ServiceUnavailable)</exception>
+        /// <exception cref="ApiException">if the GlobalCollect platform returned any other error</exception>
+        public async Task<CaptureResponse> Capture(string paymentId, CapturePaymentRequest body, CallContext context = null)
+        {
+            IDictionary<string, string> pathContext = new Dictionary<string, string>();
+            pathContext.Add("paymentId", paymentId);
+            string uri = InstantiateUri("/{apiVersion}/{merchantId}/payments/{paymentId}/capture", pathContext);
+            try
+            {
+                return await _communicator.Post<CaptureResponse>(
+                        uri,
+                        ClientHeaders,
+                        null,
+                        body,
+                        context);
+            }
+            catch (ResponseException e)
+            {
+                object errorObject = _communicator.Marshaller.Unmarshal<ErrorResponse>(e.Body);
+                throw CreateException(e.StatusCode, e.Body, errorObject, context);
+            }
+        }
+
+        /// <summary>
+        /// Resource /{merchantId}/payments/{paymentId}/captures
+        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/payments/captures.html">Get captures of payment</a>
+        /// </summary>
+        /// <param name="paymentId">string</param>
+        /// <param name="context">CallContext</param>
+        /// <returns>CapturesResponse</returns>
+        /// <exception cref="ValidationException">if the request was not correct and couldn't be processed (HTTP status code BadRequest)</exception>
+        /// <exception cref="AuthorizationException">if the request was not allowed (HTTP status code Forbidden)</exception>
+        /// <exception cref="IdempotenceException">if an idempotent request caused a conflict (HTTP status code Conflict)</exception>
+        /// <exception cref="ReferenceException">if an object was attempted to be referenced that doesn't exist or has been removed,
+        ///            or there was a conflict (HTTP status code NotFound, Conflict or Gone)</exception>
+        /// <exception cref="GlobalCollectException">if something went wrong at the GlobalCollect platform,
+        ///            the GlobalCollect platform was unable to process a message from a downstream partner/acquirer,
+        ///            or the service that you're trying to reach is temporary unavailable (HTTP status code InternalServerError, BadGateway or ServiceUnavailable)</exception>
+        /// <exception cref="ApiException">if the GlobalCollect platform returned any other error</exception>
+        public async Task<CapturesResponse> Captures(string paymentId, CallContext context = null)
+        {
+            IDictionary<string, string> pathContext = new Dictionary<string, string>();
+            pathContext.Add("paymentId", paymentId);
+            string uri = InstantiateUri("/{apiVersion}/{merchantId}/payments/{paymentId}/captures", pathContext);
+            try
+            {
+                return await _communicator.Get<CapturesResponse>(
+                        uri,
+                        ClientHeaders,
+                        null,
+                        context);
+            }
+            catch (ResponseException e)
+            {
+                object errorObject = _communicator.Marshaller.Unmarshal<ErrorResponse>(e.Body);
+                throw CreateException(e.StatusCode, e.Body, errorObject, context);
+            }
+        }
+
+        /// <summary>
         /// Resource /{merchantId}/payments/{paymentId}/cancel
-        /// <a href="https://developer.globalcollect.com/documentation/api/server/#__merchantId__payments__paymentId__cancel_post">Cancel payment</a>
+        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/payments/cancel.html">Cancel payment</a>
         /// </summary>
         /// <param name="paymentId">string</param>
         /// <param name="context">CallContext</param>
@@ -193,7 +268,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
 
         /// <summary>
         /// Resource /{merchantId}/payments/{paymentId}/cancelapproval
-        /// <a href="https://developer.globalcollect.com/documentation/api/server/#__merchantId__payments__paymentId__cancelapproval_post">Undo capture payment request</a>
+        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/payments/cancelapproval.html">Undo capture payment request</a>
         /// </summary>
         /// <param name="paymentId">string</param>
         /// <param name="context">CallContext</param>
@@ -230,7 +305,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
 
         /// <summary>
         /// Resource /{merchantId}/payments/{paymentId}/processchallenged
-        /// <a href="https://developer.globalcollect.com/documentation/api/server/#__merchantId__payments__paymentId__processchallenged_post">Approves challenged payment</a>
+        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/payments/processchallenged.html">Approves challenged payment</a>
         /// </summary>
         /// <param name="paymentId">string</param>
         /// <param name="context">CallContext</param>
@@ -267,7 +342,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
 
         /// <summary>
         /// Resource /{merchantId}/payments/{paymentId}/refund
-        /// <a href="https://developer.globalcollect.com/documentation/api/server/#__merchantId__payments__paymentId__refund_post">Create refund</a>
+        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/payments/refund.html">Create refund</a>
         /// </summary>
         /// <param name="paymentId">string</param>
         /// <param name="body">RefundRequest</param>
@@ -318,7 +393,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
 
         /// <summary>
         /// Resource /{merchantId}/payments/{paymentId}/tokenize
-        /// <a href="https://developer.globalcollect.com/documentation/api/server/#__merchantId__payments__paymentId__tokenize_post">Create a token from payment</a>
+        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/payments/tokenize.html">Create a token from payment</a>
         /// </summary>
         /// <param name="paymentId">string</param>
         /// <param name="body">TokenizePaymentRequest</param>

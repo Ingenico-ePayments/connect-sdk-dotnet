@@ -10,6 +10,24 @@ namespace Ingenico.Connect.Sdk.Logging
         TextWriter oldStdOut;
         TextWriter newStdOut;
         [TestCase]
+        public void TestLogUnicode()
+        {
+            oldStdOut = Console.Out;
+            newStdOut = new StringWriter();
+            Console.SetOut(newStdOut);
+            try
+            {
+                ICommunicatorLogger logger = SystemConsoleCommunicatorLogger.Instance;
+                logger.Log("Schröder");
+                var aString = newStdOut.ToString();
+                StringAssert.EndsWith("Schröder" + Environment.NewLine, aString);
+            }
+            finally
+            {
+                Console.SetOut(oldStdOut);
+            }
+        }
+        [TestCase]
         public void TestLog()
         {
             oldStdOut = Console.Out;

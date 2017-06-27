@@ -1,6 +1,6 @@
 /*
  * This class was auto-generated from the API references found at
- * https://developer.globalcollect.com/documentation/api/server/
+ * https://epayments-api.developer-ingenico.com/s2sapi/v1/
  */
 using Ingenico.Connect.Sdk;
 using Ingenico.Connect.Sdk.Domain.Errors;
@@ -22,7 +22,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Services
 
         /// <summary>
         /// Resource /{merchantId}/services/convert/amount
-        /// <a href="https://developer.globalcollect.com/documentation/api/server/#__merchantId__services_convert_amount_get">Convert amount</a>
+        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/services/convertAmount.html">Convert amount</a>
         /// </summary>
         /// <param name="query">ConvertAmountParams</param>
         /// <param name="context">CallContext</param>
@@ -56,7 +56,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Services
 
         /// <summary>
         /// Resource /{merchantId}/services/convert/bankaccount
-        /// <a href="https://developer.globalcollect.com/documentation/api/server/#__merchantId__services_convert_bankaccount_post">Convert Bankaccount</a>
+        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/services/bankaccount.html">Convert bankaccount</a>
         /// </summary>
         /// <param name="body">BankDetailsRequest</param>
         /// <param name="context">CallContext</param>
@@ -91,7 +91,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Services
 
         /// <summary>
         /// Resource /{merchantId}/services/getIINdetails
-        /// <a href="https://developer.globalcollect.com/documentation/api/server/#__merchantId__services_getIINdetails_post">Get IIN details</a>
+        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/services/getIINdetails.html">Get IIN details</a>
         /// </summary>
         /// <param name="body">GetIINDetailsRequest</param>
         /// <param name="context">CallContext</param>
@@ -126,7 +126,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Services
 
         /// <summary>
         /// Resource /{merchantId}/services/testconnection
-        /// <a href="https://developer.globalcollect.com/documentation/api/server/#__merchantId__services_testconnection_get">Test connection</a>
+        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/services/testconnection.html">Test connection</a>
         /// </summary>
         /// <param name="context">CallContext</param>
         /// <returns>TestConnection</returns>
