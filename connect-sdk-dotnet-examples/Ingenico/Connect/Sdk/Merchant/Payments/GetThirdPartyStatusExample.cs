@@ -3,28 +3,18 @@
  * https://epayments-api.developer-ingenico.com/s2sapi/v1/
  */
 using Ingenico.Connect.Sdk;
-using Ingenico.Connect.Sdk.Domain.Product;
-using Ingenico.Connect.Sdk.Merchant.Products;
+using Ingenico.Connect.Sdk.Domain.Payment;
 
-namespace Ingenico.Connect.Sdk.Merchant.Products
+namespace Ingenico.Connect.Sdk.Merchant.Payments
 {
-    public class GetPaymentProductExample
+    public class GetThirdPartyStatusExample
     {
         public async void Example()
         {
 #pragma warning disable 0168
             using (Client client = GetClient())
             {
-                GetProductParams query = new GetProductParams();
-                query.CountryCode = "US";
-                query.CurrencyCode = "USD";
-                query.Locale = "en_US";
-                query.Amount = 1000L;
-                query.IsRecurring = true;
-                query.ForceBasicFlow = false;
-                query.AddHide("fields");
-
-                PaymentProductResponse response = await client.Merchant("merchantId").Products().Get(1, query);
+                ThirdPartyStatusResponse response = await client.Merchant("merchantId").Payments().ThirdPartyStatus("paymentId");
             }
 #pragma warning restore 0168
         }

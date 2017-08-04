@@ -8,7 +8,7 @@
     <RootNamespace>Ingenico.Connect.Sdk</RootNamespace>
     <AssemblyName>connect-sdk-dotnet</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <ReleaseVersion>2.6.0</ReleaseVersion>
+    <ReleaseVersion>2.7.0</ReleaseVersion>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>
@@ -154,11 +154,14 @@
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\CancelApprovalPaymentResponse.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\CancelPaymentResponse.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\CapturePaymentRequest.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\CompletePaymentRequest.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\CompletePaymentResponse.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\CreatePaymentRequest.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\CreatePaymentResponse.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\PaymentApprovalResponse.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\PaymentErrorResponse.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\PaymentResponse.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\ThirdPartyStatusResponse.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\TokenizePaymentRequest.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\AbstractPaymentMethodSpecificOutput.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\AdditionalOrderInput.cs" />
@@ -182,6 +185,7 @@
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\CashPaymentMethodSpecificOutput.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\CashPaymentProduct1503SpecificInput.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\CashPaymentProduct1504SpecificInput.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\CompletePaymentCardPaymentMethodSpecificInput.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\ContactDetails.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\CreatePaymentResult.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\Customer.cs" />

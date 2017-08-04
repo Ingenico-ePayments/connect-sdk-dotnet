@@ -230,6 +230,80 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
         }
 
         /// <summary>
+        /// Resource /{merchantId}/payments/{paymentId}/complete
+        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/payments/complete.html">Complete payment</a>
+        /// </summary>
+        /// <param name="paymentId">string</param>
+        /// <param name="body">CompletePaymentRequest</param>
+        /// <param name="context">CallContext</param>
+        /// <returns>CompletePaymentResponse</returns>
+        /// <exception cref="ValidationException">if the request was not correct and couldn't be processed (HTTP status code BadRequest)</exception>
+        /// <exception cref="AuthorizationException">if the request was not allowed (HTTP status code Forbidden)</exception>
+        /// <exception cref="IdempotenceException">if an idempotent request caused a conflict (HTTP status code Conflict)</exception>
+        /// <exception cref="ReferenceException">if an object was attempted to be referenced that doesn't exist or has been removed,
+        ///            or there was a conflict (HTTP status code NotFound, Conflict or Gone)</exception>
+        /// <exception cref="GlobalCollectException">if something went wrong at the GlobalCollect platform,
+        ///            the GlobalCollect platform was unable to process a message from a downstream partner/acquirer,
+        ///            or the service that you're trying to reach is temporary unavailable (HTTP status code InternalServerError, BadGateway or ServiceUnavailable)</exception>
+        /// <exception cref="ApiException">if the GlobalCollect platform returned any other error</exception>
+        public async Task<CompletePaymentResponse> Complete(string paymentId, CompletePaymentRequest body, CallContext context = null)
+        {
+            IDictionary<string, string> pathContext = new Dictionary<string, string>();
+            pathContext.Add("paymentId", paymentId);
+            string uri = InstantiateUri("/{apiVersion}/{merchantId}/payments/{paymentId}/complete", pathContext);
+            try
+            {
+                return await _communicator.Post<CompletePaymentResponse>(
+                        uri,
+                        ClientHeaders,
+                        null,
+                        body,
+                        context);
+            }
+            catch (ResponseException e)
+            {
+                object errorObject = _communicator.Marshaller.Unmarshal<ErrorResponse>(e.Body);
+                throw CreateException(e.StatusCode, e.Body, errorObject, context);
+            }
+        }
+
+        /// <summary>
+        /// Resource /{merchantId}/payments/{paymentId}/thirdpartystatus
+        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/payments/thirdPartyStatus.html">Third party status poll</a>
+        /// </summary>
+        /// <param name="paymentId">string</param>
+        /// <param name="context">CallContext</param>
+        /// <returns>ThirdPartyStatusResponse</returns>
+        /// <exception cref="ValidationException">if the request was not correct and couldn't be processed (HTTP status code BadRequest)</exception>
+        /// <exception cref="AuthorizationException">if the request was not allowed (HTTP status code Forbidden)</exception>
+        /// <exception cref="IdempotenceException">if an idempotent request caused a conflict (HTTP status code Conflict)</exception>
+        /// <exception cref="ReferenceException">if an object was attempted to be referenced that doesn't exist or has been removed,
+        ///            or there was a conflict (HTTP status code NotFound, Conflict or Gone)</exception>
+        /// <exception cref="GlobalCollectException">if something went wrong at the GlobalCollect platform,
+        ///            the GlobalCollect platform was unable to process a message from a downstream partner/acquirer,
+        ///            or the service that you're trying to reach is temporary unavailable (HTTP status code InternalServerError, BadGateway or ServiceUnavailable)</exception>
+        /// <exception cref="ApiException">if the GlobalCollect platform returned any other error</exception>
+        public async Task<ThirdPartyStatusResponse> ThirdPartyStatus(string paymentId, CallContext context = null)
+        {
+            IDictionary<string, string> pathContext = new Dictionary<string, string>();
+            pathContext.Add("paymentId", paymentId);
+            string uri = InstantiateUri("/{apiVersion}/{merchantId}/payments/{paymentId}/thirdpartystatus", pathContext);
+            try
+            {
+                return await _communicator.Get<ThirdPartyStatusResponse>(
+                        uri,
+                        ClientHeaders,
+                        null,
+                        context);
+            }
+            catch (ResponseException e)
+            {
+                object errorObject = _communicator.Marshaller.Unmarshal<ErrorResponse>(e.Body);
+                throw CreateException(e.StatusCode, e.Body, errorObject, context);
+            }
+        }
+
+        /// <summary>
         /// Resource /{merchantId}/payments/{paymentId}/cancel
         /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/payments/cancel.html">Cancel payment</a>
         /// </summary>
@@ -268,7 +342,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
 
         /// <summary>
         /// Resource /{merchantId}/payments/{paymentId}/cancelapproval
-        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/payments/cancelapproval.html">Undo capture payment request</a>
+        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/payments/cancelapproval.html">Undo capture payment</a>
         /// </summary>
         /// <param name="paymentId">string</param>
         /// <param name="context">CallContext</param>

@@ -3,6 +3,7 @@
  * https://epayments-api.developer-ingenico.com/s2sapi/v1/
  */
 using Ingenico.Connect.Sdk.Domain.Definitions;
+using Ingenico.Connect.Sdk.Domain.Product.Definitions;
 using System.Collections.Generic;
 
 namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
@@ -10,6 +11,8 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
     public class MerchantAction
     {
         public string ActionType { get; set; } = null;
+
+        public IList<PaymentProductField> FormFields { get; set; } = null;
 
         public RedirectData RedirectData { get; set; } = null;
 

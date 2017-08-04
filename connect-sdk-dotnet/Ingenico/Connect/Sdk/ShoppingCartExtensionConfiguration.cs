@@ -14,11 +14,16 @@ namespace Ingenico.Connect.Sdk
                 }
                 if (string.IsNullOrEmpty(Creator)
                     && string.IsNullOrEmpty(Name)
-                    && string.IsNullOrEmpty(Version))
+                    && string.IsNullOrEmpty(Version)
+                    && string.IsNullOrEmpty(ExtensionId))
                 {
                     return null;
                 }
-                return new ShoppingCartExtension(Creator, Name, Version);
+                if (string.IsNullOrEmpty(ExtensionId))
+                {
+                    return new ShoppingCartExtension(Creator, Name, Version);
+                }
+                return new ShoppingCartExtension(Creator, Name, Version, ExtensionId);
             }
             set
             {
@@ -104,5 +109,30 @@ namespace Ingenico.Connect.Sdk
 
         }
         string _version;
+
+        [ConfigurationProperty("extensionId", IsRequired = false)]
+        public string ExtensionId
+        {
+            get
+            {
+                if (_extensionId == null)
+                {
+                    return (string)this["extensionId"];
+
+                }
+                return _extensionId;
+            }
+            set
+            {
+                if (IsReadOnly())
+                {
+                    _extensionId = value;
+                    return;
+                }
+                this["extensionId"] = value;
+            }
+
+        }
+        string _extensionId;
     }
 }

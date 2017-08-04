@@ -36,6 +36,8 @@ namespace Ingenico.Connect.Sdk.Merchant.Products
             hide.Add(value);
         }
 
+        public bool? ForceBasicFlow { get; set; } = null;
+
         public override IEnumerable<RequestParam> ToRequestParameters()
         {
             IList<RequestParam> result = new List<RequestParam>();
@@ -45,6 +47,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Products
             AddParameter(result, "amount", Amount);
             AddParameter(result, "isRecurring", IsRecurring);
             AddParameter(result, "hide", Hide);
+            AddParameter(result, "forceBasicFlow", ForceBasicFlow);
             return result;
         }
     }
