@@ -10,7 +10,7 @@ using System.Collections.Generic;
 namespace Ingenico.Connect.Sdk
 {
     /// <summary>
-    /// GlobalCollect platform client. Thread-safe.
+    /// Ingenico ePayments platform client. Thread-safe.
     ///
     /// This client and all its child clients are bound to one specific value for the <i>X-GCS-ClientMetaInfo</i> header.
     /// To get a new client with a different header value, use <see cref="WithClientMetaInfo"/>.

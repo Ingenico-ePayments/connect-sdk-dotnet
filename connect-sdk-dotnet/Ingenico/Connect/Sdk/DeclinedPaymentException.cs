@@ -28,7 +28,7 @@ namespace Ingenico.Connect.Sdk
             {
                 return "declined payment '" + payment.Id + "' with status '" + payment.Status + "'";
             }
-            return "the GlobalCollect platform returned a declined refund response";
+            return "the Ingenico ePayments platform returned a declined refund response";
         }
     }
 }

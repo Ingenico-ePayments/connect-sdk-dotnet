@@ -9,5 +9,7 @@ namespace Ingenico.Connect.Sdk.Domain.Payment
     public class CompletePaymentRequest
     {
         public CompletePaymentCardPaymentMethodSpecificInput CardPaymentMethodSpecificInput { get; set; } = null;
+
+        public Order Order { get; set; } = null;
     }
 }

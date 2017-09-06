@@ -5,7 +5,7 @@ using System.Net.Http;
 namespace Ingenico.Connect.Sdk
 {
     /// <summary>
-    /// Used to sign requests to the GlobalCollect platform. Thread-safe.
+    /// Used to sign requests to the Ingenico ePayments platform. Thread-safe.
     /// </summary>
     public interface IAuthenticator
     {

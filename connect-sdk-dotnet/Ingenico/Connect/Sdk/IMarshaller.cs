@@ -1,7 +1,7 @@
 namespace Ingenico.Connect.Sdk
 {
     /// <summary>
-    /// Used to marshal and unmarshal GlobalCollect platform request and response objects to and from JSON. Thread-safe.
+    /// Used to marshal and unmarshal Ingenico ePayments platform request and response objects to and from JSON. Thread-safe.
     /// </summary>
     public interface IMarshaller
     {

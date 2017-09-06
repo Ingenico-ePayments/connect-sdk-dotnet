@@ -32,10 +32,10 @@ namespace Ingenico.Connect.Sdk.Merchant.Hostedcheckouts
         /// <exception cref="IdempotenceException">if an idempotent request caused a conflict (HTTP status code Conflict)</exception>
         /// <exception cref="ReferenceException">if an object was attempted to be referenced that doesn't exist or has been removed,
         ///            or there was a conflict (HTTP status code NotFound, Conflict or Gone)</exception>
-        /// <exception cref="GlobalCollectException">if something went wrong at the GlobalCollect platform,
-        ///            the GlobalCollect platform was unable to process a message from a downstream partner/acquirer,
+        /// <exception cref="GlobalCollectException">if something went wrong at the Ingenico ePayments platform,
+        ///            the Ingenico ePayments platform was unable to process a message from a downstream partner/acquirer,
         ///            or the service that you're trying to reach is temporary unavailable (HTTP status code InternalServerError, BadGateway or ServiceUnavailable)</exception>
-        /// <exception cref="ApiException">if the GlobalCollect platform returned any other error</exception>
+        /// <exception cref="ApiException">if the Ingenico ePayments platform returned any other error</exception>
         public async Task<CreateHostedCheckoutResponse> Create(CreateHostedCheckoutRequest body, CallContext context = null)
         {
             string uri = InstantiateUri("/{apiVersion}/{merchantId}/hostedcheckouts", null);
@@ -67,10 +67,10 @@ namespace Ingenico.Connect.Sdk.Merchant.Hostedcheckouts
         /// <exception cref="IdempotenceException">if an idempotent request caused a conflict (HTTP status code Conflict)</exception>
         /// <exception cref="ReferenceException">if an object was attempted to be referenced that doesn't exist or has been removed,
         ///            or there was a conflict (HTTP status code NotFound, Conflict or Gone)</exception>
-        /// <exception cref="GlobalCollectException">if something went wrong at the GlobalCollect platform,
-        ///            the GlobalCollect platform was unable to process a message from a downstream partner/acquirer,
+        /// <exception cref="GlobalCollectException">if something went wrong at the Ingenico ePayments platform,
+        ///            the Ingenico ePayments platform was unable to process a message from a downstream partner/acquirer,
         ///            or the service that you're trying to reach is temporary unavailable (HTTP status code InternalServerError, BadGateway or ServiceUnavailable)</exception>
-        /// <exception cref="ApiException">if the GlobalCollect platform returned any other error</exception>
+        /// <exception cref="ApiException">if the Ingenico ePayments platform returned any other error</exception>
         public async Task<GetHostedCheckoutResponse> Get(string hostedCheckoutId, CallContext context = null)
         {
             IDictionary<string, string> pathContext = new Dictionary<string, string>();

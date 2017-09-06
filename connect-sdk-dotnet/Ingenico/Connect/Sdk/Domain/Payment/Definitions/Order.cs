@@ -3,6 +3,7 @@
  * https://epayments-api.developer-ingenico.com/s2sapi/v1/
  */
 using Ingenico.Connect.Sdk.Domain.Definitions;
+using System;
 using System.Collections.Generic;
 
 namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
@@ -15,6 +16,7 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
 
         public Customer Customer { get; set; } = null;
 
+        [ObsoleteAttribute("Use ShoppingCart.items instead")]
         public IList<LineItem> Items { get; set; } = null;
 
         public OrderReferences References { get; set; } = null;

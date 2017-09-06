@@ -8,7 +8,7 @@
     <RootNamespace>Ingenico.Connect.Sdk</RootNamespace>
     <AssemblyName>connect-sdk-dotnet</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <ReleaseVersion>2.7.0</ReleaseVersion>
+    <ReleaseVersion>2.8.0</ReleaseVersion>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>
@@ -168,6 +168,7 @@
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\AddressPersonal.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\AmountBreakdown.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\ApprovePaymentCardPaymentMethodSpecificOutput.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\ApprovePaymentDirectDebitPaymentMethodSpecificInput.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\ApprovePaymentMobilePaymentMethodSpecificOutput.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\ApprovePaymentNonSepaDirectDebitPaymentMethodSpecificInput.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\ApprovePaymentPaymentMethodSpecificInput.cs" />
@@ -224,12 +225,14 @@
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\PaymentStatusOutput.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\PersonalInformation.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\PersonalName.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\ProtectionEligibility.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\RedirectData.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\RedirectPaymentMethodSpecificInput.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\RedirectPaymentMethodSpecificInputBase.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\RedirectPaymentMethodSpecificOutput.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\RedirectPaymentProduct809SpecificInput.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\RedirectPaymentProduct816SpecificInput.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\RedirectPaymentProduct840SpecificInput.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\RedirectPaymentProduct882SpecificInput.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\RefundBankMethodSpecificOutput.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\RefundCardMethodSpecificOutput.cs" />
@@ -259,9 +262,11 @@
     <Compile Include="Ingenico\Connect\Sdk\Domain\Product\PaymentProductNetworksResponse.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Product\PaymentProductResponse.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Product\PaymentProducts.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Product\Definitions\AbstractIndicator.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Product\Definitions\AccountOnFile.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Product\Definitions\AccountOnFileAttribute.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Product\Definitions\AccountOnFileDisplayHints.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Product\Definitions\AuthenticationIndicator.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Product\Definitions\BoletoBancarioRequirednessValidator.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Product\Definitions\DirectoryEntry.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Product\Definitions\EmptyValidator.cs" />

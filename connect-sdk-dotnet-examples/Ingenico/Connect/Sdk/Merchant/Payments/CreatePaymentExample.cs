@@ -87,6 +87,16 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
                 customer.ShippingAddress = shippingAddress;
                 customer.VatNumber = "1234AB5678CD";
 
+                OrderInvoiceData invoiceData = new OrderInvoiceData();
+                invoiceData.InvoiceDate = "20140306191500";
+                invoiceData.InvoiceNumber = "000000123";
+
+                OrderReferences references = new OrderReferences();
+                references.Descriptor = "Fast and Furry-ous";
+                references.InvoiceData = invoiceData;
+                references.MerchantOrderId = 123456L;
+                references.MerchantReference = "AcmeOrder0001";
+
                 IList<LineItem> items = new List<LineItem>();
 
                 AmountOfMoney item1AmountOfMoney = new AmountOfMoney();
@@ -119,21 +129,14 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
 
                 items.Add(item2);
 
-                OrderInvoiceData invoiceData = new OrderInvoiceData();
-                invoiceData.InvoiceDate = "20140306191500";
-                invoiceData.InvoiceNumber = "000000123";
-
-                OrderReferences references = new OrderReferences();
-                references.Descriptor = "Fast and Furry-ous";
-                references.InvoiceData = invoiceData;
-                references.MerchantOrderId = 123456L;
-                references.MerchantReference = "AcmeOrder0001";
+                ShoppingCart shoppingCart = new ShoppingCart();
+                shoppingCart.Items = items;
 
                 Order order = new Order();
                 order.AmountOfMoney = amountOfMoney;
                 order.Customer = customer;
-                order.Items = items;
                 order.References = references;
+                order.ShoppingCart = shoppingCart;
 
                 CreatePaymentRequest body = new CreatePaymentRequest();
                 body.CardPaymentMethodSpecificInput = cardPaymentMethodSpecificInput;

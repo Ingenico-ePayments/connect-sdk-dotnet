@@ -7,24 +7,24 @@ using Ingenico.Connect.Sdk.Domain.Errors.Definitions;
 namespace Ingenico.Connect.Sdk
 {
     /// <summary>
-    /// Represents an error response from the GlobalCollect platform which contains an ID and a list of errors.
+    /// Represents an error response from the Ingenico ePayments platform which contains an ID and a list of errors.
     /// </summary>
     public class ApiException : Exception
     {
         /// <summary>
-        /// Gets the HTTP status code that was returned by the GlobalCollect platform.
+        /// Gets the HTTP status code that was returned by the Ingenico ePayments platform.
         /// </summary>
         public System.Net.HttpStatusCode StatusCode => _statusCode;
         readonly System.Net.HttpStatusCode _statusCode;
 
         /// <summary>
-        /// Gets the raw response body that was returned by the GlobalConnect platform.
+        /// Gets the raw response body that was returned by the Ingenico ePayments platform.
         /// </summary>
         public string ResponseBody => _responseBody;
         readonly string _responseBody;
 
         /// <summary>
-        /// Gets the error identifier received from the GlobalCollect platform if available.
+        /// Gets the error identifier received from the Ingenico ePayments platform if available.
         /// </summary>
         public string ErrorId => _errorId;
         readonly string _errorId;
@@ -36,7 +36,7 @@ namespace Ingenico.Connect.Sdk
         readonly IList<APIError> _errors;
 
         public ApiException(System.Net.HttpStatusCode statusCode, string responseBody, string errorId, IList<APIError> errors)
-            : this("the GlobalCollect platform returned an error response", statusCode, responseBody, errorId, errors)
+            : this("the Ingenico ePayments platform returned an error response", statusCode, responseBody, errorId, errors)
         {
 
         }

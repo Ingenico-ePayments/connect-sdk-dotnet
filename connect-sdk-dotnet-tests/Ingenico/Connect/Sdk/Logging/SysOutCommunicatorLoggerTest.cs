@@ -62,7 +62,7 @@ namespace Ingenico.Connect.Sdk.Logging
                     logger.Log("Hello world", e);
                 }
                 var aString = newStdOut.ToString();
-                StringAssert.EndsWith("Hello world" + Environment.NewLine + exception.StackTrace + Environment.NewLine, aString);
+                StringAssert.EndsWith("Hello world" + Environment.NewLine + exception.ToString() + Environment.NewLine, aString);
             }
             finally
             {

@@ -4,7 +4,7 @@
  */
 namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
 {
-    public class ApprovePaymentSepaDirectDebitPaymentMethodSpecificInput : ApprovePaymentPaymentMethodSpecificInput
+    public class ApprovePaymentSepaDirectDebitPaymentMethodSpecificInput : ApprovePaymentDirectDebitPaymentMethodSpecificInput
     {
     }
 }

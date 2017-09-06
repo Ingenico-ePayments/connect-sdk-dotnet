@@ -6,28 +6,28 @@ using System.Text;
 namespace Ingenico.Connect.Sdk
 {
     /// <summary>
-    /// Thrown when a response was received from the GlobalCollect platform which indicates an error.
+    /// Thrown when a response was received from the Ingenico ePayments platform which indicates an error.
     /// </summary>
     public class ResponseException : Exception
     {
         /// <summary>
-        /// Gets the response that was returned by the GlobalCollect platform.
+        /// Gets the response that was returned by the Ingenico ePayments platform.
         /// </summary>
         public Response Response => _response;
         readonly Response _response;
 
         /// <summary>
-        /// Gets the HTTP status code that was returned by the GlobalCollect platform.
+        /// Gets the HTTP status code that was returned by the Ingenico ePayments platform.
         /// </summary>
         public HttpStatusCode StatusCode => Response.StatusCode;
 
         /// <summary>
-        /// Gets the raw response body that was returned by the GlobalConnect platform.
+        /// Gets the raw response body that was returned by the Ingenico ePayments platform.
         /// </summary>
         public string Body => Response.Body;
 
         /// <summary>
-        /// Gets the headers that were returned by the GlobalConnect platform.
+        /// Gets the headers that were returned by the Ingenico ePayments platform.
         /// </summary>
         public IEnumerable<IResponseHeader> Headers => Response.Headers;
 

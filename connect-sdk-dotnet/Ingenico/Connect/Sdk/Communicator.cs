@@ -9,7 +9,7 @@ using Ingenico.Connect.Sdk.Logging;
 namespace Ingenico.Connect.Sdk
 {
     /// <summary>
-    /// Used to communicate with the GlobalCollect platform web services.
+    /// Used to communicate with the Ingenico ePayments platform web services.
     /// </summary>
     /// <remarks>
     /// It contains all the logic to transform a request object to a HTTP request and a HTTP response to a response object.
@@ -65,9 +65,9 @@ namespace Ingenico.Connect.Sdk
         /// <param name="requestParameters">The optional set of request parameters.</param>
         /// <param name="context">The optional call context to use</param>
         /// <typeparam name="T">Type of the response.</typeparam>
-        /// <exception cref="CommunicationException"> when an exception occurred communicating with the GlobalCollect platform </exception>
-        /// <exception cref="ResponseException">when an error response was received from the GlobalCollect platform </exception>
-        /// <exception cref="ApiException">when an error response was received from the GlobalCollect platform which contained a list of errors </exception>
+        /// <exception cref="CommunicationException"> when an exception occurred communicating with the Ingenico ePayments platform</exception>
+        /// <exception cref="ResponseException">when an error response was received from the Ingenico ePayments platform</exception>
+        /// <exception cref="ApiException">when an error response was received from the Ingenico ePayments platform which contained a list of errors</exception>
         public async Task<T> Get<T>(string relativePath, IEnumerable<IRequestHeader> requestHeaders, AbstractParamRequest requestParameters,
                           CallContext context)
         {
@@ -88,9 +88,9 @@ namespace Ingenico.Connect.Sdk
         /// <param name="requestParameters">The optional set of request parameters.</param>
         /// <param name="context">The optional call context to use</param>
         /// <typeparam name="T">Type of the response.</typeparam>
-        /// <exception cref="CommunicationException"> when an exception occurred communicating with the GlobalCollect platform </exception>
-        /// <exception cref="ResponseException">when an error response was received from the GlobalCollect platform </exception>
-        /// <exception cref="ApiException">when an error response was received from the GlobalCollect platform which contained a list of errors </exception>
+        /// <exception cref="CommunicationException"> when an exception occurred communicating with the Ingenico ePayments platform</exception>
+        /// <exception cref="ResponseException">when an error response was received from the Ingenico ePayments platform</exception>
+        /// <exception cref="ApiException">when an error response was received from the Ingenico ePayments platform which contained a list of errors</exception>
         public async Task<T> Delete<T>(string relativePath, IEnumerable<IRequestHeader> requestHeaders, AbstractParamRequest requestParameters,
                           CallContext context)
         {
@@ -112,9 +112,9 @@ namespace Ingenico.Connect.Sdk
         /// <param name="requestBody">The optional request body to send.</param>
         /// <param name="context">The optional call context to use</param>
         /// <typeparam name="T">Type of the response.</typeparam>
-        /// <exception cref="CommunicationException"> when an exception occurred communicating with the GlobalCollect platform </exception>
-        /// <exception cref="ResponseException">when an error response was received from the GlobalCollect platform </exception>
-        /// <exception cref="ApiException">when an error response was received from the GlobalCollect platform which contained a list of errors </exception>
+        /// <exception cref="CommunicationException"> when an exception occurred communicating with the Ingenico ePayments platform</exception>
+        /// <exception cref="ResponseException">when an error response was received from the Ingenico ePayments platform</exception>
+        /// <exception cref="ApiException">when an error response was received from the Ingenico ePayments platform which contained a list of errors</exception>
         public async Task<T> Post<T>(string relativePath, IEnumerable<IRequestHeader> requestHeaders, AbstractParamRequest requestParameters,
             object requestBody, CallContext context)
         {
@@ -145,9 +145,9 @@ namespace Ingenico.Connect.Sdk
         /// <param name="requestBody">The optional request body to send.</param>
         /// <param name="context">The optional call context to use</param>
         /// <typeparam name="T">Type of the response.</typeparam>
-        /// <exception cref="CommunicationException"> when an exception occurred communicating with the GlobalCollect platform </exception>
-        /// <exception cref="ResponseException">when an error response was received from the GlobalCollect platform </exception>
-        /// <exception cref="ApiException">when an error response was received from the GlobalCollect platform which contained a list of errors </exception>
+        /// <exception cref="CommunicationException"> when an exception occurred communicating with the Ingenico ePayments platform</exception>
+        /// <exception cref="ResponseException">when an error response was received from the Ingenico ePayments platform</exception>
+        /// <exception cref="ApiException">when an error response was received from the Ingenico ePayments platform which contained a list of errors</exception>
         public async Task<T> Put<T>(string relativePath, IEnumerable<IRequestHeader> requestHeaders, AbstractParamRequest requestParameters,
             object requestBody, CallContext context)
         {

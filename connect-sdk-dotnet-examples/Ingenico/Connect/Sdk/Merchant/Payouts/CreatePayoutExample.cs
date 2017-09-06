@@ -53,17 +53,20 @@ namespace Ingenico.Connect.Sdk.Merchant.Payouts
                 customer.ContactDetails = contactDetails;
                 customer.Name = name;
 
+                BankTransferPayoutMethodSpecificInput bankTransferPayoutMethodSpecificInput = new BankTransferPayoutMethodSpecificInput();
+                bankTransferPayoutMethodSpecificInput.BankAccountIban = bankAccountIban;
+                bankTransferPayoutMethodSpecificInput.Customer = customer;
+                bankTransferPayoutMethodSpecificInput.PayoutDate = "20150102";
+                bankTransferPayoutMethodSpecificInput.PayoutText = "Payout Acme";
+                bankTransferPayoutMethodSpecificInput.SwiftCode = "swift";
+
                 PayoutReferences references = new PayoutReferences();
                 references.MerchantReference = "AcmeOrder001";
 
                 CreatePayoutRequest body = new CreatePayoutRequest();
                 body.AmountOfMoney = amountOfMoney;
-                body.BankAccountIban = bankAccountIban;
-                body.Customer = customer;
-                body.PayoutDate = "20150102";
-                body.PayoutText = "Payout Acme";
+                body.BankTransferPayoutMethodSpecificInput = bankTransferPayoutMethodSpecificInput;
                 body.References = references;
-                body.SwiftCode = "swift";
 
                 try
                 {

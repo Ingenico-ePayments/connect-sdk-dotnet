@@ -5,7 +5,7 @@ using Ingenico.Connect.Sdk.DefaultImpl;
 namespace Ingenico.Connect.Sdk
 {
     /// <summary>
-    /// GlobalCollect platform factory for several SDK components.
+    /// Ingenico ePayments platform factory for several SDK components.
     /// </summary>
     public sealed class Factory
     {

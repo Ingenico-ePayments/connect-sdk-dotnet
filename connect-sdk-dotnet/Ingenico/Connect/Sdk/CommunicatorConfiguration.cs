@@ -24,7 +24,7 @@ namespace Ingenico.Connect.Sdk
         }
 
         /// <summary>
-        /// Gets or sets the GlobalCollect platform API endpoint URI.
+        /// Gets or sets the Ingenico ePayments platform API endpoint URI.
         /// </summary>
         public Uri ApiEndpoint
         {

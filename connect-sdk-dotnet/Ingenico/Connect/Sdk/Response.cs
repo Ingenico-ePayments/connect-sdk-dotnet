@@ -6,24 +6,24 @@ using System.Text;
 namespace Ingenico.Connect.Sdk
 {
     /// <summary>
-    /// A response from the GlobalCollect platform.
+    /// A response from the Ingenico ePayments platform.
     /// </summary>
     public class Response
     {
         /// <summary>
-        /// Gets The HTTP status code that was returned by the GlobalCollect platform
+        /// Gets The HTTP status code that was returned by the Ingenico ePayments platform
         /// </summary>
         public HttpStatusCode StatusCode => _statusCode;
         readonly HttpStatusCode _statusCode;
 
         /// <summary>
-        /// Gets the raw response body that was returned by the GlobalCollect platform.
+        /// Gets the raw response body that was returned by the Ingenico ePayments platform.
         /// </summary>
         public string Body => _body;
         readonly string _body;
 
         /// <summary>
-        /// Gets the headers that were returned by the GlobalCollect platform. Never <code>null</code>.
+        /// Gets the headers that were returned by the Ingenico ePayments platform. Never <code>null</code>.
         /// </summary>
         public IEnumerable<IResponseHeader> Headers => _headers;
         readonly IEnumerable<IResponseHeader> _headers;

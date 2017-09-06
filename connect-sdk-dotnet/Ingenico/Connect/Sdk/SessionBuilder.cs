@@ -8,7 +8,7 @@ namespace Ingenico.Connect.Sdk
     public class SessionBuilder
     {
         /// <summary>
-        /// Sets the GlobalCollect platform API endpoint URI to use.
+        /// Sets the Ingenico ePayments platform API endpoint URI to use.
         /// </summary>
         /// <param name="apiEndpoint">The API endpoint.</param>
         /// <returns>This.</returns>

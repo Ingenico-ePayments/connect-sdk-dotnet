@@ -11,7 +11,7 @@ using Ingenico.Connect.Sdk.Domain.Refund;
 namespace Ingenico.Connect.Sdk
 {
     /// <summary>
-    /// Base class of all GlobalCollect platform API resources.
+    /// Base class of all Ingenico ePayments platform API resources.
     /// </summary>
     public class ApiResource
     {

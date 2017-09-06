@@ -13,7 +13,7 @@ namespace Ingenico.Connect.Sdk.DefaultImpl
     /// </summary>
     public class DefaultAuthenticator : IAuthenticator
     {
-        /// <param name="authType">Based on this value both the GlobalCollect platform and the merchant know which security implementation is used.
+        /// <param name="authType">Based on this value both the Ingenico ePayments platform and the merchant know which security implementation is used.
         ///        A version number is used for backward compatibility in the future.</param>
         /// <param name="apiKeyId">An identifier for the secret API key. The apiKeyId can be retrieved from the Configuration Center.
         ///        This identifier is visible in the HTTP request and is also used to identify the correct account.</param>

@@ -22,7 +22,13 @@ namespace Ingenico.Connect.Sdk.Logging
             Console.WriteLine(DatePrefix + message);
             if (exception != null)
             {
-                Console.WriteLine(exception.StackTrace);
+                var e = exception;
+                do
+                {
+                    Console.WriteLine(e.ToString());
+                    e = e.InnerException;
+                }
+                while (e != null);
             }
         }
 

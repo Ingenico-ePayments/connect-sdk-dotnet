@@ -3,13 +3,13 @@ using System;
 namespace Ingenico.Connect.Sdk
 {
     /// <summary>
-    /// Contains the components needed to communicate with the GlobalCollect platform. Thread-safe.
+    /// Contains the components needed to communicate with the Ingenico ePayments platform. Thread-safe.
     /// </summary>
     public class Session
     {
         // Virtual for unit testing
         /// <summary>
-        /// Gets the GlobalCollect platform API endpoint URI. This URI's path will be <code>null</code> or empty.
+        /// Gets the Ingenico ePayments platform API endpoint URI. This URI's path will be <code>null</code> or empty.
         /// </summary>
         public virtual Uri ApiEndpoint => _apiEndpoint;
         Uri _apiEndpoint;

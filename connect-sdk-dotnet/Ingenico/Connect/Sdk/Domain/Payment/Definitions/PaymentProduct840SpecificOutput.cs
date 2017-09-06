@@ -11,5 +11,7 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
         public PaymentProduct840CustomerAccount CustomerAccount { get; set; } = null;
 
         public Address CustomerAddress { get; set; } = null;
+
+        public ProtectionEligibility ProtectionEligibility { get; set; } = null;
     }
 }

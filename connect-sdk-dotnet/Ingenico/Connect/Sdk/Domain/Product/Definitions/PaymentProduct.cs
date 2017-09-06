@@ -14,6 +14,8 @@ namespace Ingenico.Connect.Sdk.Domain.Product.Definitions
 
         public bool? AllowsTokenization { get; set; } = null;
 
+        public AuthenticationIndicator AuthenticationIndicator { get; set; } = null;
+
         public bool? AutoTokenized { get; set; } = null;
 
         public bool? CanBeIframed { get; set; } = null;

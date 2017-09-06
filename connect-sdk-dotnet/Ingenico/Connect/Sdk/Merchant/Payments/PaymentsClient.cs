@@ -31,16 +31,16 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
         /// <param name="body">CreatePaymentRequest</param>
         /// <param name="context">CallContext</param>
         /// <returns>CreatePaymentResponse</returns>
-        /// <exception cref="DeclinedPaymentException">if the GlobalCollect platform declined / rejected the payment. The payment result will be available from the exception.</exception>
+        /// <exception cref="DeclinedPaymentException">if the Ingenico ePayments platform declined / rejected the payment. The payment result will be available from the exception.</exception>
         /// <exception cref="ValidationException">if the request was not correct and couldn't be processed (HTTP status code BadRequest)</exception>
         /// <exception cref="AuthorizationException">if the request was not allowed (HTTP status code Forbidden)</exception>
         /// <exception cref="IdempotenceException">if an idempotent request caused a conflict (HTTP status code Conflict)</exception>
         /// <exception cref="ReferenceException">if an object was attempted to be referenced that doesn't exist or has been removed,
         ///            or there was a conflict (HTTP status code NotFound, Conflict or Gone)</exception>
-        /// <exception cref="GlobalCollectException">if something went wrong at the GlobalCollect platform,
-        ///            the GlobalCollect platform was unable to process a message from a downstream partner/acquirer,
+        /// <exception cref="GlobalCollectException">if something went wrong at the Ingenico ePayments platform,
+        ///            the Ingenico ePayments platform was unable to process a message from a downstream partner/acquirer,
         ///            or the service that you're trying to reach is temporary unavailable (HTTP status code InternalServerError, BadGateway or ServiceUnavailable)</exception>
-        /// <exception cref="ApiException">if the GlobalCollect platform returned any other error</exception>
+        /// <exception cref="ApiException">if the Ingenico ePayments platform returned any other error</exception>
         public async Task<CreatePaymentResponse> Create(CreatePaymentRequest body, CallContext context = null)
         {
             string uri = InstantiateUri("/{apiVersion}/{merchantId}/payments", null);
@@ -93,10 +93,10 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
         /// <exception cref="IdempotenceException">if an idempotent request caused a conflict (HTTP status code Conflict)</exception>
         /// <exception cref="ReferenceException">if an object was attempted to be referenced that doesn't exist or has been removed,
         ///            or there was a conflict (HTTP status code NotFound, Conflict or Gone)</exception>
-        /// <exception cref="GlobalCollectException">if something went wrong at the GlobalCollect platform,
-        ///            the GlobalCollect platform was unable to process a message from a downstream partner/acquirer,
+        /// <exception cref="GlobalCollectException">if something went wrong at the Ingenico ePayments platform,
+        ///            the Ingenico ePayments platform was unable to process a message from a downstream partner/acquirer,
         ///            or the service that you're trying to reach is temporary unavailable (HTTP status code InternalServerError, BadGateway or ServiceUnavailable)</exception>
-        /// <exception cref="ApiException">if the GlobalCollect platform returned any other error</exception>
+        /// <exception cref="ApiException">if the Ingenico ePayments platform returned any other error</exception>
         public async Task<PaymentResponse> Get(string paymentId, CallContext context = null)
         {
             IDictionary<string, string> pathContext = new Dictionary<string, string>();
@@ -130,10 +130,10 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
         /// <exception cref="IdempotenceException">if an idempotent request caused a conflict (HTTP status code Conflict)</exception>
         /// <exception cref="ReferenceException">if an object was attempted to be referenced that doesn't exist or has been removed,
         ///            or there was a conflict (HTTP status code NotFound, Conflict or Gone)</exception>
-        /// <exception cref="GlobalCollectException">if something went wrong at the GlobalCollect platform,
-        ///            the GlobalCollect platform was unable to process a message from a downstream partner/acquirer,
+        /// <exception cref="GlobalCollectException">if something went wrong at the Ingenico ePayments platform,
+        ///            the Ingenico ePayments platform was unable to process a message from a downstream partner/acquirer,
         ///            or the service that you're trying to reach is temporary unavailable (HTTP status code InternalServerError, BadGateway or ServiceUnavailable)</exception>
-        /// <exception cref="ApiException">if the GlobalCollect platform returned any other error</exception>
+        /// <exception cref="ApiException">if the Ingenico ePayments platform returned any other error</exception>
         public async Task<PaymentApprovalResponse> Approve(string paymentId, ApprovePaymentRequest body, CallContext context = null)
         {
             IDictionary<string, string> pathContext = new Dictionary<string, string>();
@@ -168,10 +168,10 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
         /// <exception cref="IdempotenceException">if an idempotent request caused a conflict (HTTP status code Conflict)</exception>
         /// <exception cref="ReferenceException">if an object was attempted to be referenced that doesn't exist or has been removed,
         ///            or there was a conflict (HTTP status code NotFound, Conflict or Gone)</exception>
-        /// <exception cref="GlobalCollectException">if something went wrong at the GlobalCollect platform,
-        ///            the GlobalCollect platform was unable to process a message from a downstream partner/acquirer,
+        /// <exception cref="GlobalCollectException">if something went wrong at the Ingenico ePayments platform,
+        ///            the Ingenico ePayments platform was unable to process a message from a downstream partner/acquirer,
         ///            or the service that you're trying to reach is temporary unavailable (HTTP status code InternalServerError, BadGateway or ServiceUnavailable)</exception>
-        /// <exception cref="ApiException">if the GlobalCollect platform returned any other error</exception>
+        /// <exception cref="ApiException">if the Ingenico ePayments platform returned any other error</exception>
         public async Task<CaptureResponse> Capture(string paymentId, CapturePaymentRequest body, CallContext context = null)
         {
             IDictionary<string, string> pathContext = new Dictionary<string, string>();
@@ -205,10 +205,10 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
         /// <exception cref="IdempotenceException">if an idempotent request caused a conflict (HTTP status code Conflict)</exception>
         /// <exception cref="ReferenceException">if an object was attempted to be referenced that doesn't exist or has been removed,
         ///            or there was a conflict (HTTP status code NotFound, Conflict or Gone)</exception>
-        /// <exception cref="GlobalCollectException">if something went wrong at the GlobalCollect platform,
-        ///            the GlobalCollect platform was unable to process a message from a downstream partner/acquirer,
+        /// <exception cref="GlobalCollectException">if something went wrong at the Ingenico ePayments platform,
+        ///            the Ingenico ePayments platform was unable to process a message from a downstream partner/acquirer,
         ///            or the service that you're trying to reach is temporary unavailable (HTTP status code InternalServerError, BadGateway or ServiceUnavailable)</exception>
-        /// <exception cref="ApiException">if the GlobalCollect platform returned any other error</exception>
+        /// <exception cref="ApiException">if the Ingenico ePayments platform returned any other error</exception>
         public async Task<CapturesResponse> Captures(string paymentId, CallContext context = null)
         {
             IDictionary<string, string> pathContext = new Dictionary<string, string>();
@@ -242,10 +242,10 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
         /// <exception cref="IdempotenceException">if an idempotent request caused a conflict (HTTP status code Conflict)</exception>
         /// <exception cref="ReferenceException">if an object was attempted to be referenced that doesn't exist or has been removed,
         ///            or there was a conflict (HTTP status code NotFound, Conflict or Gone)</exception>
-        /// <exception cref="GlobalCollectException">if something went wrong at the GlobalCollect platform,
-        ///            the GlobalCollect platform was unable to process a message from a downstream partner/acquirer,
+        /// <exception cref="GlobalCollectException">if something went wrong at the Ingenico ePayments platform,
+        ///            the Ingenico ePayments platform was unable to process a message from a downstream partner/acquirer,
         ///            or the service that you're trying to reach is temporary unavailable (HTTP status code InternalServerError, BadGateway or ServiceUnavailable)</exception>
-        /// <exception cref="ApiException">if the GlobalCollect platform returned any other error</exception>
+        /// <exception cref="ApiException">if the Ingenico ePayments platform returned any other error</exception>
         public async Task<CompletePaymentResponse> Complete(string paymentId, CompletePaymentRequest body, CallContext context = null)
         {
             IDictionary<string, string> pathContext = new Dictionary<string, string>();
@@ -279,10 +279,10 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
         /// <exception cref="IdempotenceException">if an idempotent request caused a conflict (HTTP status code Conflict)</exception>
         /// <exception cref="ReferenceException">if an object was attempted to be referenced that doesn't exist or has been removed,
         ///            or there was a conflict (HTTP status code NotFound, Conflict or Gone)</exception>
-        /// <exception cref="GlobalCollectException">if something went wrong at the GlobalCollect platform,
-        ///            the GlobalCollect platform was unable to process a message from a downstream partner/acquirer,
+        /// <exception cref="GlobalCollectException">if something went wrong at the Ingenico ePayments platform,
+        ///            the Ingenico ePayments platform was unable to process a message from a downstream partner/acquirer,
         ///            or the service that you're trying to reach is temporary unavailable (HTTP status code InternalServerError, BadGateway or ServiceUnavailable)</exception>
-        /// <exception cref="ApiException">if the GlobalCollect platform returned any other error</exception>
+        /// <exception cref="ApiException">if the Ingenico ePayments platform returned any other error</exception>
         public async Task<ThirdPartyStatusResponse> ThirdPartyStatus(string paymentId, CallContext context = null)
         {
             IDictionary<string, string> pathContext = new Dictionary<string, string>();
@@ -315,10 +315,10 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
         /// <exception cref="IdempotenceException">if an idempotent request caused a conflict (HTTP status code Conflict)</exception>
         /// <exception cref="ReferenceException">if an object was attempted to be referenced that doesn't exist or has been removed,
         ///            or there was a conflict (HTTP status code NotFound, Conflict or Gone)</exception>
-        /// <exception cref="GlobalCollectException">if something went wrong at the GlobalCollect platform,
-        ///            the GlobalCollect platform was unable to process a message from a downstream partner/acquirer,
+        /// <exception cref="GlobalCollectException">if something went wrong at the Ingenico ePayments platform,
+        ///            the Ingenico ePayments platform was unable to process a message from a downstream partner/acquirer,
         ///            or the service that you're trying to reach is temporary unavailable (HTTP status code InternalServerError, BadGateway or ServiceUnavailable)</exception>
-        /// <exception cref="ApiException">if the GlobalCollect platform returned any other error</exception>
+        /// <exception cref="ApiException">if the Ingenico ePayments platform returned any other error</exception>
         public async Task<CancelPaymentResponse> Cancel(string paymentId, CallContext context = null)
         {
             IDictionary<string, string> pathContext = new Dictionary<string, string>();
@@ -352,10 +352,10 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
         /// <exception cref="IdempotenceException">if an idempotent request caused a conflict (HTTP status code Conflict)</exception>
         /// <exception cref="ReferenceException">if an object was attempted to be referenced that doesn't exist or has been removed,
         ///            or there was a conflict (HTTP status code NotFound, Conflict or Gone)</exception>
-        /// <exception cref="GlobalCollectException">if something went wrong at the GlobalCollect platform,
-        ///            the GlobalCollect platform was unable to process a message from a downstream partner/acquirer,
+        /// <exception cref="GlobalCollectException">if something went wrong at the Ingenico ePayments platform,
+        ///            the Ingenico ePayments platform was unable to process a message from a downstream partner/acquirer,
         ///            or the service that you're trying to reach is temporary unavailable (HTTP status code InternalServerError, BadGateway or ServiceUnavailable)</exception>
-        /// <exception cref="ApiException">if the GlobalCollect platform returned any other error</exception>
+        /// <exception cref="ApiException">if the Ingenico ePayments platform returned any other error</exception>
         public async Task<CancelApprovalPaymentResponse> Cancelapproval(string paymentId, CallContext context = null)
         {
             IDictionary<string, string> pathContext = new Dictionary<string, string>();
@@ -389,10 +389,10 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
         /// <exception cref="IdempotenceException">if an idempotent request caused a conflict (HTTP status code Conflict)</exception>
         /// <exception cref="ReferenceException">if an object was attempted to be referenced that doesn't exist or has been removed,
         ///            or there was a conflict (HTTP status code NotFound, Conflict or Gone)</exception>
-        /// <exception cref="GlobalCollectException">if something went wrong at the GlobalCollect platform,
-        ///            the GlobalCollect platform was unable to process a message from a downstream partner/acquirer,
+        /// <exception cref="GlobalCollectException">if something went wrong at the Ingenico ePayments platform,
+        ///            the Ingenico ePayments platform was unable to process a message from a downstream partner/acquirer,
         ///            or the service that you're trying to reach is temporary unavailable (HTTP status code InternalServerError, BadGateway or ServiceUnavailable)</exception>
-        /// <exception cref="ApiException">if the GlobalCollect platform returned any other error</exception>
+        /// <exception cref="ApiException">if the Ingenico ePayments platform returned any other error</exception>
         public async Task<PaymentResponse> Processchallenged(string paymentId, CallContext context = null)
         {
             IDictionary<string, string> pathContext = new Dictionary<string, string>();
@@ -422,16 +422,16 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
         /// <param name="body">RefundRequest</param>
         /// <param name="context">CallContext</param>
         /// <returns>RefundResponse</returns>
-        /// <exception cref="DeclinedRefundException">if the GlobalCollect platform declined / rejected the refund. The refund result will be available from the exception.</exception>
+        /// <exception cref="DeclinedRefundException">if the Ingenico ePayments platform declined / rejected the refund. The refund result will be available from the exception.</exception>
         /// <exception cref="ValidationException">if the request was not correct and couldn't be processed (HTTP status code BadRequest)</exception>
         /// <exception cref="AuthorizationException">if the request was not allowed (HTTP status code Forbidden)</exception>
         /// <exception cref="IdempotenceException">if an idempotent request caused a conflict (HTTP status code Conflict)</exception>
         /// <exception cref="ReferenceException">if an object was attempted to be referenced that doesn't exist or has been removed,
         ///            or there was a conflict (HTTP status code NotFound, Conflict or Gone)</exception>
-        /// <exception cref="GlobalCollectException">if something went wrong at the GlobalCollect platform,
-        ///            the GlobalCollect platform was unable to process a message from a downstream partner/acquirer,
+        /// <exception cref="GlobalCollectException">if something went wrong at the Ingenico ePayments platform,
+        ///            the Ingenico ePayments platform was unable to process a message from a downstream partner/acquirer,
         ///            or the service that you're trying to reach is temporary unavailable (HTTP status code InternalServerError, BadGateway or ServiceUnavailable)</exception>
-        /// <exception cref="ApiException">if the GlobalCollect platform returned any other error</exception>
+        /// <exception cref="ApiException">if the Ingenico ePayments platform returned any other error</exception>
         public async Task<RefundResponse> Refund(string paymentId, RefundRequest body, CallContext context = null)
         {
             IDictionary<string, string> pathContext = new Dictionary<string, string>();
@@ -478,10 +478,10 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
         /// <exception cref="IdempotenceException">if an idempotent request caused a conflict (HTTP status code Conflict)</exception>
         /// <exception cref="ReferenceException">if an object was attempted to be referenced that doesn't exist or has been removed,
         ///            or there was a conflict (HTTP status code NotFound, Conflict or Gone)</exception>
-        /// <exception cref="GlobalCollectException">if something went wrong at the GlobalCollect platform,
-        ///            the GlobalCollect platform was unable to process a message from a downstream partner/acquirer,
+        /// <exception cref="GlobalCollectException">if something went wrong at the Ingenico ePayments platform,
+        ///            the Ingenico ePayments platform was unable to process a message from a downstream partner/acquirer,
         ///            or the service that you're trying to reach is temporary unavailable (HTTP status code InternalServerError, BadGateway or ServiceUnavailable)</exception>
-        /// <exception cref="ApiException">if the GlobalCollect platform returned any other error</exception>
+        /// <exception cref="ApiException">if the Ingenico ePayments platform returned any other error</exception>
         public async Task<CreateTokenResponse> Tokenize(string paymentId, TokenizePaymentRequest body, CallContext context = null)
         {
             IDictionary<string, string> pathContext = new Dictionary<string, string>();
