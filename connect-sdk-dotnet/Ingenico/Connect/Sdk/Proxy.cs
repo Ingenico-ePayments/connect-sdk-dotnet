@@ -1,7 +1,10 @@
-﻿using System;
+using System;
 
 namespace Ingenico.Connect.Sdk
 {
+    /// <summary>
+    /// Represents a proxy with a URI and it's authentication.
+    /// </summary>
     public class Proxy
     {
         public string Username { get; set; }

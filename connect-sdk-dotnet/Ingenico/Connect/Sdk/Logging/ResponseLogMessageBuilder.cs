@@ -4,7 +4,7 @@ using System.Net;
 namespace Ingenico.Connect.Sdk.Logging
 {
     /// <summary>
-    /// A utility class to build request log messages.
+    /// A utility class to build response log messages.
     /// </summary>
     public class ResponseLogMessageBuilder : LogMessageBuilder
     {

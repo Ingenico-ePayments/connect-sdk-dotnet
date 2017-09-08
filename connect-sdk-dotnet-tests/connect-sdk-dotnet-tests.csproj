@@ -10,7 +10,7 @@
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <ReleaseVersion>2.8.0</ReleaseVersion>
+    <ReleaseVersion>2.9.0</ReleaseVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -121,6 +121,7 @@
     <Compile Include="Ingenico\Connect\Sdk\Merchant\Products\GetProductParamsTest.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Merchant\Services\ConvertAmountParamsTest.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Merchant\Tokens\DeleteTokenParamsTest.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Webhooks\WebhooksHelperTest.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Util\ReflectionUtil.cs" />
   </ItemGroup>
   <ItemGroup>

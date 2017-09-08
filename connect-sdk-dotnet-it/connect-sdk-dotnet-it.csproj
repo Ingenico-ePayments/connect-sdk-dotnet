@@ -8,7 +8,7 @@
     <RootNamespace>Ingenico.Connect.Sdk</RootNamespace>
     <AssemblyName>connect-sdk-dotnet-it</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <ReleaseVersion>2.8.0</ReleaseVersion>
+    <ReleaseVersion>2.9.0</ReleaseVersion>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>
@@ -90,6 +90,7 @@
     <Compile Include="Ingenico\Connect\Sdk\It\ConnectionPoolingTest.cs" />
     <Compile Include="Ingenico\Connect\Sdk\It\ConnectionTest.cs" />
     <Compile Include="Ingenico\Connect\Sdk\It\ConvertAmountTest.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\It\CreateSessionTest.cs" />
     <Compile Include="Ingenico\Connect\Sdk\It\IdempotenceTest.cs" />
     <Compile Include="Ingenico\Connect\Sdk\It\IntegrationTest.cs" />
     <Compile Include="Ingenico\Connect\Sdk\It\MultiLineHeaderTest.cs" />

@@ -225,8 +225,7 @@ namespace Ingenico.Connect.Sdk.DefaultImpl
             Assert.Null(context.IdempotenceRequestTimestamp);
         }
 
-        static void RecordRequest(HttpStatusCode statusCode, HttpListenerRequest request, IDictionary<string, string> requestHeaders,
-                                  HttpListenerResponse response, IDictionary<string, string> responseHeaders)
+        static void RecordRequest(HttpStatusCode statusCode, HttpListenerRequest request, IDictionary<string, string> requestHeaders, HttpListenerResponse response, IDictionary<string, string> responseHeaders)
         {
             foreach (string name in request.Headers)
             {

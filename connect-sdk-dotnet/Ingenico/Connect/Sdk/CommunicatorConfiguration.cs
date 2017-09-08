@@ -38,6 +38,9 @@ namespace Ingenico.Connect.Sdk
             }
         }
 
+        /// <summary>
+        /// Gets or sets the connect timeout
+        /// </summary>
         public TimeSpan? ConnectTimeout
         {
             get
@@ -50,6 +53,9 @@ namespace Ingenico.Connect.Sdk
             }
         }
 
+        /// <summary>
+        /// Gets or sets the socket timeout
+        /// </summary>
         public TimeSpan? SocketTimeout
         {
             get
@@ -62,6 +68,9 @@ namespace Ingenico.Connect.Sdk
             }
         }
 
+        /// <summary>
+        /// Gets or sets the maximal number of connections
+        /// </summary>
         public int MaxConnections
         {
             get
@@ -133,6 +142,9 @@ namespace Ingenico.Connect.Sdk
             }
         }
 
+        /// <summary>
+        /// Gets the proxy object
+        /// </summary>
         public Proxy Proxy => new Proxy { Username = ProxyConfiguration.Username, Password = ProxyConfiguration.Password, Uri = ProxyConfiguration.Uri };
 
         /// <summary>

@@ -5,6 +5,9 @@ using Ingenico.Connect.Sdk.Logging;
 
 namespace Ingenico.Connect.Sdk
 {
+    /// <summary>
+    /// Represents a connection to the GlobalCollect platform server. Thread-safe.
+    /// </summary>
     public interface IConnection : IDisposable, ILoggingCapable
     {
         /// <summary>

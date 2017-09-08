@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -8,7 +8,7 @@
     <RootNamespace>Ingenico.Connect.Sdk</RootNamespace>
     <AssemblyName>connect-sdk-dotnet</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <ReleaseVersion>2.8.0</ReleaseVersion>
+    <ReleaseVersion>2.9.0</ReleaseVersion>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>
@@ -343,6 +343,7 @@
     <Compile Include="Ingenico\Connect\Sdk\Domain\Token\Definitions\TokenNonSepaDirectDebitPaymentProduct705SpecificData.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Token\Definitions\TokenSepaDirectDebit.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Token\Definitions\TokenSepaDirectDebitWithoutCreditor.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Webhooks\WebhooksEvent.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Logging\HeaderObfuscator.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Logging\ICommunicatorLogger.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Logging\ILoggingCapable.cs" />
@@ -375,6 +376,14 @@
     <Compile Include="Ingenico\Connect\Sdk\Merchant\Sessions\SessionsClient.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Merchant\Tokens\DeleteTokenParams.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Merchant\Tokens\TokensClient.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Webhooks\ApiVersionMismatchException.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Webhooks\ISecretKeyStore.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Webhooks\InMemorySecretKeyStore.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Webhooks\SecretKeyNotAvailableException.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Webhooks\SignatureValiditationException.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Webhooks\Webhooks.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Webhooks\WebhooksHelper.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Webhooks\WebhooksHelperBuilder.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
