@@ -8,7 +8,7 @@
     <RootNamespace>Ingenico.Connect.Sdk</RootNamespace>
     <AssemblyName>connect-sdk-dotnet</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <ReleaseVersion>2.10.0</ReleaseVersion>
+    <ReleaseVersion>2.11.0</ReleaseVersion>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>
@@ -301,6 +301,7 @@
     <Compile Include="Ingenico\Connect\Sdk\Domain\Riskassessments\RiskAssessmentBankAccount.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Riskassessments\RiskAssessmentCard.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Riskassessments\RiskAssessmentResponse.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Riskassessments\Definitions\ContactDetailsRiskAssessment.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Riskassessments\Definitions\CustomerRiskAssessment.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Riskassessments\Definitions\OrderRiskAssessment.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Riskassessments\Definitions\PersonalInformationRiskAssessment.cs" />
@@ -383,8 +384,8 @@
     <Compile Include="Ingenico\Connect\Sdk\Merchant\Tokens\DeleteTokenParams.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Merchant\Tokens\TokensClient.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Webhooks\ApiVersionMismatchException.cs" />
-    <Compile Include="Ingenico\Connect\Sdk\Webhooks\ISecretKeyStore.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Webhooks\InMemorySecretKeyStore.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Webhooks\ISecretKeyStore.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Webhooks\SecretKeyNotAvailableException.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Webhooks\SignatureValiditationException.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Webhooks\Webhooks.cs" />

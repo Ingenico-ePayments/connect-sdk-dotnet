@@ -11,6 +11,8 @@ namespace Ingenico.Connect.Sdk.Domain.Riskassessments.Definitions
     {
         public Address BillingAddress { get; set; } = null;
 
+        public ContactDetailsRiskAssessment ContactDetails { get; set; } = null;
+
         public string Locale { get; set; } = null;
 
         public PersonalInformationRiskAssessment PersonalInformation { get; set; } = null;
