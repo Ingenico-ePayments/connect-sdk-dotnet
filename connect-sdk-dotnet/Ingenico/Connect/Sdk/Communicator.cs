@@ -164,7 +164,7 @@ namespace Ingenico.Connect.Sdk
                 requestJson = _marshaller.Marshal(requestBody);
             }
 
-            requestHeaders = AddGenericHeaders(HttpMethod.Put, uri, requestHeaders, context);
+            requestHeaders = AddGenericHeaders(HttpMethod.Put, uri, requestHeaderList, context);
             Response response = await connection.Post(uri, requestHeaders, requestJson);
             return ProcessResponse<T>(response, relativePath, context);
         }
