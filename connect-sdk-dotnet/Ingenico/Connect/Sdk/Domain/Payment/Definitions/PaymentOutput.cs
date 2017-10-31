@@ -16,6 +16,8 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
 
         public NonSepaDirectDebitPaymentMethodSpecificOutput DirectDebitPaymentMethodSpecificOutput { get; set; } = null;
 
+        public EInvoicePaymentMethodSpecificOutput EInvoicePaymentMethodSpecificOutput { get; set; } = null;
+
         public InvoicePaymentMethodSpecificOutput InvoicePaymentMethodSpecificOutput { get; set; } = null;
 
         public MobilePaymentMethodSpecificOutput MobilePaymentMethodSpecificOutput { get; set; } = null;

@@ -14,6 +14,8 @@ namespace Ingenico.Connect.Sdk.Domain.Product.Definitions
 
         public string Label { get; set; } = null;
 
+        public string Link { get; set; } = null;
+
         public string Mask { get; set; } = null;
 
         public bool? Obfuscate { get; set; } = null;

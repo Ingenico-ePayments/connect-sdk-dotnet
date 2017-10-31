@@ -24,6 +24,8 @@ namespace Ingenico.Connect.Sdk.Domain.Product.Definitions
 
         public IList<PaymentProductField> Fields { get; set; } = null;
 
+        public string FieldsWarning { get; set; } = null;
+
         public int? Id { get; set; } = null;
 
         public long? MaxAmount { get; set; } = null;

@@ -17,6 +17,8 @@ namespace Ingenico.Connect.Sdk.Domain.Payment
 
         public NonSepaDirectDebitPaymentMethodSpecificInput DirectDebitPaymentMethodSpecificInput { get; set; } = null;
 
+        public EInvoicePaymentMethodSpecificInput EInvoicePaymentMethodSpecificInput { get; set; } = null;
+
         public string EncryptedCustomerInput { get; set; } = null;
 
         public FraudFields FraudFields { get; set; } = null;

@@ -49,13 +49,13 @@ namespace Ingenico.Connect.Sdk.It
 
             using (Client client = GetClient())
             {
-                CreatePaymentResponse response = await client.Merchant("20000").Payments().Create(body, context);
+                CreatePaymentResponse response = await client.Merchant(GetMerchantId()).Payments().Create(body, context);
                 string paymentId = response.Payment.Id;
 
                 Assert.AreEqual(idempotenceKey, context.IdempotenceKey);
                 Assert.Null(context.IdempotenceRequestTimestamp);
 
-                response = await client.Merchant("20000").Payments().Create(body, context);
+                response = await client.Merchant(GetMerchantId()).Payments().Create(body, context);
 
                 Assert.AreEqual(paymentId, response.Payment.Id);
 

@@ -8,7 +8,7 @@
     <RootNamespace>Ingenico.Connect.Sdk</RootNamespace>
     <AssemblyName>connect-sdk-dotnet</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <ReleaseVersion>2.11.1</ReleaseVersion>
+    <ReleaseVersion>2.12.0</ReleaseVersion>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>
@@ -35,7 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System.Collections.Immutable, Version=1.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Collections.Immutable.1.2.0\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll</HintPath>
@@ -192,6 +192,10 @@
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\CreatePaymentResult.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\Customer.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\DecryptedPaymentData.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\EInvoicePaymentMethodSpecificInput.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\EInvoicePaymentMethodSpecificOutput.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\EInvoicePaymentProduct9000SpecificInput.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\EInvoicePaymentProduct9000SpecificOutput.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\ExternalCardholderAuthenticationData.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\InvoicePaymentMethodSpecificInput.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\InvoicePaymentMethodSpecificOutput.cs" />
@@ -259,6 +263,8 @@
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payout\Definitions\PayoutReferences.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payout\Definitions\PayoutResult.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Product\Directory.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Product\GetCustomerDetailsRequest.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Product\GetCustomerDetailsResponse.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Product\PaymentProductGroupResponse.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Product\PaymentProductGroups.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Product\PaymentProductNetworksResponse.cs" />
@@ -279,6 +285,7 @@
     <Compile Include="Ingenico\Connect\Sdk\Domain\Product\Definitions\PaymentProductDisplayHints.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Product\Definitions\PaymentProductField.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Product\Definitions\PaymentProductFieldDataRestrictions.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Product\Definitions\PaymentProductFieldDisplayElement.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Product\Definitions\PaymentProductFieldDisplayHints.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Product\Definitions\PaymentProductFieldFormElement.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Product\Definitions\PaymentProductFieldTooltip.cs" />

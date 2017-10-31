@@ -25,7 +25,7 @@ namespace Ingenico.Connect.Sdk.It
             using (Client client = GetClient())
             {
                 ServicesClient services = client
-                    .Merchant("9991")
+                    .Merchant(GetMerchantId())
                     .Services();
 
                 Assert.That(services, Is.TypeOf(typeof(ServicesClient)));

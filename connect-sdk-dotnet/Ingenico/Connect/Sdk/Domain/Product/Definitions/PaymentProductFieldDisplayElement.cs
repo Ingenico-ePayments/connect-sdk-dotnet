@@ -4,16 +4,12 @@
  */
 namespace Ingenico.Connect.Sdk.Domain.Product.Definitions
 {
-    public class PaymentProductField
+    public class PaymentProductFieldDisplayElement
     {
-        public PaymentProductFieldDataRestrictions DataRestrictions { get; set; } = null;
-
-        public PaymentProductFieldDisplayHints DisplayHints { get; set; } = null;
-
         public string Id { get; set; } = null;
 
         public string Type { get; set; } = null;
 
-        public bool? UsedForLookup { get; set; } = null;
+        public string Value { get; set; } = null;
     }
 }

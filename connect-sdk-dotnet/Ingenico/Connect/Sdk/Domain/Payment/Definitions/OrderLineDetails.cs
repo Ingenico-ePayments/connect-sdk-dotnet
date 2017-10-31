@@ -8,9 +8,13 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
     {
         public long? DiscountAmount { get; set; } = null;
 
+        public long? GoogleProductCategoryId { get; set; } = null;
+
         public long? LineAmountTotal { get; set; } = null;
 
         public string ProductCode { get; set; } = null;
+
+        public string ProductName { get; set; } = null;
 
         public long? ProductPrice { get; set; } = null;
 

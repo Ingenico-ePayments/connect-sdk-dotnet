@@ -25,7 +25,7 @@ namespace Ingenico.Connect.Sdk.It
                                .Select((requestNum) =>
                                           Factory.CreateClient(communicator)
                                           .WithClientMetaInfo("")
-                                          .Merchant("9991")
+                                          .Merchant(GetMerchantId())
                                           .Services()
                                           .ConvertAmount(
                                               new ConvertAmountParams

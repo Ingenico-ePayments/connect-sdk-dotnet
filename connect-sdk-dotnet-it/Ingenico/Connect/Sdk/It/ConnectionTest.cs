@@ -14,7 +14,7 @@ namespace Ingenico.Connect.Sdk.It
         {
             using (Client client = GetClient())
             {
-                await client.Merchant("9991").Services().Testconnection();
+                await client.Merchant(GetMerchantId()).Services().Testconnection();
             }
         }
     }

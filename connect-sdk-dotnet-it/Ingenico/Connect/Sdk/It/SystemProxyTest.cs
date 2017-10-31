@@ -25,7 +25,7 @@ namespace Ingenico.Connect.Sdk.It
             using (Client client = Factory.CreateClient(configuration))
             {
                 ConvertAmount response = await client
-                    .Merchant("9991")
+                    .Merchant(GetMerchantId())
                     .Services()
                     .ConvertAmount(request);
 

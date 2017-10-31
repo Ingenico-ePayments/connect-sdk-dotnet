@@ -22,7 +22,7 @@ namespace Ingenico.Connect.Sdk.It
             {
                 var l = Ingenico.Connect.Sdk.Logging.SystemConsoleCommunicatorLogger.Instance;
                 var response = await client
-                    .Merchant("2134")
+                    .Merchant(GetMerchantId())
                     .Sessions()
                     .Create(lParams);
             }

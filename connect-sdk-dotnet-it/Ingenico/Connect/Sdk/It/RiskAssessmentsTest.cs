@@ -38,7 +38,7 @@ namespace Ingenico.Connect.Sdk.It
             using (Client client = GetClient())
             {
                 RiskAssessmentResponse riskAssessmentResponse = await client
-                    .Merchant("8500")
+                    .Merchant(GetMerchantId())
                     .Riskassessments()
                     .Bankaccounts(body);
                 Assert.That(riskAssessmentResponse.Results, Is.Not.Empty);

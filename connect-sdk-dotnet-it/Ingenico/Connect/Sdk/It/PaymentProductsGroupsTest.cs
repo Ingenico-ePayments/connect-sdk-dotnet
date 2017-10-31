@@ -20,7 +20,7 @@ namespace Ingenico.Connect.Sdk.It
             using (Client client = GetClient())
             {
                 PaymentProductGroupResponse response = await client
-                    .Merchant("8500")
+                    .Merchant(GetMerchantId())
                     .Productgroups()
                     .Get("cards", lParams);
 

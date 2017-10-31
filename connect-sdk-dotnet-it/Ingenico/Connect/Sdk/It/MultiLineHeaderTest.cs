@@ -27,7 +27,7 @@ namespace Ingenico.Connect.Sdk.It
             using (Client client = Factory.CreateClient(session))
             {
                 Directory response = await client
-                    .Merchant("8500")
+                    .Merchant(GetMerchantId())
                     .Products()
                     .Directory(809, lParams);
 
@@ -52,7 +52,7 @@ namespace Ingenico.Connect.Sdk.It
             using (Client client = Factory.CreateClient(session))
             {
                 await client
-                    .Merchant("8500")
+                    .Merchant(GetMerchantId())
                     .Services()
                     .Testconnection();
             }

@@ -36,7 +36,7 @@ namespace Ingenico.Connect.Sdk.It
             using (Client client = GetClient())
             {
                 CreateTokenResponse createTokenResponse = await client
-                    .Merchant("9991")
+                    .Merchant(GetMerchantId())
                     .Tokens()
                     .Create(createTokenRequest);
 
@@ -45,7 +45,7 @@ namespace Ingenico.Connect.Sdk.It
                 DeleteTokenParams deleteTokenRequest = new DeleteTokenParams();
 
                 await client
-                    .Merchant("9991")
+                    .Merchant(GetMerchantId())
                     .Tokens()
                     .Delete(createTokenResponse.Token, deleteTokenRequest);
             }

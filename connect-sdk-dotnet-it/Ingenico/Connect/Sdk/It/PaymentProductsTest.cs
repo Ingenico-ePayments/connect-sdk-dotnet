@@ -20,7 +20,7 @@ namespace Ingenico.Connect.Sdk.It
             using (Client client = GetClient())
             {
                 Directory response = await client
-                    .Merchant("8500")
+                    .Merchant(GetMerchantId())
                     .Products()
                     .Directory(809, lParams);
 
