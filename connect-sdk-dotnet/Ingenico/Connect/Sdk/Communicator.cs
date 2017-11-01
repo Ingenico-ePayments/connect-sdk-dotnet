@@ -165,7 +165,7 @@ namespace Ingenico.Connect.Sdk
             }
 
             requestHeaders = AddGenericHeaders(HttpMethod.Put, uri, requestHeaderList, context);
-            Response response = await connection.Post(uri, requestHeaders, requestJson);
+            Response response = await connection.Put(uri, requestHeaders, requestJson);
             return ProcessResponse<T>(response, relativePath, context);
         }
         #endregion

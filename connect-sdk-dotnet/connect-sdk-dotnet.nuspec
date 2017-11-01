@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>connect-sdk-dotnet</id>
-    <version>2.12.0</version>
+    <version>2.12.1</version>
     <authors>Ingenico ePayments</authors>
     <owners>Ingenico ePayments</owners>
     <description>SDK to communicate with the Ingenico ePayments platform using the Ingenico Connect Server API</description>
