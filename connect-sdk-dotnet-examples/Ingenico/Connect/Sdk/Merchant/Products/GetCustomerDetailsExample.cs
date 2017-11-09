@@ -28,7 +28,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Products
                 body.CountryCode = "SE";
                 body.Values = values;
 
-                GetCustomerDetailsResponse response = await client.Merchant("merchantId").Products().CustomerDetails(1, body);
+                GetCustomerDetailsResponse response = await client.Merchant("merchantId").Products().CustomerDetails(9000, body);
             }
 #pragma warning restore 0168
         }

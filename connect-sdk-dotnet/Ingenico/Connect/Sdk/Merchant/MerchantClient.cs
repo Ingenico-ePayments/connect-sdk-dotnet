@@ -5,6 +5,7 @@
 using Ingenico.Connect.Sdk;
 using Ingenico.Connect.Sdk.Merchant.Captures;
 using Ingenico.Connect.Sdk.Merchant.Hostedcheckouts;
+using Ingenico.Connect.Sdk.Merchant.Mandates;
 using Ingenico.Connect.Sdk.Merchant.Payments;
 using Ingenico.Connect.Sdk.Merchant.Payouts;
 using Ingenico.Connect.Sdk.Merchant.Productgroups;
@@ -76,6 +77,16 @@ namespace Ingenico.Connect.Sdk.Merchant
         public ProductgroupsClient Productgroups()
         {
             return new ProductgroupsClient(this, null);
+        }
+
+        /// <summary>
+        /// Resource /{merchantId}/mandates
+        /// Create, get and update mandates
+        /// </summary>
+        /// <returns>MandatesClient</returns>
+        public MandatesClient Mandates()
+        {
+            return new MandatesClient(this, null);
         }
 
         /// <summary>

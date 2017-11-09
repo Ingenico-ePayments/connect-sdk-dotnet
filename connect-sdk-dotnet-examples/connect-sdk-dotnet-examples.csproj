@@ -8,7 +8,7 @@
     <RootNamespace>Ingenico.Connect.Sdk</RootNamespace>
     <AssemblyName>connect-sdk-dotnet-examples</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <ReleaseVersion>2.12.1</ReleaseVersion>
+    <ReleaseVersion>2.13.0</ReleaseVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -36,6 +36,11 @@
     <Compile Include="Ingenico\Connect\Sdk\Merchant\Captures\GetCaptureExample.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Merchant\Hostedcheckouts\CreateHostedCheckoutExample.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Merchant\Hostedcheckouts\GetHostedCheckoutExample.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Merchant\Mandates\BlockMandateExample.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Merchant\Mandates\CreateMandateExample.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Merchant\Mandates\GetMandateExample.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Merchant\Mandates\RevokeMandateExample.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Merchant\Mandates\UnblockMandateExample.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Merchant\Payments\ApprovePaymentExample.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Merchant\Payments\CancelApprovalPaymentExample.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Merchant\Payments\CancelPaymentExample.cs" />

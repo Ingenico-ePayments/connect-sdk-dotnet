@@ -2,16 +2,12 @@
  * This class was auto-generated from the API references found at
  * https://epayments-api.developer-ingenico.com/s2sapi/v1/
  */
-using Ingenico.Connect.Sdk.Domain.Definitions;
-
 namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
 {
-    public class EInvoicePaymentMethodSpecificInput : AbstractPaymentMethodSpecificInput
+    public class EInvoicePaymentMethodSpecificInput : EInvoicePaymentMethodSpecificInputBase
     {
         public bool? AcceptedTermsAndConditions { get; set; } = null;
 
         public EInvoicePaymentProduct9000SpecificInput PaymentProduct9000SpecificInput { get; set; } = null;
-
-        public bool? RequiresApproval { get; set; } = null;
     }
 }

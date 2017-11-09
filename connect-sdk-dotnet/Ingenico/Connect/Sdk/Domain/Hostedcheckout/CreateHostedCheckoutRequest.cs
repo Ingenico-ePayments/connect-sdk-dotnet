@@ -16,6 +16,8 @@ namespace Ingenico.Connect.Sdk.Domain.Hostedcheckout
 
         public CashPaymentMethodSpecificInputBase CashPaymentMethodSpecificInput { get; set; } = null;
 
+        public EInvoicePaymentMethodSpecificInputBase EInvoicePaymentMethodSpecificInput { get; set; } = null;
+
         public FraudFields FraudFields { get; set; } = null;
 
         public HostedCheckoutSpecificInput HostedCheckoutSpecificInput { get; set; } = null;
@@ -23,5 +25,7 @@ namespace Ingenico.Connect.Sdk.Domain.Hostedcheckout
         public Order Order { get; set; } = null;
 
         public RedirectPaymentMethodSpecificInputBase RedirectPaymentMethodSpecificInput { get; set; } = null;
+
+        public SepaDirectDebitPaymentMethodSpecificInputBase SepaDirectDebitPaymentMethodSpecificInput { get; set; } = null;
     }
 }

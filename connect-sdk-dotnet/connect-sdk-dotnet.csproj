@@ -8,7 +8,7 @@
     <RootNamespace>Ingenico.Connect.Sdk</RootNamespace>
     <AssemblyName>connect-sdk-dotnet</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <ReleaseVersion>2.12.1</ReleaseVersion>
+    <ReleaseVersion>2.13.0</ReleaseVersion>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>
@@ -136,6 +136,7 @@
     <Compile Include="Ingenico\Connect\Sdk\Domain\Definitions\OrderStatusOutput.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Definitions\PaymentProductFilter.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Definitions\PersonalNameBase.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Definitions\RedirectDataBase.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Definitions\ResultDoRiskAssessment.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Definitions\RetailDecisionsCCFraudCheckOutput.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Definitions\ValidationBankAccountCheck.cs" />
@@ -149,6 +150,18 @@
     <Compile Include="Ingenico\Connect\Sdk\Domain\Hostedcheckout\Definitions\DisplayedData.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Hostedcheckout\Definitions\HostedCheckoutSpecificInput.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Hostedcheckout\Definitions\PaymentProductFiltersHostedCheckout.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Mandates\CreateMandateRequest.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Mandates\CreateMandateResponse.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Mandates\GetMandateResponse.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Mandates\Definitions\CreateMandateBase.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Mandates\Definitions\MandateAddress.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Mandates\Definitions\MandateContactDetails.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Mandates\Definitions\MandateCustomer.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Mandates\Definitions\MandateMerchantAction.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Mandates\Definitions\MandatePersonalInformation.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Mandates\Definitions\MandatePersonalName.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Mandates\Definitions\MandateRedirectData.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Mandates\Definitions\MandateResponse.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Metadata\ShoppingCartExtension.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\ApprovePaymentRequest.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\CancelApprovalPaymentResponse.cs" />
@@ -193,6 +206,7 @@
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\Customer.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\DecryptedPaymentData.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\EInvoicePaymentMethodSpecificInput.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\EInvoicePaymentMethodSpecificInputBase.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\EInvoicePaymentMethodSpecificOutput.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\EInvoicePaymentProduct9000SpecificInput.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\EInvoicePaymentProduct9000SpecificOutput.cs" />
@@ -223,6 +237,7 @@
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\PaymentCreationOutput.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\PaymentCreationReferences.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\PaymentOutput.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\PaymentProduct771SpecificOutput.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\PaymentProduct836SpecificOutput.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\PaymentProduct840CustomerAccount.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\PaymentProduct840SpecificOutput.cs" />
@@ -247,8 +262,11 @@
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\RefundOutput.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\RefundPaymentProduct840CustomerAccount.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\RefundPaymentProduct840SpecificOutput.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\Seller.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\SepaDirectDebitPaymentMethodSpecificInput.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\SepaDirectDebitPaymentMethodSpecificInputBase.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\SepaDirectDebitPaymentMethodSpecificOutput.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\SepaDirectDebitPaymentProduct771SpecificInput.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\ShoppingCart.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\ThreeDSecureResults.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payout\ApprovePayoutRequest.cs" />
@@ -370,6 +388,7 @@
     <Compile Include="Ingenico\Connect\Sdk\Merchant\MerchantClient.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Merchant\Captures\CapturesClient.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Merchant\Hostedcheckouts\HostedcheckoutsClient.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Merchant\Mandates\MandatesClient.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Merchant\Payments\FindPaymentsParams.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Merchant\Payments\PaymentsClient.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Merchant\Payouts\FindPayoutsParams.cs" />

@@ -6,7 +6,8 @@ using Ingenico.Connect.Sdk.Domain.Definitions;
 
 namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
 {
-    public class RedirectData : RedirectDataBase
+    public class SepaDirectDebitPaymentMethodSpecificInputBase : AbstractPaymentMethodSpecificInput
     {
+        public SepaDirectDebitPaymentProduct771SpecificInput PaymentProduct771SpecificInput { get; set; } = null;
     }
 }

@@ -12,6 +12,8 @@ namespace Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions
 
         public PaymentProductFiltersHostedCheckout PaymentProductFilters { get; set; } = null;
 
+        public bool? ReturnCancelState { get; set; } = null;
+
         public string ReturnUrl { get; set; } = null;
 
         public bool? ShowResultPage { get; set; } = null;

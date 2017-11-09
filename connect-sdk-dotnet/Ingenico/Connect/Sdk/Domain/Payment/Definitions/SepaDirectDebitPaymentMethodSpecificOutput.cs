@@ -9,5 +9,7 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
     public class SepaDirectDebitPaymentMethodSpecificOutput : AbstractPaymentMethodSpecificOutput
     {
         public FraudResults FraudResults { get; set; } = null;
+
+        public PaymentProduct771SpecificOutput PaymentProduct771SpecificOutput { get; set; } = null;
     }
 }
