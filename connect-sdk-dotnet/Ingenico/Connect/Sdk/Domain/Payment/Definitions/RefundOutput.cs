@@ -12,6 +12,8 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
 
         public RefundCardMethodSpecificOutput CardRefundMethodSpecificOutput { get; set; } = null;
 
+        public RefundEInvoiceMethodSpecificOutput EInvoiceRefundMethodSpecificOutput { get; set; } = null;
+
         public RefundEWalletMethodSpecificOutput EWalletRefundMethodSpecificOutput { get; set; } = null;
 
         public RefundMobileMethodSpecificOutput MobileRefundMethodSpecificOutput { get; set; } = null;
