@@ -6,8 +6,8 @@ using Ingenico.Connect.Sdk.Domain.Mandates.Definitions;
 
 namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
 {
-    public class SepaDirectDebitPaymentProduct771SpecificInput : AbstractSepaDirectDebitPaymentProduct771SpecificInput
+    public class SepaDirectDebitPaymentProduct771SpecificInputBase : AbstractSepaDirectDebitPaymentProduct771SpecificInput
     {
-        public CreateMandateWithReturnUrl Mandate { get; set; } = null;
+        public CreateMandateBase Mandate { get; set; } = null;
     }
 }

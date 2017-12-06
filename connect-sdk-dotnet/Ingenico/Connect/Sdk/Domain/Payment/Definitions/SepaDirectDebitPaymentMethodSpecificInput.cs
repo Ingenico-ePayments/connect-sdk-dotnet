@@ -4,13 +4,15 @@
  */
 namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
 {
-    public class SepaDirectDebitPaymentMethodSpecificInput : SepaDirectDebitPaymentMethodSpecificInputBase
+    public class SepaDirectDebitPaymentMethodSpecificInput : AbstractSepaDirectDebitPaymentMethodSpecificInput
     {
         public string DateCollect { get; set; } = null;
 
         public string DirectDebitText { get; set; } = null;
 
         public bool? IsRecurring { get; set; } = null;
+
+        public SepaDirectDebitPaymentProduct771SpecificInput PaymentProduct771SpecificInput { get; set; } = null;
 
         public string RecurringPaymentSequenceIndicator { get; set; } = null;
 

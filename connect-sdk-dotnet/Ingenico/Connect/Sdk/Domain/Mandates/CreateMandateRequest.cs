@@ -6,7 +6,7 @@ using Ingenico.Connect.Sdk.Domain.Mandates.Definitions;
 
 namespace Ingenico.Connect.Sdk.Domain.Mandates
 {
-    public class CreateMandateRequest : CreateMandateBase
+    public class CreateMandateRequest : CreateMandateWithReturnUrl
     {
     }
 }

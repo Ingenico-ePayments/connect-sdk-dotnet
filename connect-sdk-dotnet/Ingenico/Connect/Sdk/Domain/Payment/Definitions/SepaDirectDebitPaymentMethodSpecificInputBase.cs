@@ -2,12 +2,10 @@
  * This class was auto-generated from the API references found at
  * https://epayments-api.developer-ingenico.com/s2sapi/v1/
  */
-using Ingenico.Connect.Sdk.Domain.Definitions;
-
 namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
 {
-    public class SepaDirectDebitPaymentMethodSpecificInputBase : AbstractPaymentMethodSpecificInput
+    public class SepaDirectDebitPaymentMethodSpecificInputBase : AbstractSepaDirectDebitPaymentMethodSpecificInput
     {
-        public SepaDirectDebitPaymentProduct771SpecificInput PaymentProduct771SpecificInput { get; set; } = null;
+        public SepaDirectDebitPaymentProduct771SpecificInputBase PaymentProduct771SpecificInput { get; set; } = null;
     }
 }

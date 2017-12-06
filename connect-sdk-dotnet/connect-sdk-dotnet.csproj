@@ -8,7 +8,7 @@
     <RootNamespace>Ingenico.Connect.Sdk</RootNamespace>
     <AssemblyName>connect-sdk-dotnet</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <ReleaseVersion>2.14.0</ReleaseVersion>
+    <ReleaseVersion>2.15.0</ReleaseVersion>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>
@@ -154,6 +154,7 @@
     <Compile Include="Ingenico\Connect\Sdk\Domain\Mandates\CreateMandateResponse.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Mandates\GetMandateResponse.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Mandates\Definitions\CreateMandateBase.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Mandates\Definitions\CreateMandateWithReturnUrl.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Mandates\Definitions\MandateAddress.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Mandates\Definitions\MandateContactDetails.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Mandates\Definitions\MandateCustomer.cs" />
@@ -178,6 +179,8 @@
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\ThirdPartyStatusResponse.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\TokenizePaymentRequest.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\AbstractPaymentMethodSpecificOutput.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\AbstractSepaDirectDebitPaymentMethodSpecificInput.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\AbstractSepaDirectDebitPaymentProduct771SpecificInput.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\AdditionalOrderInput.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\AddressPersonal.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\AmountBreakdown.cs" />
@@ -268,6 +271,7 @@
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\SepaDirectDebitPaymentMethodSpecificInputBase.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\SepaDirectDebitPaymentMethodSpecificOutput.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\SepaDirectDebitPaymentProduct771SpecificInput.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\SepaDirectDebitPaymentProduct771SpecificInputBase.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\ShoppingCart.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payment\Definitions\ThreeDSecureResults.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Payout\ApprovePayoutRequest.cs" />
