@@ -8,6 +8,10 @@ namespace Ingenico.Connect.Sdk.Domain.Sessions
 {
     public class SessionResponse
     {
+        public string AssetUrl { get; set; } = null;
+
+        public string ClientApiUrl { get; set; } = null;
+
         public string ClientSessionId { get; set; } = null;
 
         public string CustomerId { get; set; } = null;

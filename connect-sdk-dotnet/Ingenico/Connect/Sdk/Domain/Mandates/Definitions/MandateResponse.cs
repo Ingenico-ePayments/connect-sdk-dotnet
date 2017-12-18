@@ -6,6 +6,8 @@ namespace Ingenico.Connect.Sdk.Domain.Mandates.Definitions
 {
     public class MandateResponse
     {
+        public string Alias { get; set; } = null;
+
         public MandateCustomer Customer { get; set; } = null;
 
         public string CustomerReference { get; set; } = null;

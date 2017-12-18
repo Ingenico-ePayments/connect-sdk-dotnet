@@ -8,6 +8,8 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
 {
     public class Payment : AbstractOrderStatus
     {
+        public HostedCheckoutSpecificOutput HostedCheckoutSpecificOutput { get; set; } = null;
+
         public PaymentOutput PaymentOutput { get; set; } = null;
 
         public string Status { get; set; } = null;

@@ -10,6 +10,8 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
     {
         public BankAccountIban BankAccountIban { get; set; } = null;
 
+        public FraudResults FraudResults { get; set; } = null;
+
         public PaymentProduct836SpecificOutput PaymentProduct836SpecificOutput { get; set; } = null;
 
         public PaymentProduct840SpecificOutput PaymentProduct840SpecificOutput { get; set; } = null;

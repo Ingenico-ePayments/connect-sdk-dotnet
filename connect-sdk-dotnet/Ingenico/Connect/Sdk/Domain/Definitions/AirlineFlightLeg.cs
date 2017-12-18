@@ -26,6 +26,8 @@ namespace Ingenico.Connect.Sdk.Domain.Definitions
 
         public string OriginAirport { get; set; } = null;
 
+        public string ServiceClass { get; set; } = null;
+
         public string StopoverCode { get; set; } = null;
     }
 }

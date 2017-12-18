@@ -34,6 +34,8 @@ namespace Ingenico.Connect.Sdk.Domain.Definitions
 
         public string PassengerName { get; set; } = null;
 
+        public IList<AirlinePassenger> Passengers { get; set; } = null;
+
         public string PlaceOfIssue { get; set; } = null;
 
         public string Pnr { get; set; } = null;
