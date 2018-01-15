@@ -18,7 +18,9 @@ namespace Ingenico.Connect.Sdk.Domain.Definitions
 
         public string DefaultFormFill { get; set; } = null;
 
-        public bool? FingerPrintActivated { get; set; } = null;
+        public bool? DeviceFingerprintActivated { get; set; } = null;
+
+        public string DeviceFingerprintTransactionId { get; set; } = null;
 
         public string GiftCardType { get; set; } = null;
 

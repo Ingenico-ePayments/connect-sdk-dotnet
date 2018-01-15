@@ -30,6 +30,16 @@ namespace Ingenico.Connect.Sdk.Merchant
         }
 
         /// <summary>
+        /// Resource /{merchantId}/hostedcheckouts
+        /// Create new hosted checkout
+        /// </summary>
+        /// <returns>HostedcheckoutsClient</returns>
+        public HostedcheckoutsClient Hostedcheckouts()
+        {
+            return new HostedcheckoutsClient(this, null);
+        }
+
+        /// <summary>
         /// Resource /{merchantId}/payments
         /// Create, cancel and approve payments
         /// </summary>
@@ -50,6 +60,16 @@ namespace Ingenico.Connect.Sdk.Merchant
         }
 
         /// <summary>
+        /// Resource /{merchantId}/refunds
+        /// Create, cancel and approve refunds
+        /// </summary>
+        /// <returns>RefundsClient</returns>
+        public RefundsClient Refunds()
+        {
+            return new RefundsClient(this, null);
+        }
+
+        /// <summary>
         /// Resource /{merchantId}/payouts
         /// Create, cancel and approve payouts
         /// </summary>
@@ -57,16 +77,6 @@ namespace Ingenico.Connect.Sdk.Merchant
         public PayoutsClient Payouts()
         {
             return new PayoutsClient(this, null);
-        }
-
-        /// <summary>
-        /// Resource /{merchantId}/products
-        /// Get information about payment products
-        /// </summary>
-        /// <returns>ProductsClient</returns>
-        public ProductsClient Products()
-        {
-            return new ProductsClient(this, null);
         }
 
         /// <summary>
@@ -80,23 +90,13 @@ namespace Ingenico.Connect.Sdk.Merchant
         }
 
         /// <summary>
-        /// Resource /{merchantId}/mandates
-        /// Create, get and update mandates
+        /// Resource /{merchantId}/products
+        /// Get information about payment products
         /// </summary>
-        /// <returns>MandatesClient</returns>
-        public MandatesClient Mandates()
+        /// <returns>ProductsClient</returns>
+        public ProductsClient Products()
         {
-            return new MandatesClient(this, null);
-        }
-
-        /// <summary>
-        /// Resource /{merchantId}/refunds
-        /// Create, cancel and approve refunds
-        /// </summary>
-        /// <returns>RefundsClient</returns>
-        public RefundsClient Refunds()
-        {
-            return new RefundsClient(this, null);
+            return new ProductsClient(this, null);
         }
 
         /// <summary>
@@ -120,16 +120,6 @@ namespace Ingenico.Connect.Sdk.Merchant
         }
 
         /// <summary>
-        /// Resource /{merchantId}/sessions
-        /// Create new Session for Client2Server API calls
-        /// </summary>
-        /// <returns>SessionsClient</returns>
-        public SessionsClient Sessions()
-        {
-            return new SessionsClient(this, null);
-        }
-
-        /// <summary>
         /// Resource /{merchantId}/tokens
         /// Create, delete and update tokens
         /// </summary>
@@ -140,13 +130,23 @@ namespace Ingenico.Connect.Sdk.Merchant
         }
 
         /// <summary>
-        /// Resource /{merchantId}/hostedcheckouts
-        /// Create new hosted checkout
+        /// Resource /{merchantId}/mandates
+        /// Create, get and update mandates
         /// </summary>
-        /// <returns>HostedcheckoutsClient</returns>
-        public HostedcheckoutsClient Hostedcheckouts()
+        /// <returns>MandatesClient</returns>
+        public MandatesClient Mandates()
         {
-            return new HostedcheckoutsClient(this, null);
+            return new MandatesClient(this, null);
+        }
+
+        /// <summary>
+        /// Resource /{merchantId}/sessions
+        /// Create new Session for Client2Server API calls
+        /// </summary>
+        /// <returns>SessionsClient</returns>
+        public SessionsClient Sessions()
+        {
+            return new SessionsClient(this, null);
         }
     }
 }

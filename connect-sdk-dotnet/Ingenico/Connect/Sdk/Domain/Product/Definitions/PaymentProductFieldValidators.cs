@@ -21,5 +21,7 @@ namespace Ingenico.Connect.Sdk.Domain.Product.Definitions
         public RangeValidator Range { get; set; } = null;
 
         public RegularExpressionValidator RegularExpression { get; set; } = null;
+
+        public EmptyValidator TermsAndConditions { get; set; } = null;
     }
 }

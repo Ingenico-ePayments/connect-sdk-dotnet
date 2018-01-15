@@ -20,6 +20,8 @@ namespace Ingenico.Connect.Sdk.Domain.Product.Definitions
 
         public bool? CanBeIframed { get; set; } = null;
 
+        public bool? DeviceFingerprintEnabled { get; set; } = null;
+
         public PaymentProductDisplayHints DisplayHints { get; set; } = null;
 
         public IList<PaymentProductField> Fields { get; set; } = null;

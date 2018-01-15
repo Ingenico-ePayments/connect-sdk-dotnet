@@ -26,40 +26,6 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
 
         /// <summary>
         /// Resource /{merchantId}/payments
-        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/payments/find.html">Find payments</a>
-        /// </summary>
-        /// <param name="query">FindPaymentsParams</param>
-        /// <param name="context">CallContext</param>
-        /// <returns>FindPaymentsResponse</returns>
-        /// <exception cref="ValidationException">if the request was not correct and couldn't be processed (HTTP status code BadRequest)</exception>
-        /// <exception cref="AuthorizationException">if the request was not allowed (HTTP status code Forbidden)</exception>
-        /// <exception cref="IdempotenceException">if an idempotent request caused a conflict (HTTP status code Conflict)</exception>
-        /// <exception cref="ReferenceException">if an object was attempted to be referenced that doesn't exist or has been removed,
-        ///            or there was a conflict (HTTP status code NotFound, Conflict or Gone)</exception>
-        /// <exception cref="GlobalCollectException">if something went wrong at the Ingenico ePayments platform,
-        ///            the Ingenico ePayments platform was unable to process a message from a downstream partner/acquirer,
-        ///            or the service that you're trying to reach is temporary unavailable (HTTP status code InternalServerError, BadGateway or ServiceUnavailable)</exception>
-        /// <exception cref="ApiException">if the Ingenico ePayments platform returned any other error</exception>
-        public async Task<FindPaymentsResponse> Find(FindPaymentsParams query, CallContext context = null)
-        {
-            string uri = InstantiateUri("/{apiVersion}/{merchantId}/payments", null);
-            try
-            {
-                return await _communicator.Get<FindPaymentsResponse>(
-                        uri,
-                        ClientHeaders,
-                        query,
-                        context);
-            }
-            catch (ResponseException e)
-            {
-                object errorObject = _communicator.Marshaller.Unmarshal<ErrorResponse>(e.Body);
-                throw CreateException(e.StatusCode, e.Body, errorObject, context);
-            }
-        }
-
-        /// <summary>
-        /// Resource /{merchantId}/payments
         /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/payments/create.html">Create payment</a>
         /// </summary>
         /// <param name="body">CreatePaymentRequest</param>
@@ -116,6 +82,40 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
         }
 
         /// <summary>
+        /// Resource /{merchantId}/payments
+        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/payments/find.html">Find payments</a>
+        /// </summary>
+        /// <param name="query">FindPaymentsParams</param>
+        /// <param name="context">CallContext</param>
+        /// <returns>FindPaymentsResponse</returns>
+        /// <exception cref="ValidationException">if the request was not correct and couldn't be processed (HTTP status code BadRequest)</exception>
+        /// <exception cref="AuthorizationException">if the request was not allowed (HTTP status code Forbidden)</exception>
+        /// <exception cref="IdempotenceException">if an idempotent request caused a conflict (HTTP status code Conflict)</exception>
+        /// <exception cref="ReferenceException">if an object was attempted to be referenced that doesn't exist or has been removed,
+        ///            or there was a conflict (HTTP status code NotFound, Conflict or Gone)</exception>
+        /// <exception cref="GlobalCollectException">if something went wrong at the Ingenico ePayments platform,
+        ///            the Ingenico ePayments platform was unable to process a message from a downstream partner/acquirer,
+        ///            or the service that you're trying to reach is temporary unavailable (HTTP status code InternalServerError, BadGateway or ServiceUnavailable)</exception>
+        /// <exception cref="ApiException">if the Ingenico ePayments platform returned any other error</exception>
+        public async Task<FindPaymentsResponse> Find(FindPaymentsParams query, CallContext context = null)
+        {
+            string uri = InstantiateUri("/{apiVersion}/{merchantId}/payments", null);
+            try
+            {
+                return await _communicator.Get<FindPaymentsResponse>(
+                        uri,
+                        ClientHeaders,
+                        query,
+                        context);
+            }
+            catch (ResponseException e)
+            {
+                object errorObject = _communicator.Marshaller.Unmarshal<ErrorResponse>(e.Body);
+                throw CreateException(e.StatusCode, e.Body, errorObject, context);
+            }
+        }
+
+        /// <summary>
         /// Resource /{merchantId}/payments/{paymentId}
         /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/payments/get.html">Get payment</a>
         /// </summary>
@@ -139,118 +139,6 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
             try
             {
                 return await _communicator.Get<PaymentResponse>(
-                        uri,
-                        ClientHeaders,
-                        null,
-                        context);
-            }
-            catch (ResponseException e)
-            {
-                object errorObject = _communicator.Marshaller.Unmarshal<ErrorResponse>(e.Body);
-                throw CreateException(e.StatusCode, e.Body, errorObject, context);
-            }
-        }
-
-        /// <summary>
-        /// Resource /{merchantId}/payments/{paymentId}/approve
-        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/payments/approve.html">Approve payment</a>
-        /// </summary>
-        /// <param name="paymentId">string</param>
-        /// <param name="body">ApprovePaymentRequest</param>
-        /// <param name="context">CallContext</param>
-        /// <returns>PaymentApprovalResponse</returns>
-        /// <exception cref="ValidationException">if the request was not correct and couldn't be processed (HTTP status code BadRequest)</exception>
-        /// <exception cref="AuthorizationException">if the request was not allowed (HTTP status code Forbidden)</exception>
-        /// <exception cref="IdempotenceException">if an idempotent request caused a conflict (HTTP status code Conflict)</exception>
-        /// <exception cref="ReferenceException">if an object was attempted to be referenced that doesn't exist or has been removed,
-        ///            or there was a conflict (HTTP status code NotFound, Conflict or Gone)</exception>
-        /// <exception cref="GlobalCollectException">if something went wrong at the Ingenico ePayments platform,
-        ///            the Ingenico ePayments platform was unable to process a message from a downstream partner/acquirer,
-        ///            or the service that you're trying to reach is temporary unavailable (HTTP status code InternalServerError, BadGateway or ServiceUnavailable)</exception>
-        /// <exception cref="ApiException">if the Ingenico ePayments platform returned any other error</exception>
-        public async Task<PaymentApprovalResponse> Approve(string paymentId, ApprovePaymentRequest body, CallContext context = null)
-        {
-            IDictionary<string, string> pathContext = new Dictionary<string, string>();
-            pathContext.Add("paymentId", paymentId);
-            string uri = InstantiateUri("/{apiVersion}/{merchantId}/payments/{paymentId}/approve", pathContext);
-            try
-            {
-                return await _communicator.Post<PaymentApprovalResponse>(
-                        uri,
-                        ClientHeaders,
-                        null,
-                        body,
-                        context);
-            }
-            catch (ResponseException e)
-            {
-                object errorObject = _communicator.Marshaller.Unmarshal<ErrorResponse>(e.Body);
-                throw CreateException(e.StatusCode, e.Body, errorObject, context);
-            }
-        }
-
-        /// <summary>
-        /// Resource /{merchantId}/payments/{paymentId}/capture
-        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/payments/capture.html">Capture payment</a>
-        /// </summary>
-        /// <param name="paymentId">string</param>
-        /// <param name="body">CapturePaymentRequest</param>
-        /// <param name="context">CallContext</param>
-        /// <returns>CaptureResponse</returns>
-        /// <exception cref="ValidationException">if the request was not correct and couldn't be processed (HTTP status code BadRequest)</exception>
-        /// <exception cref="AuthorizationException">if the request was not allowed (HTTP status code Forbidden)</exception>
-        /// <exception cref="IdempotenceException">if an idempotent request caused a conflict (HTTP status code Conflict)</exception>
-        /// <exception cref="ReferenceException">if an object was attempted to be referenced that doesn't exist or has been removed,
-        ///            or there was a conflict (HTTP status code NotFound, Conflict or Gone)</exception>
-        /// <exception cref="GlobalCollectException">if something went wrong at the Ingenico ePayments platform,
-        ///            the Ingenico ePayments platform was unable to process a message from a downstream partner/acquirer,
-        ///            or the service that you're trying to reach is temporary unavailable (HTTP status code InternalServerError, BadGateway or ServiceUnavailable)</exception>
-        /// <exception cref="ApiException">if the Ingenico ePayments platform returned any other error</exception>
-        public async Task<CaptureResponse> Capture(string paymentId, CapturePaymentRequest body, CallContext context = null)
-        {
-            IDictionary<string, string> pathContext = new Dictionary<string, string>();
-            pathContext.Add("paymentId", paymentId);
-            string uri = InstantiateUri("/{apiVersion}/{merchantId}/payments/{paymentId}/capture", pathContext);
-            try
-            {
-                return await _communicator.Post<CaptureResponse>(
-                        uri,
-                        ClientHeaders,
-                        null,
-                        body,
-                        context);
-            }
-            catch (ResponseException e)
-            {
-                object errorObject = _communicator.Marshaller.Unmarshal<ErrorResponse>(e.Body);
-                throw CreateException(e.StatusCode, e.Body, errorObject, context);
-            }
-        }
-
-        /// <summary>
-        /// Resource /{merchantId}/payments/{paymentId}/captures
-        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/payments/captures.html">Get captures of payment</a>
-        /// </summary>
-        /// <param name="paymentId">string</param>
-        /// <param name="context">CallContext</param>
-        /// <returns>CapturesResponse</returns>
-        /// <exception cref="ValidationException">if the request was not correct and couldn't be processed (HTTP status code BadRequest)</exception>
-        /// <exception cref="AuthorizationException">if the request was not allowed (HTTP status code Forbidden)</exception>
-        /// <exception cref="IdempotenceException">if an idempotent request caused a conflict (HTTP status code Conflict)</exception>
-        /// <exception cref="ReferenceException">if an object was attempted to be referenced that doesn't exist or has been removed,
-        ///            or there was a conflict (HTTP status code NotFound, Conflict or Gone)</exception>
-        /// <exception cref="GlobalCollectException">if something went wrong at the Ingenico ePayments platform,
-        ///            the Ingenico ePayments platform was unable to process a message from a downstream partner/acquirer,
-        ///            or the service that you're trying to reach is temporary unavailable (HTTP status code InternalServerError, BadGateway or ServiceUnavailable)</exception>
-        /// <exception cref="ApiException">if the Ingenico ePayments platform returned any other error</exception>
-        public async Task<CapturesResponse> Captures(string paymentId, CallContext context = null)
-        {
-            IDictionary<string, string> pathContext = new Dictionary<string, string>();
-            pathContext.Add("paymentId", paymentId);
-            string uri = InstantiateUri("/{apiVersion}/{merchantId}/payments/{paymentId}/captures", pathContext);
-            try
-            {
-                return await _communicator.Get<CapturesResponse>(
                         uri,
                         ClientHeaders,
                         null,
@@ -338,12 +226,13 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
         }
 
         /// <summary>
-        /// Resource /{merchantId}/payments/{paymentId}/cancel
-        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/payments/cancel.html">Cancel payment</a>
+        /// Resource /{merchantId}/payments/{paymentId}/tokenize
+        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/payments/tokenize.html">Create a token from payment</a>
         /// </summary>
         /// <param name="paymentId">string</param>
+        /// <param name="body">TokenizePaymentRequest</param>
         /// <param name="context">CallContext</param>
-        /// <returns>CancelPaymentResponse</returns>
+        /// <returns>CreateTokenResponse</returns>
         /// <exception cref="ValidationException">if the request was not correct and couldn't be processed (HTTP status code BadRequest)</exception>
         /// <exception cref="AuthorizationException">if the request was not allowed (HTTP status code Forbidden)</exception>
         /// <exception cref="IdempotenceException">if an idempotent request caused a conflict (HTTP status code Conflict)</exception>
@@ -353,18 +242,131 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
         ///            the Ingenico ePayments platform was unable to process a message from a downstream partner/acquirer,
         ///            or the service that you're trying to reach is temporary unavailable (HTTP status code InternalServerError, BadGateway or ServiceUnavailable)</exception>
         /// <exception cref="ApiException">if the Ingenico ePayments platform returned any other error</exception>
-        public async Task<CancelPaymentResponse> Cancel(string paymentId, CallContext context = null)
+        public async Task<CreateTokenResponse> Tokenize(string paymentId, TokenizePaymentRequest body, CallContext context = null)
         {
             IDictionary<string, string> pathContext = new Dictionary<string, string>();
             pathContext.Add("paymentId", paymentId);
-            string uri = InstantiateUri("/{apiVersion}/{merchantId}/payments/{paymentId}/cancel", pathContext);
+            string uri = InstantiateUri("/{apiVersion}/{merchantId}/payments/{paymentId}/tokenize", pathContext);
             try
             {
-                return await _communicator.Post<CancelPaymentResponse>(
+                return await _communicator.Post<CreateTokenResponse>(
+                        uri,
+                        ClientHeaders,
+                        null,
+                        body,
+                        context);
+            }
+            catch (ResponseException e)
+            {
+                object errorObject = _communicator.Marshaller.Unmarshal<ErrorResponse>(e.Body);
+                throw CreateException(e.StatusCode, e.Body, errorObject, context);
+            }
+        }
+
+        /// <summary>
+        /// Resource /{merchantId}/payments/{paymentId}/processchallenged
+        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/payments/processchallenged.html">Approves challenged payment</a>
+        /// </summary>
+        /// <param name="paymentId">string</param>
+        /// <param name="context">CallContext</param>
+        /// <returns>PaymentResponse</returns>
+        /// <exception cref="ValidationException">if the request was not correct and couldn't be processed (HTTP status code BadRequest)</exception>
+        /// <exception cref="AuthorizationException">if the request was not allowed (HTTP status code Forbidden)</exception>
+        /// <exception cref="IdempotenceException">if an idempotent request caused a conflict (HTTP status code Conflict)</exception>
+        /// <exception cref="ReferenceException">if an object was attempted to be referenced that doesn't exist or has been removed,
+        ///            or there was a conflict (HTTP status code NotFound, Conflict or Gone)</exception>
+        /// <exception cref="GlobalCollectException">if something went wrong at the Ingenico ePayments platform,
+        ///            the Ingenico ePayments platform was unable to process a message from a downstream partner/acquirer,
+        ///            or the service that you're trying to reach is temporary unavailable (HTTP status code InternalServerError, BadGateway or ServiceUnavailable)</exception>
+        /// <exception cref="ApiException">if the Ingenico ePayments platform returned any other error</exception>
+        public async Task<PaymentResponse> Processchallenged(string paymentId, CallContext context = null)
+        {
+            IDictionary<string, string> pathContext = new Dictionary<string, string>();
+            pathContext.Add("paymentId", paymentId);
+            string uri = InstantiateUri("/{apiVersion}/{merchantId}/payments/{paymentId}/processchallenged", pathContext);
+            try
+            {
+                return await _communicator.Post<PaymentResponse>(
                         uri,
                         ClientHeaders,
                         null,
                         null,
+                        context);
+            }
+            catch (ResponseException e)
+            {
+                object errorObject = _communicator.Marshaller.Unmarshal<ErrorResponse>(e.Body);
+                throw CreateException(e.StatusCode, e.Body, errorObject, context);
+            }
+        }
+
+        /// <summary>
+        /// Resource /{merchantId}/payments/{paymentId}/approve
+        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/payments/approve.html">Approve payment</a>
+        /// </summary>
+        /// <param name="paymentId">string</param>
+        /// <param name="body">ApprovePaymentRequest</param>
+        /// <param name="context">CallContext</param>
+        /// <returns>PaymentApprovalResponse</returns>
+        /// <exception cref="ValidationException">if the request was not correct and couldn't be processed (HTTP status code BadRequest)</exception>
+        /// <exception cref="AuthorizationException">if the request was not allowed (HTTP status code Forbidden)</exception>
+        /// <exception cref="IdempotenceException">if an idempotent request caused a conflict (HTTP status code Conflict)</exception>
+        /// <exception cref="ReferenceException">if an object was attempted to be referenced that doesn't exist or has been removed,
+        ///            or there was a conflict (HTTP status code NotFound, Conflict or Gone)</exception>
+        /// <exception cref="GlobalCollectException">if something went wrong at the Ingenico ePayments platform,
+        ///            the Ingenico ePayments platform was unable to process a message from a downstream partner/acquirer,
+        ///            or the service that you're trying to reach is temporary unavailable (HTTP status code InternalServerError, BadGateway or ServiceUnavailable)</exception>
+        /// <exception cref="ApiException">if the Ingenico ePayments platform returned any other error</exception>
+        public async Task<PaymentApprovalResponse> Approve(string paymentId, ApprovePaymentRequest body, CallContext context = null)
+        {
+            IDictionary<string, string> pathContext = new Dictionary<string, string>();
+            pathContext.Add("paymentId", paymentId);
+            string uri = InstantiateUri("/{apiVersion}/{merchantId}/payments/{paymentId}/approve", pathContext);
+            try
+            {
+                return await _communicator.Post<PaymentApprovalResponse>(
+                        uri,
+                        ClientHeaders,
+                        null,
+                        body,
+                        context);
+            }
+            catch (ResponseException e)
+            {
+                object errorObject = _communicator.Marshaller.Unmarshal<ErrorResponse>(e.Body);
+                throw CreateException(e.StatusCode, e.Body, errorObject, context);
+            }
+        }
+
+        /// <summary>
+        /// Resource /{merchantId}/payments/{paymentId}/capture
+        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/payments/capture.html">Capture payment</a>
+        /// </summary>
+        /// <param name="paymentId">string</param>
+        /// <param name="body">CapturePaymentRequest</param>
+        /// <param name="context">CallContext</param>
+        /// <returns>CaptureResponse</returns>
+        /// <exception cref="ValidationException">if the request was not correct and couldn't be processed (HTTP status code BadRequest)</exception>
+        /// <exception cref="AuthorizationException">if the request was not allowed (HTTP status code Forbidden)</exception>
+        /// <exception cref="IdempotenceException">if an idempotent request caused a conflict (HTTP status code Conflict)</exception>
+        /// <exception cref="ReferenceException">if an object was attempted to be referenced that doesn't exist or has been removed,
+        ///            or there was a conflict (HTTP status code NotFound, Conflict or Gone)</exception>
+        /// <exception cref="GlobalCollectException">if something went wrong at the Ingenico ePayments platform,
+        ///            the Ingenico ePayments platform was unable to process a message from a downstream partner/acquirer,
+        ///            or the service that you're trying to reach is temporary unavailable (HTTP status code InternalServerError, BadGateway or ServiceUnavailable)</exception>
+        /// <exception cref="ApiException">if the Ingenico ePayments platform returned any other error</exception>
+        public async Task<CaptureResponse> Capture(string paymentId, CapturePaymentRequest body, CallContext context = null)
+        {
+            IDictionary<string, string> pathContext = new Dictionary<string, string>();
+            pathContext.Add("paymentId", paymentId);
+            string uri = InstantiateUri("/{apiVersion}/{merchantId}/payments/{paymentId}/capture", pathContext);
+            try
+            {
+                return await _communicator.Post<CaptureResponse>(
+                        uri,
+                        ClientHeaders,
+                        null,
+                        body,
                         context);
             }
             catch (ResponseException e)
@@ -412,12 +414,12 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
         }
 
         /// <summary>
-        /// Resource /{merchantId}/payments/{paymentId}/processchallenged
-        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/payments/processchallenged.html">Approves challenged payment</a>
+        /// Resource /{merchantId}/payments/{paymentId}/captures
+        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/payments/captures.html">Get captures of payment</a>
         /// </summary>
         /// <param name="paymentId">string</param>
         /// <param name="context">CallContext</param>
-        /// <returns>PaymentResponse</returns>
+        /// <returns>CapturesResponse</returns>
         /// <exception cref="ValidationException">if the request was not correct and couldn't be processed (HTTP status code BadRequest)</exception>
         /// <exception cref="AuthorizationException">if the request was not allowed (HTTP status code Forbidden)</exception>
         /// <exception cref="IdempotenceException">if an idempotent request caused a conflict (HTTP status code Conflict)</exception>
@@ -427,17 +429,16 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
         ///            the Ingenico ePayments platform was unable to process a message from a downstream partner/acquirer,
         ///            or the service that you're trying to reach is temporary unavailable (HTTP status code InternalServerError, BadGateway or ServiceUnavailable)</exception>
         /// <exception cref="ApiException">if the Ingenico ePayments platform returned any other error</exception>
-        public async Task<PaymentResponse> Processchallenged(string paymentId, CallContext context = null)
+        public async Task<CapturesResponse> Captures(string paymentId, CallContext context = null)
         {
             IDictionary<string, string> pathContext = new Dictionary<string, string>();
             pathContext.Add("paymentId", paymentId);
-            string uri = InstantiateUri("/{apiVersion}/{merchantId}/payments/{paymentId}/processchallenged", pathContext);
+            string uri = InstantiateUri("/{apiVersion}/{merchantId}/payments/{paymentId}/captures", pathContext);
             try
             {
-                return await _communicator.Post<PaymentResponse>(
+                return await _communicator.Get<CapturesResponse>(
                         uri,
                         ClientHeaders,
-                        null,
                         null,
                         context);
             }
@@ -500,13 +501,12 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
         }
 
         /// <summary>
-        /// Resource /{merchantId}/payments/{paymentId}/tokenize
-        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/payments/tokenize.html">Create a token from payment</a>
+        /// Resource /{merchantId}/payments/{paymentId}/cancel
+        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/payments/cancel.html">Cancel payment</a>
         /// </summary>
         /// <param name="paymentId">string</param>
-        /// <param name="body">TokenizePaymentRequest</param>
         /// <param name="context">CallContext</param>
-        /// <returns>CreateTokenResponse</returns>
+        /// <returns>CancelPaymentResponse</returns>
         /// <exception cref="ValidationException">if the request was not correct and couldn't be processed (HTTP status code BadRequest)</exception>
         /// <exception cref="AuthorizationException">if the request was not allowed (HTTP status code Forbidden)</exception>
         /// <exception cref="IdempotenceException">if an idempotent request caused a conflict (HTTP status code Conflict)</exception>
@@ -516,18 +516,18 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
         ///            the Ingenico ePayments platform was unable to process a message from a downstream partner/acquirer,
         ///            or the service that you're trying to reach is temporary unavailable (HTTP status code InternalServerError, BadGateway or ServiceUnavailable)</exception>
         /// <exception cref="ApiException">if the Ingenico ePayments platform returned any other error</exception>
-        public async Task<CreateTokenResponse> Tokenize(string paymentId, TokenizePaymentRequest body, CallContext context = null)
+        public async Task<CancelPaymentResponse> Cancel(string paymentId, CallContext context = null)
         {
             IDictionary<string, string> pathContext = new Dictionary<string, string>();
             pathContext.Add("paymentId", paymentId);
-            string uri = InstantiateUri("/{apiVersion}/{merchantId}/payments/{paymentId}/tokenize", pathContext);
+            string uri = InstantiateUri("/{apiVersion}/{merchantId}/payments/{paymentId}/cancel", pathContext);
             try
             {
-                return await _communicator.Post<CreateTokenResponse>(
+                return await _communicator.Post<CancelPaymentResponse>(
                         uri,
                         ClientHeaders,
                         null,
-                        body,
+                        null,
                         context);
             }
             catch (ResponseException e)

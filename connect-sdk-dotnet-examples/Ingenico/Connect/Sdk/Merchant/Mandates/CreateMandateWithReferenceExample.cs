@@ -9,7 +9,7 @@ using Ingenico.Connect.Sdk.Domain.Mandates.Definitions;
 
 namespace Ingenico.Connect.Sdk.Merchant.Mandates
 {
-    public class CreateMandateExample
+    public class CreateMandateWithReferenceExample
     {
         public async void Example()
         {
@@ -51,7 +51,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Mandates
                 body.RecurrenceType = "UNIQUE";
                 body.SignatureType = "UNSIGNED";
 
-                CreateMandateResponse response = await client.Merchant("merchantId").Mandates().Create(body);
+                CreateMandateResponse response = await client.Merchant("merchantId").Mandates().CreateWithMandateReference("42268d8067df43e18a50a2ebf4bdb729", body);
             }
 #pragma warning restore 0168
         }
