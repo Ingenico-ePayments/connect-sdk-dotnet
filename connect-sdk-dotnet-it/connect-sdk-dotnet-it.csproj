@@ -8,7 +8,7 @@
     <RootNamespace>Ingenico.Connect.Sdk</RootNamespace>
     <AssemblyName>connect-sdk-dotnet-it</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <ReleaseVersion>2.17.0</ReleaseVersion>
+    <ReleaseVersion>2.18.0</ReleaseVersion>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>

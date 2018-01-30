@@ -14,6 +14,8 @@ namespace Ingenico.Connect.Sdk.Domain.Product.Definitions
 
         public FixedListValidator FixedList { get; set; } = null;
 
+        public EmptyValidator Iban { get; set; } = null;
+
         public LengthValidator Length { get; set; } = null;
 
         public EmptyValidator Luhn { get; set; } = null;

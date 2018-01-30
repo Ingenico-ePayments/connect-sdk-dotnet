@@ -12,6 +12,8 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
 
         public long? LineAmountTotal { get; set; } = null;
 
+        public string ProductCategory { get; set; } = null;
+
         public string ProductCode { get; set; } = null;
 
         public string ProductName { get; set; } = null;

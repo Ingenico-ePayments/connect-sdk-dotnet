@@ -20,6 +20,8 @@ namespace Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions
 
         public string Tokens { get; set; } = null;
 
+        public bool? ValidateShoppingCart { get; set; } = null;
+
         public string Variant { get; set; } = null;
     }
 }
