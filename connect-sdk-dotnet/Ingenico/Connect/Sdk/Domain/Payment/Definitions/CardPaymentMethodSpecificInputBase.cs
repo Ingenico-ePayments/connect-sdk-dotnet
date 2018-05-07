@@ -25,5 +25,9 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
         public bool? Tokenize { get; set; } = null;
 
         public string TransactionChannel { get; set; } = null;
+
+        public string UnscheduledCardOnFileIndicator { get; set; } = null;
+
+        public string UnscheduledCardOnFileRequestor { get; set; } = null;
     }
 }

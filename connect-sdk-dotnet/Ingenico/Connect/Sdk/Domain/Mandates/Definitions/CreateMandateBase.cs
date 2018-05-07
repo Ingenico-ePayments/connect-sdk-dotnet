@@ -17,5 +17,7 @@ namespace Ingenico.Connect.Sdk.Domain.Mandates.Definitions
         public string RecurrenceType { get; set; } = null;
 
         public string SignatureType { get; set; } = null;
+
+        public string UniqueMandateReference { get; set; } = null;
     }
 }
