@@ -15,5 +15,7 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
         public PaymentProduct836SpecificOutput PaymentProduct836SpecificOutput { get; set; } = null;
 
         public PaymentProduct840SpecificOutput PaymentProduct840SpecificOutput { get; set; } = null;
+
+        public string Token { get; set; } = null;
     }
 }

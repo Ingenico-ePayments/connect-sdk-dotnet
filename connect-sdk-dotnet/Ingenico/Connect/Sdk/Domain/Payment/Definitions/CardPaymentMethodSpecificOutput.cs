@@ -15,5 +15,7 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
         public CardFraudResults FraudResults { get; set; } = null;
 
         public ThreeDSecureResults ThreeDSecureResults { get; set; } = null;
+
+        public string Token { get; set; } = null;
     }
 }

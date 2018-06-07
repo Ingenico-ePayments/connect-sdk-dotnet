@@ -21,7 +21,6 @@ namespace Ingenico.Connect.Sdk.Merchant.Mandates
 
                 MandateContactDetails contactDetails = new MandateContactDetails();
                 contactDetails.EmailAddress = "wile.e.coyote@acmelabs.com";
-                contactDetails.PhoneNumber = "+1234567890";
 
                 MandateAddress mandateAddress = new MandateAddress();
                 mandateAddress.City = "Monumentenvallei";

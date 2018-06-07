@@ -7,7 +7,5 @@ namespace Ingenico.Connect.Sdk.Domain.Mandates.Definitions
     public class MandateContactDetails
     {
         public string EmailAddress { get; set; } = null;
-
-        public string PhoneNumber { get; set; } = null;
     }
 }
