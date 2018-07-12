@@ -8,7 +8,7 @@
     <RootNamespace>Ingenico.Connect.Sdk</RootNamespace>
     <AssemblyName>connect-sdk-dotnet</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <ReleaseVersion>2.21.0</ReleaseVersion>
+    <ReleaseVersion>2.22.0</ReleaseVersion>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>
@@ -151,6 +151,11 @@
     <Compile Include="Ingenico\Connect\Sdk\Domain\Hostedcheckout\Definitions\DisplayedData.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Hostedcheckout\Definitions\HostedCheckoutSpecificInput.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Hostedcheckout\Definitions\PaymentProductFiltersHostedCheckout.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Hostedmandatemanagement\CreateHostedMandateManagementRequest.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Hostedmandatemanagement\CreateHostedMandateManagementResponse.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Hostedmandatemanagement\GetHostedMandateManagementResponse.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Hostedmandatemanagement\Definitions\HostedMandateInfo.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Hostedmandatemanagement\Definitions\HostedMandateManagementSpecificInput.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Mandates\CreateMandateRequest.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Mandates\CreateMandateResponse.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Mandates\GetMandateResponse.cs" />
@@ -399,6 +404,7 @@
     <Compile Include="Ingenico\Connect\Sdk\Merchant\MerchantClient.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Merchant\Captures\CapturesClient.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Merchant\Hostedcheckouts\HostedcheckoutsClient.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Merchant\Hostedmandatemanagements\HostedmandatemanagementsClient.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Merchant\Mandates\MandatesClient.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Merchant\Payments\FindPaymentsParams.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Merchant\Payments\PaymentsClient.cs" />

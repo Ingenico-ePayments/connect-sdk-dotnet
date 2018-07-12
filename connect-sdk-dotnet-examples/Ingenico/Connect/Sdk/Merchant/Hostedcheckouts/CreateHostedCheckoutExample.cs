@@ -30,6 +30,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Hostedcheckouts
 
                 Customer customer = new Customer();
                 customer.BillingAddress = billingAddress;
+                customer.MerchantCustomerId = "1234";
 
                 Order order = new Order();
                 order.AmountOfMoney = amountOfMoney;

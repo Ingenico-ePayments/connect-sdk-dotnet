@@ -59,7 +59,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
 
                 PersonalInformation personalInformation = new PersonalInformation();
                 personalInformation.DateOfBirth = "19490917";
-                personalInformation.Gender = "M";
+                personalInformation.Gender = "male";
                 personalInformation.Name = name;
 
                 PersonalName shippingName = new PersonalName();

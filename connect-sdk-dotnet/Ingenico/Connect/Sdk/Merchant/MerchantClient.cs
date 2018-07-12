@@ -5,6 +5,7 @@
 using Ingenico.Connect.Sdk;
 using Ingenico.Connect.Sdk.Merchant.Captures;
 using Ingenico.Connect.Sdk.Merchant.Hostedcheckouts;
+using Ingenico.Connect.Sdk.Merchant.Hostedmandatemanagements;
 using Ingenico.Connect.Sdk.Merchant.Mandates;
 using Ingenico.Connect.Sdk.Merchant.Payments;
 using Ingenico.Connect.Sdk.Merchant.Payouts;
@@ -37,6 +38,16 @@ namespace Ingenico.Connect.Sdk.Merchant
         public HostedcheckoutsClient Hostedcheckouts()
         {
             return new HostedcheckoutsClient(this, null);
+        }
+
+        /// <summary>
+        /// Resource /{merchantId}/hostedmandatemanagements
+        /// Create new hosted mandate management
+        /// </summary>
+        /// <returns>HostedmandatemanagementsClient</returns>
+        public HostedmandatemanagementsClient Hostedmandatemanagements()
+        {
+            return new HostedmandatemanagementsClient(this, null);
         }
 
         /// <summary>
