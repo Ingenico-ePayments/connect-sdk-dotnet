@@ -9,5 +9,7 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
         public bool? IsNewToken { get; set; } = null;
 
         public string Token { get; set; } = null;
+
+        public bool? TokenizationSucceeded { get; set; } = null;
     }
 }

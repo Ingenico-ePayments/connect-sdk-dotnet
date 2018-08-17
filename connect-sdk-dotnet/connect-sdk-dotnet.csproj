@@ -8,7 +8,7 @@
     <RootNamespace>Ingenico.Connect.Sdk</RootNamespace>
     <AssemblyName>connect-sdk-dotnet</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <ReleaseVersion>2.22.0</ReleaseVersion>
+    <ReleaseVersion>2.23.0</ReleaseVersion>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>
@@ -333,6 +333,7 @@
     <Compile Include="Ingenico\Connect\Sdk\Domain\Refund\RefundErrorResponse.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Refund\RefundRequest.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Refund\RefundResponse.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Domain\Refund\RefundsResponse.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Refund\Definitions\BankAccountBbanRefund.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Refund\Definitions\BankRefundMethodSpecificInput.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Domain\Refund\Definitions\RefundCustomer.cs" />

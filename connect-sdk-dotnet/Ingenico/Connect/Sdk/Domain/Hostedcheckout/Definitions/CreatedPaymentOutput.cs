@@ -16,6 +16,8 @@ namespace Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions
 
         public string PaymentStatusCategory { get; set; } = null;
 
+        public bool? TokenizationSucceeded { get; set; } = null;
+
         public string Tokens { get; set; } = null;
     }
 }

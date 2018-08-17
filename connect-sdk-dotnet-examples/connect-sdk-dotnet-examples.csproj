@@ -8,7 +8,7 @@
     <RootNamespace>Ingenico.Connect.Sdk</RootNamespace>
     <AssemblyName>connect-sdk-dotnet-examples</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <ReleaseVersion>2.22.0</ReleaseVersion>
+    <ReleaseVersion>2.23.0</ReleaseVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -53,6 +53,7 @@
     <Compile Include="Ingenico\Connect\Sdk\Merchant\Payments\FindPaymentsExample.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Merchant\Payments\GetPaymentCapturesExample.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Merchant\Payments\GetPaymentExample.cs" />
+    <Compile Include="Ingenico\Connect\Sdk\Merchant\Payments\GetRefundsExample.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Merchant\Payments\GetThirdPartyStatusExample.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Merchant\Payments\ProcessChallengedPaymentExample.cs" />
     <Compile Include="Ingenico\Connect\Sdk\Merchant\Payments\RefundPaymentExample.cs" />
