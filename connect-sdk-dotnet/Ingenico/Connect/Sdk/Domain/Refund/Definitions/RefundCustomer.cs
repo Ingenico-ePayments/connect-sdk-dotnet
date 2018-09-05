@@ -14,5 +14,7 @@ namespace Ingenico.Connect.Sdk.Domain.Refund.Definitions
         public CompanyInformation CompanyInformation { get; set; } = null;
 
         public ContactDetailsBase ContactDetails { get; set; } = null;
+
+        public string FiscalNumber { get; set; } = null;
     }
 }

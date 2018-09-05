@@ -10,6 +10,8 @@ namespace Ingenico.Connect.Sdk.Domain.Refund.Definitions
     {
         public string BankCity { get; set; } = null;
 
+        public string PatronymicName { get; set; } = null;
+
         public string SwiftCode { get; set; } = null;
     }
 }

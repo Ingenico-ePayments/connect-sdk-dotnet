@@ -11,5 +11,7 @@ namespace Ingenico.Connect.Sdk.Domain.Payout.Definitions
         public Card Card { get; set; } = null;
 
         public int? PaymentProductId { get; set; } = null;
+
+        public string Token { get; set; } = null;
     }
 }
