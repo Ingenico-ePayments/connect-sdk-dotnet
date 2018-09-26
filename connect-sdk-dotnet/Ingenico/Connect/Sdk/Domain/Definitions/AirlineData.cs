@@ -47,5 +47,13 @@ namespace Ingenico.Connect.Sdk.Domain.Definitions
         public string TicketDeliveryMethod { get; set; } = null;
 
         public string TicketNumber { get; set; } = null;
+
+        public int? TotalFare { get; set; } = null;
+
+        public int? TotalFee { get; set; } = null;
+
+        public int? TotalTaxes { get; set; } = null;
+
+        public string TravelAgencyName { get; set; } = null;
     }
 }

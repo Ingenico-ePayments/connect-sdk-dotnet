@@ -90,5 +90,43 @@ namespace Ingenico.Connect.Sdk.Merchant.Productgroups
                 throw CreateException(e.StatusCode, e.Body, errorObject, context);
             }
         }
+
+        /// <summary>
+        /// Resource /{merchantId}/productgroups/{paymentProductGroupId}/deviceFingerprint
+        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/productgroups/deviceFingerprint.html">Get device fingerprint</a>
+        /// </summary>
+        /// <param name="paymentProductGroupId">string</param>
+        /// <param name="body">DeviceFingerprintRequest</param>
+        /// <param name="context">CallContext</param>
+        /// <returns>DeviceFingerprintResponse</returns>
+        /// <exception cref="ValidationException">if the request was not correct and couldn't be processed (HTTP status code BadRequest)</exception>
+        /// <exception cref="AuthorizationException">if the request was not allowed (HTTP status code Forbidden)</exception>
+        /// <exception cref="IdempotenceException">if an idempotent request caused a conflict (HTTP status code Conflict)</exception>
+        /// <exception cref="ReferenceException">if an object was attempted to be referenced that doesn't exist or has been removed,
+        ///            or there was a conflict (HTTP status code NotFound, Conflict or Gone)</exception>
+        /// <exception cref="GlobalCollectException">if something went wrong at the Ingenico ePayments platform,
+        ///            the Ingenico ePayments platform was unable to process a message from a downstream partner/acquirer,
+        ///            or the service that you're trying to reach is temporary unavailable (HTTP status code InternalServerError, BadGateway or ServiceUnavailable)</exception>
+        /// <exception cref="ApiException">if the Ingenico ePayments platform returned any other error</exception>
+        public async Task<DeviceFingerprintResponse> DeviceFingerprint(string paymentProductGroupId, DeviceFingerprintRequest body, CallContext context = null)
+        {
+            IDictionary<string, string> pathContext = new Dictionary<string, string>();
+            pathContext.Add("paymentProductGroupId", paymentProductGroupId);
+            string uri = InstantiateUri("/{apiVersion}/{merchantId}/productgroups/{paymentProductGroupId}/deviceFingerprint", pathContext);
+            try
+            {
+                return await _communicator.Post<DeviceFingerprintResponse>(
+                        uri,
+                        ClientHeaders,
+                        null,
+                        body,
+                        context);
+            }
+            catch (ResponseException e)
+            {
+                object errorObject = _communicator.Marshaller.Unmarshal<ErrorResponse>(e.Body);
+                throw CreateException(e.StatusCode, e.Body, errorObject, context);
+            }
+        }
     }
 }

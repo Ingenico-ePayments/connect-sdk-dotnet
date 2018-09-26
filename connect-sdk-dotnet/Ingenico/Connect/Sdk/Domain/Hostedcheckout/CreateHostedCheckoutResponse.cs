@@ -16,6 +16,8 @@ namespace Ingenico.Connect.Sdk.Domain.Hostedcheckout
 
         public IList<string> InvalidTokens { get; set; } = null;
 
+        public string MerchantReference { get; set; } = null;
+
         public string PartialRedirectUrl { get; set; } = null;
     }
 }
