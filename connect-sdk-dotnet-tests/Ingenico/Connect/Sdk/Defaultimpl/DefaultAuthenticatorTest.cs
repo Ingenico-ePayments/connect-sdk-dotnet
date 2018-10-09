@@ -79,7 +79,7 @@ namespace Ingenico.Connect.Sdk.DefaultImpl
             IList<RequestHeader> httpHeaders = new List<RequestHeader>();
             httpHeaders.Add(new RequestHeader("User-Agent", "Apache-HttpClient/4.3.4 (java 1.5)"));
             httpHeaders.Add(new RequestHeader("Date", "Fri, 06 Jun 2014 13:39:43 GMT"));
-            string signature = authenticator.CreateSimpleAuthenticationSignature(HttpMethod.Get, new Uri("http://api.globalcollect.com:8080/v1/9991/tokens/123456789"), httpHeaders);
+            string signature = authenticator.CreateSimpleAuthenticationSignature(HttpMethod.Get, new Uri("http://world.api-ingenico.com:8080/v1/9991/tokens/123456789"), httpHeaders);
             Assert.AreEqual("GCS v1HMAC:5e45c937b9db33ae:J5LjfSBvrQNhu7gG0gvifZt+IWNDReGCmHmBmth6ueI=", signature);
         }
 
@@ -94,7 +94,7 @@ namespace Ingenico.Connect.Sdk.DefaultImpl
             httpHeaders.Add(new RequestHeader("Content-Type", "application/json"));
             httpHeaders.Add(new RequestHeader("X-GCS-CustomerHeader", "processed header value"));
             httpHeaders.Add(new RequestHeader("Date", "Fri, 06 Jun 2014 13:39:43 GMT"));
-            string signature = authenticator.CreateSimpleAuthenticationSignature(HttpMethod.Delete, new Uri("http://api.globalcollect.com:8080/v1/9991/tokens/123456789"), httpHeaders);
+            string signature = authenticator.CreateSimpleAuthenticationSignature(HttpMethod.Delete, new Uri("http://world.api-ingenico.com:8080/v1/9991/tokens/123456789"), httpHeaders);
             Assert.AreEqual("GCS v1HMAC:5e45c937b9db33ae:jGWLz3ouN4klE+SkqO5gO+KkbQNM06Rric7E3dcfmqw=", signature);
         }
     }

@@ -11,5 +11,7 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
         public bool? IsAuthorized { get; set; } = null;
 
         public bool? IsRefundable { get; set; } = null;
+
+        public string ThreeDSecureStatus { get; set; } = null;
     }
 }

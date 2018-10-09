@@ -9,7 +9,6 @@ using Ingenico.Connect.Sdk.Domain.Payment;
 using Ingenico.Connect.Sdk.Domain.Refund;
 using Ingenico.Connect.Sdk.Domain.Token;
 using System.Collections.Generic;
-using System.Net;
 using System.Threading.Tasks;
 
 namespace Ingenico.Connect.Sdk.Merchant.Payments
@@ -55,28 +54,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
             }
             catch (ResponseException e)
             {
-                object errorObject;
-                switch (e.StatusCode)
-                {
-                    case HttpStatusCode.BadRequest:
-                        errorObject = _communicator.Marshaller.Unmarshal<PaymentErrorResponse>(e.Body);
-                        break;
-                    case HttpStatusCode.PaymentRequired:
-                        errorObject = _communicator.Marshaller.Unmarshal<PaymentErrorResponse>(e.Body);
-                        break;
-                    case HttpStatusCode.Forbidden:
-                        errorObject = _communicator.Marshaller.Unmarshal<PaymentErrorResponse>(e.Body);
-                        break;
-                    case HttpStatusCode.BadGateway:
-                        errorObject = _communicator.Marshaller.Unmarshal<PaymentErrorResponse>(e.Body);
-                        break;
-                    case HttpStatusCode.ServiceUnavailable:
-                        errorObject = _communicator.Marshaller.Unmarshal<PaymentErrorResponse>(e.Body);
-                        break;
-                    default:
-                        errorObject = _communicator.Marshaller.Unmarshal<ErrorResponse>(e.Body);
-                        break;
-                }
+                object errorObject = _communicator.Marshaller.Unmarshal<PaymentErrorResponse>(e.Body);
                 throw CreateException(e.StatusCode, e.Body, errorObject, context);
             }
         }
@@ -483,19 +461,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
             }
             catch (ResponseException e)
             {
-                object errorObject;
-                switch (e.StatusCode)
-                {
-                    case HttpStatusCode.BadRequest:
-                        errorObject = _communicator.Marshaller.Unmarshal<RefundErrorResponse>(e.Body);
-                        break;
-                    case HttpStatusCode.NotFound:
-                        errorObject = _communicator.Marshaller.Unmarshal<RefundErrorResponse>(e.Body);
-                        break;
-                    default:
-                        errorObject = _communicator.Marshaller.Unmarshal<ErrorResponse>(e.Body);
-                        break;
-                }
+                object errorObject = _communicator.Marshaller.Unmarshal<RefundErrorResponse>(e.Body);
                 throw CreateException(e.StatusCode, e.Body, errorObject, context);
             }
         }

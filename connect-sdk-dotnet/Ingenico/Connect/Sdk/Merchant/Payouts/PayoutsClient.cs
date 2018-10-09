@@ -6,7 +6,6 @@ using Ingenico.Connect.Sdk;
 using Ingenico.Connect.Sdk.Domain.Errors;
 using Ingenico.Connect.Sdk.Domain.Payout;
 using System.Collections.Generic;
-using System.Net;
 using System.Threading.Tasks;
 
 namespace Ingenico.Connect.Sdk.Merchant.Payouts
@@ -52,16 +51,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Payouts
             }
             catch (ResponseException e)
             {
-                object errorObject;
-                switch (e.StatusCode)
-                {
-                    case HttpStatusCode.BadRequest:
-                        errorObject = _communicator.Marshaller.Unmarshal<PayoutErrorResponse>(e.Body);
-                        break;
-                    default:
-                        errorObject = _communicator.Marshaller.Unmarshal<ErrorResponse>(e.Body);
-                        break;
-                }
+                object errorObject = _communicator.Marshaller.Unmarshal<PayoutErrorResponse>(e.Body);
                 throw CreateException(e.StatusCode, e.Body, errorObject, context);
             }
         }
