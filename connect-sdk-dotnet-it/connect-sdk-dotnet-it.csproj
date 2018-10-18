@@ -87,20 +87,7 @@
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Ingenico\Connect\Sdk\It\ConnectionPoolingTest.cs" />
-    <Compile Include="Ingenico\Connect\Sdk\It\ConnectionTest.cs" />
-    <Compile Include="Ingenico\Connect\Sdk\It\ConvertAmountTest.cs" />
-    <Compile Include="Ingenico\Connect\Sdk\It\CreateSessionTest.cs" />
-    <Compile Include="Ingenico\Connect\Sdk\It\IdempotenceTest.cs" />
-    <Compile Include="Ingenico\Connect\Sdk\It\IntegrationTest.cs" />
-    <Compile Include="Ingenico\Connect\Sdk\It\MultiLineHeaderTest.cs" />
-    <Compile Include="Ingenico\Connect\Sdk\It\PaymentProductsGroupsTest.cs" />
-    <Compile Include="Ingenico\Connect\Sdk\It\PaymentProductsTest.cs" />
-    <Compile Include="Ingenico\Connect\Sdk\It\RiskAssessmentsTest.cs" />
-    <Compile Include="Ingenico\Connect\Sdk\It\SDKProxyTest.cs" />
-    <Compile Include="Ingenico\Connect\Sdk\It\SystemProxyTest.cs" />
-    <Compile Include="Ingenico\Connect\Sdk\It\TokenTest.cs" />
-    <Compile Include="Ingenico\Connect\Sdk\Util\ReflectionUtil.cs" />
+    <Compile Include="Ingenico\**\*.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\connect-sdk-dotnet\connect-sdk-dotnet.csproj">

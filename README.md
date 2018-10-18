@@ -42,6 +42,12 @@ To install the latest .NET SDK release, run the following command in the Package
 
 	PM> Install-Package connect-sdk-dotnet
 
+### Release (Strong-Named)
+
+To install the latest .NET SDK release as a [Strong-Named assembly](https://docs.microsoft.com/en-us/dotnet/framework/app-domains/strong-named-assemblies), run the following command in the Package Manager Console (`Tools -> NuGet Package Manager -> Package Manager Console`) in Visual Studio:
+
+	PM> Install-Package connect-sdk-dotnet.StrongName
+
 ### Source
 
 To install the latest .NET SDK source in a solution, clone the repository, and add the file `connect-sdk-dotnet.csproj` to the current solution. On the project depending on the Ingenico Connect SDK, add a reference to the `connect-sdk-dotnet` project.
