@@ -4,7 +4,7 @@
  */
 namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
 {
-    public class EInvoicePaymentMethodSpecificInput : EInvoicePaymentMethodSpecificInputBase
+    public class EInvoicePaymentMethodSpecificInput : AbstractEInvoicePaymentMethodSpecificInput
     {
         public bool? AcceptedTermsAndConditions { get; set; } = null;
 

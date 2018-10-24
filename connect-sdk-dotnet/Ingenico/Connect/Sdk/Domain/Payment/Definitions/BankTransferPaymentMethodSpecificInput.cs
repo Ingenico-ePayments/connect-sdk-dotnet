@@ -4,7 +4,7 @@
  */
 namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
 {
-    public class BankTransferPaymentMethodSpecificInput : BankTransferPaymentMethodSpecificInputBase
+    public class BankTransferPaymentMethodSpecificInput : AbstractBankTransferPaymentMethodSpecificInput
     {
     }
 }

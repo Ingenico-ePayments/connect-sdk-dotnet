@@ -4,7 +4,7 @@
  */
 namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
 {
-    public class CashPaymentMethodSpecificInput : CashPaymentMethodSpecificInputBase
+    public class CashPaymentMethodSpecificInput : AbstractCashPaymentMethodSpecificInput
     {
         public CashPaymentProduct1503SpecificInput PaymentProduct1503SpecificInput { get; set; } = null;
 

@@ -38,6 +38,12 @@ namespace Ingenico.Connect.Sdk.Domain.Product.Definitions
 
         public string PaymentMethod { get; set; } = null;
 
+        public PaymentProduct302SpecificData PaymentProduct302SpecificData { get; set; } = null;
+
+        public PaymentProduct320SpecificData PaymentProduct320SpecificData { get; set; } = null;
+
+        public PaymentProduct863SpecificData PaymentProduct863SpecificData { get; set; } = null;
+
         public string PaymentProductGroup { get; set; } = null;
 
         public bool? UsesRedirectionTo3rdParty { get; set; } = null;

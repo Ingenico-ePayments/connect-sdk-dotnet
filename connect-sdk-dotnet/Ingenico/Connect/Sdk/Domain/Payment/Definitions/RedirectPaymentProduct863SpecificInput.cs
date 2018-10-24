@@ -4,7 +4,8 @@
  */
 namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
 {
-    public class EInvoicePaymentMethodSpecificInputBase : AbstractEInvoicePaymentMethodSpecificInput
+    public class RedirectPaymentProduct863SpecificInput
     {
+        public string IntegrationType { get; set; } = null;
     }
 }

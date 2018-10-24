@@ -6,7 +6,7 @@ using Ingenico.Connect.Sdk.Domain.Definitions;
 
 namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
 {
-    public class CardPaymentMethodSpecificInput : CardPaymentMethodSpecificInputBase
+    public class CardPaymentMethodSpecificInput : AbstractCardPaymentMethodSpecificInput
     {
         public Card Card { get; set; } = null;
 
