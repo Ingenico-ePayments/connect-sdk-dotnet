@@ -10,6 +10,8 @@ namespace Ingenico.Connect.Sdk.Domain.Definitions
 
         public string CvvResult { get; set; } = null;
 
+        public FraugsterResults Fraugster { get; set; } = null;
+
         public FraudResultsRetailDecisions RetailDecisions { get; set; } = null;
     }
 }
