@@ -22,10 +22,6 @@ namespace Ingenico.Connect.Sdk.DefaultImpl
         ///        This secret is used as input for the HMAC algorithm.</param>
         public DefaultAuthenticator(AuthorizationType authType, string apiKeyId, string secretApiKey)
         {
-            if (authType == null)
-            {
-                throw new ArgumentException("authorizationType is required");
-            }
             if (string.IsNullOrWhiteSpace(apiKeyId))
             {
                 throw new ArgumentException("apiKeyId is required");
@@ -34,7 +30,7 @@ namespace Ingenico.Connect.Sdk.DefaultImpl
             {
                 throw new ArgumentException("secretApiKey is required");
             }
-            _authorizationType = authType;
+            _authorizationType = authType ?? throw new ArgumentException("authorizationType is required");
             _apiKeyId = apiKeyId;
             _secretApiKey = secretApiKey;
 

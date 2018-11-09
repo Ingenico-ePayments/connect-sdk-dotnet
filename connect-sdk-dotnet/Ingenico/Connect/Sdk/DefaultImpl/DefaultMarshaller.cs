@@ -8,8 +8,7 @@ namespace Ingenico.Connect.Sdk.DefaultImpl
     /// </summary>
     public sealed class DefaultMarshaller : IMarshaller
     {
-        public static DefaultMarshaller Instance => _instance;
-        static readonly DefaultMarshaller _instance = new DefaultMarshaller();
+        public static DefaultMarshaller Instance { get; } = new DefaultMarshaller();
 
         #region IMarshaller Implementation
         public string Marshal(object requestObject) => JsonConvert.SerializeObject(requestObject, _jsonSerializerSettings);

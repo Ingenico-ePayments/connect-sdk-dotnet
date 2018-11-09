@@ -5,10 +5,13 @@ namespace Ingenico.Connect.Sdk.DefaultImpl
     public class AuthorizationType
     {
         #region enum
+
         public static readonly AuthorizationType V1HMAC = new AuthorizationType("v1HMAC");
+
         #endregion
 
         #region Static
+
         /// <summary>
         /// Returns the enum value of the specified string.
         /// </summary>
@@ -20,14 +23,14 @@ namespace Ingenico.Connect.Sdk.DefaultImpl
             }
             throw new ArgumentException("Unsupported Authorization");
         }
+
         #endregion
 
-        public string SignatureString => _signatureString;
-        readonly string _signatureString;
+        public string SignatureString { get; }
 
-        AuthorizationType(string signatureString)
+        private AuthorizationType(string signatureString)
         {
-            _signatureString = signatureString;
+            SignatureString = signatureString;
         }
     }
 }
