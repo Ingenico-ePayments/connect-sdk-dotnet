@@ -3,6 +3,7 @@
  * https://epayments-api.developer-ingenico.com/s2sapi/v1/
  */
 using Ingenico.Connect.Sdk.Domain.Payment.Definitions;
+using System;
 
 namespace Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions
 {
@@ -14,6 +15,7 @@ namespace Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions
 
         public PaymentCreationReferences PaymentCreationReferences { get; set; } = null;
 
+        [ObsoleteAttribute("Use payment.statusOutput.statusCategory instead")]
         public string PaymentStatusCategory { get; set; } = null;
 
         public bool? TokenizationSucceeded { get; set; } = null;

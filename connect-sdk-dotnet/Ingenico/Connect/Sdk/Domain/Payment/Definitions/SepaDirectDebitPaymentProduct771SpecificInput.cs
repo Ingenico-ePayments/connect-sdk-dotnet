@@ -8,6 +8,8 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
 {
     public class SepaDirectDebitPaymentProduct771SpecificInput : AbstractSepaDirectDebitPaymentProduct771SpecificInput
     {
+        public string ExistingUniqueMandateReference { get; set; } = null;
+
         public CreateMandateWithReturnUrl Mandate { get; set; } = null;
     }
 }

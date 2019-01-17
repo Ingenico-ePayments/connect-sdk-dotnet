@@ -30,6 +30,8 @@ namespace Ingenico.Connect.Sdk.Domain.Product.Definitions
 
         public int? Id { get; set; } = null;
 
+        public bool? IsJavaScriptRequired { get; set; } = null;
+
         public long? MaxAmount { get; set; } = null;
 
         public long? MinAmount { get; set; } = null;

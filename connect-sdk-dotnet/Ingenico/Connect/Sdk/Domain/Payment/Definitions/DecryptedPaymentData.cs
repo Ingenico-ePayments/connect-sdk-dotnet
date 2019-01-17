@@ -15,5 +15,9 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
         public int? Eci { get; set; } = null;
 
         public string ExpiryDate { get; set; } = null;
+
+        public string Pan { get; set; } = null;
+
+        public string PaymentMethod { get; set; } = null;
     }
 }

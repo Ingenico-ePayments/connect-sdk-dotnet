@@ -8,6 +8,8 @@ namespace Ingenico.Connect.Sdk.Domain.Product.Definitions
 {
     public class PaymentProduct320SpecificData
     {
+        public string Gateway { get; set; } = null;
+
         public IList<string> Networks { get; set; } = null;
     }
 }

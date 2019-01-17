@@ -14,12 +14,8 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
 
         public string EncryptedPaymentData { get; set; } = null;
 
-        public MobilePaymentProduct320SpecificInput PaymentProduct320SpecificInput { get; set; } = null;
-
         public bool? RequiresApproval { get; set; } = null;
 
         public bool? SkipFraudService { get; set; } = null;
-
-        public string TransactionId { get; set; } = null;
     }
 }

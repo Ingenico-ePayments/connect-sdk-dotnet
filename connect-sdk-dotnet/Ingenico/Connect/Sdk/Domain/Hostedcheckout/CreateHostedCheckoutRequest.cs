@@ -22,6 +22,8 @@ namespace Ingenico.Connect.Sdk.Domain.Hostedcheckout
 
         public HostedCheckoutSpecificInput HostedCheckoutSpecificInput { get; set; } = null;
 
+        public MobilePaymentMethodSpecificInputHostedCheckout MobilePaymentMethodSpecificInput { get; set; } = null;
+
         public Order Order { get; set; } = null;
 
         public RedirectPaymentMethodSpecificInputBase RedirectPaymentMethodSpecificInput { get; set; } = null;
