@@ -23,7 +23,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Products
 
         /// <summary>
         /// Resource /{merchantId}/products
-        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/products/find.html">Get payment products</a>
+        /// - <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/products/find.html">Get payment products</a>
         /// </summary>
         /// <param name="query">FindProductsParams</param>
         /// <param name="context">CallContext</param>
@@ -57,7 +57,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Products
 
         /// <summary>
         /// Resource /{merchantId}/products/{paymentProductId}
-        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/products/get.html">Get payment product</a>
+        /// - <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/products/get.html">Get payment product</a>
         /// </summary>
         /// <param name="paymentProductId">int?</param>
         /// <param name="query">GetProductParams</param>
@@ -94,7 +94,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Products
 
         /// <summary>
         /// Resource /{merchantId}/products/{paymentProductId}/directory
-        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/products/directory.html">Get payment product directory</a>
+        /// - <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/products/directory.html">Get payment product directory</a>
         /// </summary>
         /// <param name="paymentProductId">int?</param>
         /// <param name="query">DirectoryParams</param>
@@ -131,7 +131,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Products
 
         /// <summary>
         /// Resource /{merchantId}/products/{paymentProductId}/customerDetails
-        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/products/customerDetails.html">Get customer details</a>
+        /// - <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/products/customerDetails.html">Get customer details</a>
         /// </summary>
         /// <param name="paymentProductId">int?</param>
         /// <param name="body">GetCustomerDetailsRequest</param>
@@ -169,7 +169,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Products
 
         /// <summary>
         /// Resource /{merchantId}/products/{paymentProductId}/deviceFingerprint
-        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/products/deviceFingerprint.html">Get device fingerprint</a>
+        /// - <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/products/deviceFingerprint.html">Get device fingerprint</a>
         /// </summary>
         /// <param name="paymentProductId">int?</param>
         /// <param name="body">DeviceFingerprintRequest</param>
@@ -207,7 +207,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Products
 
         /// <summary>
         /// Resource /{merchantId}/products/{paymentProductId}/networks
-        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/products/networks.html">Get payment product networks</a>
+        /// - <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/products/networks.html">Get payment product networks</a>
         /// </summary>
         /// <param name="paymentProductId">int?</param>
         /// <param name="query">NetworksParams</param>
@@ -244,7 +244,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Products
 
         /// <summary>
         /// Resource /{merchantId}/products/{paymentProductId}/publicKey
-        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/products/publicKey.html">Get payment product specific public key</a>
+        /// - <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/products/publicKey.html">Get payment product specific public key</a>
         /// </summary>
         /// <param name="paymentProductId">int?</param>
         /// <param name="context">CallContext</param>

@@ -22,7 +22,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Sessions
 
         /// <summary>
         /// Resource /{merchantId}/sessions
-        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/sessions/create.html">Create session</a>
+        /// - <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/sessions/create.html">Create session</a>
         /// </summary>
         /// <param name="body">SessionRequest</param>
         /// <param name="context">CallContext</param>

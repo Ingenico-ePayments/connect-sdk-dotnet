@@ -22,7 +22,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Captures
 
         /// <summary>
         /// Resource /{merchantId}/captures/{captureId}
-        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/captures/get.html">Get capture</a>
+        /// - <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/captures/get.html">Get capture</a>
         /// </summary>
         /// <param name="captureId">string</param>
         /// <param name="context">CallContext</param>

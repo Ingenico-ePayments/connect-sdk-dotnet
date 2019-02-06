@@ -22,7 +22,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Riskassessments
 
         /// <summary>
         /// Resource /{merchantId}/riskassessments/bankaccounts
-        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/riskassessments/bankaccounts.html">Risk-assess bankaccount</a>
+        /// - <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/riskassessments/bankaccounts.html">Risk-assess bankaccount</a>
         /// </summary>
         /// <param name="body">RiskAssessmentBankAccount</param>
         /// <param name="context">CallContext</param>
@@ -57,7 +57,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Riskassessments
 
         /// <summary>
         /// Resource /{merchantId}/riskassessments/cards
-        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/riskassessments/cards.html">Risk-assess card</a>
+        /// - <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/riskassessments/cards.html">Risk-assess card</a>
         /// </summary>
         /// <param name="body">RiskAssessmentCard</param>
         /// <param name="context">CallContext</param>

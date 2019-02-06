@@ -4,6 +4,7 @@
  */
 using Ingenico.Connect.Sdk;
 using Ingenico.Connect.Sdk.Merchant.Captures;
+using Ingenico.Connect.Sdk.Merchant.Disputes;
 using Ingenico.Connect.Sdk.Merchant.Hostedcheckouts;
 using Ingenico.Connect.Sdk.Merchant.Hostedmandatemanagements;
 using Ingenico.Connect.Sdk.Merchant.Mandates;
@@ -32,7 +33,6 @@ namespace Ingenico.Connect.Sdk.Merchant
 
         /// <summary>
         /// Resource /{merchantId}/hostedcheckouts
-        /// Create new hosted checkout
         /// </summary>
         /// <returns>HostedcheckoutsClient</returns>
         public HostedcheckoutsClient Hostedcheckouts()
@@ -42,7 +42,6 @@ namespace Ingenico.Connect.Sdk.Merchant
 
         /// <summary>
         /// Resource /{merchantId}/hostedmandatemanagements
-        /// Create new hosted mandate management
         /// </summary>
         /// <returns>HostedmandatemanagementsClient</returns>
         public HostedmandatemanagementsClient Hostedmandatemanagements()
@@ -52,7 +51,6 @@ namespace Ingenico.Connect.Sdk.Merchant
 
         /// <summary>
         /// Resource /{merchantId}/payments
-        /// Create, cancel and approve payments
         /// </summary>
         /// <returns>PaymentsClient</returns>
         public PaymentsClient Payments()
@@ -62,7 +60,6 @@ namespace Ingenico.Connect.Sdk.Merchant
 
         /// <summary>
         /// Resource /{merchantId}/captures
-        /// Get capture
         /// </summary>
         /// <returns>CapturesClient</returns>
         public CapturesClient Captures()
@@ -72,7 +69,6 @@ namespace Ingenico.Connect.Sdk.Merchant
 
         /// <summary>
         /// Resource /{merchantId}/refunds
-        /// Create, cancel and approve refunds
         /// </summary>
         /// <returns>RefundsClient</returns>
         public RefundsClient Refunds()
@@ -81,8 +77,16 @@ namespace Ingenico.Connect.Sdk.Merchant
         }
 
         /// <summary>
+        /// Resource /{merchantId}/disputes
+        /// </summary>
+        /// <returns>DisputesClient</returns>
+        public DisputesClient Disputes()
+        {
+            return new DisputesClient(this, null);
+        }
+
+        /// <summary>
         /// Resource /{merchantId}/payouts
-        /// Create, cancel and approve payouts
         /// </summary>
         /// <returns>PayoutsClient</returns>
         public PayoutsClient Payouts()
@@ -92,7 +96,6 @@ namespace Ingenico.Connect.Sdk.Merchant
 
         /// <summary>
         /// Resource /{merchantId}/productgroups
-        /// Get information about payment product groups
         /// </summary>
         /// <returns>ProductgroupsClient</returns>
         public ProductgroupsClient Productgroups()
@@ -102,7 +105,6 @@ namespace Ingenico.Connect.Sdk.Merchant
 
         /// <summary>
         /// Resource /{merchantId}/products
-        /// Get information about payment products
         /// </summary>
         /// <returns>ProductsClient</returns>
         public ProductsClient Products()
@@ -112,7 +114,6 @@ namespace Ingenico.Connect.Sdk.Merchant
 
         /// <summary>
         /// Resource /{merchantId}/riskassessments
-        /// Perform risk assessments on your customer data
         /// </summary>
         /// <returns>RiskassessmentsClient</returns>
         public RiskassessmentsClient Riskassessments()
@@ -122,7 +123,6 @@ namespace Ingenico.Connect.Sdk.Merchant
 
         /// <summary>
         /// Resource /{merchantId}/services
-        /// Several services to help you
         /// </summary>
         /// <returns>ServicesClient</returns>
         public ServicesClient Services()
@@ -132,7 +132,6 @@ namespace Ingenico.Connect.Sdk.Merchant
 
         /// <summary>
         /// Resource /{merchantId}/tokens
-        /// Create, delete and update tokens
         /// </summary>
         /// <returns>TokensClient</returns>
         public TokensClient Tokens()
@@ -142,7 +141,6 @@ namespace Ingenico.Connect.Sdk.Merchant
 
         /// <summary>
         /// Resource /{merchantId}/mandates
-        /// Create, get and update mandates
         /// </summary>
         /// <returns>MandatesClient</returns>
         public MandatesClient Mandates()
@@ -152,7 +150,6 @@ namespace Ingenico.Connect.Sdk.Merchant
 
         /// <summary>
         /// Resource /{merchantId}/sessions
-        /// Create new Session for Client2Server API calls
         /// </summary>
         /// <returns>SessionsClient</returns>
         public SessionsClient Sessions()

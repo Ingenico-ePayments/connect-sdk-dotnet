@@ -22,7 +22,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Tokens
 
         /// <summary>
         /// Resource /{merchantId}/tokens
-        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/tokens/create.html">Create token</a>
+        /// - <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/tokens/create.html">Create token</a>
         /// </summary>
         /// <param name="body">CreateTokenRequest</param>
         /// <param name="context">CallContext</param>
@@ -57,7 +57,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Tokens
 
         /// <summary>
         /// Resource /{merchantId}/tokens/{tokenId}
-        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/tokens/get.html">Get token</a>
+        /// - <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/tokens/get.html">Get token</a>
         /// </summary>
         /// <param name="tokenId">string</param>
         /// <param name="context">CallContext</param>
@@ -93,7 +93,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Tokens
 
         /// <summary>
         /// Resource /{merchantId}/tokens/{tokenId}
-        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/tokens/update.html">Update token</a>
+        /// - <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/tokens/update.html">Update token</a>
         /// </summary>
         /// <param name="tokenId">string</param>
         /// <param name="body">UpdateTokenRequest</param>
@@ -131,7 +131,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Tokens
 
         /// <summary>
         /// Resource /{merchantId}/tokens/{tokenId}
-        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/tokens/delete.html">Delete token</a>
+        /// - <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/tokens/delete.html">Delete token</a>
         /// </summary>
         /// <param name="tokenId">string</param>
         /// <param name="query">DeleteTokenParams</param>
@@ -168,7 +168,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Tokens
 
         /// <summary>
         /// Resource /{merchantId}/tokens/{tokenId}/approvesepadirectdebit
-        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/tokens/approvesepadirectdebit.html">Approve SEPA DD mandate</a>
+        /// - <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/tokens/approvesepadirectdebit.html">Approve SEPA DD mandate</a>
         /// </summary>
         /// <param name="tokenId">string</param>
         /// <param name="body">ApproveTokenRequest</param>

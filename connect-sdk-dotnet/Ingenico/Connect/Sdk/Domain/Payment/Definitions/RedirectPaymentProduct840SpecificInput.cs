@@ -6,7 +6,7 @@ using System;
 
 namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
 {
-    public class RedirectPaymentProduct840SpecificInput
+    public class RedirectPaymentProduct840SpecificInput : AbstractRedirectPaymentProduct840SpecificInput
     {
         [ObsoleteAttribute("use order.references.descriptor instead.")]
         public string Custom { get; set; } = null;

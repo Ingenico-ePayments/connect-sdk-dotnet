@@ -6,5 +6,6 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
 {
     public class RedirectPaymentMethodSpecificInputBase : AbstractRedirectPaymentMethodSpecificInput
     {
+        public RedirectPaymentProduct840SpecificInputBase PaymentProduct840SpecificInput { get; set; } = null;
     }
 }

@@ -22,7 +22,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Payouts
 
         /// <summary>
         /// Resource /{merchantId}/payouts
-        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/payouts/create.html">Create payout</a>
+        /// - <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/payouts/create.html">Create payout</a>
         /// </summary>
         /// <param name="body">CreatePayoutRequest</param>
         /// <param name="context">CallContext</param>
@@ -58,7 +58,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Payouts
 
         /// <summary>
         /// Resource /{merchantId}/payouts
-        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/payouts/find.html">Find payouts</a>
+        /// - <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/payouts/find.html">Find payouts</a>
         /// </summary>
         /// <param name="query">FindPayoutsParams</param>
         /// <param name="context">CallContext</param>
@@ -92,7 +92,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Payouts
 
         /// <summary>
         /// Resource /{merchantId}/payouts/{payoutId}
-        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/payouts/get.html">Get payout</a>
+        /// - <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/payouts/get.html">Get payout</a>
         /// </summary>
         /// <param name="payoutId">string</param>
         /// <param name="context">CallContext</param>
@@ -128,7 +128,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Payouts
 
         /// <summary>
         /// Resource /{merchantId}/payouts/{payoutId}/approve
-        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/payouts/approve.html">Approve payout</a>
+        /// - <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/payouts/approve.html">Approve payout</a>
         /// </summary>
         /// <param name="payoutId">string</param>
         /// <param name="body">ApprovePayoutRequest</param>
@@ -166,7 +166,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Payouts
 
         /// <summary>
         /// Resource /{merchantId}/payouts/{payoutId}/cancel
-        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/payouts/cancel.html">Cancel payout</a>
+        /// - <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/payouts/cancel.html">Cancel payout</a>
         /// </summary>
         /// <param name="payoutId">string</param>
         /// <param name="context">CallContext</param>
@@ -203,7 +203,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Payouts
 
         /// <summary>
         /// Resource /{merchantId}/payouts/{payoutId}/cancelapproval
-        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/payouts/cancelapproval.html">Undo approve payout</a>
+        /// - <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/payouts/cancelapproval.html">Undo approve payout</a>
         /// </summary>
         /// <param name="payoutId">string</param>
         /// <param name="context">CallContext</param>

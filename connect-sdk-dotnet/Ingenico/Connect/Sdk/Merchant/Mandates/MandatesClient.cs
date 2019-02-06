@@ -22,7 +22,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Mandates
 
         /// <summary>
         /// Resource /{merchantId}/mandates
-        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/mandates/create.html">Create mandate</a>
+        /// - <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/mandates/create.html">Create mandate</a>
         /// </summary>
         /// <param name="body">CreateMandateRequest</param>
         /// <param name="context">CallContext</param>
@@ -57,7 +57,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Mandates
 
         /// <summary>
         /// Resource /{merchantId}/mandates/{uniqueMandateReference}
-        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/mandates/createWithMandateReference.html">Create mandate with mandatereference</a>
+        /// - <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/mandates/createWithMandateReference.html">Create mandate with mandatereference</a>
         /// </summary>
         /// <param name="uniqueMandateReference">string</param>
         /// <param name="body">CreateMandateRequest</param>
@@ -95,7 +95,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Mandates
 
         /// <summary>
         /// Resource /{merchantId}/mandates/{uniqueMandateReference}
-        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/mandates/get.html">Get mandate</a>
+        /// - <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/mandates/get.html">Get mandate</a>
         /// </summary>
         /// <param name="uniqueMandateReference">string</param>
         /// <param name="context">CallContext</param>
@@ -131,7 +131,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Mandates
 
         /// <summary>
         /// Resource /{merchantId}/mandates/{uniqueMandateReference}/block
-        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/mandates/block.html">Block mandate</a>
+        /// - <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/mandates/block.html">Block mandate</a>
         /// </summary>
         /// <param name="uniqueMandateReference">string</param>
         /// <param name="context">CallContext</param>
@@ -168,7 +168,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Mandates
 
         /// <summary>
         /// Resource /{merchantId}/mandates/{uniqueMandateReference}/unblock
-        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/mandates/unblock.html">Unblock mandate</a>
+        /// - <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/mandates/unblock.html">Unblock mandate</a>
         /// </summary>
         /// <param name="uniqueMandateReference">string</param>
         /// <param name="context">CallContext</param>
@@ -205,7 +205,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Mandates
 
         /// <summary>
         /// Resource /{merchantId}/mandates/{uniqueMandateReference}/revoke
-        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/mandates/revoke.html">Revoke mandate</a>
+        /// - <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/mandates/revoke.html">Revoke mandate</a>
         /// </summary>
         /// <param name="uniqueMandateReference">string</param>
         /// <param name="context">CallContext</param>

@@ -3,30 +3,30 @@
  * https://epayments-api.developer-ingenico.com/s2sapi/v1/
  */
 using Ingenico.Connect.Sdk;
+using Ingenico.Connect.Sdk.Domain.Dispute;
 using Ingenico.Connect.Sdk.Domain.Errors;
-using Ingenico.Connect.Sdk.Domain.Hostedcheckout;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Ingenico.Connect.Sdk.Merchant.Hostedcheckouts
+namespace Ingenico.Connect.Sdk.Merchant.Disputes
 {
     /// <summary>
-    /// Hostedcheckouts client. Thread-safe.
+    /// Disputes client. Thread-safe.
     /// </summary>
-    public class HostedcheckoutsClient : ApiResource
+    public class DisputesClient : ApiResource
     {
-        public HostedcheckoutsClient(ApiResource parent, IDictionary<string, string> pathContext) :
+        public DisputesClient(ApiResource parent, IDictionary<string, string> pathContext) :
             base(parent, pathContext)
         {
         }
 
         /// <summary>
-        /// Resource /{merchantId}/hostedcheckouts
-        /// - <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/hostedcheckouts/create.html">Create hosted checkout</a>
+        /// Resource /{merchantId}/disputes/{disputeId}
+        /// - <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/disputes/get.html">Get dispute</a>
         /// </summary>
-        /// <param name="body">CreateHostedCheckoutRequest</param>
+        /// <param name="disputeId">string</param>
         /// <param name="context">CallContext</param>
-        /// <returns>CreateHostedCheckoutResponse</returns>
+        /// <returns>DisputeResponse</returns>
         /// <exception cref="ValidationException">if the request was not correct and couldn't be processed (HTTP status code BadRequest)</exception>
         /// <exception cref="AuthorizationException">if the request was not allowed (HTTP status code Forbidden)</exception>
         /// <exception cref="IdempotenceException">if an idempotent request caused a conflict (HTTP status code Conflict)</exception>
@@ -36,16 +36,17 @@ namespace Ingenico.Connect.Sdk.Merchant.Hostedcheckouts
         ///            the Ingenico ePayments platform was unable to process a message from a downstream partner/acquirer,
         ///            or the service that you're trying to reach is temporary unavailable (HTTP status code InternalServerError, BadGateway or ServiceUnavailable)</exception>
         /// <exception cref="ApiException">if the Ingenico ePayments platform returned any other error</exception>
-        public async Task<CreateHostedCheckoutResponse> Create(CreateHostedCheckoutRequest body, CallContext context = null)
+        public async Task<DisputeResponse> Get(string disputeId, CallContext context = null)
         {
-            string uri = InstantiateUri("/{apiVersion}/{merchantId}/hostedcheckouts", null);
+            IDictionary<string, string> pathContext = new Dictionary<string, string>();
+            pathContext.Add("disputeId", disputeId);
+            string uri = InstantiateUri("/{apiVersion}/{merchantId}/disputes/{disputeId}", pathContext);
             try
             {
-                return await _communicator.Post<CreateHostedCheckoutResponse>(
+                return await _communicator.Get<DisputeResponse>(
                         uri,
                         ClientHeaders,
                         null,
-                        body,
                         context);
             }
             catch (ResponseException e)
@@ -56,12 +57,12 @@ namespace Ingenico.Connect.Sdk.Merchant.Hostedcheckouts
         }
 
         /// <summary>
-        /// Resource /{merchantId}/hostedcheckouts/{hostedCheckoutId}
-        /// - <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/hostedcheckouts/get.html">Get hosted checkout status</a>
+        /// Resource /{merchantId}/disputes/{disputeId}/submit
+        /// - <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/disputes/submit.html">Submit dispute</a>
         /// </summary>
-        /// <param name="hostedCheckoutId">string</param>
+        /// <param name="disputeId">string</param>
         /// <param name="context">CallContext</param>
-        /// <returns>GetHostedCheckoutResponse</returns>
+        /// <returns>DisputeResponse</returns>
         /// <exception cref="ValidationException">if the request was not correct and couldn't be processed (HTTP status code BadRequest)</exception>
         /// <exception cref="AuthorizationException">if the request was not allowed (HTTP status code Forbidden)</exception>
         /// <exception cref="IdempotenceException">if an idempotent request caused a conflict (HTTP status code Conflict)</exception>
@@ -71,16 +72,17 @@ namespace Ingenico.Connect.Sdk.Merchant.Hostedcheckouts
         ///            the Ingenico ePayments platform was unable to process a message from a downstream partner/acquirer,
         ///            or the service that you're trying to reach is temporary unavailable (HTTP status code InternalServerError, BadGateway or ServiceUnavailable)</exception>
         /// <exception cref="ApiException">if the Ingenico ePayments platform returned any other error</exception>
-        public async Task<GetHostedCheckoutResponse> Get(string hostedCheckoutId, CallContext context = null)
+        public async Task<DisputeResponse> Submit(string disputeId, CallContext context = null)
         {
             IDictionary<string, string> pathContext = new Dictionary<string, string>();
-            pathContext.Add("hostedCheckoutId", hostedCheckoutId);
-            string uri = InstantiateUri("/{apiVersion}/{merchantId}/hostedcheckouts/{hostedCheckoutId}", pathContext);
+            pathContext.Add("disputeId", disputeId);
+            string uri = InstantiateUri("/{apiVersion}/{merchantId}/disputes/{disputeId}/submit", pathContext);
             try
             {
-                return await _communicator.Get<GetHostedCheckoutResponse>(
+                return await _communicator.Post<DisputeResponse>(
                         uri,
                         ClientHeaders,
+                        null,
                         null,
                         context);
             }

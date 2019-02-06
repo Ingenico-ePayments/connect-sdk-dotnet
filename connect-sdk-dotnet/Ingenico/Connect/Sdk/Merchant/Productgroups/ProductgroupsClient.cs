@@ -22,7 +22,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Productgroups
 
         /// <summary>
         /// Resource /{merchantId}/productgroups
-        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/productgroups/find.html">Get payment product groups</a>
+        /// - <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/productgroups/find.html">Get payment product groups</a>
         /// </summary>
         /// <param name="query">FindProductgroupsParams</param>
         /// <param name="context">CallContext</param>
@@ -56,7 +56,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Productgroups
 
         /// <summary>
         /// Resource /{merchantId}/productgroups/{paymentProductGroupId}
-        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/productgroups/get.html">Get payment product group</a>
+        /// - <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/productgroups/get.html">Get payment product group</a>
         /// </summary>
         /// <param name="paymentProductGroupId">string</param>
         /// <param name="query">GetProductgroupParams</param>
@@ -93,7 +93,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Productgroups
 
         /// <summary>
         /// Resource /{merchantId}/productgroups/{paymentProductGroupId}/deviceFingerprint
-        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/productgroups/deviceFingerprint.html">Get device fingerprint</a>
+        /// - <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/productgroups/deviceFingerprint.html">Get device fingerprint</a>
         /// </summary>
         /// <param name="paymentProductGroupId">string</param>
         /// <param name="body">DeviceFingerprintRequest</param>

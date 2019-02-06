@@ -22,7 +22,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Refunds
 
         /// <summary>
         /// Resource /{merchantId}/refunds
-        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/refunds/find.html">Find refunds</a>
+        /// - <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/refunds/find.html">Find refunds</a>
         /// </summary>
         /// <param name="query">FindRefundsParams</param>
         /// <param name="context">CallContext</param>
@@ -56,7 +56,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Refunds
 
         /// <summary>
         /// Resource /{merchantId}/refunds/{refundId}
-        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/refunds/get.html">Get refund</a>
+        /// - <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/refunds/get.html">Get refund</a>
         /// </summary>
         /// <param name="refundId">string</param>
         /// <param name="context">CallContext</param>
@@ -92,7 +92,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Refunds
 
         /// <summary>
         /// Resource /{merchantId}/refunds/{refundId}/approve
-        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/refunds/approve.html">Approve refund</a>
+        /// - <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/refunds/approve.html">Approve refund</a>
         /// </summary>
         /// <param name="refundId">string</param>
         /// <param name="body">ApproveRefundRequest</param>
@@ -130,7 +130,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Refunds
 
         /// <summary>
         /// Resource /{merchantId}/refunds/{refundId}/cancel
-        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/refunds/cancel.html">Cancel refund</a>
+        /// - <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/refunds/cancel.html">Cancel refund</a>
         /// </summary>
         /// <param name="refundId">string</param>
         /// <param name="context">CallContext</param>
@@ -167,7 +167,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Refunds
 
         /// <summary>
         /// Resource /{merchantId}/refunds/{refundId}/cancelapproval
-        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/refunds/cancelapproval.html">Undo approve refund</a>
+        /// - <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/refunds/cancelapproval.html">Undo approve refund</a>
         /// </summary>
         /// <param name="refundId">string</param>
         /// <param name="context">CallContext</param>

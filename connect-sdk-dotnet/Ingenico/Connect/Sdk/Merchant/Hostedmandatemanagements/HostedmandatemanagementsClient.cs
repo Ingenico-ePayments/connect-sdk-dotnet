@@ -22,7 +22,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Hostedmandatemanagements
 
         /// <summary>
         /// Resource /{merchantId}/hostedmandatemanagements
-        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/hostedmandatemanagements/create.html">Create hosted mandate management</a>
+        /// - <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/hostedmandatemanagements/create.html">Create hosted mandate management</a>
         /// </summary>
         /// <param name="body">CreateHostedMandateManagementRequest</param>
         /// <param name="context">CallContext</param>
@@ -57,7 +57,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Hostedmandatemanagements
 
         /// <summary>
         /// Resource /{merchantId}/hostedmandatemanagements/{hostedMandateManagementId}
-        /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/hostedmandatemanagements/get.html">Get hosted mandate management status</a>
+        /// - <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/hostedmandatemanagements/get.html">Get hosted mandate management status</a>
         /// </summary>
         /// <param name="hostedMandateManagementId">string</param>
         /// <param name="context">CallContext</param>
