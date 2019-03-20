@@ -12,6 +12,8 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
 
         public string CompanyName { get; set; } = null;
 
+        public string ContactPhone { get; set; } = null;
+
         public string CountryCode { get; set; } = null;
 
         public string CustomerAccountStatus { get; set; } = null;

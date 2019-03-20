@@ -23,6 +23,8 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
 
         public Seller Seller { get; set; } = null;
 
+        public Shipping Shipping { get; set; } = null;
+
         public ShoppingCart ShoppingCart { get; set; } = null;
     }
 }
