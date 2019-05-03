@@ -10,6 +10,8 @@ namespace Ingenico.Connect.Sdk.Domain.Riskassessments.Definitions
     {
         public FraudFields FraudFields { get; set; } = null;
 
+        public MerchantRiskAssessment Merchant { get; set; } = null;
+
         public OrderRiskAssessment Order { get; set; } = null;
 
         public int? PaymentProductId { get; set; } = null;

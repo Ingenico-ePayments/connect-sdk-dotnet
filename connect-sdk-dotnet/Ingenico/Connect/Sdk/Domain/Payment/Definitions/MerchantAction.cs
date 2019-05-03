@@ -14,6 +14,8 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
 
         public IList<PaymentProductField> FormFields { get; set; } = null;
 
+        public MobileThreeDSecureChallengeParameters MobileThreeDSecureChallengeParameters { get; set; } = null;
+
         public RedirectData RedirectData { get; set; } = null;
 
         public string RenderingData { get; set; } = null;

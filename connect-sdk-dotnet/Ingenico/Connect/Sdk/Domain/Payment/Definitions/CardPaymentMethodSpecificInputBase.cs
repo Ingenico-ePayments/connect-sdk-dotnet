@@ -6,5 +6,6 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
 {
     public class CardPaymentMethodSpecificInputBase : AbstractCardPaymentMethodSpecificInput
     {
+        public ThreeDSecureBase ThreeDSecure { get; set; } = null;
     }
 }

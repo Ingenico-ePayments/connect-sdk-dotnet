@@ -10,6 +10,8 @@ namespace Ingenico.Connect.Sdk.Domain.Payment
     {
         public CompletePaymentCardPaymentMethodSpecificInput CardPaymentMethodSpecificInput { get; set; } = null;
 
+        public Definitions.Merchant Merchant { get; set; } = null;
+
         public Order Order { get; set; } = null;
     }
 }

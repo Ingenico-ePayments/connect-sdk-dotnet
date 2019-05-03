@@ -8,7 +8,7 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
 {
     public class AbstractSepaDirectDebitPaymentProduct771SpecificInput
     {
-        [ObsoleteAttribute("Use existingUniqueMandateReference instead")]
+        [ObsoleteAttribute("Use existingUniqueMandateReference or mandate.uniqueMandateReference instead")]
         public string MandateReference { get; set; } = null;
     }
 }

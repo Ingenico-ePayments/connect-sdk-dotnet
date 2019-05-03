@@ -10,6 +10,14 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
     {
         public IList<AmountBreakdown> AmountBreakdown { get; set; } = null;
 
+        public GiftCardPurchase GiftCardPurchase { get; set; } = null;
+
+        public bool? IsPreOrder { get; set; } = null;
+
         public IList<LineItem> Items { get; set; } = null;
+
+        public string PreOrderItemAvailabilityDate { get; set; } = null;
+
+        public bool? ReOrderIndicator { get; set; } = null;
     }
 }

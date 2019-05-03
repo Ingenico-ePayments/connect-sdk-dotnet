@@ -8,7 +8,17 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
     {
         public string Cavv { get; set; } = null;
 
+        public string DirectoryServerTransactionId { get; set; } = null;
+
         public string Eci { get; set; } = null;
+
+        public SdkDataOutput SdkData { get; set; } = null;
+
+        public ThreeDSecureData ThreeDSecureData { get; set; } = null;
+
+        public string ThreeDSecureVersion { get; set; } = null;
+
+        public string ThreeDServerTransactionId { get; set; } = null;
 
         public string Xid { get; set; } = null;
     }

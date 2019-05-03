@@ -24,10 +24,47 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
                 card.Cvv = "123";
                 card.ExpiryDate = "1220";
 
+                ExternalCardholderAuthenticationData externalCardholderAuthenticationData = new ExternalCardholderAuthenticationData();
+                externalCardholderAuthenticationData.Cavv = "AgAAAAAABk4DWZ4C28yUQAAAAAA=";
+                externalCardholderAuthenticationData.CavvAlgorithm = "1";
+                externalCardholderAuthenticationData.Eci = 8;
+                externalCardholderAuthenticationData.ThreeDSecureVersion = "v2";
+                externalCardholderAuthenticationData.ThreeDServerTransactionId = "3DSTID1234";
+                externalCardholderAuthenticationData.ValidationResult = "Y";
+                externalCardholderAuthenticationData.Xid = "n3h2uOQPUgnmqhCkXNfxl8pOZJA=";
+
+                ThreeDSecureData priorThreeDSecureData = new ThreeDSecureData();
+                priorThreeDSecureData.AcsTransactionId = "empty";
+                priorThreeDSecureData.Method = "challenged";
+                priorThreeDSecureData.UtcTimestamp = "201901311530";
+
+                DeviceRenderOptions deviceRenderOptions = new DeviceRenderOptions();
+                deviceRenderOptions.SdkInterface = "native";
+                deviceRenderOptions.SdkUiType = "multi-select";
+
+                SdkDataInput sdkData = new SdkDataInput();
+                sdkData.DeviceInfo = "abc123";
+                sdkData.DeviceRenderOptions = deviceRenderOptions;
+                sdkData.SdkAppId = "xyz";
+                sdkData.SdkEncryptedData = "abc123";
+                sdkData.SdkEphemeralPublicKey = "123xyz";
+                sdkData.SdkMaxTimeout = "30";
+                sdkData.SdkReferenceNumber = "zaq123";
+                sdkData.SdkTransactionId = "xsw321";
+
+                ThreeDSecure threeDSecure = new ThreeDSecure();
+                threeDSecure.AuthenticationFlow = "browser";
+                threeDSecure.ChallengeCanvasSize = "600x400";
+                threeDSecure.ChallengeIndicator = "challenge-requested";
+                threeDSecure.ExternalCardholderAuthenticationData = externalCardholderAuthenticationData;
+                threeDSecure.PriorThreeDSecureData = priorThreeDSecureData;
+                threeDSecure.SdkData = sdkData;
+                threeDSecure.SkipAuthentication = false;
+
                 CardPaymentMethodSpecificInput cardPaymentMethodSpecificInput = new CardPaymentMethodSpecificInput();
                 cardPaymentMethodSpecificInput.Card = card;
                 cardPaymentMethodSpecificInput.PaymentProductId = 1;
-                cardPaymentMethodSpecificInput.SkipAuthentication = false;
+                cardPaymentMethodSpecificInput.ThreeDSecure = threeDSecure;
 
                 AmountOfMoney amountOfMoney = new AmountOfMoney();
                 amountOfMoney.Amount = 2980L;
@@ -44,6 +81,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
 
                 CompanyInformation companyInformation = new CompanyInformation();
                 companyInformation.Name = "Acme Labs";
+                companyInformation.VatNumber = "1234AB5678CD";
 
                 ContactDetails contactDetails = new ContactDetails();
                 contactDetails.EmailAddress = "wile.e.coyote@acmelabs.com";
@@ -62,21 +100,6 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
                 personalInformation.Gender = "male";
                 personalInformation.Name = name;
 
-                PersonalName shippingName = new PersonalName();
-                shippingName.FirstName = "Road";
-                shippingName.Surname = "Runner";
-                shippingName.Title = "Miss";
-
-                AddressPersonal shippingAddress = new AddressPersonal();
-                shippingAddress.AdditionalInfo = "Suite II";
-                shippingAddress.City = "Monument Valley";
-                shippingAddress.CountryCode = "US";
-                shippingAddress.HouseNumber = "1";
-                shippingAddress.Name = shippingName;
-                shippingAddress.State = "Utah";
-                shippingAddress.Street = "Desertroad";
-                shippingAddress.Zip = "84536";
-
                 Customer customer = new Customer();
                 customer.BillingAddress = billingAddress;
                 customer.CompanyInformation = companyInformation;
@@ -84,8 +107,6 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
                 customer.Locale = "en_US";
                 customer.MerchantCustomerId = "1234";
                 customer.PersonalInformation = personalInformation;
-                customer.ShippingAddress = shippingAddress;
-                customer.VatNumber = "1234AB5678CD";
 
                 OrderInvoiceData invoiceData = new OrderInvoiceData();
                 invoiceData.InvoiceDate = "20140306191500";
@@ -96,6 +117,24 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
                 references.InvoiceData = invoiceData;
                 references.MerchantOrderId = 123456L;
                 references.MerchantReference = "AcmeOrder0001";
+
+                PersonalName shippingName = new PersonalName();
+                shippingName.FirstName = "Road";
+                shippingName.Surname = "Runner";
+                shippingName.Title = "Miss";
+
+                AddressPersonal address = new AddressPersonal();
+                address.AdditionalInfo = "Suite II";
+                address.City = "Monument Valley";
+                address.CountryCode = "US";
+                address.HouseNumber = "1";
+                address.Name = shippingName;
+                address.State = "Utah";
+                address.Street = "Desertroad";
+                address.Zip = "84536";
+
+                Shipping shipping = new Shipping();
+                shipping.Address = address;
 
                 IList<LineItem> items = new List<LineItem>();
 
@@ -136,6 +175,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
                 order.AmountOfMoney = amountOfMoney;
                 order.Customer = customer;
                 order.References = references;
+                order.Shipping = shipping;
                 order.ShoppingCart = shoppingCart;
 
                 CreatePaymentRequest body = new CreatePaymentRequest();

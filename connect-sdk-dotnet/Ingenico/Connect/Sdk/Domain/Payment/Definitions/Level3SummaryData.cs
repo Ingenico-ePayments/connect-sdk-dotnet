@@ -6,16 +6,16 @@ using System;
 
 namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
 {
-    [ObsoleteAttribute("Use Order.shoppingCart instead")]
+    [ObsoleteAttribute("Use ShoppingCart.amountBreakdown instead")]
     public class Level3SummaryData
     {
-        [ObsoleteAttribute("Use ShoppingCart.amountbreakdown with type DISCOUNT instead")]
+        [ObsoleteAttribute("Use ShoppingCart.amountBreakdown with type DISCOUNT instead")]
         public long? DiscountAmount { get; set; } = null;
 
-        [ObsoleteAttribute("Use ShoppingCart.amountbreakdown with type DUTY instead")]
+        [ObsoleteAttribute("Use ShoppingCart.amountBreakdown with type DUTY instead")]
         public long? DutyAmount { get; set; } = null;
 
-        [ObsoleteAttribute("Use ShoppingCart.amountbreakdown with type SHIPPING instead")]
+        [ObsoleteAttribute("Use ShoppingCart.amountBreakdown with type SHIPPING instead")]
         public long? ShippingAmount { get; set; } = null;
     }
 }

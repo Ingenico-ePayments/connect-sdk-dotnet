@@ -2,6 +2,7 @@
  * This class was auto-generated from the API references found at
  * https://epayments-api.developer-ingenico.com/s2sapi/v1/
  */
+using System;
 using System.Collections.Generic;
 
 namespace Ingenico.Connect.Sdk.Domain.Definitions
@@ -20,6 +21,7 @@ namespace Ingenico.Connect.Sdk.Domain.Definitions
 
         public bool? IsETicket { get; set; } = null;
 
+        [ObsoleteAttribute("Use Order.customer.accountType instead")]
         public bool? IsRegisteredCustomer { get; set; } = null;
 
         public bool? IsRestrictedTicket { get; set; } = null;

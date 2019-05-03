@@ -11,7 +11,7 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
     {
         public AirlineData AirlineData { get; set; } = null;
 
-        [ObsoleteAttribute("Use Order.shoppingCart instead")]
+        [ObsoleteAttribute("Use Order.shoppingCart.amountBreakdown instead")]
         public Level3SummaryData Level3SummaryData { get; set; } = null;
 
         public long? NumberOfInstallments { get; set; } = null;

@@ -7,5 +7,7 @@ namespace Ingenico.Connect.Sdk.Domain.Definitions
     public class CompanyInformation
     {
         public string Name { get; set; } = null;
+
+        public string VatNumber { get; set; } = null;
     }
 }

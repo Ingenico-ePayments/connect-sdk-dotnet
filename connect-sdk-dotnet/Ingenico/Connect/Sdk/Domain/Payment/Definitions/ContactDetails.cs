@@ -10,6 +10,10 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
     {
         public string FaxNumber { get; set; } = null;
 
+        public string MobilePhoneNumber { get; set; } = null;
+
         public string PhoneNumber { get; set; } = null;
+
+        public string WorkPhoneNumber { get; set; } = null;
     }
 }

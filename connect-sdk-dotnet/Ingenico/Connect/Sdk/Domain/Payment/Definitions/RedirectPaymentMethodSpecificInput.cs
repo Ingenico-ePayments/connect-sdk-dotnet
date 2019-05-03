@@ -2,6 +2,8 @@
  * This class was auto-generated from the API references found at
  * https://epayments-api.developer-ingenico.com/s2sapi/v1/
  */
+using System;
+
 namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
 {
     public class RedirectPaymentMethodSpecificInput : AbstractRedirectPaymentMethodSpecificInput
@@ -18,6 +20,9 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
 
         public RedirectPaymentProduct882SpecificInput PaymentProduct882SpecificInput { get; set; } = null;
 
+        public RedirectionData RedirectionData { get; set; } = null;
+
+        [ObsoleteAttribute("Use redirectionData.returnUrl instead")]
         public string ReturnUrl { get; set; } = null;
     }
 }

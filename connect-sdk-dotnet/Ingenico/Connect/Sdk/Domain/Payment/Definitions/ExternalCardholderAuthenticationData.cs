@@ -10,7 +10,13 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
 
         public string CavvAlgorithm { get; set; } = null;
 
+        public string DirectoryServerTransactionId { get; set; } = null;
+
         public int? Eci { get; set; } = null;
+
+        public string ThreeDSecureVersion { get; set; } = null;
+
+        public string ThreeDServerTransactionId { get; set; } = null;
 
         public string ValidationResult { get; set; } = null;
 

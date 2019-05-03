@@ -13,5 +13,7 @@ namespace Ingenico.Connect.Sdk.Domain.Riskassessments.Definitions
         public AmountOfMoney AmountOfMoney { get; set; } = null;
 
         public CustomerRiskAssessment Customer { get; set; } = null;
+
+        public ShippingRiskAssessment Shipping { get; set; } = null;
     }
 }

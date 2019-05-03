@@ -16,11 +16,12 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
 
         public Customer Customer { get; set; } = null;
 
-        [ObsoleteAttribute("Use ShoppingCart.items instead")]
+        [ObsoleteAttribute("Use shoppingCart.items instead")]
         public IList<LineItem> Items { get; set; } = null;
 
         public OrderReferences References { get; set; } = null;
 
+        [ObsoleteAttribute("Use Merchant.seller instead")]
         public Seller Seller { get; set; } = null;
 
         public Shipping Shipping { get; set; } = null;

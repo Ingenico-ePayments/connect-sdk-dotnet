@@ -10,6 +10,8 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
     {
         public AdditionalOrderInputAirlineData AdditionalInput { get; set; } = null;
 
+        public CustomerApprovePayment Customer { get; set; } = null;
+
         public OrderReferencesApprovePayment References { get; set; } = null;
     }
 }

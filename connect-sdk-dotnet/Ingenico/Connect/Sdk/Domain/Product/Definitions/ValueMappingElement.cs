@@ -11,7 +11,7 @@ namespace Ingenico.Connect.Sdk.Domain.Product.Definitions
     {
         public IList<PaymentProductFieldDisplayElement> DisplayElements { get; set; } = null;
 
-        [ObsoleteAttribute("use displayElement with ID 'displayName' instead.")]
+        [ObsoleteAttribute("Use displayElements instead with ID 'displayName'")]
         public string DisplayName { get; set; } = null;
 
         public string Value { get; set; } = null;

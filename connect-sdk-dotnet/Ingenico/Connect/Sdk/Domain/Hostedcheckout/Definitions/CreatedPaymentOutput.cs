@@ -15,7 +15,7 @@ namespace Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions
 
         public PaymentCreationReferences PaymentCreationReferences { get; set; } = null;
 
-        [ObsoleteAttribute("Use payment.statusOutput.statusCategory instead")]
+        [ObsoleteAttribute("Use Payment.statusOutput.statusCategory instead")]
         public string PaymentStatusCategory { get; set; } = null;
 
         public bool? TokenizationSucceeded { get; set; } = null;

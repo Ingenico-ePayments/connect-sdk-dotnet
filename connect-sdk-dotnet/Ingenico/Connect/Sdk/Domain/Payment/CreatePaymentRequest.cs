@@ -25,6 +25,8 @@ namespace Ingenico.Connect.Sdk.Domain.Payment
 
         public InvoicePaymentMethodSpecificInput InvoicePaymentMethodSpecificInput { get; set; } = null;
 
+        public Definitions.Merchant Merchant { get; set; } = null;
+
         public MobilePaymentMethodSpecificInput MobilePaymentMethodSpecificInput { get; set; } = null;
 
         public Order Order { get; set; } = null;

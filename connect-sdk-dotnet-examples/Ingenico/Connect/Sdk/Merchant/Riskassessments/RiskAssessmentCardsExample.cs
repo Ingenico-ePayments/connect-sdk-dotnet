@@ -61,7 +61,6 @@ namespace Ingenico.Connect.Sdk.Merchant.Riskassessments
                 airlineData.FlightLegs = flightLegs;
                 airlineData.InvoiceNumber = "123456";
                 airlineData.IsETicket = true;
-                airlineData.IsRegisteredCustomer = true;
                 airlineData.IsRestrictedTicket = true;
                 airlineData.IsThirdParty = true;
                 airlineData.IssueDate = "20150101";
@@ -86,6 +85,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Riskassessments
                 billingAddress.CountryCode = "US";
 
                 CustomerRiskAssessment customer = new CustomerRiskAssessment();
+                customer.AccountType = "existing";
                 customer.BillingAddress = billingAddress;
                 customer.Locale = "en_US";
 
