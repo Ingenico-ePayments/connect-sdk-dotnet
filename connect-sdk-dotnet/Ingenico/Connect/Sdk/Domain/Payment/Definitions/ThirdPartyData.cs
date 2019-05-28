@@ -4,10 +4,8 @@
  */
 namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
 {
-    public class RedirectPaymentProduct863SpecificInput
+    public class ThirdPartyData
     {
-        public string IntegrationType { get; set; } = null;
-
-        public string OpenId { get; set; } = null;
+        public PaymentProduct863ThirdPartyData PaymentProduct863 { get; set; } = null;
     }
 }

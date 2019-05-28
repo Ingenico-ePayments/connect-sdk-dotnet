@@ -13,6 +13,8 @@ namespace Ingenico.Connect.Sdk.Merchant.Refunds
     /// </summary>
     public class FindRefundsParams : AbstractParamRequest
     {
+        public string HostedCheckoutId { get; set; } = null;
+
         public string MerchantReference { get; set; } = null;
 
         public long? MerchantOrderId { get; set; } = null;
@@ -24,6 +26,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Refunds
         public override IEnumerable<RequestParam> ToRequestParameters()
         {
             IList<RequestParam> result = new List<RequestParam>();
+            AddParameter(result, "hostedCheckoutId", HostedCheckoutId);
             AddParameter(result, "merchantReference", MerchantReference);
             AddParameter(result, "merchantOrderId", MerchantOrderId);
             AddParameter(result, "offset", Offset);

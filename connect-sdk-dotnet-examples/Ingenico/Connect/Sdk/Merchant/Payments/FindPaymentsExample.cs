@@ -16,6 +16,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
             using (Client client = GetClient())
             {
                 FindPaymentsParams query = new FindPaymentsParams();
+                query.HostedCheckoutId = "15c09dac-bf44-486a-af6b-edfd8680a166";
                 query.MerchantReference = "AcmeOrder0001";
                 query.MerchantOrderId = 123456L;
                 query.Offset = 0;

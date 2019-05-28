@@ -21,5 +21,7 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
         public string RenderingData { get; set; } = null;
 
         public IList<KeyValuePair> ShowData { get; set; } = null;
+
+        public ThirdPartyData ThirdPartyData { get; set; } = null;
     }
 }

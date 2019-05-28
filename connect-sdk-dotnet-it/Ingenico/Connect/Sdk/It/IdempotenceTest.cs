@@ -34,8 +34,11 @@ namespace Ingenico.Connect.Sdk.It
             order.Customer = (customer);
             body.Order = (order);
 
+            RedirectionData redirectionData = new RedirectionData();
+            redirectionData.ReturnUrl = ("http://example.com/");
+
             RedirectPaymentMethodSpecificInput paymentMethodSpecificInput = new RedirectPaymentMethodSpecificInput();
-            paymentMethodSpecificInput.ReturnUrl = ("http://example.com/");
+            paymentMethodSpecificInput.RedirectionData = redirectionData;
             paymentMethodSpecificInput.PaymentProductId = (809);
 
             RedirectPaymentProduct809SpecificInput paymentProductSpecificInput = new RedirectPaymentProduct809SpecificInput();
