@@ -12,5 +12,15 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
         public CashPaymentProduct1503SpecificInput PaymentProduct1503SpecificInput { get; set; } = null;
 
         public CashPaymentProduct1504SpecificInput PaymentProduct1504SpecificInput { get; set; } = null;
+
+        public CashPaymentProduct1521SpecificInput PaymentProduct1521SpecificInput { get; set; } = null;
+
+        public CashPaymentProduct1522SpecificInput PaymentProduct1522SpecificInput { get; set; } = null;
+
+        public CashPaymentProduct1523SpecificInput PaymentProduct1523SpecificInput { get; set; } = null;
+
+        public CashPaymentProduct1524SpecificInput PaymentProduct1524SpecificInput { get; set; } = null;
+
+        public CashPaymentProduct1526SpecificInput PaymentProduct1526SpecificInput { get; set; } = null;
     }
 }

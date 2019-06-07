@@ -38,27 +38,12 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
                 priorThreeDSecureData.Method = "challenged";
                 priorThreeDSecureData.UtcTimestamp = "201901311530";
 
-                DeviceRenderOptions deviceRenderOptions = new DeviceRenderOptions();
-                deviceRenderOptions.SdkInterface = "native";
-                deviceRenderOptions.SdkUiType = "multi-select";
-
-                SdkDataInput sdkData = new SdkDataInput();
-                sdkData.DeviceInfo = "abc123";
-                sdkData.DeviceRenderOptions = deviceRenderOptions;
-                sdkData.SdkAppId = "xyz";
-                sdkData.SdkEncryptedData = "abc123";
-                sdkData.SdkEphemeralPublicKey = "123xyz";
-                sdkData.SdkMaxTimeout = "30";
-                sdkData.SdkReferenceNumber = "zaq123";
-                sdkData.SdkTransactionId = "xsw321";
-
                 ThreeDSecure threeDSecure = new ThreeDSecure();
                 threeDSecure.AuthenticationFlow = "browser";
                 threeDSecure.ChallengeCanvasSize = "600x400";
                 threeDSecure.ChallengeIndicator = "challenge-requested";
                 threeDSecure.ExternalCardholderAuthenticationData = externalCardholderAuthenticationData;
                 threeDSecure.PriorThreeDSecureData = priorThreeDSecureData;
-                threeDSecure.SdkData = sdkData;
                 threeDSecure.SkipAuthentication = false;
 
                 CardPaymentMethodSpecificInput cardPaymentMethodSpecificInput = new CardPaymentMethodSpecificInput();
