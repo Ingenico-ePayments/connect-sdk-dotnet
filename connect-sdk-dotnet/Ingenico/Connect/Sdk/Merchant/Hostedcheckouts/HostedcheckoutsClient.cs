@@ -38,7 +38,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Hostedcheckouts
         /// <exception cref="ApiException">if the Ingenico ePayments platform returned any other error</exception>
         public async Task<CreateHostedCheckoutResponse> Create(CreateHostedCheckoutRequest body, CallContext context = null)
         {
-            string uri = InstantiateUri("/{apiVersion}/{merchantId}/hostedcheckouts", null);
+            string uri = InstantiateUri("/v1/{merchantId}/hostedcheckouts", null);
             try
             {
                 return await _communicator.Post<CreateHostedCheckoutResponse>(
@@ -75,7 +75,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Hostedcheckouts
         {
             IDictionary<string, string> pathContext = new Dictionary<string, string>();
             pathContext.Add("hostedCheckoutId", hostedCheckoutId);
-            string uri = InstantiateUri("/{apiVersion}/{merchantId}/hostedcheckouts/{hostedCheckoutId}", pathContext);
+            string uri = InstantiateUri("/v1/{merchantId}/hostedcheckouts/{hostedCheckoutId}", pathContext);
             try
             {
                 return await _communicator.Get<GetHostedCheckoutResponse>(

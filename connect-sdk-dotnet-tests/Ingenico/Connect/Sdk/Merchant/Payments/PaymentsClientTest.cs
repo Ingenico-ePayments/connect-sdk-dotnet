@@ -8,6 +8,8 @@ using Ingenico.Connect.Sdk.Domain.Payment;
 using Ingenico.Connect.Sdk.Domain.Payment.Definitions;
 using Ingenico.Connect.Sdk.Domain.Definitions;
 using System.Threading.Tasks;
+using System.IO;
+using System.Linq;
 
 namespace Ingenico.Connect.Sdk.Merchant.Payments
 {
@@ -136,6 +138,16 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
 
         }
 
+        public static Stream GenerateStreamFromString(string s)
+        {
+            var stream = new MemoryStream();
+            var writer = new StreamWriter(stream);
+            writer.Write(s);
+            writer.Flush();
+            stream.Position = 0;
+            return stream;
+        }
+
         /// <summary>
         /// Tests that a non-failure response will not throw an exception.
         /// </summary>
@@ -143,8 +155,12 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
         public async Task TestCreateSuccess()
         {
             var connectionMock = new Mock<IConnection>();
-
-            connectionMock.Setup(arg => arg.Post(Moq.It.IsAny<Uri>(), Moq.It.IsAny<IEnumerable<IRequestHeader>>(), Moq.It.IsAny<string>())).ReturnsAsync(new Response((HttpStatusCode)201, pendingApprovalJson, null));
+            // new Response((HttpStatusCode)201, pendingApprovalJson, null
+            var jsonStream = GenerateStreamFromString(pendingApprovalJson);
+            connectionMock.Setup(arg
+                    => arg.Post(Moq.It.IsAny<Uri>(), Moq.It.IsAny<IEnumerable<IRequestHeader>>(), Moq.It.IsAny<string>(), Moq.It.IsAny<Func<HttpStatusCode, Stream, IEnumerable<IResponseHeader>, CreatePaymentResponse>>()))
+                .Returns((Uri a, IEnumerable<IRequestHeader> b, string c, Func<HttpStatusCode, Stream, IEnumerable<IResponseHeader>, CreatePaymentResponse> d)
+                    => Task.FromResult(d((HttpStatusCode)201, jsonStream, new List<IResponseHeader>())));
 
             Uri apiEndpoint = new Uri("http://localhost");
             var session = new Session(apiEndpoint, connectionMock.Object, new DefaultAuthenticator(AuthorizationType.V1HMAC, "test", "test"), new MetaDataProvider("Ingenico"));
@@ -166,7 +182,10 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
         {
             var connectionMock = new Mock<IConnection>();
 
-            connectionMock.Setup(arg => arg.Post(Moq.It.IsAny<Uri>(), Moq.It.IsAny<IEnumerable<IRequestHeader>>(), Moq.It.IsAny<string>())).ReturnsAsync(new Response((HttpStatusCode)400, rejectedJson, null));
+            connectionMock.Setup(arg
+                    => arg.Post(Moq.It.IsAny<Uri>(), Moq.It.IsAny<IEnumerable<IRequestHeader>>(), Moq.It.IsAny<string>(), Moq.It.IsAny<Func<HttpStatusCode, Stream, IEnumerable<IResponseHeader>, CreatePaymentResponse>>()))
+                        .Returns((Uri a, IEnumerable<IRequestHeader> b, string c, Func<HttpStatusCode, Stream, IEnumerable<IResponseHeader>, CreatePaymentResponse> d)
+                    => Task.FromResult(d((HttpStatusCode)400, GenerateStreamFromString(rejectedJson), new List<IResponseHeader>())));
 
             Uri apiEndpoint = new Uri("http://localhost");
             var session = new Session(apiEndpoint, connectionMock.Object, new DefaultAuthenticator(AuthorizationType.V1HMAC, "test", "test"), new MetaDataProvider("Ingenico"));
@@ -199,7 +218,11 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
         {
             var connectionMock = new Mock<IConnection>();
 
-            connectionMock.Setup(arg => arg.Post(Moq.It.IsAny<Uri>(), Moq.It.IsAny<IEnumerable<IRequestHeader>>(), Moq.It.IsAny<string>())).ReturnsAsync(new Response((HttpStatusCode)400, invalidRequestJson, null));
+            connectionMock.Setup(arg
+                    => arg.Post(Moq.It.IsAny<Uri>(), Moq.It.IsAny<IEnumerable<IRequestHeader>>(), Moq.It.IsAny<string>(), Moq.It.IsAny<Func<HttpStatusCode, Stream, IEnumerable<IResponseHeader>, CreatePaymentResponse>>()))
+                .Returns((Uri a, IEnumerable<IRequestHeader> b, string c, Func<HttpStatusCode, Stream, IEnumerable<IResponseHeader>, CreatePaymentResponse> d)
+                    => Task.FromResult(d((HttpStatusCode)400, GenerateStreamFromString(invalidRequestJson), new List<IResponseHeader>())));
+
 
             Uri apiEndpoint = new Uri("http://localhost");
             var session = new Session(apiEndpoint, connectionMock.Object, new DefaultAuthenticator(AuthorizationType.V1HMAC, "test", "test"), new MetaDataProvider("Ingenico"));
@@ -227,7 +250,10 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
         {
             var connectionMock = new Mock<IConnection>();
 
-            connectionMock.Setup(arg => arg.Post(Moq.It.IsAny<Uri>(), Moq.It.IsAny<IEnumerable<IRequestHeader>>(), Moq.It.IsAny<string>())).ReturnsAsync(new Response((HttpStatusCode)401, invalidAuthorizationJson, null));
+            connectionMock.Setup(arg
+                    => arg.Post(Moq.It.IsAny<Uri>(), Moq.It.IsAny<IEnumerable<IRequestHeader>>(), Moq.It.IsAny<string>(), Moq.It.IsAny<Func<HttpStatusCode, Stream, IEnumerable<IResponseHeader>, CreatePaymentResponse>>()))
+                .Returns((Uri a, IEnumerable<IRequestHeader> b, string c, Func<HttpStatusCode, Stream, IEnumerable<IResponseHeader>, CreatePaymentResponse> d)
+                    => Task.FromResult(d((HttpStatusCode)401, GenerateStreamFromString(invalidAuthorizationJson), new List<IResponseHeader>())));
 
             Uri apiEndpoint = new Uri("http://localhost");
             var session = new Session(apiEndpoint, connectionMock.Object, new DefaultAuthenticator(AuthorizationType.V1HMAC, "test", "test"), new MetaDataProvider("Ingenico"));
@@ -256,7 +282,10 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
         {
             var connectionMock = new Mock<IConnection>();
 
-            connectionMock.Setup(arg => arg.Post(Moq.It.IsAny<Uri>(), Moq.It.IsAny<IEnumerable<IRequestHeader>>(), Moq.It.IsAny<string>())).ReturnsAsync(new Response((HttpStatusCode)409, duplicateRequestJson, null));
+            connectionMock.Setup(arg
+                    => arg.Post(Moq.It.IsAny<Uri>(), Moq.It.IsAny<IEnumerable<IRequestHeader>>(), Moq.It.IsAny<string>(), Moq.It.IsAny<Func<HttpStatusCode, Stream, IEnumerable<IResponseHeader>, CreatePaymentResponse>>()))
+                .Returns((Uri a, IEnumerable<IRequestHeader> b, string c, Func<HttpStatusCode, Stream, IEnumerable<IResponseHeader>, CreatePaymentResponse> d)
+                    => Task.FromResult(d((HttpStatusCode)409, GenerateStreamFromString(duplicateRequestJson), new List<IResponseHeader>())));
 
             Uri apiEndpoint = new Uri("http://localhost");
             var session = new Session(apiEndpoint, connectionMock.Object, new DefaultAuthenticator(AuthorizationType.V1HMAC, "test", "test"), new MetaDataProvider("Ingenico"));
@@ -286,7 +315,10 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
             HttpStatusCode code = (HttpStatusCode)409;
             var idempotenceKey = "key";
             var connectionMock = new Mock<IConnection>();
-            connectionMock.Setup(arg => arg.Post(Moq.It.IsAny<Uri>(), Moq.It.IsAny<IEnumerable<IRequestHeader>>(), Moq.It.IsAny<string>())).ReturnsAsync(new Response(code, responseBody, null));
+            connectionMock.Setup(arg
+                    => arg.Post(Moq.It.IsAny<Uri>(), Moq.It.IsAny<IEnumerable<IRequestHeader>>(), Moq.It.IsAny<string>(), Moq.It.IsAny<Func<HttpStatusCode, Stream, IEnumerable<IResponseHeader>, CreatePaymentResponse>>()))
+                .Returns((Uri a, IEnumerable<IRequestHeader> b, string c, Func<HttpStatusCode, Stream, IEnumerable<IResponseHeader>, CreatePaymentResponse> d)
+                    => Task.FromResult(d((HttpStatusCode)code, GenerateStreamFromString(responseBody), null)));
 
             Uri apiEndpoint = new Uri("http://localhost");
             var session = new Session(apiEndpoint, connectionMock.Object, new DefaultAuthenticator(AuthorizationType.V1HMAC, "test", "test"), new MetaDataProvider("Ingenico"));
@@ -318,7 +350,10 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
             string responseBody = notFoundHtml;
             HttpStatusCode code = (HttpStatusCode)404;
             var connectionMock = new Mock<IConnection>();
-            connectionMock.Setup(arg => arg.Post(Moq.It.IsAny<Uri>(), Moq.It.IsAny<IEnumerable<IRequestHeader>>(), Moq.It.IsAny<string>())).ReturnsAsync(new Response(code, responseBody, new List<IResponseHeader> { new ResponseHeader("content-type", "text/html") }));
+            connectionMock.Setup(arg
+                    => arg.Post(Moq.It.IsAny<Uri>(), Moq.It.IsAny<IEnumerable<IRequestHeader>>(), Moq.It.IsAny<string>(), Moq.It.IsAny<Func<HttpStatusCode, Stream, IEnumerable<IResponseHeader>, CreatePaymentResponse>>()))
+                .Returns((Uri a, IEnumerable<IRequestHeader> b, string c, Func<HttpStatusCode, Stream, IEnumerable<IResponseHeader>, CreatePaymentResponse> d)
+                    => Task.FromResult(d((HttpStatusCode)code, GenerateStreamFromString(responseBody), new List<IResponseHeader> { new ResponseHeader("content-type", "text/html") })));
 
             Uri apiEndpoint = new Uri("http://localhost");
             var session = new Session(apiEndpoint, connectionMock.Object, new DefaultAuthenticator(AuthorizationType.V1HMAC, "test", "test"), new MetaDataProvider("Ingenico"));
@@ -349,7 +384,10 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
             string responseBody = methodNotAllowedHtml;
             HttpStatusCode code = (HttpStatusCode)405;
             var connectionMock = new Mock<IConnection>();
-            connectionMock.Setup(arg => arg.Post(Moq.It.IsAny<Uri>(), Moq.It.IsAny<IEnumerable<IRequestHeader>>(), Moq.It.IsAny<string>())).ReturnsAsync(new Response(code, responseBody, new List<IResponseHeader> { new ResponseHeader("content-type", "text/html") }));
+            connectionMock.Setup(arg
+                    => arg.Post(Moq.It.IsAny<Uri>(), Moq.It.IsAny<IEnumerable<IRequestHeader>>(), Moq.It.IsAny<string>(), Moq.It.IsAny<Func<HttpStatusCode, Stream, IEnumerable<IResponseHeader>, CreatePaymentResponse>>()))
+                .Returns((Uri a, IEnumerable<IRequestHeader> b, string c, Func<HttpStatusCode, Stream, IEnumerable<IResponseHeader>, CreatePaymentResponse> d)
+                    => Task.FromResult(d((HttpStatusCode)code, GenerateStreamFromString(responseBody), new List<IResponseHeader> { new ResponseHeader("content-type", "text/html") })));
 
             Uri apiEndpoint = new Uri("http://localhost");
             var session = new Session(apiEndpoint, connectionMock.Object, new DefaultAuthenticator(AuthorizationType.V1HMAC, "test", "test"), new MetaDataProvider("Ingenico"));
@@ -370,6 +408,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
                 Assert.That(e.InnerException.ToString(), Does.Contain(responseBody));
             }
         }
+
 
         CreatePaymentRequest CreateRequest()
         {

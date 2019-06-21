@@ -13,6 +13,7 @@ namespace Ingenico.Connect.Sdk
         public static string API_KEY_ID = "someKey";
         public static string SECRET_API_KEY = "someSecret";
         public static IDictionary<string,string> DICT = new Dictionary<string, string> {
+                {"connect.api.integrator", "Ingenico"},
                 {"connect.api.endpoint.host", "api-sandbox.globalcollect.com" },
                 {"connect.api.authorizationType", "v1HMAC"},
                 {"connect.api.socketTimeout", "-1"},

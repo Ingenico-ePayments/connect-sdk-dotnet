@@ -38,7 +38,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Services
         /// <exception cref="ApiException">if the Ingenico ePayments platform returned any other error</exception>
         public async Task<ConvertAmount> ConvertAmount(ConvertAmountParams query, CallContext context = null)
         {
-            string uri = InstantiateUri("/{apiVersion}/{merchantId}/services/convert/amount", null);
+            string uri = InstantiateUri("/v1/{merchantId}/services/convert/amount", null);
             try
             {
                 return await _communicator.Get<ConvertAmount>(
@@ -72,7 +72,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Services
         /// <exception cref="ApiException">if the Ingenico ePayments platform returned any other error</exception>
         public async Task<BankDetailsResponse> Bankaccount(BankDetailsRequest body, CallContext context = null)
         {
-            string uri = InstantiateUri("/{apiVersion}/{merchantId}/services/convert/bankaccount", null);
+            string uri = InstantiateUri("/v1/{merchantId}/services/convert/bankaccount", null);
             try
             {
                 return await _communicator.Post<BankDetailsResponse>(
@@ -107,7 +107,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Services
         /// <exception cref="ApiException">if the Ingenico ePayments platform returned any other error</exception>
         public async Task<GetIINDetailsResponse> GetIINdetails(GetIINDetailsRequest body, CallContext context = null)
         {
-            string uri = InstantiateUri("/{apiVersion}/{merchantId}/services/getIINdetails", null);
+            string uri = InstantiateUri("/v1/{merchantId}/services/getIINdetails", null);
             try
             {
                 return await _communicator.Post<GetIINDetailsResponse>(
@@ -142,7 +142,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Services
         /// <exception cref="ApiException">if the Ingenico ePayments platform returned any other error</exception>
         public async Task<GetPrivacyPolicyResponse> Privacypolicy(PrivacypolicyParams query, CallContext context = null)
         {
-            string uri = InstantiateUri("/{apiVersion}/{merchantId}/services/privacypolicy", null);
+            string uri = InstantiateUri("/v1/{merchantId}/services/privacypolicy", null);
             try
             {
                 return await _communicator.Get<GetPrivacyPolicyResponse>(
@@ -175,7 +175,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Services
         /// <exception cref="ApiException">if the Ingenico ePayments platform returned any other error</exception>
         public async Task<TestConnection> Testconnection(CallContext context = null)
         {
-            string uri = InstantiateUri("/{apiVersion}/{merchantId}/services/testconnection", null);
+            string uri = InstantiateUri("/v1/{merchantId}/services/testconnection", null);
             try
             {
                 return await _communicator.Get<TestConnection>(

@@ -252,8 +252,9 @@ namespace Ingenico.Connect.Sdk
                     ProxyConfiguration.Uri = new Uri(proxyURI);
                     ProxyConfiguration.Username = proxyUser;
                     ProxyConfiguration.Password = proxyPass;
-
                 }
+
+                Integrator = GetProperty(properties, "connect.api.integrator", "");
             }
         }
 

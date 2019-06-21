@@ -18,7 +18,10 @@ namespace Ingenico.Connect.Sdk.Merchant.Tokens
         public override IEnumerable<RequestParam> ToRequestParameters()
         {
             IList<RequestParam> result = new List<RequestParam>();
-            AddParameter(result, "mandateCancelDate", MandateCancelDate);
+            if (MandateCancelDate != null)
+            {
+                result.Add(new RequestParam("mandateCancelDate", MandateCancelDate));
+            }
             return result;
         }
     }

@@ -38,7 +38,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Mandates
         /// <exception cref="ApiException">if the Ingenico ePayments platform returned any other error</exception>
         public async Task<CreateMandateResponse> Create(CreateMandateRequest body, CallContext context = null)
         {
-            string uri = InstantiateUri("/{apiVersion}/{merchantId}/mandates", null);
+            string uri = InstantiateUri("/v1/{merchantId}/mandates", null);
             try
             {
                 return await _communicator.Post<CreateMandateResponse>(
@@ -76,7 +76,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Mandates
         {
             IDictionary<string, string> pathContext = new Dictionary<string, string>();
             pathContext.Add("uniqueMandateReference", uniqueMandateReference);
-            string uri = InstantiateUri("/{apiVersion}/{merchantId}/mandates/{uniqueMandateReference}", pathContext);
+            string uri = InstantiateUri("/v1/{merchantId}/mandates/{uniqueMandateReference}", pathContext);
             try
             {
                 return await _communicator.Put<CreateMandateResponse>(
@@ -113,7 +113,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Mandates
         {
             IDictionary<string, string> pathContext = new Dictionary<string, string>();
             pathContext.Add("uniqueMandateReference", uniqueMandateReference);
-            string uri = InstantiateUri("/{apiVersion}/{merchantId}/mandates/{uniqueMandateReference}", pathContext);
+            string uri = InstantiateUri("/v1/{merchantId}/mandates/{uniqueMandateReference}", pathContext);
             try
             {
                 return await _communicator.Get<GetMandateResponse>(
@@ -149,7 +149,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Mandates
         {
             IDictionary<string, string> pathContext = new Dictionary<string, string>();
             pathContext.Add("uniqueMandateReference", uniqueMandateReference);
-            string uri = InstantiateUri("/{apiVersion}/{merchantId}/mandates/{uniqueMandateReference}/block", pathContext);
+            string uri = InstantiateUri("/v1/{merchantId}/mandates/{uniqueMandateReference}/block", pathContext);
             try
             {
                 return await _communicator.Post<GetMandateResponse>(
@@ -186,7 +186,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Mandates
         {
             IDictionary<string, string> pathContext = new Dictionary<string, string>();
             pathContext.Add("uniqueMandateReference", uniqueMandateReference);
-            string uri = InstantiateUri("/{apiVersion}/{merchantId}/mandates/{uniqueMandateReference}/unblock", pathContext);
+            string uri = InstantiateUri("/v1/{merchantId}/mandates/{uniqueMandateReference}/unblock", pathContext);
             try
             {
                 return await _communicator.Post<GetMandateResponse>(
@@ -223,7 +223,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Mandates
         {
             IDictionary<string, string> pathContext = new Dictionary<string, string>();
             pathContext.Add("uniqueMandateReference", uniqueMandateReference);
-            string uri = InstantiateUri("/{apiVersion}/{merchantId}/mandates/{uniqueMandateReference}/revoke", pathContext);
+            string uri = InstantiateUri("/v1/{merchantId}/mandates/{uniqueMandateReference}/revoke", pathContext);
             try
             {
                 return await _communicator.Post<GetMandateResponse>(

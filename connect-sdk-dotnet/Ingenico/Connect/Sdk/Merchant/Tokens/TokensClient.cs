@@ -38,7 +38,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Tokens
         /// <exception cref="ApiException">if the Ingenico ePayments platform returned any other error</exception>
         public async Task<CreateTokenResponse> Create(CreateTokenRequest body, CallContext context = null)
         {
-            string uri = InstantiateUri("/{apiVersion}/{merchantId}/tokens", null);
+            string uri = InstantiateUri("/v1/{merchantId}/tokens", null);
             try
             {
                 return await _communicator.Post<CreateTokenResponse>(
@@ -75,7 +75,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Tokens
         {
             IDictionary<string, string> pathContext = new Dictionary<string, string>();
             pathContext.Add("tokenId", tokenId);
-            string uri = InstantiateUri("/{apiVersion}/{merchantId}/tokens/{tokenId}", pathContext);
+            string uri = InstantiateUri("/v1/{merchantId}/tokens/{tokenId}", pathContext);
             try
             {
                 return await _communicator.Get<TokenResponse>(
@@ -98,7 +98,6 @@ namespace Ingenico.Connect.Sdk.Merchant.Tokens
         /// <param name="tokenId">string</param>
         /// <param name="body">UpdateTokenRequest</param>
         /// <param name="context">CallContext</param>
-        /// <returns>void</returns>
         /// <exception cref="ValidationException">if the request was not correct and couldn't be processed (HTTP status code BadRequest)</exception>
         /// <exception cref="AuthorizationException">if the request was not allowed (HTTP status code Forbidden)</exception>
         /// <exception cref="IdempotenceException">if an idempotent request caused a conflict (HTTP status code Conflict)</exception>
@@ -112,7 +111,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Tokens
         {
             IDictionary<string, string> pathContext = new Dictionary<string, string>();
             pathContext.Add("tokenId", tokenId);
-            string uri = InstantiateUri("/{apiVersion}/{merchantId}/tokens/{tokenId}", pathContext);
+            string uri = InstantiateUri("/v1/{merchantId}/tokens/{tokenId}", pathContext);
             try
             {
                 await _communicator.Put<object>(
@@ -136,7 +135,6 @@ namespace Ingenico.Connect.Sdk.Merchant.Tokens
         /// <param name="tokenId">string</param>
         /// <param name="query">DeleteTokenParams</param>
         /// <param name="context">CallContext</param>
-        /// <returns>void</returns>
         /// <exception cref="ValidationException">if the request was not correct and couldn't be processed (HTTP status code BadRequest)</exception>
         /// <exception cref="AuthorizationException">if the request was not allowed (HTTP status code Forbidden)</exception>
         /// <exception cref="IdempotenceException">if an idempotent request caused a conflict (HTTP status code Conflict)</exception>
@@ -150,7 +148,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Tokens
         {
             IDictionary<string, string> pathContext = new Dictionary<string, string>();
             pathContext.Add("tokenId", tokenId);
-            string uri = InstantiateUri("/{apiVersion}/{merchantId}/tokens/{tokenId}", pathContext);
+            string uri = InstantiateUri("/v1/{merchantId}/tokens/{tokenId}", pathContext);
             try
             {
                 await _communicator.Delete<object>(
@@ -173,7 +171,6 @@ namespace Ingenico.Connect.Sdk.Merchant.Tokens
         /// <param name="tokenId">string</param>
         /// <param name="body">ApproveTokenRequest</param>
         /// <param name="context">CallContext</param>
-        /// <returns>void</returns>
         /// <exception cref="ValidationException">if the request was not correct and couldn't be processed (HTTP status code BadRequest)</exception>
         /// <exception cref="AuthorizationException">if the request was not allowed (HTTP status code Forbidden)</exception>
         /// <exception cref="IdempotenceException">if an idempotent request caused a conflict (HTTP status code Conflict)</exception>
@@ -187,7 +184,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Tokens
         {
             IDictionary<string, string> pathContext = new Dictionary<string, string>();
             pathContext.Add("tokenId", tokenId);
-            string uri = InstantiateUri("/{apiVersion}/{merchantId}/tokens/{tokenId}/approvesepadirectdebit", pathContext);
+            string uri = InstantiateUri("/v1/{merchantId}/tokens/{tokenId}/approvesepadirectdebit", pathContext);
             try
             {
                 await _communicator.Post<object>(

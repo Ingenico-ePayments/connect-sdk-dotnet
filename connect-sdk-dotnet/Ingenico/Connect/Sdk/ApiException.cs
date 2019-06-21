@@ -30,7 +30,7 @@ namespace Ingenico.Connect.Sdk
         readonly string _errorId;
 
         /// <summary>
-        /// Gets the error list received from the GlobalCollect if available. Never <code>null</code>.
+        /// Gets the error list received from the Ingenico ePayments platform if available. Never <code>null</code>.
         /// </summary>
         public IList<APIError> Errors => _errors;
         readonly IList<APIError> _errors;

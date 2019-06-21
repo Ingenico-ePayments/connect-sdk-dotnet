@@ -26,11 +26,26 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
         public override IEnumerable<RequestParam> ToRequestParameters()
         {
             IList<RequestParam> result = new List<RequestParam>();
-            AddParameter(result, "hostedCheckoutId", HostedCheckoutId);
-            AddParameter(result, "merchantReference", MerchantReference);
-            AddParameter(result, "merchantOrderId", MerchantOrderId);
-            AddParameter(result, "offset", Offset);
-            AddParameter(result, "limit", Limit);
+            if (HostedCheckoutId != null)
+            {
+                result.Add(new RequestParam("hostedCheckoutId", HostedCheckoutId));
+            }
+            if (MerchantReference != null)
+            {
+                result.Add(new RequestParam("merchantReference", MerchantReference));
+            }
+            if (MerchantOrderId != null)
+            {
+                result.Add(new RequestParam("merchantOrderId", MerchantOrderId.ToString()));
+            }
+            if (Offset != null)
+            {
+                result.Add(new RequestParam("offset", Offset.ToString()));
+            }
+            if (Limit != null)
+            {
+                result.Add(new RequestParam("limit", Limit.ToString()));
+            }
             return result;
         }
     }

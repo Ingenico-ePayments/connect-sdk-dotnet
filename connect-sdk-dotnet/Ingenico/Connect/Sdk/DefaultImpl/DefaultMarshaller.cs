@@ -1,3 +1,5 @@
+using System;
+using System.IO;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 
@@ -26,6 +28,25 @@ namespace Ingenico.Connect.Sdk.DefaultImpl
                 throw new MarshallerSyntaxException(exception);
             }
         }
+
+        public T Unmarshal<T>(Stream responseJson)
+        {
+            try
+            {
+                var sr = new StreamReader(responseJson);
+                JsonReader jr = new JsonTextReader(sr);
+                var serializer = JsonSerializer.Create(_jsonSerializerSettings);
+
+                T anObject = serializer.Deserialize<T>(jr);
+                return anObject;
+            }
+            catch (JsonReaderException exception)
+            {
+                throw new MarshallerSyntaxException(exception);
+            }
+
+        }
+
         #endregion
 
         static readonly JsonSerializerSettings _jsonSerializerSettings = new JsonSerializerSettings

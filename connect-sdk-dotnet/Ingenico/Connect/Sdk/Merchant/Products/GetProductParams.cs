@@ -41,13 +41,40 @@ namespace Ingenico.Connect.Sdk.Merchant.Products
         public override IEnumerable<RequestParam> ToRequestParameters()
         {
             IList<RequestParam> result = new List<RequestParam>();
-            AddParameter(result, "countryCode", CountryCode);
-            AddParameter(result, "currencyCode", CurrencyCode);
-            AddParameter(result, "locale", Locale);
-            AddParameter(result, "amount", Amount);
-            AddParameter(result, "isRecurring", IsRecurring);
-            AddParameter(result, "hide", Hide);
-            AddParameter(result, "forceBasicFlow", ForceBasicFlow);
+            if (CountryCode != null)
+            {
+                result.Add(new RequestParam("countryCode", CountryCode));
+            }
+            if (CurrencyCode != null)
+            {
+                result.Add(new RequestParam("currencyCode", CurrencyCode));
+            }
+            if (Locale != null)
+            {
+                result.Add(new RequestParam("locale", Locale));
+            }
+            if (Amount != null)
+            {
+                result.Add(new RequestParam("amount", Amount.ToString()));
+            }
+            if (IsRecurring != null)
+            {
+                result.Add(new RequestParam("isRecurring", IsRecurring.ToString().ToLower()));
+            }
+            if (Hide != null)
+            {
+                foreach (var hideElement in Hide)
+                {
+                    if (hideElement != null)
+                    {
+                        result.Add(new RequestParam("hide", hideElement));
+                    }
+                }
+            }
+            if (ForceBasicFlow != null)
+            {
+                result.Add(new RequestParam("forceBasicFlow", ForceBasicFlow.ToString().ToLower()));
+            }
             return result;
         }
     }

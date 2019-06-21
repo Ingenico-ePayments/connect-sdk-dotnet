@@ -38,7 +38,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Productgroups
         /// <exception cref="ApiException">if the Ingenico ePayments platform returned any other error</exception>
         public async Task<PaymentProductGroups> Find(FindProductgroupsParams query, CallContext context = null)
         {
-            string uri = InstantiateUri("/{apiVersion}/{merchantId}/productgroups", null);
+            string uri = InstantiateUri("/v1/{merchantId}/productgroups", null);
             try
             {
                 return await _communicator.Get<PaymentProductGroups>(
@@ -75,7 +75,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Productgroups
         {
             IDictionary<string, string> pathContext = new Dictionary<string, string>();
             pathContext.Add("paymentProductGroupId", paymentProductGroupId);
-            string uri = InstantiateUri("/{apiVersion}/{merchantId}/productgroups/{paymentProductGroupId}", pathContext);
+            string uri = InstantiateUri("/v1/{merchantId}/productgroups/{paymentProductGroupId}", pathContext);
             try
             {
                 return await _communicator.Get<PaymentProductGroupResponse>(
@@ -112,7 +112,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Productgroups
         {
             IDictionary<string, string> pathContext = new Dictionary<string, string>();
             pathContext.Add("paymentProductGroupId", paymentProductGroupId);
-            string uri = InstantiateUri("/{apiVersion}/{merchantId}/productgroups/{paymentProductGroupId}/deviceFingerprint", pathContext);
+            string uri = InstantiateUri("/v1/{merchantId}/productgroups/{paymentProductGroupId}/deviceFingerprint", pathContext);
             try
             {
                 return await _communicator.Post<DeviceFingerprintResponse>(

@@ -48,8 +48,8 @@ namespace Ingenico.Connect.Sdk
         {
             CommunicatorConfiguration configuration = createBasicConfiguration()
                                                    .WithProxyUri(new Uri("http://proxy.example.org:3128"))
-                                                   .WithProxyUserName("global-collect-username")
-                                                   .WithProxyPassword("global-collect-password");
+                                                   .WithProxyUserName("connect-username")
+                                                   .WithProxyPassword("connect-password");
 
             AssertBasicConfigurationSettings(configuration);
             Assert.AreEqual(CommunicatorConfiguration.DefaultMaxConnections, configuration.MaxConnections);
@@ -59,8 +59,8 @@ namespace Ingenico.Connect.Sdk
             Assert.NotNull(configuration.ProxyConfiguration);
             ProxyConfiguration proxyFig = configuration.ProxyConfiguration;
             AssertBasicProxySettings(proxyFig);
-            Assert.AreEqual("global-collect-username", proxyFig.Username);
-            Assert.AreEqual("global-collect-password", proxyFig.Password);
+            Assert.AreEqual("connect-username", proxyFig.Username);
+            Assert.AreEqual("connect-password", proxyFig.Password);
         }
 
         [TestCase]

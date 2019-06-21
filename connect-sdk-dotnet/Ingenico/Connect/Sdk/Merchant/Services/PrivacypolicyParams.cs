@@ -20,8 +20,14 @@ namespace Ingenico.Connect.Sdk.Merchant.Services
         public override IEnumerable<RequestParam> ToRequestParameters()
         {
             IList<RequestParam> result = new List<RequestParam>();
-            AddParameter(result, "locale", Locale);
-            AddParameter(result, "paymentProductId", PaymentProductId);
+            if (Locale != null)
+            {
+                result.Add(new RequestParam("locale", Locale));
+            }
+            if (PaymentProductId != null)
+            {
+                result.Add(new RequestParam("paymentProductId", PaymentProductId.ToString()));
+            }
             return result;
         }
     }

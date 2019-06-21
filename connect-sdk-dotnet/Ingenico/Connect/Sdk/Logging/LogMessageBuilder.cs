@@ -29,7 +29,16 @@ namespace Ingenico.Connect.Sdk.Logging
 
         public void SetBody(string body, string contentType)
         {
-            Body = LoggingUtil.ObfuscateBody(body);
+            Body = IsBinaryContent(contentType) ? "<binary content>" : LoggingUtil.ObfuscateBody(body);
+            ContentType = contentType;
+        }
+        public void SetBinaryContentBody(string contentType)
+        {
+            if (!IsBinaryContent(contentType))
+            {
+                throw new ArgumentException("Not a binary content type: " + contentType);
+            }
+            Body = "<binary content>";
             ContentType = contentType;
         }
 
@@ -56,6 +65,13 @@ namespace Ingenico.Connect.Sdk.Logging
         protected string EmptyIfNull(string value)
         {
             return value != null ? value : "";
+        }
+        bool IsBinaryContent(string contentType)
+        {
+            return contentType != null
+                && !contentType.StartsWith("text/", StringComparison.OrdinalIgnoreCase)
+                               && (contentType.IndexOf("json", StringComparison.OrdinalIgnoreCase) < 0)
+                               && (contentType.IndexOf("xml", StringComparison.OrdinalIgnoreCase) < 0);
         }
     }
 }

@@ -38,7 +38,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Hostedmandatemanagements
         /// <exception cref="ApiException">if the Ingenico ePayments platform returned any other error</exception>
         public async Task<CreateHostedMandateManagementResponse> Create(CreateHostedMandateManagementRequest body, CallContext context = null)
         {
-            string uri = InstantiateUri("/{apiVersion}/{merchantId}/hostedmandatemanagements", null);
+            string uri = InstantiateUri("/v1/{merchantId}/hostedmandatemanagements", null);
             try
             {
                 return await _communicator.Post<CreateHostedMandateManagementResponse>(
@@ -75,7 +75,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Hostedmandatemanagements
         {
             IDictionary<string, string> pathContext = new Dictionary<string, string>();
             pathContext.Add("hostedMandateManagementId", hostedMandateManagementId);
-            string uri = InstantiateUri("/{apiVersion}/{merchantId}/hostedmandatemanagements/{hostedMandateManagementId}", pathContext);
+            string uri = InstantiateUri("/v1/{merchantId}/hostedmandatemanagements/{hostedMandateManagementId}", pathContext);
             try
             {
                 return await _communicator.Get<GetHostedMandateManagementResponse>(

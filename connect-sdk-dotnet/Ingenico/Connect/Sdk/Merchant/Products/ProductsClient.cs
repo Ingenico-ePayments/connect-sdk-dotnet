@@ -5,7 +5,6 @@
 using Ingenico.Connect.Sdk;
 using Ingenico.Connect.Sdk.Domain.Errors;
 using Ingenico.Connect.Sdk.Domain.Product;
-using Ingenico.Connect.Sdk.Domain.Publickey;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -39,7 +38,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Products
         /// <exception cref="ApiException">if the Ingenico ePayments platform returned any other error</exception>
         public async Task<PaymentProducts> Find(FindProductsParams query, CallContext context = null)
         {
-            string uri = InstantiateUri("/{apiVersion}/{merchantId}/products", null);
+            string uri = InstantiateUri("/v1/{merchantId}/products", null);
             try
             {
                 return await _communicator.Get<PaymentProducts>(
@@ -76,7 +75,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Products
         {
             IDictionary<string, string> pathContext = new Dictionary<string, string>();
             pathContext.Add("paymentProductId", paymentProductId.ToString());
-            string uri = InstantiateUri("/{apiVersion}/{merchantId}/products/{paymentProductId}", pathContext);
+            string uri = InstantiateUri("/v1/{merchantId}/products/{paymentProductId}", pathContext);
             try
             {
                 return await _communicator.Get<PaymentProductResponse>(
@@ -113,7 +112,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Products
         {
             IDictionary<string, string> pathContext = new Dictionary<string, string>();
             pathContext.Add("paymentProductId", paymentProductId.ToString());
-            string uri = InstantiateUri("/{apiVersion}/{merchantId}/products/{paymentProductId}/directory", pathContext);
+            string uri = InstantiateUri("/v1/{merchantId}/products/{paymentProductId}/directory", pathContext);
             try
             {
                 return await _communicator.Get<Directory>(
@@ -150,7 +149,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Products
         {
             IDictionary<string, string> pathContext = new Dictionary<string, string>();
             pathContext.Add("paymentProductId", paymentProductId.ToString());
-            string uri = InstantiateUri("/{apiVersion}/{merchantId}/products/{paymentProductId}/customerDetails", pathContext);
+            string uri = InstantiateUri("/v1/{merchantId}/products/{paymentProductId}/customerDetails", pathContext);
             try
             {
                 return await _communicator.Post<GetCustomerDetailsResponse>(
@@ -188,7 +187,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Products
         {
             IDictionary<string, string> pathContext = new Dictionary<string, string>();
             pathContext.Add("paymentProductId", paymentProductId.ToString());
-            string uri = InstantiateUri("/{apiVersion}/{merchantId}/products/{paymentProductId}/deviceFingerprint", pathContext);
+            string uri = InstantiateUri("/v1/{merchantId}/products/{paymentProductId}/deviceFingerprint", pathContext);
             try
             {
                 return await _communicator.Post<DeviceFingerprintResponse>(
@@ -226,49 +225,13 @@ namespace Ingenico.Connect.Sdk.Merchant.Products
         {
             IDictionary<string, string> pathContext = new Dictionary<string, string>();
             pathContext.Add("paymentProductId", paymentProductId.ToString());
-            string uri = InstantiateUri("/{apiVersion}/{merchantId}/products/{paymentProductId}/networks", pathContext);
+            string uri = InstantiateUri("/v1/{merchantId}/products/{paymentProductId}/networks", pathContext);
             try
             {
                 return await _communicator.Get<PaymentProductNetworksResponse>(
                         uri,
                         ClientHeaders,
                         query,
-                        context);
-            }
-            catch (ResponseException e)
-            {
-                object errorObject = _communicator.Marshaller.Unmarshal<ErrorResponse>(e.Body);
-                throw CreateException(e.StatusCode, e.Body, errorObject, context);
-            }
-        }
-
-        /// <summary>
-        /// Resource /{merchantId}/products/{paymentProductId}/publicKey
-        /// - <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/products/publicKey.html">Get payment product specific public key</a>
-        /// </summary>
-        /// <param name="paymentProductId">int?</param>
-        /// <param name="context">CallContext</param>
-        /// <returns>PublicKey</returns>
-        /// <exception cref="ValidationException">if the request was not correct and couldn't be processed (HTTP status code BadRequest)</exception>
-        /// <exception cref="AuthorizationException">if the request was not allowed (HTTP status code Forbidden)</exception>
-        /// <exception cref="IdempotenceException">if an idempotent request caused a conflict (HTTP status code Conflict)</exception>
-        /// <exception cref="ReferenceException">if an object was attempted to be referenced that doesn't exist or has been removed,
-        ///            or there was a conflict (HTTP status code NotFound, Conflict or Gone)</exception>
-        /// <exception cref="GlobalCollectException">if something went wrong at the Ingenico ePayments platform,
-        ///            the Ingenico ePayments platform was unable to process a message from a downstream partner/acquirer,
-        ///            or the service that you're trying to reach is temporary unavailable (HTTP status code InternalServerError, BadGateway or ServiceUnavailable)</exception>
-        /// <exception cref="ApiException">if the Ingenico ePayments platform returned any other error</exception>
-        public async Task<PublicKey> PublicKey(int? paymentProductId, CallContext context = null)
-        {
-            IDictionary<string, string> pathContext = new Dictionary<string, string>();
-            pathContext.Add("paymentProductId", paymentProductId.ToString());
-            string uri = InstantiateUri("/{apiVersion}/{merchantId}/products/{paymentProductId}/publicKey", pathContext);
-            try
-            {
-                return await _communicator.Get<PublicKey>(
-                        uri,
-                        ClientHeaders,
-                        null,
                         context);
             }
             catch (ResponseException e)

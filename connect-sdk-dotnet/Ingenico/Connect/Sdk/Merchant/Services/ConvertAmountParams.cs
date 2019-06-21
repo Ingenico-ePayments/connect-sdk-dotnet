@@ -22,9 +22,18 @@ namespace Ingenico.Connect.Sdk.Merchant.Services
         public override IEnumerable<RequestParam> ToRequestParameters()
         {
             IList<RequestParam> result = new List<RequestParam>();
-            AddParameter(result, "source", Source);
-            AddParameter(result, "target", Target);
-            AddParameter(result, "amount", Amount);
+            if (Source != null)
+            {
+                result.Add(new RequestParam("source", Source));
+            }
+            if (Target != null)
+            {
+                result.Add(new RequestParam("target", Target));
+            }
+            if (Amount != null)
+            {
+                result.Add(new RequestParam("amount", Amount.ToString()));
+            }
             return result;
         }
     }

@@ -40,7 +40,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Captures
         {
             IDictionary<string, string> pathContext = new Dictionary<string, string>();
             pathContext.Add("captureId", captureId);
-            string uri = InstantiateUri("/{apiVersion}/{merchantId}/captures/{captureId}", pathContext);
+            string uri = InstantiateUri("/v1/{merchantId}/captures/{captureId}", pathContext);
             try
             {
                 return await _communicator.Get<CaptureResponse>(

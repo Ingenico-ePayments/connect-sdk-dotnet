@@ -1,3 +1,5 @@
+using System.IO;
+
 namespace Ingenico.Connect.Sdk
 {
     /// <summary>
@@ -14,9 +16,17 @@ namespace Ingenico.Connect.Sdk
         /// <summary>
         /// Unmarshal a JSON string to a response object.
         /// </summary>
-        /// <param name="responseJson">Response json.</param>
+        /// <param name="responseJson">The JSON that will be parsed.</param>
         /// <typeparam name="T">The response type.</typeparam>
         /// <exception cref="MarshallerSyntaxException">if the JSON is not a valid representation for an object of the given type</exception>
         T Unmarshal<T>(string responseJson);
+
+        /// <summary>
+        /// Unmarshal JSON from a stream to a response object.
+        /// </summary>
+        /// <param name="responseJson">The stream containing a valid JSON string.</param>
+        /// <typeparam name="T">The response type.</typeparam>
+        /// <exception cref="MarshallerSyntaxException">if the JSON is not a valid representation for an object of the given type</exception>
+        T Unmarshal<T>(Stream responseJson);
     }
 }

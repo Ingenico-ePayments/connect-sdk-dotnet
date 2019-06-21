@@ -39,7 +39,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Payouts
         /// <exception cref="ApiException">if the Ingenico ePayments platform returned any other error</exception>
         public async Task<PayoutResponse> Create(CreatePayoutRequest body, CallContext context = null)
         {
-            string uri = InstantiateUri("/{apiVersion}/{merchantId}/payouts", null);
+            string uri = InstantiateUri("/v1/{merchantId}/payouts", null);
             try
             {
                 return await _communicator.Post<PayoutResponse>(
@@ -74,7 +74,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Payouts
         /// <exception cref="ApiException">if the Ingenico ePayments platform returned any other error</exception>
         public async Task<FindPayoutsResponse> Find(FindPayoutsParams query, CallContext context = null)
         {
-            string uri = InstantiateUri("/{apiVersion}/{merchantId}/payouts", null);
+            string uri = InstantiateUri("/v1/{merchantId}/payouts", null);
             try
             {
                 return await _communicator.Get<FindPayoutsResponse>(
@@ -110,7 +110,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Payouts
         {
             IDictionary<string, string> pathContext = new Dictionary<string, string>();
             pathContext.Add("payoutId", payoutId);
-            string uri = InstantiateUri("/{apiVersion}/{merchantId}/payouts/{payoutId}", pathContext);
+            string uri = InstantiateUri("/v1/{merchantId}/payouts/{payoutId}", pathContext);
             try
             {
                 return await _communicator.Get<PayoutResponse>(
@@ -147,7 +147,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Payouts
         {
             IDictionary<string, string> pathContext = new Dictionary<string, string>();
             pathContext.Add("payoutId", payoutId);
-            string uri = InstantiateUri("/{apiVersion}/{merchantId}/payouts/{payoutId}/approve", pathContext);
+            string uri = InstantiateUri("/v1/{merchantId}/payouts/{payoutId}/approve", pathContext);
             try
             {
                 return await _communicator.Post<PayoutResponse>(
@@ -170,7 +170,6 @@ namespace Ingenico.Connect.Sdk.Merchant.Payouts
         /// </summary>
         /// <param name="payoutId">string</param>
         /// <param name="context">CallContext</param>
-        /// <returns>void</returns>
         /// <exception cref="ValidationException">if the request was not correct and couldn't be processed (HTTP status code BadRequest)</exception>
         /// <exception cref="AuthorizationException">if the request was not allowed (HTTP status code Forbidden)</exception>
         /// <exception cref="IdempotenceException">if an idempotent request caused a conflict (HTTP status code Conflict)</exception>
@@ -184,7 +183,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Payouts
         {
             IDictionary<string, string> pathContext = new Dictionary<string, string>();
             pathContext.Add("payoutId", payoutId);
-            string uri = InstantiateUri("/{apiVersion}/{merchantId}/payouts/{payoutId}/cancel", pathContext);
+            string uri = InstantiateUri("/v1/{merchantId}/payouts/{payoutId}/cancel", pathContext);
             try
             {
                 await _communicator.Post<object>(
@@ -207,7 +206,6 @@ namespace Ingenico.Connect.Sdk.Merchant.Payouts
         /// </summary>
         /// <param name="payoutId">string</param>
         /// <param name="context">CallContext</param>
-        /// <returns>void</returns>
         /// <exception cref="ValidationException">if the request was not correct and couldn't be processed (HTTP status code BadRequest)</exception>
         /// <exception cref="AuthorizationException">if the request was not allowed (HTTP status code Forbidden)</exception>
         /// <exception cref="IdempotenceException">if an idempotent request caused a conflict (HTTP status code Conflict)</exception>
@@ -221,7 +219,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Payouts
         {
             IDictionary<string, string> pathContext = new Dictionary<string, string>();
             pathContext.Add("payoutId", payoutId);
-            string uri = InstantiateUri("/{apiVersion}/{merchantId}/payouts/{payoutId}/cancelapproval", pathContext);
+            string uri = InstantiateUri("/v1/{merchantId}/payouts/{payoutId}/cancelapproval", pathContext);
             try
             {
                 await _communicator.Post<object>(

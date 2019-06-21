@@ -38,7 +38,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Riskassessments
         /// <exception cref="ApiException">if the Ingenico ePayments platform returned any other error</exception>
         public async Task<RiskAssessmentResponse> Bankaccounts(RiskAssessmentBankAccount body, CallContext context = null)
         {
-            string uri = InstantiateUri("/{apiVersion}/{merchantId}/riskassessments/bankaccounts", null);
+            string uri = InstantiateUri("/v1/{merchantId}/riskassessments/bankaccounts", null);
             try
             {
                 return await _communicator.Post<RiskAssessmentResponse>(
@@ -73,7 +73,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Riskassessments
         /// <exception cref="ApiException">if the Ingenico ePayments platform returned any other error</exception>
         public async Task<RiskAssessmentResponse> Cards(RiskAssessmentCard body, CallContext context = null)
         {
-            string uri = InstantiateUri("/{apiVersion}/{merchantId}/riskassessments/cards", null);
+            string uri = InstantiateUri("/v1/{merchantId}/riskassessments/cards", null);
             try
             {
                 return await _communicator.Post<RiskAssessmentResponse>(

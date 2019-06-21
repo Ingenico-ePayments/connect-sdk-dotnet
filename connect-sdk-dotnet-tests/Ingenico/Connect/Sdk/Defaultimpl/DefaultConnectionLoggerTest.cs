@@ -2,6 +2,7 @@ using NUnit.Framework;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Text.RegularExpressions;
 using MockHttpServer;
 using System.Net;
@@ -387,14 +388,38 @@ namespace Ingenico.Connect.Sdk.DefaultImpl
   uri:          '/v1/1234/services/testconnection'
   headers:      'X-GCS-ServerMetaInfo=""") + @"[^""]*" + Regex.Escape(@""", Date=""") + @"[^""]+" + Regex.Escape(@""", Authorization=""********""") + @"[^']*" + Regex.Escape(@"'");
         
-        string testConnectionResponse = @"" + Regex.Escape(@"Incoming response (requestId='") + @"([-a-zA-Z0-9]+)" + Regex.Escape(@"' + '") + @"[0-9]*" + Regex.Escape(@"' ms):
+        string testConnectionResponse = Regex.Escape(@"Incoming response (requestId='") + @"([-a-zA-Z0-9]+)" + Regex.Escape(@"' + '") + @"[0-9]*" + Regex.Escape(@"' ms):
   status-code:  '200'
   headers:      'Dummy=""""") + @"(,\ Server=""[^""]*"")?" + Regex.Escape(@", Date=""") + @"[^']*" + Regex.Escape(@"'
   content-type: 'application/json'
   body:         '{
     ""result"": ""OK""
 }'");
-        
+
+        string binaryRequestRequest = Regex.Escape(@"Outgoing request (requestId='") + @"([-a-zA-Z0-9]+)" + Regex.Escape(@"'):
+  method:       'POST'
+  uri:          '/binaryRequest'
+  headers:      'X-GCS-ServerMetaInfo=""") + @"[^""]*" + Regex.Escape(@""", Date=""") + @"[^""]+" + Regex.Escape(@""", Authorization=""********""") + @"[^']*" + Regex.Escape(@"'
+  content-type: 'multipart/form-data; boundary=") + @".*" + Regex.Escape(@"'
+  body:         '<binary content>'");
+
+        string binaryRequestResponse = Regex.Escape(@"Incoming response (requestId='") + @"([-a-zA-Z0-9]+)" + Regex.Escape(@"' + '") + @"[0-9]*" + Regex.Escape(@"' ms):
+  status-code:  '204'
+  headers:      '") + @"[^']*" + Regex.Escape(@"Dummy=""""") + @"[^']*" + Regex.Escape(@", Date=""") + @"[^""]+" + Regex.Escape(@"""") + @"[^']*" + Regex.Escape(@"'
+  content-type: ''
+  body:         ''");
+
+        string binaryResponseRequest = Regex.Escape(@"Outgoing request (requestId='") + @"([-a-zA-Z0-9]+)" + Regex.Escape(@"'):
+  method:       'GET'
+  uri:          '/binaryContent'
+  headers:      '") + @"[^']*" + Regex.Escape(@"'");
+
+        string binaryResponseResponse = Regex.Escape(@"Incoming response (requestId='") + @"([-a-zA-Z0-9]+)" + Regex.Escape(@"' + '") + @"[0-9]*" + Regex.Escape(@"' ms):
+  status-code:  '200'
+  headers:      '") + @"[^']*" + Regex.Escape(@"Dummy=""""") + @"[^']*" + Regex.Escape(@", Date=""") + @"[^']*" + Regex.Escape(@"'
+  content-type: 'application/octet-stream'
+  body:         '<binary content>'");
+
         string unknownServerErrorJson = @"{
     ""errorId"": ""fbff1179-7ba4-4894-9021-d8a0011d23a7"",
     ""errors"": [
@@ -791,6 +816,161 @@ namespace Ingenico.Connect.Sdk.DefaultImpl
         }
 
         [TestCase]
+        public async Task TestBinaryRequestWithKnownLength()
+        {
+            TestLogger logger = new TestLogger();
+
+            using (MockServer host = new MockServer(Port, "/binaryRequest", (request, response, arg3) =>
+                    {
+                        AssignResponse((HttpStatusCode)204, new Dictionary<string, string>(), response);
+                        return null;
+                    }))
+            using (Communicator communicator = CreateCommunicator())
+            {
+                communicator.EnableLogging(logger);
+
+                byte[] data = new byte[1024];
+                new Random().NextBytes(data);
+
+                UploadableFile file = new UploadableFile("dummyFile", new MemoryStream(data), "application/octetstream", data.Length);
+                MultipartFormDataObject multipart = new MultipartFormDataObject();
+                multipart.AddFile("file", file);
+
+                await communicator.Post<object>("/binaryRequest", new List<IRequestHeader>(), null, multipart, null);
+            }
+            Assert.That(logger.Entries, Has.Count.EqualTo(2));
+
+            TestLoggerEntry requestEntry = logger.Entries.First();
+
+            Assert.That(requestEntry.Message, Is.Not.Null);
+            Assert.That(requestEntry.Thrown, Is.Null);
+
+            TestLoggerEntry responseEntry = logger.Entries.ElementAt(1);
+
+            Assert.That(responseEntry.Message, Is.Not.Null);
+            Assert.That(responseEntry.Thrown, Is.Null);
+
+            AssertRequestAndResponse(requestEntry.Message, responseEntry.Message, binaryRequestRequest, binaryRequestResponse);
+        }
+
+        [TestCase]
+        public async Task TestBinaryRequestWithUnknownLength()
+        {
+            TestLogger logger = new TestLogger();
+
+            using (MockServer host = new MockServer(Port, "/binaryRequest", (request, response, arg3) =>
+                    {
+                        AssignResponse((HttpStatusCode)204, new Dictionary<string, string>(), response);
+                        return null;
+                    }))
+            using (Communicator communicator = CreateCommunicator())
+            {
+                communicator.EnableLogging(logger);
+
+                byte[] data = new byte[1024];
+                new Random().NextBytes(data);
+
+                UploadableFile file = new UploadableFile("dummyFile", new MemoryStream(data), "application/octetstream");
+                MultipartFormDataObject multipart = new MultipartFormDataObject();
+                multipart.AddFile("file", file);
+
+                await communicator.Post<object>("/binaryRequest", new List<IRequestHeader>(), null, multipart, null);
+            }
+            Assert.That(logger.Entries, Has.Count.EqualTo(2));
+
+            TestLoggerEntry requestEntry = logger.Entries.First();
+
+            Assert.That(requestEntry.Message, Is.Not.Null);
+            Assert.That(requestEntry.Thrown, Is.Null);
+
+            TestLoggerEntry responseEntry = logger.Entries.ElementAt(1);
+
+            Assert.That(responseEntry.Message, Is.Not.Null);
+            Assert.That(responseEntry.Thrown, Is.Null);
+
+            AssertRequestAndResponse(requestEntry.Message, responseEntry.Message, binaryRequestRequest, binaryRequestResponse);
+        }
+
+        [TestCase]
+        public async Task TestBinaryResponse()
+        {
+            TestLogger logger = new TestLogger();
+
+            byte[] data = new byte[10];
+            new Random().NextBytes(data);
+
+            using (MockServer host = new MockServer(Port, "/binaryContent", (request, response, arg3) =>
+                    {
+                        AssignResponse((HttpStatusCode)200, new Dictionary<string, string>(), response, null, "application/octet-stream");
+                        new MemoryStream(data).CopyTo(response.OutputStream);
+                    }))
+            using (IConnection connection = CreateConnection())
+            {
+                connection.EnableLogging(logger);
+
+                var uriBuilder = new UriBuilder("http", "localhost");
+                uriBuilder.Port = 5357;
+                uriBuilder.Path = "/binaryContent";
+                await connection.Get<object>(uriBuilder.Uri, new List<IRequestHeader>(), (statusCode, stream, headers) => {
+                    MemoryStream memStream = new MemoryStream();
+                    stream.CopyTo(memStream);
+
+                    Assert.That(statusCode, Is.EqualTo(HttpStatusCode.OK));
+                    Assert.That(memStream.ToArray(), Is.EqualTo(data));
+
+                    return null;
+                });
+            }
+            Assert.That(logger.Entries, Has.Count.EqualTo(2));
+
+            TestLoggerEntry requestEntry = logger.Entries.First();
+
+            Assert.That(requestEntry.Message, Is.Not.Null);
+            Assert.That(requestEntry.Thrown, Is.Null);
+
+            TestLoggerEntry responseEntry = logger.Entries.ElementAt(1);
+
+            Assert.That(responseEntry.Message, Is.Not.Null);
+            Assert.That(responseEntry.Thrown, Is.Null);
+
+            AssertRequestAndResponse(requestEntry.Message, responseEntry.Message, binaryResponseRequest, binaryResponseResponse);
+        }
+
+        [TestCase]
+        public async Task TestVoidContent()
+        {
+            // reuse delete token
+            TestLogger logger = new TestLogger();
+
+            using (MockServer host = new MockServer(Port, "/v1/1234/tokens/5678", (request, response, arg3) =>
+                    {
+                        AssignResponse((HttpStatusCode)204, new Dictionary<string, string>(), response);
+                        return null;
+                    }))
+            using (Communicator communicator = CreateCommunicator())
+            {
+                communicator.EnableLogging(logger);
+
+                await communicator.Delete("/v1/1234/tokens/5678", new List<IRequestHeader>(), null, (stream, headers) => {
+                    Assert.That(stream.ReadByte(), Is.EqualTo(-1));
+                }, null);
+            }
+            Assert.That(logger.Entries, Has.Count.EqualTo(2));
+
+            TestLoggerEntry requestEntry = logger.Entries.First();
+
+            Assert.That(requestEntry.Message, Is.Not.Null);
+            Assert.That(requestEntry.Thrown, Is.Null);
+
+            TestLoggerEntry responseEntry = logger.Entries.ElementAt(1);
+
+            Assert.That(responseEntry.Message, Is.Not.Null);
+            Assert.That(responseEntry.Thrown, Is.Null);
+
+            AssertRequestAndResponse(requestEntry.Message, responseEntry.Message, deleteTokenRequest, deleteTokenResponse);
+        }
+
+        [TestCase]
         public void TestLoggingUnknownServerError()
         {
             // an exception is thrown after logging the response
@@ -995,16 +1175,26 @@ namespace Ingenico.Connect.Sdk.DefaultImpl
             return requestId;
         }
 
-        Client CreateClient(int connectTimeout = 50000, int socketTimeout = 50000)
+        IConnection CreateConnection(int connectTimeout = 50000, int socketTimeout = 50000)
         {
             // Connect timeout not implemented
-            IConnection connection = new DefaultConnection(TimeSpan.FromMilliseconds(socketTimeout), 2);
+            return new DefaultConnection(TimeSpan.FromMilliseconds(socketTimeout), 2);
+        }
+
+        Communicator CreateCommunicator(int connectTimeout = 50000, int socketTimeout = 50000)
+        {
+            IConnection connection = CreateConnection(connectTimeout, socketTimeout);
             IAuthenticator authenticator = new DefaultAuthenticator(AuthorizationType.V1HMAC, "apiKey", "secret");
             MetaDataProvider metaDataProvider = new MetaDataProvider("Ingenico");
             var uriBuilder = new UriBuilder("http", "localhost");
             uriBuilder.Port = 5357;
             Session session = new Session(uriBuilder.Uri, connection, authenticator, metaDataProvider);
-            Communicator communicator = Factory.CreateCommunicator(session);
+            return Factory.CreateCommunicator(session);
+        }
+
+        Client CreateClient(int connectTimeout = 50000, int socketTimeout = 50000)
+        {
+            Communicator communicator = CreateCommunicator(connectTimeout, socketTimeout);
             Client client = Factory.CreateClient(communicator);
             return client;
         }

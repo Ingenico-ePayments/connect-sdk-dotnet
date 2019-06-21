@@ -24,7 +24,7 @@ namespace Ingenico.Connect.Sdk
         }
 
         Client(Communicator communicator, string clientMetaInfo) :
-            base(communicator, clientMetaInfo, new Dictionary<string, string> { { "apiVersion", ApiVersion } })
+            base(communicator, clientMetaInfo, null)
         {
         }
 

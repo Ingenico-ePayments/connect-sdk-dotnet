@@ -8,15 +8,15 @@ namespace Ingenico.Connect.Sdk
 {
     public class WebhooksEvent
     {
-        public String ApiVersion { get; set; }
+        public string ApiVersion { get; set; }
 
-        public String Id { get; set; }
+        public string Id { get; set; }
 
-        public String Created { get; set; }
+        public string Created { get; set; }
 
-        public String MerchantId { get; set; }
+        public string MerchantId { get; set; }
 
-        public String Type { get; set; }
+        public string Type { get; set; }
 
         public PaymentResponse Payment { get; set; }
 

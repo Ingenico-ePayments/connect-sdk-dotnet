@@ -5,6 +5,7 @@
 using Ingenico.Connect.Sdk;
 using Ingenico.Connect.Sdk.Merchant.Captures;
 using Ingenico.Connect.Sdk.Merchant.Disputes;
+using Ingenico.Connect.Sdk.Merchant.Files;
 using Ingenico.Connect.Sdk.Merchant.Hostedcheckouts;
 using Ingenico.Connect.Sdk.Merchant.Hostedmandatemanagements;
 using Ingenico.Connect.Sdk.Merchant.Mandates;
@@ -155,6 +156,15 @@ namespace Ingenico.Connect.Sdk.Merchant
         public SessionsClient Sessions()
         {
             return new SessionsClient(this, null);
+        }
+
+        /// <summary>
+        /// Resource /{merchantId}/files
+        /// </summary>
+        /// <returns>FilesClient</returns>
+        public FilesClient Files()
+        {
+            return new FilesClient(this, null);
         }
     }
 }

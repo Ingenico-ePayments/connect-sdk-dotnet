@@ -20,8 +20,14 @@ namespace Ingenico.Connect.Sdk.Merchant.Products
         public override IEnumerable<RequestParam> ToRequestParameters()
         {
             IList<RequestParam> result = new List<RequestParam>();
-            AddParameter(result, "countryCode", CountryCode);
-            AddParameter(result, "currencyCode", CurrencyCode);
+            if (CountryCode != null)
+            {
+                result.Add(new RequestParam("countryCode", CountryCode));
+            }
+            if (CurrencyCode != null)
+            {
+                result.Add(new RequestParam("currencyCode", CurrencyCode));
+            }
             return result;
         }
     }

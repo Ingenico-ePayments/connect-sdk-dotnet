@@ -3,18 +3,21 @@
  * https://epayments-api.developer-ingenico.com/s2sapi/v1/
  */
 using Ingenico.Connect.Sdk;
-using Ingenico.Connect.Sdk.Domain.Publickey;
+using System;
+using System.IO;
 
-namespace Ingenico.Connect.Sdk.Merchant.Products
+namespace Ingenico.Connect.Sdk.Merchant.Files
 {
-    public class GetPaymentProductPublicKeyExample
+    public class GetFileExample
     {
         public async void Example()
         {
 #pragma warning disable 0168
             using (Client client = GetClient())
             {
-                PublicKey response = await client.Merchant("merchantId").Products().PublicKey(320);
+                await client.Merchant("merchantId").Files().GetFile("fileId", (stream, headers) => {
+                    // Do something with stream and headers here.
+                });
             }
 #pragma warning restore 0168
         }

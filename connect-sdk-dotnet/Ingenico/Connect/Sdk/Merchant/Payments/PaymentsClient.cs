@@ -43,7 +43,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
         /// <exception cref="ApiException">if the Ingenico ePayments platform returned any other error</exception>
         public async Task<CreatePaymentResponse> Create(CreatePaymentRequest body, CallContext context = null)
         {
-            string uri = InstantiateUri("/{apiVersion}/{merchantId}/payments", null);
+            string uri = InstantiateUri("/v1/{merchantId}/payments", null);
             try
             {
                 return await _communicator.Post<CreatePaymentResponse>(
@@ -78,7 +78,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
         /// <exception cref="ApiException">if the Ingenico ePayments platform returned any other error</exception>
         public async Task<FindPaymentsResponse> Find(FindPaymentsParams query, CallContext context = null)
         {
-            string uri = InstantiateUri("/{apiVersion}/{merchantId}/payments", null);
+            string uri = InstantiateUri("/v1/{merchantId}/payments", null);
             try
             {
                 return await _communicator.Get<FindPaymentsResponse>(
@@ -114,7 +114,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
         {
             IDictionary<string, string> pathContext = new Dictionary<string, string>();
             pathContext.Add("paymentId", paymentId);
-            string uri = InstantiateUri("/{apiVersion}/{merchantId}/payments/{paymentId}", pathContext);
+            string uri = InstantiateUri("/v1/{merchantId}/payments/{paymentId}", pathContext);
             try
             {
                 return await _communicator.Get<PaymentResponse>(
@@ -151,7 +151,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
         {
             IDictionary<string, string> pathContext = new Dictionary<string, string>();
             pathContext.Add("paymentId", paymentId);
-            string uri = InstantiateUri("/{apiVersion}/{merchantId}/payments/{paymentId}/complete", pathContext);
+            string uri = InstantiateUri("/v1/{merchantId}/payments/{paymentId}/complete", pathContext);
             try
             {
                 return await _communicator.Post<CompletePaymentResponse>(
@@ -188,7 +188,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
         {
             IDictionary<string, string> pathContext = new Dictionary<string, string>();
             pathContext.Add("paymentId", paymentId);
-            string uri = InstantiateUri("/{apiVersion}/{merchantId}/payments/{paymentId}/thirdpartystatus", pathContext);
+            string uri = InstantiateUri("/v1/{merchantId}/payments/{paymentId}/thirdpartystatus", pathContext);
             try
             {
                 return await _communicator.Get<ThirdPartyStatusResponse>(
@@ -225,7 +225,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
         {
             IDictionary<string, string> pathContext = new Dictionary<string, string>();
             pathContext.Add("paymentId", paymentId);
-            string uri = InstantiateUri("/{apiVersion}/{merchantId}/payments/{paymentId}/tokenize", pathContext);
+            string uri = InstantiateUri("/v1/{merchantId}/payments/{paymentId}/tokenize", pathContext);
             try
             {
                 return await _communicator.Post<CreateTokenResponse>(
@@ -262,7 +262,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
         {
             IDictionary<string, string> pathContext = new Dictionary<string, string>();
             pathContext.Add("paymentId", paymentId);
-            string uri = InstantiateUri("/{apiVersion}/{merchantId}/payments/{paymentId}/processchallenged", pathContext);
+            string uri = InstantiateUri("/v1/{merchantId}/payments/{paymentId}/processchallenged", pathContext);
             try
             {
                 return await _communicator.Post<PaymentResponse>(
@@ -300,7 +300,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
         {
             IDictionary<string, string> pathContext = new Dictionary<string, string>();
             pathContext.Add("paymentId", paymentId);
-            string uri = InstantiateUri("/{apiVersion}/{merchantId}/payments/{paymentId}/approve", pathContext);
+            string uri = InstantiateUri("/v1/{merchantId}/payments/{paymentId}/approve", pathContext);
             try
             {
                 return await _communicator.Post<PaymentApprovalResponse>(
@@ -338,7 +338,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
         {
             IDictionary<string, string> pathContext = new Dictionary<string, string>();
             pathContext.Add("paymentId", paymentId);
-            string uri = InstantiateUri("/{apiVersion}/{merchantId}/payments/{paymentId}/capture", pathContext);
+            string uri = InstantiateUri("/v1/{merchantId}/payments/{paymentId}/capture", pathContext);
             try
             {
                 return await _communicator.Post<CaptureResponse>(
@@ -375,7 +375,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
         {
             IDictionary<string, string> pathContext = new Dictionary<string, string>();
             pathContext.Add("paymentId", paymentId);
-            string uri = InstantiateUri("/{apiVersion}/{merchantId}/payments/{paymentId}/cancelapproval", pathContext);
+            string uri = InstantiateUri("/v1/{merchantId}/payments/{paymentId}/cancelapproval", pathContext);
             try
             {
                 return await _communicator.Post<CancelApprovalPaymentResponse>(
@@ -412,7 +412,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
         {
             IDictionary<string, string> pathContext = new Dictionary<string, string>();
             pathContext.Add("paymentId", paymentId);
-            string uri = InstantiateUri("/{apiVersion}/{merchantId}/payments/{paymentId}/captures", pathContext);
+            string uri = InstantiateUri("/v1/{merchantId}/payments/{paymentId}/captures", pathContext);
             try
             {
                 return await _communicator.Get<CapturesResponse>(
@@ -450,7 +450,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
         {
             IDictionary<string, string> pathContext = new Dictionary<string, string>();
             pathContext.Add("paymentId", paymentId);
-            string uri = InstantiateUri("/{apiVersion}/{merchantId}/payments/{paymentId}/refund", pathContext);
+            string uri = InstantiateUri("/v1/{merchantId}/payments/{paymentId}/refund", pathContext);
             try
             {
                 return await _communicator.Post<RefundResponse>(
@@ -487,7 +487,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
         {
             IDictionary<string, string> pathContext = new Dictionary<string, string>();
             pathContext.Add("paymentId", paymentId);
-            string uri = InstantiateUri("/{apiVersion}/{merchantId}/payments/{paymentId}/refunds", pathContext);
+            string uri = InstantiateUri("/v1/{merchantId}/payments/{paymentId}/refunds", pathContext);
             try
             {
                 return await _communicator.Get<RefundsResponse>(
@@ -523,7 +523,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
         {
             IDictionary<string, string> pathContext = new Dictionary<string, string>();
             pathContext.Add("paymentId", paymentId);
-            string uri = InstantiateUri("/{apiVersion}/{merchantId}/payments/{paymentId}/cancel", pathContext);
+            string uri = InstantiateUri("/v1/{merchantId}/payments/{paymentId}/cancel", pathContext);
             try
             {
                 return await _communicator.Post<CancelPaymentResponse>(
@@ -561,7 +561,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
         {
             IDictionary<string, string> pathContext = new Dictionary<string, string>();
             pathContext.Add("paymentId", paymentId);
-            string uri = InstantiateUri("/{apiVersion}/{merchantId}/payments/{paymentId}/dispute", pathContext);
+            string uri = InstantiateUri("/v1/{merchantId}/payments/{paymentId}/dispute", pathContext);
             try
             {
                 return await _communicator.Post<DisputeResponse>(
@@ -598,7 +598,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
         {
             IDictionary<string, string> pathContext = new Dictionary<string, string>();
             pathContext.Add("paymentId", paymentId);
-            string uri = InstantiateUri("/{apiVersion}/{merchantId}/payments/{paymentId}/disputes", pathContext);
+            string uri = InstantiateUri("/v1/{merchantId}/payments/{paymentId}/disputes", pathContext);
             try
             {
                 return await _communicator.Get<DisputesResponse>(

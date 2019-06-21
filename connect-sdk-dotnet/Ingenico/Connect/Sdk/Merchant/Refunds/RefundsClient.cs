@@ -38,7 +38,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Refunds
         /// <exception cref="ApiException">if the Ingenico ePayments platform returned any other error</exception>
         public async Task<FindRefundsResponse> Find(FindRefundsParams query, CallContext context = null)
         {
-            string uri = InstantiateUri("/{apiVersion}/{merchantId}/refunds", null);
+            string uri = InstantiateUri("/v1/{merchantId}/refunds", null);
             try
             {
                 return await _communicator.Get<FindRefundsResponse>(
@@ -74,7 +74,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Refunds
         {
             IDictionary<string, string> pathContext = new Dictionary<string, string>();
             pathContext.Add("refundId", refundId);
-            string uri = InstantiateUri("/{apiVersion}/{merchantId}/refunds/{refundId}", pathContext);
+            string uri = InstantiateUri("/v1/{merchantId}/refunds/{refundId}", pathContext);
             try
             {
                 return await _communicator.Get<RefundResponse>(
@@ -97,7 +97,6 @@ namespace Ingenico.Connect.Sdk.Merchant.Refunds
         /// <param name="refundId">string</param>
         /// <param name="body">ApproveRefundRequest</param>
         /// <param name="context">CallContext</param>
-        /// <returns>void</returns>
         /// <exception cref="ValidationException">if the request was not correct and couldn't be processed (HTTP status code BadRequest)</exception>
         /// <exception cref="AuthorizationException">if the request was not allowed (HTTP status code Forbidden)</exception>
         /// <exception cref="IdempotenceException">if an idempotent request caused a conflict (HTTP status code Conflict)</exception>
@@ -111,7 +110,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Refunds
         {
             IDictionary<string, string> pathContext = new Dictionary<string, string>();
             pathContext.Add("refundId", refundId);
-            string uri = InstantiateUri("/{apiVersion}/{merchantId}/refunds/{refundId}/approve", pathContext);
+            string uri = InstantiateUri("/v1/{merchantId}/refunds/{refundId}/approve", pathContext);
             try
             {
                 await _communicator.Post<object>(
@@ -134,7 +133,6 @@ namespace Ingenico.Connect.Sdk.Merchant.Refunds
         /// </summary>
         /// <param name="refundId">string</param>
         /// <param name="context">CallContext</param>
-        /// <returns>void</returns>
         /// <exception cref="ValidationException">if the request was not correct and couldn't be processed (HTTP status code BadRequest)</exception>
         /// <exception cref="AuthorizationException">if the request was not allowed (HTTP status code Forbidden)</exception>
         /// <exception cref="IdempotenceException">if an idempotent request caused a conflict (HTTP status code Conflict)</exception>
@@ -148,7 +146,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Refunds
         {
             IDictionary<string, string> pathContext = new Dictionary<string, string>();
             pathContext.Add("refundId", refundId);
-            string uri = InstantiateUri("/{apiVersion}/{merchantId}/refunds/{refundId}/cancel", pathContext);
+            string uri = InstantiateUri("/v1/{merchantId}/refunds/{refundId}/cancel", pathContext);
             try
             {
                 await _communicator.Post<object>(
@@ -171,7 +169,6 @@ namespace Ingenico.Connect.Sdk.Merchant.Refunds
         /// </summary>
         /// <param name="refundId">string</param>
         /// <param name="context">CallContext</param>
-        /// <returns>void</returns>
         /// <exception cref="ValidationException">if the request was not correct and couldn't be processed (HTTP status code BadRequest)</exception>
         /// <exception cref="AuthorizationException">if the request was not allowed (HTTP status code Forbidden)</exception>
         /// <exception cref="IdempotenceException">if an idempotent request caused a conflict (HTTP status code Conflict)</exception>
@@ -185,7 +182,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Refunds
         {
             IDictionary<string, string> pathContext = new Dictionary<string, string>();
             pathContext.Add("refundId", refundId);
-            string uri = InstantiateUri("/{apiVersion}/{merchantId}/refunds/{refundId}/cancelapproval", pathContext);
+            string uri = InstantiateUri("/v1/{merchantId}/refunds/{refundId}/cancelapproval", pathContext);
             try
             {
                 await _communicator.Post<object>(
