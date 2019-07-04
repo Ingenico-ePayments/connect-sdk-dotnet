@@ -14,6 +14,8 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
         [ObsoleteAttribute("Use Order.shoppingCart.amountBreakdown instead")]
         public Level3SummaryData Level3SummaryData { get; set; } = null;
 
+        public LoanRecipient LoanRecipient { get; set; } = null;
+
         public long? NumberOfInstallments { get; set; } = null;
 
         public string OrderDate { get; set; } = null;
