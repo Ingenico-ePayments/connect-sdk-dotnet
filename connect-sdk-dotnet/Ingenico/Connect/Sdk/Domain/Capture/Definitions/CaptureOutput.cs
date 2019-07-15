@@ -10,6 +10,8 @@ namespace Ingenico.Connect.Sdk.Domain.Capture.Definitions
     {
         public long? AmountPaid { get; set; } = null;
 
+        public long? AmountReversed { get; set; } = null;
+
         public BankTransferPaymentMethodSpecificOutput BankTransferPaymentMethodSpecificOutput { get; set; } = null;
 
         public CardPaymentMethodSpecificOutput CardPaymentMethodSpecificOutput { get; set; } = null;

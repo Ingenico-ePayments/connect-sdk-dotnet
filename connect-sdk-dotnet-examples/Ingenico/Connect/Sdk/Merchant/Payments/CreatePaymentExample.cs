@@ -24,32 +24,22 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
                 card.Cvv = "123";
                 card.ExpiryDate = "1220";
 
-                ExternalCardholderAuthenticationData externalCardholderAuthenticationData = new ExternalCardholderAuthenticationData();
-                externalCardholderAuthenticationData.Cavv = "AgAAAAAABk4DWZ4C28yUQAAAAAA=";
-                externalCardholderAuthenticationData.CavvAlgorithm = "1";
-                externalCardholderAuthenticationData.Eci = 8;
-                externalCardholderAuthenticationData.ThreeDSecureVersion = "v2";
-                externalCardholderAuthenticationData.ThreeDServerTransactionId = "3DSTID1234";
-                externalCardholderAuthenticationData.ValidationResult = "Y";
-                externalCardholderAuthenticationData.Xid = "n3h2uOQPUgnmqhCkXNfxl8pOZJA=";
-
-                ThreeDSecureData priorThreeDSecureData = new ThreeDSecureData();
-                priorThreeDSecureData.AcsTransactionId = "empty";
-                priorThreeDSecureData.Method = "challenged";
-                priorThreeDSecureData.UtcTimestamp = "201901311530";
+                RedirectionData redirectionData = new RedirectionData();
+                redirectionData.ReturnUrl = "https://hostname.myownwebsite.url";
 
                 ThreeDSecure threeDSecure = new ThreeDSecure();
                 threeDSecure.AuthenticationFlow = "browser";
                 threeDSecure.ChallengeCanvasSize = "600x400";
                 threeDSecure.ChallengeIndicator = "challenge-requested";
-                threeDSecure.ExternalCardholderAuthenticationData = externalCardholderAuthenticationData;
-                threeDSecure.PriorThreeDSecureData = priorThreeDSecureData;
+                threeDSecure.RedirectionData = redirectionData;
                 threeDSecure.SkipAuthentication = false;
 
                 CardPaymentMethodSpecificInput cardPaymentMethodSpecificInput = new CardPaymentMethodSpecificInput();
                 cardPaymentMethodSpecificInput.Card = card;
+                cardPaymentMethodSpecificInput.IsRecurring = false;
                 cardPaymentMethodSpecificInput.PaymentProductId = 1;
                 cardPaymentMethodSpecificInput.ThreeDSecure = threeDSecure;
+                cardPaymentMethodSpecificInput.TransactionChannel = "ECOMMERCE";
 
                 AmountOfMoney amountOfMoney = new AmountOfMoney();
                 amountOfMoney.Amount = 2980L;
@@ -70,9 +60,22 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
 
                 ContactDetails contactDetails = new ContactDetails();
                 contactDetails.EmailAddress = "wile.e.coyote@acmelabs.com";
-                contactDetails.EmailMessageType = "html";
                 contactDetails.FaxNumber = "+1234567891";
                 contactDetails.PhoneNumber = "+1234567890";
+
+                BrowserData browserData = new BrowserData();
+                browserData.ColorDepth = 24;
+                browserData.JavaEnabled = false;
+                browserData.ScreenHeight = "1200";
+                browserData.ScreenWidth = "1920";
+
+                CustomerDevice device = new CustomerDevice();
+                device.AcceptHeader = "texthtml,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8";
+                device.BrowserData = browserData;
+                device.IpAddress = "123.123.123.123";
+                device.Locale = "en-US";
+                device.TimezoneOffsetUtcMinutes = "420";
+                device.UserAgent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/12.1 Safari/605.1.15";
 
                 PersonalName name = new PersonalName();
                 name.FirstName = "Wile";
@@ -86,9 +89,11 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
                 personalInformation.Name = name;
 
                 Customer customer = new Customer();
+                customer.AccountType = "none";
                 customer.BillingAddress = billingAddress;
                 customer.CompanyInformation = companyInformation;
                 customer.ContactDetails = contactDetails;
+                customer.Device = device;
                 customer.Locale = "en_US";
                 customer.MerchantCustomerId = "1234";
                 customer.PersonalInformation = personalInformation;

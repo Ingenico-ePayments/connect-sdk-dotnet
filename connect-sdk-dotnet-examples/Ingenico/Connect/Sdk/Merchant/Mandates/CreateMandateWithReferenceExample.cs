@@ -17,7 +17,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Mandates
             using (Client client = GetClient())
             {
                 BankAccountIban bankAccountIban = new BankAccountIban();
-                bankAccountIban.Iban = "DE46940594210000012345";
+                bankAccountIban.Iban = "DE46720200700359736690";
 
                 MandateContactDetails contactDetails = new MandateContactDetails();
                 contactDetails.EmailAddress = "wile.e.coyote@acmelabs.com";
