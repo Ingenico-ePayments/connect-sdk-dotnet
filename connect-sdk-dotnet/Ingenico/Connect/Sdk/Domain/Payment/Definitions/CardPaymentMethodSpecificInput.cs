@@ -16,6 +16,8 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
 
         public bool? IsRecurring { get; set; } = null;
 
+        public string MerchantInitiatedReasonIndicator { get; set; } = null;
+
         [ObsoleteAttribute("Use threeDSecure.redirectionData.returnUrl instead")]
         public string ReturnUrl { get; set; } = null;
 

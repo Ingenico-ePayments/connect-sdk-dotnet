@@ -12,6 +12,8 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
 
         public string ChallengeIndicator { get; set; } = null;
 
+        public string ExemptionRequest { get; set; } = null;
+
         public ThreeDSecureData PriorThreeDSecureData { get; set; } = null;
 
         public SdkDataInput SdkData { get; set; } = null;

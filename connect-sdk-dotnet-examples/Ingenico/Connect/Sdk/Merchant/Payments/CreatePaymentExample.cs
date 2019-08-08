@@ -31,12 +31,14 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
                 threeDSecure.AuthenticationFlow = "browser";
                 threeDSecure.ChallengeCanvasSize = "600x400";
                 threeDSecure.ChallengeIndicator = "challenge-requested";
+                threeDSecure.ExemptionRequest = "none";
                 threeDSecure.RedirectionData = redirectionData;
                 threeDSecure.SkipAuthentication = false;
 
                 CardPaymentMethodSpecificInput cardPaymentMethodSpecificInput = new CardPaymentMethodSpecificInput();
                 cardPaymentMethodSpecificInput.Card = card;
                 cardPaymentMethodSpecificInput.IsRecurring = false;
+                cardPaymentMethodSpecificInput.MerchantInitiatedReasonIndicator = "delayedCharges";
                 cardPaymentMethodSpecificInput.PaymentProductId = 1;
                 cardPaymentMethodSpecificInput.ThreeDSecure = threeDSecure;
                 cardPaymentMethodSpecificInput.TransactionChannel = "ECOMMERCE";

@@ -13,6 +13,8 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
 
         public string CustomerReference { get; set; } = null;
 
+        public string InitialSchemeTransactionId { get; set; } = null;
+
         public CardRecurrenceDetails Recurring { get; set; } = null;
 
         [ObsoleteAttribute("Use recurring.recurringPaymentSequenceIndicator instead")]

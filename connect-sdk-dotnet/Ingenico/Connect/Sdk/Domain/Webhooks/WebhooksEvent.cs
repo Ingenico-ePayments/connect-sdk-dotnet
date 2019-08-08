@@ -1,4 +1,5 @@
 using System;
+using Ingenico.Connect.Sdk.Domain.Dispute;
 using Ingenico.Connect.Sdk.Domain.Payment;
 using Ingenico.Connect.Sdk.Domain.Refund;
 using Ingenico.Connect.Sdk.Domain.Payout;
@@ -25,5 +26,7 @@ namespace Ingenico.Connect.Sdk
         public PayoutResponse Payout { get; set; }
 
         public TokenResponse Token { get; set; }
+
+        public DisputeResponse Dispute { get; set; }
     }
 }
