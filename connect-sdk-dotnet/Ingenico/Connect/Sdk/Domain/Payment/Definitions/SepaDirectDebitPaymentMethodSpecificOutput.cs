@@ -11,5 +11,7 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
         public FraudResults FraudResults { get; set; } = null;
 
         public PaymentProduct771SpecificOutput PaymentProduct771SpecificOutput { get; set; } = null;
+
+        public string Token { get; set; } = null;
     }
 }
