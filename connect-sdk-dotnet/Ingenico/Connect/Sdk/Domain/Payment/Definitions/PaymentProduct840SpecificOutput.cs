@@ -8,6 +8,8 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
 {
     public class PaymentProduct840SpecificOutput
     {
+        public Address BillingAddress { get; set; } = null;
+
         public PaymentProduct840CustomerAccount CustomerAccount { get; set; } = null;
 
         public Address CustomerAddress { get; set; } = null;

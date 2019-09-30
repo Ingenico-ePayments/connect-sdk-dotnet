@@ -8,6 +8,8 @@ namespace Ingenico.Connect.Sdk.Domain.Token
     {
         public bool? IsNewToken { get; set; } = null;
 
+        public string OriginalPaymentId { get; set; } = null;
+
         public string Token { get; set; } = null;
     }
 }

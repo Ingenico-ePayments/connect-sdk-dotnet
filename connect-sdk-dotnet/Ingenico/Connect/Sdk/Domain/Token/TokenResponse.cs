@@ -16,6 +16,8 @@ namespace Ingenico.Connect.Sdk.Domain.Token
 
         public TokenNonSepaDirectDebit NonSepaDirectDebit { get; set; } = null;
 
+        public string OriginalPaymentId { get; set; } = null;
+
         public int? PaymentProductId { get; set; } = null;
 
         public TokenSepaDirectDebit SepaDirectDebit { get; set; } = null;
