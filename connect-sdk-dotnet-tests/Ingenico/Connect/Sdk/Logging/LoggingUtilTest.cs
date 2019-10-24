@@ -5,7 +5,7 @@ namespace Ingenico.Connect.Sdk.Logging
     [TestFixture]
     public class LoggingUtilTest
     {
-        string noObfuscation = @"{
+        private readonly string noObfuscation = @"{
     ""order"": {
         ""amountOfMoney"": {
             ""currencyCode"": ""EUR"",
@@ -22,13 +22,13 @@ namespace Ingenico.Connect.Sdk.Logging
         ""paymentProductId"": 11
     }
 }";
-        string binObfuscated = @"{
+        private readonly string binObfuscated = @"{
     ""bin"": ""123456**""
 }";
-        string binUnobfuscated = @"{
+        private readonly string binUnobfuscated = @"{
     ""bin"": ""12345678""
 }";
-        string cardObfuscated = @"{
+        private readonly string cardObfuscated = @"{
     ""order"": {
         ""amountOfMoney"": {
             ""currencyCode"": ""CAD"",
@@ -49,7 +49,7 @@ namespace Ingenico.Connect.Sdk.Logging
         }
     }
 }";
-        string cardUnObfuscated = @"{
+        private readonly string cardUnObfuscated = @"{
     ""order"": {
         ""amountOfMoney"": {
             ""currencyCode"": ""CAD"",
@@ -70,7 +70,7 @@ namespace Ingenico.Connect.Sdk.Logging
         }
     }
 }";
-        string ibanObfuscated = @"{
+        private readonly string ibanObfuscated = @"{
     ""sepaDirectDebit"": {
         ""mandate"": {
             ""bankAccountIban"": {
@@ -89,7 +89,7 @@ namespace Ingenico.Connect.Sdk.Logging
     },
     ""paymentProductId"": 770
 }";
-        string ibanUnobfuscated = @"{
+        private readonly string ibanUnobfuscated = @"{
     ""sepaDirectDebit"": {
         ""mandate"": {
             ""bankAccountIban"": {
@@ -107,6 +107,16 @@ namespace Ingenico.Connect.Sdk.Logging
         }
     },
     ""paymentProductId"": 770
+}";
+        private readonly string noObjectObfuscationUnobfuscated = @"{
+    ""value"" : true,
+    ""value"" : {
+    }
+}";
+        private readonly string noObjectObfuscationObfuscated = @"{
+    ""value"" : *****
+    ""value"" : {
+    }
 }";
 
         [TestCase]
@@ -151,6 +161,12 @@ namespace Ingenico.Connect.Sdk.Logging
         public void TestObfuscateBodyWithNoMatches()
         {
             CheckObfuscatedBodyWithMatches(noObfuscation);
+        }
+
+        [TestCase]
+        public void TestObfuscateBodyWithObject()
+        {
+            CheckObfuscatedBodyWithMatches(noObjectObfuscationUnobfuscated, noObjectObfuscationObfuscated);
         }
 
         [TestCase]

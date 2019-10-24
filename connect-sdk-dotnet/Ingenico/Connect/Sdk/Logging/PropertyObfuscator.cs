@@ -25,7 +25,7 @@ namespace Ingenico.Connect.Sdk.Logging
             IEnumerator<string> iterator = propertyNames.GetEnumerator();
 
             /*
-             * Regex to create: (["'])(X|Y|Z)\1\s*:\s*(?:(["'])(.*?)(?<!\\)\3|([^"'\s]\S*))
+             * Regex to create: (["'])(X|Y|Z)\1\s*:\s*(?:(["'])(.*?)(?<!\\)\3|([^"'\s\[\{]\S*))
              * Groups:
              * 1: opening " or ' for the property name
              * 2: property name
@@ -46,8 +46,7 @@ namespace Ingenico.Connect.Sdk.Logging
             {
                 regexStringBuilder.Append('|').Append(Regex.Escape(iterator.Current));
             }
-            regexStringBuilder.Append(")\\1\\s*:\\s*(?:([\"'])(.*?)(?<!\\\\)\\3|([^\"'\\s]\\S*))");
-
+            regexStringBuilder.Append(")\\1\\s*:\\s*(?:([\"'])(.*?)(?<!\\\\)\\3|([^\"'\\s\\[\\{]\\S*))");
 
             return new Regex(regexStringBuilder.ToString(), RegexOptions.Multiline);
         }
@@ -64,15 +63,14 @@ namespace Ingenico.Connect.Sdk.Logging
             foreach (Match matcher in _propertyRegex.Matches(body))
             {
                 string propertyName = matcher.Groups[2].Value;
-                string value = matcher.Groups[4].Value;
-                int valueStart = matcher.Groups[4].Index;
-                int valueEnd = matcher.Groups[4].Index + matcher.Groups[4].Length;
-                if (value == null)
+                Group valueGroup = matcher.Groups[4];
+                if (!valueGroup.Success)
                 {
-                    value = matcher.Groups[5].Value;
-                    valueStart = matcher.Groups[5].Index;
-                    valueEnd = matcher.Groups[5].Index + matcher.Groups[5].Length;
+                    valueGroup = matcher.Groups[5];
                 }
+                string value = valueGroup.Value;
+                int valueStart = valueGroup.Index;
+                int valueEnd = valueGroup.Index + valueGroup.Length;
 
                 string obfuscatedValue = ObfuscateValue(propertyName, value);
 
