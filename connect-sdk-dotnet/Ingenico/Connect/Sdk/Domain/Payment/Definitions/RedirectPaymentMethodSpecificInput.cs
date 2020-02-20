@@ -20,6 +20,8 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
 
         public RedirectPaymentProduct863SpecificInput PaymentProduct863SpecificInput { get; set; } = null;
 
+        public RedirectPaymentProduct869SpecificInput PaymentProduct869SpecificInput { get; set; } = null;
+
         public RedirectPaymentProduct882SpecificInput PaymentProduct882SpecificInput { get; set; } = null;
 
         public RedirectionData RedirectionData { get; set; } = null;

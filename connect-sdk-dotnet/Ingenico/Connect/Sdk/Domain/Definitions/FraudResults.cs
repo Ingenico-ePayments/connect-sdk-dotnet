@@ -7,5 +7,7 @@ namespace Ingenico.Connect.Sdk.Domain.Definitions
     public class FraudResults
     {
         public string FraudServiceResult { get; set; } = null;
+
+        public InAuth InAuth { get; set; } = null;
     }
 }

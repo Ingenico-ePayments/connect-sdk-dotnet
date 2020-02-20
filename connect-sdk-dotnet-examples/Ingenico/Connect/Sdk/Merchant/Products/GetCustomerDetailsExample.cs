@@ -3,9 +3,9 @@
  * https://epayments-api.developer-ingenico.com/s2sapi/v1/
  */
 using Ingenico.Connect.Sdk;
-using Ingenico.Connect.Sdk.Domain.Definitions;
 using Ingenico.Connect.Sdk.Domain.Product;
 using System.Collections.Generic;
+using KeyValuePair = Ingenico.Connect.Sdk.Domain.Definitions.KeyValuePair;
 
 namespace Ingenico.Connect.Sdk.Merchant.Products
 {
