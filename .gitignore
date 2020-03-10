@@ -39,8 +39,8 @@ Thumbs.db
 #dotCover
 *.dotCover
 
-#NuGet package
-/connect-sdk-dotnet*.nupkg
+#Visual Studio
+.vs
 
-# test results/
-**/TestResult.xml
+#Visual Studio Code
+.vscode

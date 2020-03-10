@@ -25,35 +25,49 @@ This repository consists out of four main components:
 
 ## Requirements
 
-.NET Framework 4.5 is required. In addition, the following packages are required:
+The .NET SDK supports .NET Framework 4.5 and [.NET Standard](https://docs.microsoft.com/en-us/dotnet/standard/net-standard) 2.0 and 2.1.
 
-* [Microsoft BCL Portability Pack ](https://www.nuget.org/packages/Microsoft.Bcl/) 1.1.10 or higher
-* [Microsoft BCL Build Components](https://www.nuget.org/packages/Microsoft.Bcl.Build/) 1.0.21 or higher
-* [Microsoft HTTP Client Libraries](https://www.nuget.org/packages/Microsoft.Net.Http/) 2.2.29 or higher
-* [System.Collections.Immutable](https://www.nuget.org/packages/System.Collections.Immutable/) 1.2.0 or higher
-* [Json.NET](https://www.nuget.org/packages/Newtonsoft.Json/) 9.0.1 or higher
+### .NET Framework 4.5
+
+When using .NET Framework 4.5, the following packages are rquired:
+
+* [Json.NET](https://www.nuget.org/packages/Newtonsoft.Json/) 10.0.3 or higher
 * [NLog](https://www.nuget.org/packages/NLog/) 4.3.7 or higher
+* [System.Collections.Immutable](https://www.nuget.org/packages/System.Collections.Immutable/) 1.2.0 or higher
+
+In addition, the following references are required, which are part of the .NET Framework:
+* System.Configuration
+* System.Net.Http
+
+### .NET Standard 2.0 and 2.1
+
+When using .NET Standard 2.0 or 2.1, the following packages are rquired:
+
+* [Json.NET](https://www.nuget.org/packages/Newtonsoft.Json/) 12.0.3 or higher
+* [NLog](https://www.nuget.org/packages/NLog/) 4.6.8 or higher
+* [System.Collections.Immutable](https://www.nuget.org/packages/System.Collections.Immutable/) 1.6.0 or higher
+* [System.Configuration.ConfigurationManager](https://www.nuget.org/packages/System.Configuration.ConfigurationManager/) 4.6.0 or higher
 
 ## Installation
  
 ### Release
 
+#### Package Manager
+
 To install the latest .NET SDK release, run the following command in the Package Manager Console (`Tools -> NuGet Package Manager -> Package Manager Console`) in Visual Studio:
 
 	PM> Install-Package connect-sdk-dotnet
 
+#### .NET CLI
+
+To install the latest .NET SDK release, run the following command:
+
+	dotnet add package connect-sdk-dotnet
+
 ### Release (Strong-Named)
 
-To install the latest .NET SDK release as a [Strong-Named assembly](https://docs.microsoft.com/en-us/dotnet/framework/app-domains/strong-named-assemblies), run the following command in the Package Manager Console (`Tools -> NuGet Package Manager -> Package Manager Console`) in Visual Studio:
-
-	PM> Install-Package connect-sdk-dotnet.StrongName
-
-### Source
-
-To install the latest .NET SDK source in a solution, clone the repository, and add the file `connect-sdk-dotnet.csproj` to the current solution. On the project depending on the Ingenico Connect SDK, add a reference to the `connect-sdk-dotnet` project.
-
-Note that you will need an IDE that supports version 6.0 of the C# language, such as Visual Studio 2015. Older versions will not be able to compile the SDK code, but they will be able to use the SDK as a dependency, e.g. through NuGet.
+To install the latest .NET SDK release as a [Strong-Named assembly](https://docs.microsoft.com/en-us/dotnet/framework/app-domains/strong-named-assemblies), follow the instructions above but use `connect-sdk-dotnet.StrongName` instead of `connect-sdk-dotnet`.
 
 ## Building the repository
 
-This repository uses [Visual Studio](https://www.visualstudio.com/) 2015 or up to build. Open `connect-sdk-dotnet.sln` in Visual Studio, and click build.
+This repository uses [Visual Studio](https://www.visualstudio.com/) 2019 to build. Open `connect-sdk-dotnet.sln` in Visual Studio, and click build.

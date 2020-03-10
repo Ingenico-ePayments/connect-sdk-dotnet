@@ -1,49 +1,39 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{86D9672B-FDEA-4328-A325-26AA6A90838E}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <TargetFrameworks>net45;netstandard2.0;netstandard2.1</TargetFrameworks>
     <RootNamespace>Ingenico.Connect.Sdk</RootNamespace>
-    <AssemblyName>connect-sdk-dotnet-examples</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <ReleaseVersion>3.6.0</ReleaseVersion>
+    <AssemblyVersion>3.7.0</AssemblyVersion>
+    <Version>3.7.0</Version>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <Company>Ingenico ePayments</Company>
+    <Product>Ingenico Connect .NET SDK examples</Product>
+    <Description>Examples for the Ingenico Connect .NET SDK</Description>
+    <PackageTags>Ingenico ePayments Connect SDK</PackageTags>
+    <Copyright>Copyright (c) 2016 Global Collect Services B.V.</Copyright>
+    <Authors>Ingenico ePayments</Authors>
+    <PackageProjectUrl>https://epayments.developer-ingenico.com/documentation/sdk/server/dotnet/</PackageProjectUrl>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+    <PackageIcon>packageIcon.png</PackageIcon>
+    <PackageIconUrl>https://github.com/Ingenico-ePayments/connect-sdk-dotnet/blob/master/packageIcon.png</PackageIconUrl>
+    <RepositoryUrl>https://github.com/Ingenico-ePayments/connect-sdk-dotnet</RepositoryUrl>
+
+    <IsPackable>false</IsPackable>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug</OutputPath>
-    <DefineConstants>DEBUG;</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <ConsolePause>false</ConsolePause>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release</OutputPath>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <ConsolePause>false</ConsolePause>
-  </PropertyGroup>
+
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Configuration" />
+    <ProjectReference Include="..\connect-sdk-dotnet\connect-sdk-dotnet.csproj" />
   </ItemGroup>
+
   <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Ingenico\**\*.cs" />
+    <None Include="..\packageIcon.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="..\LICENSE.txt">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
-  <ItemGroup />
-  <ItemGroup>
-    <ProjectReference Include="..\connect-sdk-dotnet\connect-sdk-dotnet.csproj">
-      <Project>{0F1D918A-EC59-4217-808B-5FF141D8387C}</Project>
-      <Name>connect-sdk-dotnet</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="app.config" />
-  </ItemGroup>
-  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+
 </Project>
