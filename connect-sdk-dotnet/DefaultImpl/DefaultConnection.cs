@@ -276,7 +276,7 @@ namespace Ingenico.Connect.Sdk.DefaultImpl
                 }
             }
 
-            var contentType = responseBodyHeaders.ContentType.ToString();
+            var contentType = responseBodyHeaders.ContentType?.ToString();
             if (IsBinaryContent(contentType))
             {
                 sb.SetBinaryContentBody(contentType);

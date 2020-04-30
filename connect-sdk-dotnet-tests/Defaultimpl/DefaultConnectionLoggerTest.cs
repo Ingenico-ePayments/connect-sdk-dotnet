@@ -541,7 +541,7 @@ namespace Ingenico.Connect.Sdk.DefaultImpl
 
             using (MockServer host = new MockServer(5357, "/v1/1234/tokens/5678", (request, response, arg3) =>
                    {
-                       AssignResponse((HttpStatusCode)204, new Dictionary<string, string>(), response);
+                       AssignResponse((HttpStatusCode)204, new Dictionary<string, string>(), response, contentType: null);
                        return null;
                    }))
             using (Client client = CreateClient())
@@ -822,7 +822,7 @@ namespace Ingenico.Connect.Sdk.DefaultImpl
 
             using (MockServer host = new MockServer(Port, "/binaryRequest", (request, response, arg3) =>
                     {
-                        AssignResponse((HttpStatusCode)204, new Dictionary<string, string>(), response);
+                        AssignResponse((HttpStatusCode)204, new Dictionary<string, string>(), response, contentType: null);
                         return null;
                     }))
             using (Communicator communicator = CreateCommunicator())
@@ -860,7 +860,7 @@ namespace Ingenico.Connect.Sdk.DefaultImpl
 
             using (MockServer host = new MockServer(Port, "/binaryRequest", (request, response, arg3) =>
                     {
-                        AssignResponse((HttpStatusCode)204, new Dictionary<string, string>(), response);
+                        AssignResponse((HttpStatusCode)204, new Dictionary<string, string>(), response, contentType: null);
                         return null;
                     }))
             using (Communicator communicator = CreateCommunicator())
@@ -944,7 +944,7 @@ namespace Ingenico.Connect.Sdk.DefaultImpl
 
             using (MockServer host = new MockServer(Port, "/v1/1234/tokens/5678", (request, response, arg3) =>
                     {
-                        AssignResponse((HttpStatusCode)204, new Dictionary<string, string>(), response);
+                        AssignResponse((HttpStatusCode)204, new Dictionary<string, string>(), response, contentType: null);
                         return null;
                     }))
             using (Communicator communicator = CreateCommunicator())
@@ -1252,7 +1252,10 @@ namespace Ingenico.Connect.Sdk.DefaultImpl
         static void AssignResponse(HttpStatusCode statusCode, IDictionary additionalHeaders, HttpListenerResponse response, string location = null, string contentType = "application/json")
         {
             response.StatusCode = (int)statusCode;
-            response.Headers.Add("Content-Type", contentType);
+            if (contentType != null)
+            {
+                response.Headers.Add("Content-Type", contentType);
+            }
 
             response.Headers.Add("Dummy", (string)null);
 
