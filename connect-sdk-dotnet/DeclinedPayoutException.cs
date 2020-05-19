@@ -9,7 +9,7 @@ namespace Ingenico.Connect.Sdk
     public class DeclinedPayoutException : DeclinedTransactionException
     {
         /// <summary>
-        /// Gets the result of creating a payout if available, otherwise <code>null</code>.
+        /// Gets the result of creating a payout if available, otherwise <c>null</c>.
         /// </summary>
         public PayoutResult PayoutResult => _errors?.PayoutResult;
 

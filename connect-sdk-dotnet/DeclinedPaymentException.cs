@@ -9,7 +9,7 @@ namespace Ingenico.Connect.Sdk
     public class DeclinedPaymentException : DeclinedTransactionException
     {
         /// <summary>
-        /// Gets the result of creating a payment if available, otherwise <code>null</code>.
+        /// Gets the result of creating a payment if available, otherwise <c>null</c>.
         /// </summary>
         public CreatePaymentResult CreatePaymentResult => _errors?.PaymentResult;
 

@@ -10,7 +10,7 @@ namespace Ingenico.Connect.Sdk
         private static Regex DispositionFilenameRegex { get;  } = new Regex("(?:^|;)\\s*filename\\s*=\\s*(.*?)\\s*(?:;|$)", RegexOptions.IgnoreCase | RegexOptions.Compiled);
 
         /// <returns>
-        /// The value of the header from this with the given name, or <code>null</code> if there was no such header.
+        /// The value of the header from this with the given name, or <c>null</c> if there was no such header.
         /// </returns>
         public static string GetHeaderValue(this IEnumerable<IResponseHeader> headers, string headerName)
         {
@@ -18,15 +18,16 @@ namespace Ingenico.Connect.Sdk
         }
 
         /// <returns>
-        /// The header from this with the given name, or <code>null</code> if there was no such header.
+        /// The header from this with the given name, or <c>null</c> if there was no such header.
         /// </returns>
         public static IResponseHeader GetHeader(this IEnumerable<IResponseHeader> headers, string headerName)
         {
             return headers?.FirstOrDefault((h) => h.Name.Equals(headerName, StringComparison.OrdinalIgnoreCase));
         }
+
         ///
-        /// <returns>The value of the <code>filename</code> parameter of the <code>Content-Disposition</code> header from this,
-        /// or <code>null</code> if there was no such header or parameter.</returns>
+        /// <returns>The value of the <c>filename</c> parameter of the <c>Content-Disposition</c> header from this,
+        /// or <c>null</c> if there was no such header or parameter.</returns>
         ///
         public static string GetDispositionFilename(this IEnumerable<ResponseHeader> headers)
         {

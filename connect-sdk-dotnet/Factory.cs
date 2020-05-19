@@ -11,8 +11,7 @@ namespace Ingenico.Connect.Sdk
     {
         /// <summary>
         /// Creates a <see cref="CommunicatorConfiguration"/> based on the configuration values in
-        /// your <code>app.conf</code> or <code>web.conf</code> file,
-        /// <code>apiKeyId</code> and <code>secretApiKey</code>.
+        /// your <c>app.conf</c> or <c>web.conf</c> file, <c>apiKeyId</c> and <c>secretApiKey</c>.
         /// </summary>
         /// <param name="apiKeyId">The API key identifier.</param>
         /// <param name="secretApiKey">The secret API key.</param>
@@ -38,8 +37,7 @@ namespace Ingenico.Connect.Sdk
 
         /// <summary>
         /// Creates a <see cref="CommunicatorConfiguration"/> based on the configuration
-        /// values in <code>configurationDictionary</code>, <code>apiKeyId</code> and
-        /// <code>secretApiKey</code>.
+        /// values in <c>configurationDictionary</c>, <c>apiKeyId</c> and <c>secretApiKey</c>.
         /// </summary>
         /// <param name="configurationDictionary">Dictionary containing configuration.</param>
         /// <param name="apiKeyId">The API key identifier.</param>
@@ -61,8 +59,7 @@ namespace Ingenico.Connect.Sdk
 
         /// <summary>
         /// Creates a <see cref="SessionBuilder"/> based on the configuration values in
-        /// your <code>app.conf</code> or <code>web.conf</code> file,
-        /// <code>apiKeyId</code> and <code>secretApiKey</code>.
+        /// your <c>app.conf</c> or <c>web.conf</c> file, <c>apiKeyId</c> and <c>secretApiKey</c>.
         /// </summary>
         /// <param name="apiKeyId">The API key identifier.</param>
         /// <param name="secretApiKey">The secret API key.</param>
@@ -74,8 +71,7 @@ namespace Ingenico.Connect.Sdk
 
         /// <summary>
         /// Creates a <see cref="SessionBuilder"/> based on the configuration
-        /// values in <code>configurationDictionary</code>, <code>apiKeyId</code> and
-        /// <code>secretApiKey</code>.
+        /// values in <c>configurationDictionary</c>, <c>apiKeyId</c> and <c>secretApiKey</c>.
         /// </summary>
         /// <param name="configurationDictionary">Dictionary containing configuration.</param>
         /// <param name="apiKeyId">The API key identifier.</param>
@@ -113,8 +109,7 @@ namespace Ingenico.Connect.Sdk
 
         /// <summary>
         /// Creates a <see cref="Communicator"/> based on the configuration values in
-        /// your <code>app.conf</code> or <code>web.conf</code> file,
-        /// <code>apiKeyId</code> and <code>secretApiKey</code>.
+        /// your <c>app.conf</c> or <c>web.conf</c> file, <c>apiKeyId</c> and <c>secretApiKey</c>.
         /// </summary>
         /// <param name="apiKeyId">The API key identifier.</param>
         /// <param name="secretApiKey">The secret API key.</param>
@@ -127,8 +122,7 @@ namespace Ingenico.Connect.Sdk
 
         /// <summary>
         /// Creates a <see cref="Communicator"/> based on the configuration values
-        /// <code>configurationDictionary</code>, <code>apiKeyId</code> and
-        /// <code>secretApiKey</code>.
+        /// <c>configurationDictionary</c>, <c>apiKeyId</c> and <c>secretApiKey</c>.
         /// </summary>
         /// <param name="configurationDictionary">Dictionary containing configuration.</param>
         /// <param name="apiKeyId">The API key identifier.</param>
@@ -159,8 +153,7 @@ namespace Ingenico.Connect.Sdk
 
         /// <summary>
         /// Creates a <see cref="Client"/> based on the configuration values in
-        /// your <code>app.conf</code> or <code>web.conf</code> file,
-        /// <code>apiKeyId</code> and <code>secretApiKey</code>.
+        /// your <c>app.conf</c> or <c>web.conf</c> file, <c>apiKeyId</c> and <c>secretApiKey</c>.
         /// </summary>
         /// <param name="apiKeyId">The API key identifier.</param>
         /// <param name="secretApiKey">The secret API key.</param>
@@ -171,8 +164,7 @@ namespace Ingenico.Connect.Sdk
 
         /// <summary>
         /// Creates a <see cref="Client"/> based on the configuration values in
-        /// <code>configurationDictionary</code>, <code>apiKeyId</code> and
-        /// <code>secretApiKey</code>.
+        /// <c>configurationDictionary</c>, <c>apiKeyId</c> and <c>secretApiKey</c>.
         /// </summary>
         /// <param name="configurationDictionary">Dictionary containing configuration.</param>
         /// <param name="apiKeyId">The API key identifier.</param>

@@ -25,7 +25,7 @@ namespace Ingenico.Connect.Sdk.Logging
             IEnumerator<string> iterator = propertyNames.GetEnumerator();
 
             /*
-             * Regex to create: (["'])(X|Y|Z)\1\s*:\s*(?:(["'])(.*?)(?<!\\)\3|([^"'\s\[\{]\S*))
+             * Regex to create: (["'])(X|Y|Z)\1\s*:\s*(?:(["'])(.*?)(?<!\\)\3|([^"'\s\[\{][\S-[,]]*))
              * Groups:
              * 1: opening " or ' for the property name
              * 2: property name
@@ -46,7 +46,7 @@ namespace Ingenico.Connect.Sdk.Logging
             {
                 regexStringBuilder.Append('|').Append(Regex.Escape(iterator.Current));
             }
-            regexStringBuilder.Append(")\\1\\s*:\\s*(?:([\"'])(.*?)(?<!\\\\)\\3|([^\"'\\s\\[\\{]\\S*))");
+            regexStringBuilder.Append(")\\1\\s*:\\s*(?:([\"'])(.*?)(?<!\\\\)\\3|([^\"'\\s\\[\\{][\\S-[,]]*))");
 
             return new Regex(regexStringBuilder.ToString(), RegexOptions.Multiline);
         }

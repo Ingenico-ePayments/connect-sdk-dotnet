@@ -99,7 +99,7 @@ namespace Ingenico.Connect.Sdk
         }
 
         /// <summary>
-        /// Gets or sets an identifier for the secret API key. The <code>apiKeyId</code> can be
+        /// Gets or sets an identifier for the secret API key. The <c>apiKeyId</c> can be
         /// retrieved from the Configuration Center. This identifier is visible in
         /// the HTTP request and is also used to identify the correct account.
         /// </summary>
@@ -117,8 +117,8 @@ namespace Ingenico.Connect.Sdk
 
         /// <summary>
         /// Gets or sets a shared secret. The shared secret can be retrieved from the
-        /// Configuration Center. An <code>apiKeyId</code> and <code>secretApiKey</code> always
-        /// go hand-in-hand, the difference is that <code>secretApiKey</code> is never
+        /// Configuration Center. An <c>apiKeyId</c> and <c>secretApiKey</c> always
+        /// go hand-in-hand, the difference is that <c>secretApiKey</c> is never
         /// visible in the HTTP request. This secret is used as input for the HMAC
         /// algorithm.
         /// </summary>

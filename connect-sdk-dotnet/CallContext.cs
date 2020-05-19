@@ -24,7 +24,7 @@ namespace Ingenico.Connect.Sdk
         /// last request for which this call context was used.
         /// </summary>
         /// <value>The idempotence request timestamp.</value>
-        /// <remarks>Returns <code>null</code> if no idempotencerequest was present.
+        /// <remarks>Returns <c>null</c> if no idempotencerequest was present.
         ///  The setter should only be called by <see cref="Communicator"/> objects based 
         /// on the response to the request for which this call context was used.
         /// </remarks>

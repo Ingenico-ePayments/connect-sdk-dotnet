@@ -54,13 +54,13 @@ namespace Ingenico.Connect.Sdk
         }
 
         /// <summary>
-        /// Returns the header with the given name, or <code>null</code> if there was no such header.
+        /// Returns the header with the given name, or <c>null</c> if there was no such header.
         /// </summary>
         public IResponseHeader GetHeader(string headerName)
             => Headers.GetHeader(headerName);
 
         /// <summary>
-        /// Returns the value of the header with the given name, or <code>null</code> if there was no such header.
+        /// Returns the value of the header with the given name, or <c>null</c> if there was no such header.
         /// </summary>
         public string GetHeaderValue(string headerName)
             => Headers.GetHeaderValue(headerName);

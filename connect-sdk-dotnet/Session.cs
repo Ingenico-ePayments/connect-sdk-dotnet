@@ -9,22 +9,22 @@ namespace Ingenico.Connect.Sdk
     {
         // Virtual for unit testing
         /// <summary>
-        /// Gets the Ingenico ePayments platform API endpoint URI. This URI's path will be <code>null</code> or empty.
+        /// Gets the Ingenico ePayments platform API endpoint URI. This URI's path will be <c>null</c> or empty.
         /// </summary>
         public virtual Uri ApiEndpoint { get; }
 
         /// <summary>
-        /// Gets the <see cref="IConnection"/> object associated with this session. Never <code>null</code>.
+        /// Gets the <see cref="IConnection"/> object associated with this session. Never <c>null</c>.
         /// </summary>
         public IConnection Connection { get; }
 
         /// <summary>
-        /// Gets the <see cref="MetaDataProvider"/> object associated with this session. Never <code>null</code>.
+        /// Gets the <see cref="MetaDataProvider"/> object associated with this session. Never <c>null</c>.
         /// </summary>
         public MetaDataProvider MetaDataProvider { get; }
 
         /// <summary>
-        /// Gets he <see cref="IAuthenticator"/> object associated with this session. Never <code>null</code>.
+        /// Gets he <see cref="IAuthenticator"/> object associated with this session. Never <c>null</c>.
         /// </summary>
         public IAuthenticator Authenticator { get; }
 

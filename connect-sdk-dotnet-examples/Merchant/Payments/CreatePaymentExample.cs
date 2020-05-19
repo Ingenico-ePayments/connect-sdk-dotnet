@@ -24,10 +24,15 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
                 card.Cvv = "123";
                 card.ExpiryDate = "1220";
 
+                AmountOfMoney authenticationAmount = new AmountOfMoney();
+                authenticationAmount.Amount = 2980L;
+                authenticationAmount.CurrencyCode = "EUR";
+
                 RedirectionData redirectionData = new RedirectionData();
                 redirectionData.ReturnUrl = "https://hostname.myownwebsite.url";
 
                 ThreeDSecure threeDSecure = new ThreeDSecure();
+                threeDSecure.AuthenticationAmount = authenticationAmount;
                 threeDSecure.AuthenticationFlow = "browser";
                 threeDSecure.ChallengeCanvasSize = "600x400";
                 threeDSecure.ChallengeIndicator = "challenge-requested";

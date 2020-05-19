@@ -33,7 +33,7 @@ namespace Ingenico.Connect.Sdk
 
         /// <summary>
         /// Gets the server related headers containing the metadata to be associated with the request (if any).
-        /// This will always contain at least an automatically generated header <code>X-GCS-ServerMetaInfo</code>.
+        /// This will always contain at least an automatically generated header <c>X-GCS-ServerMetaInfo</c>.
         /// </summary>
         public IEnumerable<RequestHeader> ServerMetaDataHeaders { get; }
 
@@ -96,7 +96,7 @@ namespace Ingenico.Connect.Sdk
             }
         }
 
-        const string SDK_VERSION = "3.9.1";
+        const string SDK_VERSION = "3.10.0";
 
         const string SERVER_META_INFO_HEADER = "X-GCS-ServerMetaInfo";
 

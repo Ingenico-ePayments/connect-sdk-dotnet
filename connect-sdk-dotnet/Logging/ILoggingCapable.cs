@@ -11,7 +11,7 @@ namespace Ingenico.Connect.Sdk.Logging
         /// Turns on logging using the given communicator logger.
         /// </summary>
         /// <param name="communicatorLogger">The given communicator logger.</param>
-        /// <exception cref="ArgumentException">If the given communicator logger is <code>null</code>.</exception>
+        /// <exception cref="ArgumentException">If the given communicator logger is <c>null</c>.</exception>
         void EnableLogging(ICommunicatorLogger communicatorLogger);
 
         /// <summary>

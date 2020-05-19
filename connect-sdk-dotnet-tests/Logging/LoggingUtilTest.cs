@@ -114,7 +114,7 @@ namespace Ingenico.Connect.Sdk.Logging
     }
 }";
         const string noObjectObfuscationObfuscated = @"{
-    ""value"" : *****
+    ""value"" : ****,
     ""value"" : {
     }
 }";

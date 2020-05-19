@@ -9,7 +9,7 @@ namespace Ingenico.Connect.Sdk
     public class DeclinedRefundException : DeclinedTransactionException
     {
         /// <summary>
-        /// Gets the result of creating a refund if available, otherwise <code>null</code>.
+        /// Gets the result of creating a refund if available, otherwise <c>null</c>.
         /// </summary>
         public RefundResult RefundResult => _errors?.RefundResult;
 

@@ -27,7 +27,7 @@ namespace Ingenico.Connect.Sdk
         public string ErrorId { get; }
 
         /// <summary>
-        /// Gets the error list received from the Ingenico ePayments platform if available. Never <code>null</code>.
+        /// Gets the error list received from the Ingenico ePayments platform if available. Never <c>null</c>.
         /// </summary>
         public IList<APIError> Errors { get; }
 

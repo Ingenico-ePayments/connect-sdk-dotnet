@@ -19,7 +19,7 @@ namespace Ingenico.Connect.Sdk
     public class Communicator : IDisposable, ILoggingCapable
     {
         /// <summary>
-        /// Gets the <see cref="IMarshaller"/> object associated with this communicator. Never <code>null</code>.
+        /// Gets the <see cref="IMarshaller"/> object associated with this communicator. Never <c>null</c>.
         /// </summary>
         public IMarshaller Marshaller { get; }
 
@@ -486,7 +486,7 @@ namespace Ingenico.Connect.Sdk
         /// <summary>
         /// Adds the necessary headers to the given list of headers. This includes the authorization header, 
         /// which uses other headers, so when you need to override this method, 
-        /// make sure to call <code>base.AddGenericHeaders</code> at the <i>end</i> of your overridden method.
+        /// make sure to call <c>base.AddGenericHeaders</c> at the <i>end</i> of your overridden method.
         /// </summary>
         protected IEnumerable<IRequestHeader> AddGenericHeaders(HttpMethod httpMethod, Uri uri, IEnumerable<IRequestHeader> requestHeaders, CallContext context)
         {

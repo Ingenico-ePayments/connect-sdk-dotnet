@@ -9,7 +9,7 @@ namespace Ingenico.Connect.Sdk.Webhooks
     public interface ISecretKeyStore
     {
         /// <summary>
-        /// Gets the secret key for the given key id. Never <code>null</code>.
+        /// Gets the secret key for the given key id. Never <c>null</c>.
         /// </summary>
         /// <exception cref="SecretKeyNotAvailableException">If the secret key for the given key id is not available.</exception>
         string GetSecretKey(string keyId);
