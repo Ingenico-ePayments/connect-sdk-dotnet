@@ -30,6 +30,8 @@ namespace Ingenico.Connect.Sdk.Domain.Capture.Definitions
 
         public RedirectPaymentMethodSpecificOutput RedirectPaymentMethodSpecificOutput { get; set; } = null;
 
+        public string ReversalReason { get; set; } = null;
+
         public SepaDirectDebitPaymentMethodSpecificOutput SepaDirectDebitPaymentMethodSpecificOutput { get; set; } = null;
     }
 }
