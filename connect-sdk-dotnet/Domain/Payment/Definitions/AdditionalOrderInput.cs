@@ -11,11 +11,14 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
     {
         public AirlineData AirlineData { get; set; } = null;
 
+        public Installments Installments { get; set; } = null;
+
         [ObsoleteAttribute("Use Order.shoppingCart.amountBreakdown instead")]
         public Level3SummaryData Level3SummaryData { get; set; } = null;
 
         public LoanRecipient LoanRecipient { get; set; } = null;
 
+        [ObsoleteAttribute("Use installments.numberOfInstallments instead")]
         public long? NumberOfInstallments { get; set; } = null;
 
         public string OrderDate { get; set; } = null;
