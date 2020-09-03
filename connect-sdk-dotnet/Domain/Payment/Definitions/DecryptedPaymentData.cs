@@ -6,6 +6,8 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
 {
     public class DecryptedPaymentData
     {
+        public string AuthMethod { get; set; } = null;
+
         public string CardholderName { get; set; } = null;
 
         public string Cryptogram { get; set; } = null;
