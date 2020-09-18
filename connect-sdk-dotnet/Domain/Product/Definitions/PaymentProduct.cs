@@ -10,6 +10,8 @@ namespace Ingenico.Connect.Sdk.Domain.Product.Definitions
     {
         public IList<AccountOnFile> AccountsOnFile { get; set; } = null;
 
+        public string AcquirerCountry { get; set; } = null;
+
         public bool? AllowsInstallments { get; set; } = null;
 
         public bool? AllowsRecurring { get; set; } = null;

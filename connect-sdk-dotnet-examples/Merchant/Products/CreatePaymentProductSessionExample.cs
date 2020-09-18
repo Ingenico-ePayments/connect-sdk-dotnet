@@ -18,7 +18,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Products
                 MobilePaymentProductSession302SpecificInput paymentProductSession302SpecificInput = new MobilePaymentProductSession302SpecificInput();
                 paymentProductSession302SpecificInput.DisplayName = "Ingenico";
                 paymentProductSession302SpecificInput.DomainName = "pay1.secured-by-ingenico.com";
-                paymentProductSession302SpecificInput.ValidationUrl = "https://apple-pay-gateway-cert.apple.com/paymentservices/startSession";
+                paymentProductSession302SpecificInput.ValidationUrl = "<VALIDATION URL RECEIVED FROM APPLE>";
 
                 CreatePaymentProductSessionRequest body = new CreatePaymentProductSessionRequest();
                 body.PaymentProductSession302SpecificInput = paymentProductSession302SpecificInput;

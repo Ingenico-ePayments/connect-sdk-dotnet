@@ -31,7 +31,7 @@ namespace Ingenico.Connect.Sdk.It
             cardWithoutCvv.CardholderName = ("Jan");
             cardWithoutCvv.IssueNumber = ("12");
             cardWithoutCvv.CardNumber = ("4567350000427977");
-            cardWithoutCvv.ExpiryDate = ("0820");
+            cardWithoutCvv.ExpiryDate = ("1225");
 
             using (Client client = GetClient())
             {
