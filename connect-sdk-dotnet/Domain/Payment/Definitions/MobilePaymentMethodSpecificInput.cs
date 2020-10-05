@@ -10,9 +10,13 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
     {
         public string AuthorizationMode { get; set; } = null;
 
+        public string CustomerReference { get; set; } = null;
+
         public DecryptedPaymentData DecryptedPaymentData { get; set; } = null;
 
         public string EncryptedPaymentData { get; set; } = null;
+
+        public MobilePaymentProduct320SpecificInput PaymentProduct320SpecificInput { get; set; } = null;
 
         public bool? RequiresApproval { get; set; } = null;
 

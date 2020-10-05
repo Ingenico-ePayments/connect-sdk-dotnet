@@ -8,8 +8,16 @@ namespace Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions
 {
     public class MobilePaymentMethodSpecificInputHostedCheckout : AbstractPaymentMethodSpecificInput
     {
+        public string AuthorizationMode { get; set; } = null;
+
+        public string CustomerReference { get; set; } = null;
+
         public MobilePaymentProduct302SpecificInputHostedCheckout PaymentProduct302SpecificInput { get; set; } = null;
 
         public MobilePaymentProduct320SpecificInputHostedCheckout PaymentProduct320SpecificInput { get; set; } = null;
+
+        public bool? RequiresApproval { get; set; } = null;
+
+        public bool? SkipFraudService { get; set; } = null;
     }
 }
