@@ -6,8 +6,14 @@ namespace Ingenico.Connect.Sdk.Domain.Token.Definitions
 {
     public class TokenEWallet : AbstractToken
     {
+        /// <summary>
+        /// Object containing the details of the customer
+        /// </summary>
         public CustomerToken Customer { get; set; } = null;
 
+        /// <summary>
+        /// Object containing the eWallet tokenizable data
+        /// </summary>
         public TokenEWalletData Data { get; set; } = null;
     }
 }

@@ -13,6 +13,27 @@ namespace Ingenico.Connect.Sdk.It
         [TestCase]
         public async Task Test()
         {
+            var lParams = new FindProductsParams();
+            lParams.CountryCode = ("NL");
+            lParams.CurrencyCode = ("EUR");
+
+            using (Client client = GetClient())
+            {
+                PaymentProducts response = await client
+                    .Merchant(GetMerchantId())
+                    .Products()
+                    .Find(lParams);
+
+                Assert.That(response.ListOfPaymentProducts, Is.Not.Empty);
+            }
+        }
+
+        /// <summary>
+        /// Smoke Test for product directories service.
+        /// </summary>
+        [TestCase]
+        public async Task TestDirectories()
+        {
             var lParams = new DirectoryParams();
             lParams.CountryCode = ("NL");
             lParams.CurrencyCode = ("EUR");

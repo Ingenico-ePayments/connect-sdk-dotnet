@@ -8,8 +8,14 @@ namespace Ingenico.Connect.Sdk.Domain.Services.Definitions
 {
     public class BankDetails
     {
+        /// <summary>
+        /// Object that holds the Basic Bank Account Number (BBAN) data
+        /// </summary>
         public BankAccountBban BankAccountBban { get; set; } = null;
 
+        /// <summary>
+        /// Object that holds the International Bank Account Number (IBAN) data
+        /// </summary>
         public BankAccountIban BankAccountIban { get; set; } = null;
     }
 }

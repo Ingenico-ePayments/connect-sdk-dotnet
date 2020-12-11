@@ -6,6 +6,9 @@ namespace Ingenico.Connect.Sdk.Domain.Token.Definitions
 {
     public class MandateSepaDirectDebit : MandateSepaDirectDebitWithMandateId
     {
+        /// <summary>
+        /// Object containing information on the creditor
+        /// </summary>
         public Creditor Creditor { get; set; } = null;
     }
 }

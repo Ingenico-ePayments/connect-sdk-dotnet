@@ -8,6 +8,9 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
 {
     public class RedirectPaymentProduct816SpecificInput
     {
+        /// <summary>
+        /// Object containing the bank account details of the customer
+        /// </summary>
         public BankAccountIban BankAccountIban { get; set; } = null;
     }
 }

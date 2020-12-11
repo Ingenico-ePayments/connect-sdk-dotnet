@@ -9,6 +9,9 @@ namespace Ingenico.Connect.Sdk.Domain.Riskassessments
 {
     public class RiskAssessmentResponse
     {
+        /// <summary>
+        /// Object that contains the results of the performed fraudchecks
+        /// </summary>
         public IList<ResultDoRiskAssessment> Results { get; set; } = null;
     }
 }

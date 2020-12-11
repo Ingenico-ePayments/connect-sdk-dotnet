@@ -8,10 +8,19 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
 {
     public class SepaDirectDebitPaymentMethodSpecificOutput : AbstractPaymentMethodSpecificOutput
     {
+        /// <summary>
+        /// Object containing the results of the fraud screening
+        /// </summary>
         public FraudResults FraudResults { get; set; } = null;
 
+        /// <summary>
+        /// Output that is SEPA Direct Debit specific (i.e. the used mandate)
+        /// </summary>
         public PaymentProduct771SpecificOutput PaymentProduct771SpecificOutput { get; set; } = null;
 
+        /// <summary>
+        /// ID of the token. This property is populated for the GlobalCollect payment platform when the payment was done with a token or when the payment was tokenized.
+        /// </summary>
         public string Token { get; set; } = null;
     }
 }

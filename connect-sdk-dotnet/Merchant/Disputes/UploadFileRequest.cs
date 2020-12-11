@@ -13,6 +13,9 @@ namespace Ingenico.Connect.Sdk.Merchant.Disputes
     /// </summary>
     public class UploadFileRequest : IMultipartFormDataRequest
     {
+        /// <summary>
+        /// The file that you will upload as evidence to support a dispute.
+        /// </summary>
         public UploadableFile File { get; set; } = null;
 
         public MultipartFormDataObject ToMultipartFormDataObject()

@@ -6,8 +6,15 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
 {
     public class ApprovePaymentPaymentMethodSpecificInput
     {
+        /// <summary>
+        /// The desired date for the collection
+        /// <br />Format: YYYYMMDD
+        /// </summary>
         public string DateCollect { get; set; } = null;
 
+        /// <summary>
+        /// Token containing tokenized bank account details
+        /// </summary>
         public string Token { get; set; } = null;
     }
 }

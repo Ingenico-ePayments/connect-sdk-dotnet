@@ -6,6 +6,9 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
 {
     public class OrderReferencesApprovePayment
     {
+        /// <summary>
+        /// Your (unique) reference for the transaction that you can use to reconcile our report files
+        /// </summary>
         public string MerchantReference { get; set; } = null;
     }
 }

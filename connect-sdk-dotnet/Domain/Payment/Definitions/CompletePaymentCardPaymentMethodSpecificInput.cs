@@ -8,6 +8,9 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
 {
     public class CompletePaymentCardPaymentMethodSpecificInput
     {
+        /// <summary>
+        /// Object containing card details
+        /// </summary>
         public CardWithoutCvv Card { get; set; } = null;
     }
 }

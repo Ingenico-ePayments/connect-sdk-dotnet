@@ -8,10 +8,19 @@ namespace Ingenico.Connect.Sdk.Domain.Payment
 {
     public class CancelPaymentResponse
     {
+        /// <summary>
+        /// Object that holds specific information on cancelled card payments
+        /// </summary>
         public CancelPaymentCardPaymentMethodSpecificOutput CardPaymentMethodSpecificOutput { get; set; } = null;
 
+        /// <summary>
+        /// Object that holds specific information on cancelled mobile payments
+        /// </summary>
         public CancelPaymentMobilePaymentMethodSpecificOutput MobilePaymentMethodSpecificOutput { get; set; } = null;
 
+        /// <summary>
+        /// Object that holds the payment related properties
+        /// </summary>
         public Definitions.Payment Payment { get; set; } = null;
     }
 }

@@ -8,8 +8,14 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
 {
     public class GiftCardPurchase
     {
+        /// <summary>
+        /// Object containing information on an amount of money
+        /// </summary>
         public AmountOfMoney AmountOfMoney { get; set; } = null;
 
+        /// <summary>
+        /// Number of gift cards that are purchased through this transaction
+        /// </summary>
         public int? NumberOfGiftCards { get; set; } = null;
     }
 }

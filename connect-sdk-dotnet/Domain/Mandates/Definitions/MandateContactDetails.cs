@@ -6,6 +6,9 @@ namespace Ingenico.Connect.Sdk.Domain.Mandates.Definitions
 {
     public class MandateContactDetails
     {
+        /// <summary>
+        /// Email address of the customer
+        /// </summary>
         public string EmailAddress { get; set; } = null;
     }
 }

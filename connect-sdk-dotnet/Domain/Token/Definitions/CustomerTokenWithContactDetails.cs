@@ -6,6 +6,9 @@ namespace Ingenico.Connect.Sdk.Domain.Token.Definitions
 {
     public class CustomerTokenWithContactDetails : CustomerToken
     {
+        /// <summary>
+        /// Object containing contact details like email address and phone number
+        /// </summary>
         public ContactDetailsToken ContactDetails { get; set; } = null;
     }
 }

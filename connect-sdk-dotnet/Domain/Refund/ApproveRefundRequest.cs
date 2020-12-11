@@ -6,6 +6,9 @@ namespace Ingenico.Connect.Sdk.Domain.Refund
 {
     public class ApproveRefundRequest
     {
+        /// <summary>
+        /// Refund amount to be approved
+        /// </summary>
         public long? Amount { get; set; } = null;
     }
 }

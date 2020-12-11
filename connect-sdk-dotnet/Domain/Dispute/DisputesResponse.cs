@@ -8,6 +8,9 @@ namespace Ingenico.Connect.Sdk.Domain.Dispute
 {
     public class DisputesResponse
     {
+        /// <summary>
+        /// Array containing disputes and their characteristics.
+        /// </summary>
         public IList<Definitions.Dispute> Disputes { get; set; } = null;
     }
 }

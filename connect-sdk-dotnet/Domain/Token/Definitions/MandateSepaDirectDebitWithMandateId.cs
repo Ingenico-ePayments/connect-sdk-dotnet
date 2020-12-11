@@ -6,6 +6,9 @@ namespace Ingenico.Connect.Sdk.Domain.Token.Definitions
 {
     public class MandateSepaDirectDebitWithMandateId : MandateSepaDirectDebitWithoutCreditor
     {
+        /// <summary>
+        /// Unique mandate identifier
+        /// </summary>
         public string MandateId { get; set; } = null;
     }
 }

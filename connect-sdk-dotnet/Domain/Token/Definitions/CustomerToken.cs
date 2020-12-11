@@ -8,8 +8,14 @@ namespace Ingenico.Connect.Sdk.Domain.Token.Definitions
 {
     public class CustomerToken : CustomerBase
     {
+        /// <summary>
+        /// Object containing the billing address details
+        /// </summary>
         public Address BillingAddress { get; set; } = null;
 
+        /// <summary>
+        /// Object containing personal information of the customer
+        /// </summary>
         public PersonalInformationToken PersonalInformation { get; set; } = null;
     }
 }

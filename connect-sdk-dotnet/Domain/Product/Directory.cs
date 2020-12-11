@@ -9,6 +9,9 @@ namespace Ingenico.Connect.Sdk.Domain.Product
 {
     public class Directory
     {
+        /// <summary>
+        /// List of entries in the directory
+        /// </summary>
         public IList<DirectoryEntry> Entries { get; set; } = null;
     }
 }

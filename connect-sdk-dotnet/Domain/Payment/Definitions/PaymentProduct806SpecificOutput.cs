@@ -8,8 +8,14 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
 {
     public class PaymentProduct806SpecificOutput
     {
+        /// <summary>
+        /// Object containing the billing address details of the customer
+        /// </summary>
         public Address BillingAddress { get; set; } = null;
 
+        /// <summary>
+        /// Object containing the account details
+        /// </summary>
         public TrustlyBankAccount CustomerAccount { get; set; } = null;
     }
 }

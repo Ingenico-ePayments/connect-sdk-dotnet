@@ -6,6 +6,9 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
 {
     public class RefundEWalletMethodSpecificOutput : RefundMethodSpecificOutput
     {
+        /// <summary>
+        /// PayPal (payment product 840) specific details
+        /// </summary>
         public RefundPaymentProduct840SpecificOutput PaymentProduct840SpecificOutput { get; set; } = null;
     }
 }

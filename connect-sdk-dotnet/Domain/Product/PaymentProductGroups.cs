@@ -12,6 +12,8 @@ namespace Ingenico.Connect.Sdk.Domain.Product
     {
         /// <summary>
         /// Property paymentProductGroups
+        /// <br />
+        /// Array containing payment product groups and their characteristics
         /// </summary>
         [JsonProperty(PropertyName = "paymentProductGroups")]
         public IList<PaymentProductGroup> ListOfPaymentProductGroups { get; set; } = null;

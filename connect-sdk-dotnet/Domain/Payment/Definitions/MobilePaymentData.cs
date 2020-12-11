@@ -6,8 +6,15 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
 {
     public class MobilePaymentData
     {
+        /// <summary>
+        /// The obfuscated DPAN. Only the last four digits are visible.
+        /// </summary>
         public string Dpan { get; set; } = null;
 
+        /// <summary>
+        /// Expiry date of the tokenized card
+        /// <br />Format: MMYY
+        /// </summary>
         public string ExpiryDate { get; set; } = null;
     }
 }

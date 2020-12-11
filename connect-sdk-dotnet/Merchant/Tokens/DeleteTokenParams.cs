@@ -13,6 +13,10 @@ namespace Ingenico.Connect.Sdk.Merchant.Tokens
     /// </summary>
     public class DeleteTokenParams : AbstractParamRequest
     {
+        /// <summary>
+        /// Date of the mandate cancellation
+        /// <br />Format: YYYYMMDD
+        /// </summary>
         public string MandateCancelDate { get; set; } = null;
 
         public override IEnumerable<RequestParam> ToRequestParameters()

@@ -8,6 +8,9 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
 {
     public class NonSepaDirectDebitPaymentMethodSpecificOutput : AbstractPaymentMethodSpecificOutput
     {
+        /// <summary>
+        /// Object containing the results of the fraud screening
+        /// </summary>
         public FraudResults FraudResults { get; set; } = null;
     }
 }

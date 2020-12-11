@@ -8,6 +8,9 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
 {
     public class AddressPersonal : Address
     {
+        /// <summary>
+        /// Object that holds the name elements
+        /// </summary>
         public PersonalName Name { get; set; } = null;
     }
 }

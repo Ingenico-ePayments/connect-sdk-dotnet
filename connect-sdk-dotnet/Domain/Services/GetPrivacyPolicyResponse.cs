@@ -6,6 +6,9 @@ namespace Ingenico.Connect.Sdk.Domain.Services
 {
     public class GetPrivacyPolicyResponse
     {
+        /// <summary>
+        /// HTML content to be displayed to the user
+        /// </summary>
         public string HtmlContent { get; set; } = null;
     }
 }

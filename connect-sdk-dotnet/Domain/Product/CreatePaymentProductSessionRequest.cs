@@ -8,6 +8,9 @@ namespace Ingenico.Connect.Sdk.Domain.Product
 {
     public class CreatePaymentProductSessionRequest
     {
+        /// <summary>
+        /// Object containing details for creating an Apple Pay session.
+        /// </summary>
         public MobilePaymentProductSession302SpecificInput PaymentProductSession302SpecificInput { get; set; } = null;
     }
 }

@@ -6,6 +6,9 @@ namespace Ingenico.Connect.Sdk.Domain.Product.Definitions
 {
     public class MobilePaymentProductSession302SpecificOutput
     {
+        /// <summary>
+        /// Object containing an opaque merchant session object.
+        /// </summary>
         public string SessionObject { get; set; } = null;
     }
 }

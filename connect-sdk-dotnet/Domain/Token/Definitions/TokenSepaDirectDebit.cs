@@ -6,8 +6,14 @@ namespace Ingenico.Connect.Sdk.Domain.Token.Definitions
 {
     public class TokenSepaDirectDebit : AbstractToken
     {
+        /// <summary>
+        /// Object containing the details of the customer
+        /// </summary>
         public CustomerTokenWithContactDetails Customer { get; set; } = null;
 
+        /// <summary>
+        /// Object containing the mandate details
+        /// </summary>
         public MandateSepaDirectDebit Mandate { get; set; } = null;
     }
 }

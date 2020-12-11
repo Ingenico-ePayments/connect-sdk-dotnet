@@ -6,6 +6,10 @@ namespace Ingenico.Connect.Sdk.Domain.Payout
 {
     public class ApprovePayoutRequest
     {
+        /// <summary>
+        /// The desired date for the payout
+        /// <br />Format: YYYYMMDD
+        /// </summary>
         public string DatePayout { get; set; } = null;
     }
 }

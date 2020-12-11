@@ -9,12 +9,24 @@ namespace Ingenico.Connect.Sdk.Domain.Services
 {
     public class BankDetailsResponse
     {
+        /// <summary>
+        /// Object that holds the Basic Bank Account Number (BBAN) data
+        /// </summary>
         public BankAccountBban BankAccountBban { get; set; } = null;
 
+        /// <summary>
+        /// Object that holds the International Bank Account Number (IBAN) data
+        /// </summary>
         public BankAccountIban BankAccountIban { get; set; } = null;
 
+        /// <summary>
+        /// Object that holds the reformatted bank account data
+        /// </summary>
         public BankData BankData { get; set; } = null;
 
+        /// <summary>
+        /// Object that holds all the SWIFT routing information
+        /// </summary>
         public Swift Swift { get; set; } = null;
     }
 }

@@ -6,6 +6,9 @@ namespace Ingenico.Connect.Sdk.Domain.Token.Definitions
 {
     public class TokenEWalletData
     {
+        /// <summary>
+        /// Identification of the PayPal recurring billing agreement
+        /// </summary>
         public string BillingAgreementId { get; set; } = null;
     }
 }

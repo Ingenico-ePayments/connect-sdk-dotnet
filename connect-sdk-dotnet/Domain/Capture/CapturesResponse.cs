@@ -8,6 +8,9 @@ namespace Ingenico.Connect.Sdk.Domain.Capture
 {
     public class CapturesResponse
     {
+        /// <summary>
+        /// The list of all captures performed on the requested payment.
+        /// </summary>
         public IList<Definitions.Capture> Captures { get; set; } = null;
     }
 }

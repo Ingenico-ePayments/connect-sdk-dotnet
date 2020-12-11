@@ -13,14 +13,29 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
     /// </summary>
     public class FindPaymentsParams : AbstractParamRequest
     {
+        /// <summary>
+        /// Your hosted checkout identifier to filter on.
+        /// </summary>
         public string HostedCheckoutId { get; set; } = null;
 
+        /// <summary>
+        /// Your unique transaction reference to filter on.
+        /// </summary>
         public string MerchantReference { get; set; } = null;
 
+        /// <summary>
+        /// Your order identifier to filter on.
+        /// </summary>
         public long? MerchantOrderId { get; set; } = null;
 
+        /// <summary>
+        /// The zero-based index of the first payment in the result. If omitted, the offset will be 0.
+        /// </summary>
         public int? Offset { get; set; } = null;
 
+        /// <summary>
+        /// The maximum number of payments to return, with a maximum of 100. If omitted, the limit will be 10.
+        /// </summary>
         public int? Limit { get; set; } = null;
 
         public override IEnumerable<RequestParam> ToRequestParameters()

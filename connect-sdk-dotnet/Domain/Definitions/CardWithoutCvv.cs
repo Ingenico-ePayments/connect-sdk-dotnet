@@ -6,8 +6,14 @@ namespace Ingenico.Connect.Sdk.Domain.Definitions
 {
     public class CardWithoutCvv : CardEssentials
     {
+        /// <summary>
+        /// Card holder's name on the card
+        /// </summary>
         public string CardholderName { get; set; } = null;
 
+        /// <summary>
+        /// Issue number on the card (if applicable)
+        /// </summary>
         public string IssueNumber { get; set; } = null;
     }
 }

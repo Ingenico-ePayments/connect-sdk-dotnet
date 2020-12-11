@@ -13,10 +13,19 @@ namespace Ingenico.Connect.Sdk.Merchant.Services
     /// </summary>
     public class ConvertAmountParams : AbstractParamRequest
     {
+        /// <summary>
+        /// Three-letter ISO currency code representing the source currency
+        /// </summary>
         public string Source { get; set; } = null;
 
+        /// <summary>
+        /// Three-letter ISO currency code representing the target currency
+        /// </summary>
         public string Target { get; set; } = null;
 
+        /// <summary>
+        /// Amount to be converted in cents and always having 2 decimals
+        /// </summary>
         public long? Amount { get; set; } = null;
 
         public override IEnumerable<RequestParam> ToRequestParameters()

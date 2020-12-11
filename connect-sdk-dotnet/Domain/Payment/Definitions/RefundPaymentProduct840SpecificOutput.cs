@@ -6,6 +6,9 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
 {
     public class RefundPaymentProduct840SpecificOutput
     {
+        /// <summary>
+        /// Object containing the PayPal account details
+        /// </summary>
         public RefundPaymentProduct840CustomerAccount CustomerAccount { get; set; } = null;
     }
 }

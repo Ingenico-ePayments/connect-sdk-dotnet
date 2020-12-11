@@ -9,6 +9,9 @@ namespace Ingenico.Connect.Sdk.Domain.Riskassessments
 {
     public class RiskAssessmentCard : RiskAssessment
     {
+        /// <summary>
+        /// Object containing Card object
+        /// </summary>
         public Card Card { get; set; } = null;
     }
 }

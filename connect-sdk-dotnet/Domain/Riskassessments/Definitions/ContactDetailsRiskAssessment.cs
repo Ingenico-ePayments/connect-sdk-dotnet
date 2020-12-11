@@ -6,6 +6,9 @@ namespace Ingenico.Connect.Sdk.Domain.Riskassessments.Definitions
 {
     public class ContactDetailsRiskAssessment
     {
+        /// <summary>
+        /// Email address of the customer
+        /// </summary>
         public string EmailAddress { get; set; } = null;
     }
 }

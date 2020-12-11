@@ -8,6 +8,9 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
 {
     public class NonSepaDirectDebitPaymentProduct730SpecificInput
     {
+        /// <summary>
+        /// Object containing account holder name and bank account information
+        /// </summary>
         public BankAccountBban BankAccountBban { get; set; } = null;
     }
 }

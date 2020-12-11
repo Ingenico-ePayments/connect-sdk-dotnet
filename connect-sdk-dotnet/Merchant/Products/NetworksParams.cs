@@ -13,12 +13,28 @@ namespace Ingenico.Connect.Sdk.Merchant.Products
     /// </summary>
     public class NetworksParams : AbstractParamRequest
     {
+        /// <summary>
+        /// ISO 3166-1 alpha-2 country code
+        /// </summary>
         public string CountryCode { get; set; } = null;
 
+        /// <summary>
+        /// Three-letter ISO currency code representing the currency for the amount
+        /// </summary>
         public string CurrencyCode { get; set; } = null;
 
+        /// <summary>
+        /// Amount in cents and always having 2 decimals
+        /// </summary>
         public long? Amount { get; set; } = null;
 
+        /// <summary>
+        /// This allows you to filter networks based on their support for recurring or not 
+        /// <list type="bullet">
+        ///   <item><description>true</description></item>
+        ///   <item><description>false</description></item>
+        /// </list>
+        /// </summary>
         public bool? IsRecurring { get; set; } = null;
 
         public override IEnumerable<RequestParam> ToRequestParameters()

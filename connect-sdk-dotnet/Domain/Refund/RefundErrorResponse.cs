@@ -10,10 +10,19 @@ namespace Ingenico.Connect.Sdk.Domain.Refund
 {
     public class RefundErrorResponse
     {
+        /// <summary>
+        /// Unique reference, for debugging purposes, of this error response
+        /// </summary>
         public string ErrorId { get; set; } = null;
 
+        /// <summary>
+        /// List of one or more errors
+        /// </summary>
         public IList<APIError> Errors { get; set; } = null;
 
+        /// <summary>
+        /// Object that contains details on the created refund in case one has been created
+        /// </summary>
         public RefundResult RefundResult { get; set; } = null;
     }
 }

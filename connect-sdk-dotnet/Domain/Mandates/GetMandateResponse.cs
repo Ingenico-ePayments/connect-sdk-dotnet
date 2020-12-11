@@ -8,6 +8,9 @@ namespace Ingenico.Connect.Sdk.Domain.Mandates
 {
     public class GetMandateResponse
     {
+        /// <summary>
+        /// Object containing information on a mandate.
+        /// </summary>
         public MandateResponse Mandate { get; set; } = null;
     }
 }

@@ -8,6 +8,9 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
 {
     public class PaymentProduct3201SpecificOutput
     {
+        /// <summary>
+        /// Object containing card details
+        /// </summary>
         public CardEssentials Card { get; set; } = null;
     }
 }

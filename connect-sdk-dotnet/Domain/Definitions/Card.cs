@@ -6,6 +6,9 @@ namespace Ingenico.Connect.Sdk.Domain.Definitions
 {
     public class Card : CardWithoutCvv
     {
+        /// <summary>
+        /// Card Verification Value, a 3 or 4 digit code used as an additional security feature for card not present transactions.
+        /// </summary>
         public string Cvv { get; set; } = null;
     }
 }

@@ -8,6 +8,9 @@ namespace Ingenico.Connect.Sdk.Domain.Token.Definitions
 {
     public class TokenNonSepaDirectDebitPaymentProduct730SpecificData
     {
+        /// <summary>
+        /// Object containing account holder name and bank account information
+        /// </summary>
         public BankAccountBban BankAccountBban { get; set; } = null;
     }
 }

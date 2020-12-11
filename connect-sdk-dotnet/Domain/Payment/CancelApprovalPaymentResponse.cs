@@ -6,6 +6,9 @@ namespace Ingenico.Connect.Sdk.Domain.Payment
 {
     public class CancelApprovalPaymentResponse
     {
+        /// <summary>
+        /// Object that holds the payment related properties
+        /// </summary>
         public Definitions.Payment Payment { get; set; } = null;
     }
 }

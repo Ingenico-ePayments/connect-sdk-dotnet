@@ -6,6 +6,9 @@ namespace Ingenico.Connect.Sdk.Domain.Services
 {
     public class TestConnection
     {
+        /// <summary>
+        /// OK result on the connection to GC
+        /// </summary>
         public string Result { get; set; } = null;
     }
 }

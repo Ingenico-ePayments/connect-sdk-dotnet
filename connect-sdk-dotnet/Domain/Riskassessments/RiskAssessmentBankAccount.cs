@@ -9,8 +9,14 @@ namespace Ingenico.Connect.Sdk.Domain.Riskassessments
 {
     public class RiskAssessmentBankAccount : RiskAssessment
     {
+        /// <summary>
+        /// Object containing account holder name and bank account information
+        /// </summary>
         public BankAccountBban BankAccountBban { get; set; } = null;
 
+        /// <summary>
+        /// Object containing account holder name and IBAN information
+        /// </summary>
         public BankAccountIban BankAccountIban { get; set; } = null;
     }
 }

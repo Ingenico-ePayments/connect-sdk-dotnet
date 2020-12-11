@@ -6,6 +6,9 @@ namespace Ingenico.Connect.Sdk.Domain.Riskassessments.Definitions
 {
     public class MerchantRiskAssessment
     {
+        /// <summary>
+        /// The website from which the purchase was made
+        /// </summary>
         public string WebsiteUrl { get; set; } = null;
     }
 }
