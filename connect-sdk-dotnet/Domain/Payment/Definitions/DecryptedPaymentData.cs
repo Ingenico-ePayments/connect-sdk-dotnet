@@ -2,6 +2,8 @@
  * This class was auto-generated from the API references found at
  * https://epayments-api.developer-ingenico.com/s2sapi/v1/
  */
+using System;
+
 namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
 {
     public class DecryptedPaymentData
@@ -12,6 +14,7 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
         ///   <item><description>For Google Pay, maps to the paymentMethodDetails.authMethod property in the encrypted payment data.</description></item>
         /// </list>.
         /// </summary>
+        [ObsoleteAttribute("Use decryptedPaymentData.paymentMethod instead")]
         public string AuthMethod { get; set; } = null;
 
         /// <summary>
