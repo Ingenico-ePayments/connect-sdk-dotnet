@@ -42,6 +42,14 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
         public string RecurringPaymentSequenceIndicator { get; set; } = null;
 
         /// <summary>
+        /// <list type="bullet">
+        ///   <item><description>true - The payment requires approval before the funds will be captured using the Approve payment or Capture payment API.</description></item>
+        ///   <item><description>false - The payment does not require approval, and the funds will be captured automatically.</description></item>
+        /// </list>
+        /// </summary>
+        public bool? RequiresApproval { get; set; } = null;
+
+        /// <summary>
         /// ID of the token that holds previously stored SEPA Direct Debit account and mandate data. Only relevant for legacy SEPA Direct Debit.
         /// </summary>
         public string Token { get; set; } = null;

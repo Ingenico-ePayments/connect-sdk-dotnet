@@ -45,7 +45,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Tokens
                 CardWithoutCvv cardWithoutCvv = new CardWithoutCvv();
                 cardWithoutCvv.CardNumber = "4567350000427977";
                 cardWithoutCvv.CardholderName = "Wile E. Coyote";
-                cardWithoutCvv.ExpiryDate = "0820";
+                cardWithoutCvv.ExpiryDate = "1299";
                 cardWithoutCvv.IssueNumber = "12";
 
                 TokenCardData data = new TokenCardData();

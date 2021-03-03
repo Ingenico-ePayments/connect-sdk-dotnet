@@ -22,7 +22,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
                 card.CardNumber = "4567350000427977";
                 card.CardholderName = "Wile E. Coyote";
                 card.Cvv = "123";
-                card.ExpiryDate = "1220";
+                card.ExpiryDate = "1299";
 
                 AmountOfMoney authenticationAmount = new AmountOfMoney();
                 authenticationAmount.Amount = 2980L;

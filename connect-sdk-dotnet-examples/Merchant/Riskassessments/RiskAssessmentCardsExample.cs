@@ -20,7 +20,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Riskassessments
                 Card card = new Card();
                 card.CardNumber = "4567350000427977";
                 card.Cvv = "123";
-                card.ExpiryDate = "0820";
+                card.ExpiryDate = "1299";
 
                 IList<AirlineFlightLeg> flightLegs = new List<AirlineFlightLeg>();
 

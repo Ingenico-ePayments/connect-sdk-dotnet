@@ -19,7 +19,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
                 CardWithoutCvv card = new CardWithoutCvv();
                 card.CardNumber = "67030000000000003";
                 card.CardholderName = "Wile E. Coyote";
-                card.ExpiryDate = "1220";
+                card.ExpiryDate = "1299";
 
                 CompletePaymentCardPaymentMethodSpecificInput cardPaymentMethodSpecificInput = new CompletePaymentCardPaymentMethodSpecificInput();
                 cardPaymentMethodSpecificInput.Card = card;

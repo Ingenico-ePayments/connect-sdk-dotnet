@@ -7,12 +7,12 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
     public class CardRecurrenceDetails
     {
         /// <summary>
-        /// Date in YYYYMMDD after which there will be no further charges.
+        /// Date in YYYYMMDD after which there will be no further charges. If no value is provided we will set a default value of five years after we processed the first recurring transaction.
         /// </summary>
         public string EndDate { get; set; } = null;
 
         /// <summary>
-        /// Minimum number of days between authorizations.
+        /// Minimum number of days between authorizations. If no value is provided we will set a default value of 30 days.
         /// </summary>
         public int? MinFrequency { get; set; } = null;
 

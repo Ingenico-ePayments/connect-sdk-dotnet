@@ -48,6 +48,14 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
         public string RecurringPaymentSequenceIndicator { get; set; } = null;
 
         /// <summary>
+        /// <list type="bullet">
+        ///   <item><description>true - The payment requires approval before the funds will be captured using the Approve payment or Capture payment API.</description></item>
+        ///   <item><description>false - The payment does not require approval, and the funds will be captured automatically.</description></item>
+        /// </list>
+        /// </summary>
+        public bool? RequiresApproval { get; set; } = null;
+
+        /// <summary>
         /// ID of the stored token that contains the bank account details to be debited
         /// </summary>
         public string Token { get; set; } = null;
