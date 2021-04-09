@@ -45,11 +45,11 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
         public string Dpan { get; set; } = null;
 
         /// <summary>
-        /// Electronic Commerce Indicator. 
+        /// The eci is Electronic Commerce Indicator. 
         /// <list type="bullet">
         ///   <item><description>For Apple Pay, maps to the paymentData.eciIndicator property in the encrypted payment data.</description></item>
-        ///   <item><description>For Google Pay, maps to the paymentMethodDetails.eciIndicator property in the encryted payment data.</description></item>
-        /// </list>Not allowed for Google Pay if the authMethod in the response of Google is PAN_ONLY.
+        ///   <item><description>For Google Pay, maps to the paymentMethodDetails.eciIndicator property in the encrypted payment data.</description></item>
+        /// </list>
         /// </summary>
         public int? Eci { get; set; } = null;
 

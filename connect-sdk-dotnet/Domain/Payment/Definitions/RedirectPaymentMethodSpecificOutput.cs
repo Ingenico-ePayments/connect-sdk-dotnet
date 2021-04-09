@@ -9,9 +9,19 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
     public class RedirectPaymentMethodSpecificOutput : AbstractPaymentMethodSpecificOutput
     {
         /// <summary>
+        /// Object that holds the Basic Bank Account Number (BBAN) data
+        /// </summary>
+        public BankAccountBban BankAccountBban { get; set; } = null;
+
+        /// <summary>
         /// Object containing account holder name and IBAN information
         /// </summary>
         public BankAccountIban BankAccountIban { get; set; } = null;
+
+        /// <summary>
+        /// The BIC is the Business Identifier Code, also known as SWIFT or Bank Identifier code. It is a code with an internationally agreed format to Identify a specific bank or even branch. The BIC contains 8 or 11 positions: the first 4 contain the bank code, followed by the country code and location code.
+        /// </summary>
+        public string Bic { get; set; } = null;
 
         /// <summary>
         /// Object containing the results of the fraud screening

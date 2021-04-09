@@ -19,6 +19,11 @@ namespace Ingenico.Connect.Sdk.Domain.Services.Definitions
         public string CountryCode { get; set; } = null;
 
         /// <summary>
+        /// True if the payment is to be paid in multiple installments (numberOfInstallments &gt; 1 for the payment). When true only payment products that support installments will be allowed in context.
+        /// </summary>
+        public bool? IsInstallments { get; set; } = null;
+
+        /// <summary>
         /// True if the payment is recurring
         /// </summary>
         public bool? IsRecurring { get; set; } = null;
