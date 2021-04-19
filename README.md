@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The .NET SDK helps you to communicate with the [Ingenico Connect](https://epayments.developer-ingenico.com/) Server API. It's primary features are:
+The .NET SDK helps you to communicate with the [Ingenico Connect](https://epayments.developer-ingenico.com/) Server API. Its primary features are:
 
 * convenient C# wrapper around the API calls and responses
     * marshalls C# request objects to HTTP requests
