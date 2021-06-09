@@ -8,7 +8,7 @@ namespace Ingenico.Connect.Sdk
     [TestFixture]
     public class CommunicatorTest
     {
-        readonly Uri baseUri = new Uri("https://api-sandbox.globalcollect.com");
+        readonly Uri baseUri = new Uri("https://eu.sandbox.api-ingenico.com");
         readonly Mock<Session> sessionMock = new Mock<Session>();
 
         [TestCase]
@@ -20,8 +20,8 @@ namespace Ingenico.Connect.Sdk
             Uri uri = communicator.ToAbsoluteURI("v1/merchant/20000/convertamount", new List<RequestParam>());
             Uri uri2 = communicator.ToAbsoluteURI("/v1/merchant/20000/convertamount", new List<RequestParam>());
 
-            Assert.That(uri, Is.EqualTo(new Uri("https://api-sandbox.globalcollect.com/v1/merchant/20000/convertamount")));
-            Assert.That(uri2, Is.EqualTo(new Uri("https://api-sandbox.globalcollect.com/v1/merchant/20000/convertamount")));
+            Assert.That(uri, Is.EqualTo(new Uri("https://eu.sandbox.api-ingenico.com/v1/merchant/20000/convertamount")));
+            Assert.That(uri2, Is.EqualTo(new Uri("https://eu.sandbox.api-ingenico.com/v1/merchant/20000/convertamount")));
         }
 
         [TestCase]
@@ -37,8 +37,8 @@ namespace Ingenico.Connect.Sdk
             Uri uri = communicator.ToAbsoluteURI("v1/merchant/20000/convertamount", list);
             Uri uri2 = communicator.ToAbsoluteURI("/v1/merchant/20000/convertamount", list);
 
-            Assert.AreEqual(new Uri("https://api-sandbox.globalcollect.com/v1/merchant/20000/convertamount?amount=123&source=USD&target=EUR&dummy=%C3%A9%26%25%3D"), uri);
-            Assert.AreEqual(new Uri("https://api-sandbox.globalcollect.com/v1/merchant/20000/convertamount?amount=123&source=USD&target=EUR&dummy=%C3%A9%26%25%3D"), uri2);
+            Assert.AreEqual(new Uri("https://eu.sandbox.api-ingenico.com/v1/merchant/20000/convertamount?amount=123&source=USD&target=EUR&dummy=%C3%A9%26%25%3D"), uri);
+            Assert.AreEqual(new Uri("https://eu.sandbox.api-ingenico.com/v1/merchant/20000/convertamount?amount=123&source=USD&target=EUR&dummy=%C3%A9%26%25%3D"), uri2);
         }
     }
 }

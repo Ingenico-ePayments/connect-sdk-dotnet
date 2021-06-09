@@ -2,6 +2,8 @@
  * This class was auto-generated from the API references found at
  * https://epayments-api.developer-ingenico.com/s2sapi/v1/
  */
+using System;
+
 namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
 {
     public class SdkDataInput
@@ -9,6 +11,7 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
         /// <summary>
         /// Device information gathered by the 3DS SDK on a customer device. This is JSON name/value pairs that as a whole is Base64url encoded.
         /// </summary>
+        [ObsoleteAttribute("No replacement")]
         public string DeviceInfo { get; set; } = null;
 
         /// <summary>

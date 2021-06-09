@@ -83,14 +83,14 @@ namespace Ingenico.Connect.Sdk
         {
             Dictionary<string, string> properties = new Dictionary<string, string>();
             properties["connect.api.endpoint.scheme"] = "http";
-            properties["connect.api.endpoint.host"] = "api-sandbox.globalcollect.com";
+            properties["connect.api.endpoint.host"] = "eu.sandbox.api-ingenico.com";
             properties["connect.api.authorizationType"] = AuthType;
             properties["connect.api.connectTimeout"] = "20000";
             properties["connect.api.socketTimeout"] = "10000";
 
             CommunicatorConfiguration configuration = new CommunicatorConfiguration(properties);
 
-            Assert.AreEqual(new Uri("http://api-sandbox.globalcollect.com"), configuration.ApiEndpoint);
+            Assert.AreEqual(new Uri("http://eu.sandbox.api-ingenico.com"), configuration.ApiEndpoint);
 
         }
 
@@ -99,14 +99,14 @@ namespace Ingenico.Connect.Sdk
         {
             Dictionary<string, string> properties = new Dictionary<string, string>();
             properties["connect.api.endpoint.port"] = "8443";
-            properties["connect.api.endpoint.host"] = "api-sandbox.globalcollect.com";
+            properties["connect.api.endpoint.host"] = "eu.sandbox.api-ingenico.com";
             properties["connect.api.authorizationType"] = AuthType;
             properties["connect.api.connectTimeout"] = "20000";
             properties["connect.api.socketTimeout"] = "10000";
 
             CommunicatorConfiguration configuration = new CommunicatorConfiguration(properties);
 
-            Assert.AreEqual(new Uri("https://api-sandbox.globalcollect.com:8443"), configuration.ApiEndpoint);
+            Assert.AreEqual(new Uri("https://eu.sandbox.api-ingenico.com:8443"), configuration.ApiEndpoint);
         }
 
         [TestCase]
@@ -114,7 +114,7 @@ namespace Ingenico.Connect.Sdk
         {
             Dictionary<string, string> properties = new Dictionary<string, string>();
             properties["connect.api.endpoint.port"] = "8080";
-            properties["connect.api.endpoint.host"] = "api-sandbox.globalcollect.com";
+            properties["connect.api.endpoint.host"] = "eu.sandbox.api-ingenico.com";
             properties["connect.api.endpoint.scheme"] = "http";
             properties["connect.api.authorizationType"] = AuthType;
             properties["connect.api.connectTimeout"] = "20000";
@@ -122,7 +122,7 @@ namespace Ingenico.Connect.Sdk
 
             CommunicatorConfiguration configuration = new CommunicatorConfiguration(properties);
 
-            Assert.AreEqual(new Uri("http://api-sandbox.globalcollect.com:8080"), configuration.ApiEndpoint);
+            Assert.AreEqual(new Uri("http://eu.sandbox.api-ingenico.com:8080"), configuration.ApiEndpoint);
         }
 
         [TestCase]
@@ -142,7 +142,7 @@ namespace Ingenico.Connect.Sdk
         CommunicatorConfiguration CreateBasicConfiguration()
         {
             return new CommunicatorConfiguration()
-                                                  .WithApiEndpoint(new Uri("https://api-sandbox.globalcollect.com"))
+                                                  .WithApiEndpoint(new Uri("https://eu.sandbox.api-ingenico.com"))
                                                   .WithAuthorizationType(AuthorizationType.V1HMAC)
                                                   .WithConnectTimeout(20000)
                                                   .WithSocketTimeout(10000);
@@ -150,7 +150,7 @@ namespace Ingenico.Connect.Sdk
 
         void AssertBasicConfigurationSettings(CommunicatorConfiguration configuration)
         {
-            Assert.AreEqual(new Uri("https://api-sandbox.globalcollect.com"), configuration.ApiEndpoint);
+            Assert.AreEqual(new Uri("https://eu.sandbox.api-ingenico.com"), configuration.ApiEndpoint);
             Assert.AreEqual(AuthorizationType.V1HMAC, configuration.AuthorizationType);
             Assert.AreEqual(20000, configuration.ConnectTimeout?.TotalMilliseconds);
             Assert.AreEqual(10000, configuration.SocketTimeout?.TotalMilliseconds);

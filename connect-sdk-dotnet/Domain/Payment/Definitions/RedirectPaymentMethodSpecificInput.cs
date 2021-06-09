@@ -17,6 +17,11 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
         public bool? IsRecurring { get; set; } = null;
 
         /// <summary>
+        /// Object containing specific input required for UPI payments.
+        /// </summary>
+        public RedirectPaymentProduct4101SpecificInput PaymentProduct4101SpecificInput { get; set; } = null;
+
+        /// <summary>
         /// Object containing specific input required for Dutch iDeal payments (Payment product ID 809)
         /// </summary>
         public RedirectPaymentProduct809SpecificInput PaymentProduct809SpecificInput { get; set; } = null;

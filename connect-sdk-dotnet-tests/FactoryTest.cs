@@ -14,7 +14,7 @@ namespace Ingenico.Connect.Sdk
         public static string SECRET_API_KEY = "someSecret";
         public static IDictionary<string,string> DICT = new Dictionary<string, string> {
                 {"connect.api.integrator", "Ingenico"},
-                {"connect.api.endpoint.host", "api-sandbox.globalcollect.com" },
+                {"connect.api.endpoint.host", "eu.sandbox.api-ingenico.com" },
                 {"connect.api.authorizationType", "v1HMAC"},
                 {"connect.api.socketTimeout", "-1"},
                 {"connect.api.connectTimeout", "-1"},
@@ -26,7 +26,7 @@ namespace Ingenico.Connect.Sdk
         {
             CommunicatorConfiguration configuration = Factory.CreateConfiguration(
                 DICT, API_KEY_ID, SECRET_API_KEY);
-            Assert.AreEqual(new Uri("https://api-sandbox.globalcollect.com"), configuration.ApiEndpoint);
+            Assert.AreEqual(new Uri("https://eu.sandbox.api-ingenico.com"), configuration.ApiEndpoint);
             Assert.AreEqual(AuthorizationType.V1HMAC, configuration.AuthorizationType);
             Assert.AreEqual(-1, configuration.ConnectTimeout?.TotalMilliseconds);
             Assert.AreEqual(-1, configuration.SocketTimeout?.TotalMilliseconds);
