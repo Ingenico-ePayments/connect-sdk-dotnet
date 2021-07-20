@@ -21,6 +21,11 @@ namespace Ingenico.Connect.Sdk.Domain.Payout.Definitions
         public int? PaymentProductId { get; set; } = null;
 
         /// <summary>
+        /// Object containing the details of the recipient of the payout
+        /// </summary>
+        public PayoutRecipient Recipient { get; set; } = null;
+
+        /// <summary>
         /// ID of the token that holds previously stored card data. Note that this is only supported for transactions on the Ogone payment engine.
         /// </summary>
         public string Token { get; set; } = null;

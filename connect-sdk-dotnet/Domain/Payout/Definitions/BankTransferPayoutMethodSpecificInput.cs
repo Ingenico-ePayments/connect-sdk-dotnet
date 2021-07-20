@@ -3,6 +3,7 @@
  * https://epayments-api.developer-ingenico.com/s2sapi/v1/
  */
 using Ingenico.Connect.Sdk.Domain.Definitions;
+using System;
 
 namespace Ingenico.Connect.Sdk.Domain.Payout.Definitions
 {
@@ -21,6 +22,7 @@ namespace Ingenico.Connect.Sdk.Domain.Payout.Definitions
         /// <summary>
         /// Object containing the details of the customer.
         /// </summary>
+        [ObsoleteAttribute("Moved to PayoutDetails")]
         public PayoutCustomer Customer { get; set; } = null;
 
         /// <summary>

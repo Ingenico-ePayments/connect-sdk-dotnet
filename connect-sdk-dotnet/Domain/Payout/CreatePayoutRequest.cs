@@ -13,6 +13,7 @@ namespace Ingenico.Connect.Sdk.Domain.Payout
         /// <summary>
         /// Object containing amount and ISO currency code attributes
         /// </summary>
+        [ObsoleteAttribute("Moved to PayoutDetails")]
         public AmountOfMoney AmountOfMoney { get; set; } = null;
 
         /// <summary>
@@ -40,7 +41,7 @@ namespace Ingenico.Connect.Sdk.Domain.Payout
         /// <summary>
         /// Object containing the details of the customer.
         /// </summary>
-        [ObsoleteAttribute("Moved to BankTransferPayoutMethodSpecificInput")]
+        [ObsoleteAttribute("Moved to PayoutDetails")]
         public PayoutCustomer Customer { get; set; } = null;
 
         /// <summary>
@@ -51,6 +52,11 @@ namespace Ingenico.Connect.Sdk.Domain.Payout
         public string PayoutDate { get; set; } = null;
 
         /// <summary>
+        /// Object containing the details for Create Payout Request
+        /// </summary>
+        public PayoutDetails PayoutDetails { get; set; } = null;
+
+        /// <summary>
         /// Text to be printed on the bank account statement of the beneficiary. The maximum allowed length might differ per country. The data will be automatically truncated to the maximum allowed length.
         /// </summary>
         [ObsoleteAttribute("Moved to BankTransferPayoutMethodSpecificInput")]
@@ -59,6 +65,7 @@ namespace Ingenico.Connect.Sdk.Domain.Payout
         /// <summary>
         /// Object that holds all reference properties that are linked to this transaction
         /// </summary>
+        [ObsoleteAttribute("Moved to PayoutDetails")]
         public PayoutReferences References { get; set; } = null;
 
         /// <summary>

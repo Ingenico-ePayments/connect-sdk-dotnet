@@ -46,6 +46,7 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
         ///   <item><description>Brazil - Company (CNPJ) with a length of 14 digits</description></item>
         ///   <item><description>Denmark - Consumer (CPR-nummer or personnummer) with a length of 10 digits</description></item>
         ///   <item><description>Finland - Consumer (Finnish: henkil&#246;tunnus (abbreviated as HETU), Swedish: personbeteckning) with a length of 11 characters</description></item>
+        ///   <item><description>India - Consumer (PAN) with a length of 10 characters</description></item>
         ///   <item><description>Norway - Consumer (f&#248;dselsnummer) with a length of 11 digits</description></item>
         ///   <item><description>Sweden - Consumer (personnummer) with a length of 10 or 12 digits</description></item>
         /// </list>

@@ -19,13 +19,19 @@ namespace Ingenico.Connect.Sdk.Merchant.Payouts
 #pragma warning disable 0168
             using (Client client = GetClient())
             {
-                AmountOfMoney amountOfMoney = new AmountOfMoney();
-                amountOfMoney.Amount = 2345L;
-                amountOfMoney.CurrencyCode = "EUR";
-
                 BankAccountIban bankAccountIban = new BankAccountIban();
                 bankAccountIban.AccountHolderName = "Wile E. Coyote";
                 bankAccountIban.Iban = "IT60X0542811101000000123456";
+
+                BankTransferPayoutMethodSpecificInput bankTransferPayoutMethodSpecificInput = new BankTransferPayoutMethodSpecificInput();
+                bankTransferPayoutMethodSpecificInput.BankAccountIban = bankAccountIban;
+                bankTransferPayoutMethodSpecificInput.PayoutDate = "20150102";
+                bankTransferPayoutMethodSpecificInput.PayoutText = "Payout Acme";
+                bankTransferPayoutMethodSpecificInput.SwiftCode = "swift";
+
+                AmountOfMoney amountOfMoney = new AmountOfMoney();
+                amountOfMoney.Amount = 2345L;
+                amountOfMoney.CurrencyCode = "EUR";
 
                 Address address = new Address();
                 address.City = "Burbank";
@@ -53,20 +59,17 @@ namespace Ingenico.Connect.Sdk.Merchant.Payouts
                 customer.ContactDetails = contactDetails;
                 customer.Name = name;
 
-                BankTransferPayoutMethodSpecificInput bankTransferPayoutMethodSpecificInput = new BankTransferPayoutMethodSpecificInput();
-                bankTransferPayoutMethodSpecificInput.BankAccountIban = bankAccountIban;
-                bankTransferPayoutMethodSpecificInput.Customer = customer;
-                bankTransferPayoutMethodSpecificInput.PayoutDate = "20150102";
-                bankTransferPayoutMethodSpecificInput.PayoutText = "Payout Acme";
-                bankTransferPayoutMethodSpecificInput.SwiftCode = "swift";
-
                 PayoutReferences references = new PayoutReferences();
                 references.MerchantReference = "AcmeOrder001";
 
+                PayoutDetails payoutDetails = new PayoutDetails();
+                payoutDetails.AmountOfMoney = amountOfMoney;
+                payoutDetails.Customer = customer;
+                payoutDetails.References = references;
+
                 CreatePayoutRequest body = new CreatePayoutRequest();
-                body.AmountOfMoney = amountOfMoney;
                 body.BankTransferPayoutMethodSpecificInput = bankTransferPayoutMethodSpecificInput;
-                body.References = references;
+                body.PayoutDetails = payoutDetails;
 
                 try
                 {
