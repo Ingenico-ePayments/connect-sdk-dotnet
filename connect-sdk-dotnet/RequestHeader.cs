@@ -24,12 +24,11 @@ namespace Ingenico.Connect.Sdk
             {
                 return value;
             }
-            // Replace all sequences of whitespace*-linebreak-whitespace* into a single linebreak-space
-            // This will ensure that:
-            // - no line ends with whitespace, because this causes authentication failures
-            // - each line starts with a single whitespace, so it is a valid header value
-            var pattern = "[\\s-[\r\n]]*(\r?\n)[\\s-[\r\n]]*";
-            var newString = new Regex(pattern, RegexOptions.Multiline | RegexOptions.CultureInvariant).Replace(value, "$1 ");
+            // Replace all sequences of linebreak-whitespace* with a single linebreak-space
+            // This matches the normalization done by DefaultAuthenticator, and ensures that multiline headers
+            // will not cause authentication failures
+            var pattern = "\r?\n[\\s-[\r\n]]*";
+            var newString = new Regex(pattern, RegexOptions.Multiline | RegexOptions.CultureInvariant).Replace(value, " ").Trim();
             return newString;
         }
 

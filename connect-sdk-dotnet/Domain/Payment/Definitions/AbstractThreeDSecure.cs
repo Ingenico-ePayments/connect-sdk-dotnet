@@ -23,5 +23,7 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
         public SdkDataInput SdkData { get; set; } = null;
 
         public bool? SkipAuthentication { get; set; } = null;
+
+        public string TransactionRiskLevel { get; set; } = null;
     }
 }

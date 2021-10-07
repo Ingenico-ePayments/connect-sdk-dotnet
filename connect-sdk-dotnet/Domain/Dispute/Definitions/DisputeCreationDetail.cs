@@ -12,7 +12,7 @@ namespace Ingenico.Connect.Sdk.Domain.Dispute.Definitions
         public string DisputeCreationDate { get; set; } = null;
 
         /// <summary>
-        /// The originator of this dispute, which is either Ingenico ePayments or you as our client.
+        /// The originator of this dispute, which is either Worldline or you as our client.
         /// </summary>
         public string DisputeOriginator { get; set; } = null;
 

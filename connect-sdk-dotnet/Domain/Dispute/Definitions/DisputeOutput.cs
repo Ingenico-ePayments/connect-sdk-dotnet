@@ -46,7 +46,7 @@ namespace Ingenico.Connect.Sdk.Domain.Dispute.Definitions
         public string ReplyTo { get; set; } = null;
 
         /// <summary>
-        /// The message sent from you to Ingenico ePayments.
+        /// The message sent from you to Worldline.
         /// </summary>
         public string RequestMessage { get; set; } = null;
 

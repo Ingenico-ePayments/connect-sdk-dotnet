@@ -15,12 +15,12 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
         public string Custom { get; set; } = null;
 
         /// <summary>
-        /// <div class="deprecated-wrapper depends-wrapper">Deprecated: If your PayPal payments are processed by Ingenico's Ogone Payment Platform, please use the property addressSelectionAtPayPal instead.</div>
-        /// <br />Indicates whether to use PayPal Express Checkout for payments processed by Ingenico's GlobalCollect Payment Platform. 
+        /// <div class="deprecated-wrapper depends-wrapper">Deprecated: If your PayPal payments are processed by Worldline's Ogone Payment Platform, please use the property addressSelectionAtPayPal instead.</div>
+        /// <br />Indicates whether to use PayPal Express Checkout for payments processed by Worldline's GlobalCollect Payment Platform. 
         /// <list type="bullet">
         ///   <item><description>true = PayPal Express Checkout</description></item>
         ///   <item><description>false = Regular PayPal payment</description></item>
-        /// </list>For payments processed by Ingenico's Ogone Payment Platform, please see the addressSelectionAtPayPal property for more information.
+        /// </list>For payments processed by Worldline's Ogone Payment Platform, please see the addressSelectionAtPayPal property for more information.
         /// </summary>
         public bool? IsShortcut { get; set; } = null;
     }

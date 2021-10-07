@@ -109,12 +109,12 @@ namespace Ingenico.Connect.Sdk.Domain.Product.Definitions
         public bool? IsJavaScriptRequired { get; set; } = null;
 
         /// <summary>
-        /// Maximum amount in EUR cents (using 2 decimals, so 1 EUR becomes 100 cents) for transactions done with this payment product
+        /// Maximum amount in cents (using 2 decimals, so 1 EUR becomes 100 cents) for transactions done with this payment product
         /// </summary>
         public long? MaxAmount { get; set; } = null;
 
         /// <summary>
-        /// Minimum amount in EUR cents (using 2 decimals, so 1 EUR becomes 100 cents) for transactions done with this payment product
+        /// Minimum amount in cents (using 2 decimals, so 1 EUR becomes 100 cents) for transactions done with this payment product
         /// </summary>
         public long? MinAmount { get; set; } = null;
 
