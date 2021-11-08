@@ -57,6 +57,11 @@ namespace Ingenico.Connect.Sdk.Domain.Definitions
         public FraugsterResults Fraugster { get; set; } = null;
 
         /// <summary>
+        /// Results of Microsoft Fraud Protection risk assessment. Microsoft collects transaction data points and uses Adaptive AI that continuously learns to protect you against payment fraud.
+        /// </summary>
+        public MicrosoftFraudResults MicrosoftFraudProtection { get; set; } = null;
+
+        /// <summary>
         /// Additional response data returned by RetailDecisions
         /// </summary>
         public FraudResultsRetailDecisions RetailDecisions { get; set; } = null;
