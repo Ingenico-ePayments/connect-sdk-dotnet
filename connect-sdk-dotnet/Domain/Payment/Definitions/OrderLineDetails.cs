@@ -43,6 +43,11 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
         public long? ProductPrice { get; set; } = null;
 
         /// <summary>
+        /// Product SKU number
+        /// </summary>
+        public string ProductSku { get; set; } = null;
+
+        /// <summary>
         /// Code used to classify items that are purchased
         /// <br />Note: Must not be all spaces or all zeros
         /// </summary>
