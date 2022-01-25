@@ -52,18 +52,31 @@ namespace Ingenico.Connect.Sdk.It
 
             using (Client client = GetClient())
             {
-                CreatePaymentResponse response = await client.Merchant(GetMerchantId()).Payments().Create(body, context);
-                string paymentId = response.Payment.Id;
+                CreatePaymentResult result = await doCreatePayment(client, body, context);
+                string paymentId = result.Payment.Id;
+                string status = result.Payment.Status;
 
                 Assert.AreEqual(idempotenceKey, context.IdempotenceKey);
                 Assert.Null(context.IdempotenceRequestTimestamp);
 
-                response = await client.Merchant(GetMerchantId()).Payments().Create(body, context);
+                result = await doCreatePayment(client, body, context);
 
-                Assert.AreEqual(paymentId, response.Payment.Id);
+                Assert.AreEqual(paymentId, result.Payment.Id);
+                Assert.AreEqual(status, result.Payment.Status);
 
                 Assert.AreEqual(idempotenceKey, context.IdempotenceKey);
                 Assert.NotNull(context.IdempotenceRequestTimestamp);
+            }
+        }
+
+        private async Task<CreatePaymentResult> doCreatePayment(Client client, CreatePaymentRequest body, CallContext context) {
+            // For this test it doesn't matter if the response is successful or declined,
+            // as long as idempotence is handled correctly
+            try
+            {
+                return await client.Merchant(GetMerchantId()).Payments().Create(body, context);
+            } catch (DeclinedPaymentException e) {
+                return e.CreatePaymentResult;
             }
         }
     }
