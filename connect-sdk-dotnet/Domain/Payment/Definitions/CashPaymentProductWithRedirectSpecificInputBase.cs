@@ -4,7 +4,8 @@
  */
 namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
 {
-    public class CashPaymentProduct1523SpecificInput : CashPaymentProductWithRedirectSpecificInputBase
+    public class CashPaymentProductWithRedirectSpecificInputBase
     {
+        public string ReturnUrl { get; set; } = null;
     }
 }
