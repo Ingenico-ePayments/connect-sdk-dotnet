@@ -1,0 +1,596 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class MerchantClient
+   | Ingenico Connect .NET SDK </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class MerchantClient
+   | Ingenico Connect .NET SDK ">
+    <meta name="generator" content="docfx 2.57.2.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="https://epayments.developer-ingenico.com/documentation/sdk/server/dotnet/">
+                <img id="logo" class="svg" src="../logo.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Ingenico.Connect.Sdk.Merchant.MerchantClient">
+  
+  
+  <h1 id="Ingenico_Connect_Sdk_Merchant_MerchantClient" data-uid="Ingenico.Connect.Sdk.Merchant.MerchantClient" class="text-break">Class MerchantClient
+  </h1>
+  <div class="markdown level0 summary"><p>Merchant client. Thread-safe.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="Ingenico.Connect.Sdk.ApiResource.html">ApiResource</a></div>
+    <div class="level2"><span class="xref">MerchantClient</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Ingenico.Connect.Sdk.ApiResource.html#Ingenico_Connect_Sdk_ApiResource__communicator">ApiResource._communicator</a>
+    </div>
+    <div>
+      <a class="xref" href="Ingenico.Connect.Sdk.ApiResource.html#Ingenico_Connect_Sdk_ApiResource__clientMetaInfo">ApiResource._clientMetaInfo</a>
+    </div>
+    <div>
+      <a class="xref" href="Ingenico.Connect.Sdk.ApiResource.html#Ingenico_Connect_Sdk_ApiResource_ClientHeaders">ApiResource.ClientHeaders</a>
+    </div>
+    <div>
+      <a class="xref" href="Ingenico.Connect.Sdk.ApiResource.html#Ingenico_Connect_Sdk_ApiResource_InstantiateUri_System_String_IDictionary_System_String_System_String__">ApiResource.InstantiateUri(String, IDictionary&lt;String, String&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Ingenico.Connect.Sdk.ApiResource.html#Ingenico_Connect_Sdk_ApiResource_CreateException_System_Net_HttpStatusCode_System_String_System_Object_Ingenico_Connect_Sdk_CallContext_">ApiResource.CreateException(System.Net.HttpStatusCode, String, Object, CallContext)</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Ingenico.Connect.Sdk.Merchant.html">Ingenico.Connect.Sdk.Merchant</a></h6>
+  <h6><strong>Assembly</strong>: connect-sdk-dotnet.dll</h6>
+  <h5 id="Ingenico_Connect_Sdk_Merchant_MerchantClient_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class MerchantClient : ApiResource</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  
+  <a id="Ingenico_Connect_Sdk_Merchant_MerchantClient__ctor_" data-uid="Ingenico.Connect.Sdk.Merchant.MerchantClient.#ctor*"></a>
+  <h4 id="Ingenico_Connect_Sdk_Merchant_MerchantClient__ctor_Ingenico_Connect_Sdk_ApiResource_IDictionary_System_String_System_String__" data-uid="Ingenico.Connect.Sdk.Merchant.MerchantClient.#ctor(Ingenico.Connect.Sdk.ApiResource,IDictionary{System.String,System.String})">MerchantClient(ApiResource, IDictionary&lt;String, String&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MerchantClient(ApiResource parent, IDictionary&lt;string, string&gt; pathContext)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Ingenico.Connect.Sdk.ApiResource.html">ApiResource</a></td>
+        <td><span class="parametername">parent</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">IDictionary</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">pathContext</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="Ingenico_Connect_Sdk_Merchant_MerchantClient_Captures_" data-uid="Ingenico.Connect.Sdk.Merchant.MerchantClient.Captures*"></a>
+  <h4 id="Ingenico_Connect_Sdk_Merchant_MerchantClient_Captures" data-uid="Ingenico.Connect.Sdk.Merchant.MerchantClient.Captures">Captures()</h4>
+  <div class="markdown level1 summary"><p>Resource /{merchantId}/captures</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CapturesClient Captures()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Ingenico.Connect.Sdk.Merchant.Captures.CapturesClient.html">CapturesClient</a></td>
+        <td><p>CapturesClient</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Ingenico_Connect_Sdk_Merchant_MerchantClient_Disputes_" data-uid="Ingenico.Connect.Sdk.Merchant.MerchantClient.Disputes*"></a>
+  <h4 id="Ingenico_Connect_Sdk_Merchant_MerchantClient_Disputes" data-uid="Ingenico.Connect.Sdk.Merchant.MerchantClient.Disputes">Disputes()</h4>
+  <div class="markdown level1 summary"><p>Resource /{merchantId}/disputes</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DisputesClient Disputes()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Ingenico.Connect.Sdk.Merchant.Disputes.DisputesClient.html">DisputesClient</a></td>
+        <td><p>DisputesClient</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Ingenico_Connect_Sdk_Merchant_MerchantClient_Files_" data-uid="Ingenico.Connect.Sdk.Merchant.MerchantClient.Files*"></a>
+  <h4 id="Ingenico_Connect_Sdk_Merchant_MerchantClient_Files" data-uid="Ingenico.Connect.Sdk.Merchant.MerchantClient.Files">Files()</h4>
+  <div class="markdown level1 summary"><p>Resource /{merchantId}/files</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public FilesClient Files()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Ingenico.Connect.Sdk.Merchant.Files.FilesClient.html">FilesClient</a></td>
+        <td><p>FilesClient</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Ingenico_Connect_Sdk_Merchant_MerchantClient_Hostedcheckouts_" data-uid="Ingenico.Connect.Sdk.Merchant.MerchantClient.Hostedcheckouts*"></a>
+  <h4 id="Ingenico_Connect_Sdk_Merchant_MerchantClient_Hostedcheckouts" data-uid="Ingenico.Connect.Sdk.Merchant.MerchantClient.Hostedcheckouts">Hostedcheckouts()</h4>
+  <div class="markdown level1 summary"><p>Resource /{merchantId}/hostedcheckouts</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public HostedcheckoutsClient Hostedcheckouts()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Ingenico.Connect.Sdk.Merchant.Hostedcheckouts.HostedcheckoutsClient.html">HostedcheckoutsClient</a></td>
+        <td><p>HostedcheckoutsClient</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Ingenico_Connect_Sdk_Merchant_MerchantClient_Hostedmandatemanagements_" data-uid="Ingenico.Connect.Sdk.Merchant.MerchantClient.Hostedmandatemanagements*"></a>
+  <h4 id="Ingenico_Connect_Sdk_Merchant_MerchantClient_Hostedmandatemanagements" data-uid="Ingenico.Connect.Sdk.Merchant.MerchantClient.Hostedmandatemanagements">Hostedmandatemanagements()</h4>
+  <div class="markdown level1 summary"><p>Resource /{merchantId}/hostedmandatemanagements</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public HostedmandatemanagementsClient Hostedmandatemanagements()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Ingenico.Connect.Sdk.Merchant.Hostedmandatemanagements.HostedmandatemanagementsClient.html">HostedmandatemanagementsClient</a></td>
+        <td><p>HostedmandatemanagementsClient</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Ingenico_Connect_Sdk_Merchant_MerchantClient_Mandates_" data-uid="Ingenico.Connect.Sdk.Merchant.MerchantClient.Mandates*"></a>
+  <h4 id="Ingenico_Connect_Sdk_Merchant_MerchantClient_Mandates" data-uid="Ingenico.Connect.Sdk.Merchant.MerchantClient.Mandates">Mandates()</h4>
+  <div class="markdown level1 summary"><p>Resource /{merchantId}/mandates</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MandatesClient Mandates()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Ingenico.Connect.Sdk.Merchant.Mandates.MandatesClient.html">MandatesClient</a></td>
+        <td><p>MandatesClient</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Ingenico_Connect_Sdk_Merchant_MerchantClient_Payments_" data-uid="Ingenico.Connect.Sdk.Merchant.MerchantClient.Payments*"></a>
+  <h4 id="Ingenico_Connect_Sdk_Merchant_MerchantClient_Payments" data-uid="Ingenico.Connect.Sdk.Merchant.MerchantClient.Payments">Payments()</h4>
+  <div class="markdown level1 summary"><p>Resource /{merchantId}/payments</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PaymentsClient Payments()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Ingenico.Connect.Sdk.Merchant.Payments.PaymentsClient.html">PaymentsClient</a></td>
+        <td><p>PaymentsClient</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Ingenico_Connect_Sdk_Merchant_MerchantClient_Payouts_" data-uid="Ingenico.Connect.Sdk.Merchant.MerchantClient.Payouts*"></a>
+  <h4 id="Ingenico_Connect_Sdk_Merchant_MerchantClient_Payouts" data-uid="Ingenico.Connect.Sdk.Merchant.MerchantClient.Payouts">Payouts()</h4>
+  <div class="markdown level1 summary"><p>Resource /{merchantId}/payouts</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PayoutsClient Payouts()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Ingenico.Connect.Sdk.Merchant.Payouts.PayoutsClient.html">PayoutsClient</a></td>
+        <td><p>PayoutsClient</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Ingenico_Connect_Sdk_Merchant_MerchantClient_Productgroups_" data-uid="Ingenico.Connect.Sdk.Merchant.MerchantClient.Productgroups*"></a>
+  <h4 id="Ingenico_Connect_Sdk_Merchant_MerchantClient_Productgroups" data-uid="Ingenico.Connect.Sdk.Merchant.MerchantClient.Productgroups">Productgroups()</h4>
+  <div class="markdown level1 summary"><p>Resource /{merchantId}/productgroups</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ProductgroupsClient Productgroups()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Ingenico.Connect.Sdk.Merchant.Productgroups.ProductgroupsClient.html">ProductgroupsClient</a></td>
+        <td><p>ProductgroupsClient</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Ingenico_Connect_Sdk_Merchant_MerchantClient_Products_" data-uid="Ingenico.Connect.Sdk.Merchant.MerchantClient.Products*"></a>
+  <h4 id="Ingenico_Connect_Sdk_Merchant_MerchantClient_Products" data-uid="Ingenico.Connect.Sdk.Merchant.MerchantClient.Products">Products()</h4>
+  <div class="markdown level1 summary"><p>Resource /{merchantId}/products</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ProductsClient Products()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Ingenico.Connect.Sdk.Merchant.Products.ProductsClient.html">ProductsClient</a></td>
+        <td><p>ProductsClient</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Ingenico_Connect_Sdk_Merchant_MerchantClient_Refunds_" data-uid="Ingenico.Connect.Sdk.Merchant.MerchantClient.Refunds*"></a>
+  <h4 id="Ingenico_Connect_Sdk_Merchant_MerchantClient_Refunds" data-uid="Ingenico.Connect.Sdk.Merchant.MerchantClient.Refunds">Refunds()</h4>
+  <div class="markdown level1 summary"><p>Resource /{merchantId}/refunds</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public RefundsClient Refunds()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Ingenico.Connect.Sdk.Merchant.Refunds.RefundsClient.html">RefundsClient</a></td>
+        <td><p>RefundsClient</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Ingenico_Connect_Sdk_Merchant_MerchantClient_Riskassessments_" data-uid="Ingenico.Connect.Sdk.Merchant.MerchantClient.Riskassessments*"></a>
+  <h4 id="Ingenico_Connect_Sdk_Merchant_MerchantClient_Riskassessments" data-uid="Ingenico.Connect.Sdk.Merchant.MerchantClient.Riskassessments">Riskassessments()</h4>
+  <div class="markdown level1 summary"><p>Resource /{merchantId}/riskassessments</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public RiskassessmentsClient Riskassessments()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Ingenico.Connect.Sdk.Merchant.Riskassessments.RiskassessmentsClient.html">RiskassessmentsClient</a></td>
+        <td><p>RiskassessmentsClient</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Ingenico_Connect_Sdk_Merchant_MerchantClient_Services_" data-uid="Ingenico.Connect.Sdk.Merchant.MerchantClient.Services*"></a>
+  <h4 id="Ingenico_Connect_Sdk_Merchant_MerchantClient_Services" data-uid="Ingenico.Connect.Sdk.Merchant.MerchantClient.Services">Services()</h4>
+  <div class="markdown level1 summary"><p>Resource /{merchantId}/services</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ServicesClient Services()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Ingenico.Connect.Sdk.Merchant.Services.ServicesClient.html">ServicesClient</a></td>
+        <td><p>ServicesClient</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Ingenico_Connect_Sdk_Merchant_MerchantClient_Sessions_" data-uid="Ingenico.Connect.Sdk.Merchant.MerchantClient.Sessions*"></a>
+  <h4 id="Ingenico_Connect_Sdk_Merchant_MerchantClient_Sessions" data-uid="Ingenico.Connect.Sdk.Merchant.MerchantClient.Sessions">Sessions()</h4>
+  <div class="markdown level1 summary"><p>Resource /{merchantId}/sessions</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SessionsClient Sessions()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Ingenico.Connect.Sdk.Merchant.Sessions.SessionsClient.html">SessionsClient</a></td>
+        <td><p>SessionsClient</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="Ingenico_Connect_Sdk_Merchant_MerchantClient_Tokens_" data-uid="Ingenico.Connect.Sdk.Merchant.MerchantClient.Tokens*"></a>
+  <h4 id="Ingenico_Connect_Sdk_Merchant_MerchantClient_Tokens" data-uid="Ingenico.Connect.Sdk.Merchant.MerchantClient.Tokens">Tokens()</h4>
+  <div class="markdown level1 summary"><p>Resource /{merchantId}/tokens</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TokensClient Tokens()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Ingenico.Connect.Sdk.Merchant.Tokens.TokensClient.html">TokensClient</a></td>
+        <td><p>TokensClient</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            Copyright (c) 2016 Global Collect Services B.V.
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
