@@ -3,8 +3,8 @@
   <PropertyGroup>
     <TargetFrameworks>net45;netcoreapp2.1;netcoreapp3.1</TargetFrameworks>
     <RootNamespace>Ingenico.Connect.Sdk</RootNamespace>
-    <AssemblyVersion>3.30</AssemblyVersion>
-    <Version>3.30</Version>
+    <AssemblyVersion>3.30.0</AssemblyVersion>
+    <Version>3.30.0</Version>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <Company>Ingenico ePayments</Company>
     <Product>Ingenico Connect .NET SDK integration tests</Product>
