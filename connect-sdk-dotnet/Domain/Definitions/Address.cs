@@ -37,8 +37,9 @@ namespace Ingenico.Connect.Sdk.Domain.Definitions
         /// <br />Notes:
         /// <br />
         /// <list type="bullet">
-        ///   <item><description>The maximum length for 3-D Secure version 2 is AN3.</description></item>
-        ///   <item><description>The maximum length for paymentProductId 1503 (Boleto) is AN2.</description></item>
+        ///   <item><description>The maximum length for 3-D Secure version 2 is AN3 for payments that are processed by the GlobalCollect platform</description></item>
+        ///   <item><description>The maximum length for paymentProductId 1503 (Boleto) is AN2 for payments that are processed by the GlobalCollect platform</description></item>
+        ///   <item><description>The maximum length is 3 for payments that are processed by the WL Online Payment Acceptance platform</description></item>
         /// </list>
         /// </summary>
         public string StateCode { get; set; } = null;
