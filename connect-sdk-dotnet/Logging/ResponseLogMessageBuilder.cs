@@ -14,6 +14,14 @@ namespace Ingenico.Connect.Sdk.Logging
   content-type: '{4}'
   body:         '{5}'";
 
+        public ResponseLogMessageBuilder(string requestId, HttpStatusCode statusCode, TimeSpan duration, BodyObfuscator bodyObfuscator, HeaderObfuscator headerObfuscator)
+            : base(requestId, bodyObfuscator, headerObfuscator)
+        {
+            _statusCode = statusCode;
+            Duration = duration;
+        }
+
+        [ObsoleteAttribute("Use the constructor that takes a BodyObfuscator and HeaderObfuscator instead")]
         public ResponseLogMessageBuilder(string requestId, HttpStatusCode statusCode)
             : base(requestId)
         {

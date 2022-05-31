@@ -21,7 +21,7 @@ namespace Ingenico.Connect.Sdk.Logging
             _headers.Append("=\"");
             if (value != null)
             {
-                string obfuscatedValue = LoggingUtil.ObfuscateHeader(name, value);
+                string obfuscatedValue = HeaderObfuscator.ObfuscateHeader(name, value);
                 _headers.Append(obfuscatedValue);
             }
             _headers.Append("\"");
@@ -29,7 +29,7 @@ namespace Ingenico.Connect.Sdk.Logging
 
         public void SetBody(string body, string contentType)
         {
-            Body = IsBinaryContent(contentType) ? "<binary content>" : LoggingUtil.ObfuscateBody(body);
+            Body = IsBinaryContent(contentType) ? "<binary content>" : BodyObfuscator.ObfuscateBody(body);
             ContentType = contentType;
         }
         public void SetBinaryContentBody(string contentType)
@@ -51,7 +51,10 @@ namespace Ingenico.Connect.Sdk.Logging
         protected string ContentType { get; private set; }
         protected string Charset { get; private set; }
 
-        protected LogMessageBuilder(string requestId)
+        protected BodyObfuscator BodyObfuscator { get; }
+        protected HeaderObfuscator HeaderObfuscator { get; }
+
+        protected LogMessageBuilder(string requestId, BodyObfuscator bodyObfuscator, HeaderObfuscator headerObfuscator)
         {
             if (string.IsNullOrEmpty(requestId))
             {
@@ -59,6 +62,14 @@ namespace Ingenico.Connect.Sdk.Logging
             }
 
             RequestId = requestId;
+            BodyObfuscator = bodyObfuscator ?? throw new ArgumentException("bodyObfuscator is required");
+            HeaderObfuscator = headerObfuscator ?? throw new ArgumentException("headerObfuscator is required");
+        }
+
+        [ObsoleteAttribute("Use the constructor that takes a BodyObfuscator and HeaderObfuscator instead")]
+        protected LogMessageBuilder(string requestId)
+            : this(requestId, BodyObfuscator.DefaultObfuscator, HeaderObfuscator.DefaultObfuscator)
+        {
         }
 
         protected string EmptyIfNull(string value)

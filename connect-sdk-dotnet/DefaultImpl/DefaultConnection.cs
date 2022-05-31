@@ -13,7 +13,7 @@ namespace Ingenico.Connect.Sdk.DefaultImpl
     /// <summary>
     /// The default implementation for the connection interface. Supports Pooling, and is thread safe.
     /// </summary>
-    public class DefaultConnection : IPooledConnection
+    public class DefaultConnection : IPooledConnection, ILoggingCapable, IObfuscationCapable
     {
         public DefaultConnection(TimeSpan? socketTimeout, int maxConnections = 2, Proxy proxy = null)
         {
@@ -208,6 +208,24 @@ namespace Ingenico.Connect.Sdk.DefaultImpl
         }
         #endregion
 
+        #region IObfuscationCapable implementation
+        public BodyObfuscator BodyObfuscator
+        {
+            set
+            {
+                _bodyObfuscator = value ?? throw new ArgumentException("bodyObfuscator is required");
+            }
+        }
+
+        public HeaderObfuscator HeaderObfuscator
+        {
+            set
+            {
+                _headerObfuscator = value ?? throw new ArgumentException("headerObfuscator is required");
+            }
+        }
+        #endregion
+
         #region ILoggingCapable implementation
         public void EnableLogging(ICommunicatorLogger communicatorLogger)
         {
@@ -236,7 +254,7 @@ namespace Ingenico.Connect.Sdk.DefaultImpl
                 return;
             }
 
-            var sb = new RequestLogMessageBuilder(guid.ToString(), message.Method.ToString(), message.RequestUri.PathAndQuery);
+            var sb = new RequestLogMessageBuilder(guid.ToString(), message.Method.ToString(), message.RequestUri.PathAndQuery, _bodyObfuscator, _headerObfuscator);
             foreach (var header in message.Headers)
             {
                 sb.AddHeader(header.Key, string.Join(" ", header.Value));
@@ -260,10 +278,7 @@ namespace Ingenico.Connect.Sdk.DefaultImpl
                 return responseBodyStream;
             }
 
-            var sb = new ResponseLogMessageBuilder(guid.ToString(), httpResponse.StatusCode)
-            {
-                Duration = duration
-            };
+            var sb = new ResponseLogMessageBuilder(guid.ToString(), httpResponse.StatusCode, duration, _bodyObfuscator, _headerObfuscator);
             foreach (var header in httpResponse.Headers)
             {
                 sb.AddHeader(header.Key, string.Join(" ", header.Value));
@@ -317,9 +332,12 @@ namespace Ingenico.Connect.Sdk.DefaultImpl
         }
         #endregion
 
-        // Private because not all operations are guaranteed to be thread safe. 
+        // Private because not all operations are guaranteed to be thread safe.
         // This class only uses thread safe methods (except in the constructor)
         readonly HttpClient _httpClient;
+
+        BodyObfuscator _bodyObfuscator = BodyObfuscator.DefaultObfuscator;
+        HeaderObfuscator _headerObfuscator = HeaderObfuscator.DefaultObfuscator;
 
         ICommunicatorLogger _communicatorLogger;
     }

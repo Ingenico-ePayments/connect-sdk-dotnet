@@ -16,7 +16,7 @@ namespace Ingenico.Connect.Sdk
     /// It contains all the logic to transform a request object to a HTTP request and a HTTP response to a response object.
     /// It is also thread safe.
     /// </remarks>
-    public class Communicator : IDisposable, ILoggingCapable
+    public class Communicator : IDisposable, ILoggingCapable, IObfuscationCapable
     {
         /// <summary>
         /// Gets the <see cref="IMarshaller"/> object associated with this communicator. Never <c>null</c>.
@@ -41,6 +41,32 @@ namespace Ingenico.Connect.Sdk
         public void Dispose()
         {
             Session.Connection.Dispose();
+        }
+        #endregion
+
+        #region IObfuscationCapable implementation
+        public BodyObfuscator BodyObfuscator
+        {
+            set
+            {
+                IConnection connection = Session.Connection;
+                if (typeof(IObfuscationCapable).IsAssignableFrom(connection.GetType()))
+                {
+                    ((IObfuscationCapable)connection).BodyObfuscator = value;
+                }
+            }
+        }
+
+        public HeaderObfuscator HeaderObfuscator
+        {
+            set
+            {
+                IConnection connection = Session.Connection;
+                if (typeof(IObfuscationCapable).IsAssignableFrom(connection.GetType()))
+                {
+                    ((IObfuscationCapable)connection).HeaderObfuscator = value;
+                }
+            }
         }
         #endregion
 

@@ -1,3 +1,5 @@
+using System;
+
 namespace Ingenico.Connect.Sdk.Logging
 {
     /// <summary>
@@ -14,6 +16,14 @@ namespace Ingenico.Connect.Sdk.Logging
   content-type: '{4}'
   body:         '{5}'";
 
+        public RequestLogMessageBuilder(string requestId, string method, string uri, BodyObfuscator bodyObfuscator, HeaderObfuscator headerObfuscator)
+            : base(requestId, bodyObfuscator, headerObfuscator)
+        {
+            _method = method;
+            _uri = uri;
+        }
+
+        [ObsoleteAttribute("Use the constructor that takes a BodyObfuscator and HeaderObfuscator instead")]
         public RequestLogMessageBuilder(string requestId, string method, string uri)
             : base(requestId)
         {

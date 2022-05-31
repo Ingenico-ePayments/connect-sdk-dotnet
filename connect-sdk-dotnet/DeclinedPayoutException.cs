@@ -28,7 +28,7 @@ namespace Ingenico.Connect.Sdk
             {
                 return "declined payout '" + payout.Id + "' with status '" + payout.Status + "'";
             }
-            return "the Ingenico ePayments platform returned a declined refund response";
+            return "the Ingenico ePayments platform returned a declined payout response";
         }
     }
 }

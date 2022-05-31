@@ -1,53 +1,116 @@
+using System;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 
 namespace Ingenico.Connect.Sdk.Logging
 {
-    class HeaderObfuscator : Obfuscator
+    /// <summary>
+    /// A class that can be used to obfuscate headers. Thread-safe if all its obfuscation rules are.
+    /// </summary>
+    public class HeaderObfuscator
     {
-        public static HeaderObfuscatorBuilder Builder()
+        static readonly HeaderObfuscator DEFAULT_OBFUSCATOR = Custom().Build();
+
+        readonly IDictionary<string, ObfuscationRule> _obfuscationRules;
+
+        HeaderObfuscator(IDictionary<string, ObfuscationRule> obfuscationRules)
         {
-            return new HeaderObfuscatorBuilder();
+            _obfuscationRules = ImmutableDictionary.ToImmutableDictionary(obfuscationRules, StringComparer.OrdinalIgnoreCase);
         }
 
-        public class HeaderObfuscatorBuilder
+        /// <summary>
+        /// Obfuscates the value for the given header as necessary.
+        /// </summary>
+        public String ObfuscateHeader(String name, String value)
         {
-            public HeaderObfuscatorBuilder WithAll(string property)
+            if (_obfuscationRules.TryGetValue(name, out ObfuscationRule obfuscationRule))
             {
-                Obfuscators.Add(property, ValueObfuscator.ALL);
+                return obfuscationRule(value);
+            }
+            return value;
+        }
+
+        /// <summary>
+        /// Returns a builder to create custom header obfuscators.
+        /// This builder will contain some pre-defined obfuscation rules.These cannot be removed,
+        /// but replacing them is possible.
+        /// </summary>
+        public static Builder Custom()
+        {
+            return new Builder()
+                    .ObfuscateWithFixedLength(8, "Authorization")
+                    .ObfuscateWithFixedLength(8, "WWW-Authenticate")
+                    .ObfuscateWithFixedLength(8, "Proxy-Authenticate")
+                    .ObfuscateWithFixedLength(8, "Proxy-Authorization")
+                    .ObfuscateWithFixedLength(8, "X-GCS-Authentication-Token")
+                    .ObfuscateWithFixedLength(8, "X-GCS-CallerPassword");
+        }
+
+        /// <summary>
+        /// Returns a default header obfuscator.
+        /// The result will be equivalent to calling Custom().Build().
+        /// </summary>
+        public static HeaderObfuscator DefaultObfuscator => DEFAULT_OBFUSCATOR;
+
+        public class Builder
+        {
+            /// <summary>
+            /// Adds an obfuscation rule that will replace all characters with *.
+            /// </summary>
+            public Builder ObfuscateAll(string headerName)
+            {
+                ObfuscationRules[headerName] = ValueObfuscator.ALL.ObfuscateValue;
                 return this;
             }
 
-            public HeaderObfuscatorBuilder WithFixedLength(string property, int fixedLength)
+            /// <summary>
+            /// Adds an obfuscation rule that will replace values with a fixed length string containing only *.
+            /// </summary>
+            public Builder ObfuscateWithFixedLength(int fixedLength, string headerName)
             {
-                Obfuscators.Add(property, ValueObfuscator.FixedLength(fixedLength));
+                ObfuscationRules[headerName] = ValueObfuscator.FixedLength(fixedLength).ObfuscateValue;
                 return this;
             }
 
-            public HeaderObfuscatorBuilder WithKeepStartCount(string key, int count)
+            /// <summary>
+            /// Adds an obfuscation rule that will keep a fixed number of characters at the start,
+            /// then replaces all other characters with *.
+            /// </summary>
+            public Builder ObfuscateAllButFirst(int count, string headerName)
             {
-                Obfuscators.Add(key, ValueObfuscator.KeepingStartCount(count));
+                ObfuscationRules[headerName] = ValueObfuscator.KeepingStartCount(count).ObfuscateValue;
                 return this;
             }
 
-            public HeaderObfuscatorBuilder WithKeepEndCount(string property, int count)
+            /// <summary>
+            /// Adds an obfuscation rule that will keep a fixed number of characters at the end,
+            /// then replaces all other characters with *.
+            /// </summary>
+            public Builder ObfuscateAllButLast(int count, string headerName)
             {
-                Obfuscators.Add(property, ValueObfuscator.KeepingEndCount(count));
+                ObfuscationRules[headerName] = ValueObfuscator.KeepingEndCount(count).ObfuscateValue;
+                return this;
+            }
+
+            /// <summary>
+            /// Adds a custom, non-null obfuscation rule.
+            /// </summary>
+            public Builder ObfuscateCustom(string headerName, ObfuscationRule obfuscationRule)
+            {
+                ObfuscationRules[headerName] = obfuscationRule ?? throw new ArgumentException("obfuscationRule is required");
                 return this;
             }
 
             public HeaderObfuscator Build()
             {
-                return new HeaderObfuscator(this.Obfuscators);
+                return new HeaderObfuscator(this.ObfuscationRules);
             }
 
-            IDictionary<string, ValueObfuscator> Obfuscators { get; }
-                = new Dictionary<string, ValueObfuscator>();
+            internal Builder()
+            {
+            }
 
-        }
-        HeaderObfuscator(IDictionary<string, ValueObfuscator> obfuscators)
-            : base(obfuscators, true)
-        {
-
+            IDictionary<string, ObfuscationRule> ObfuscationRules { get; } = new Dictionary<string, ObfuscationRule>();
         }
     }
 }

@@ -15,7 +15,7 @@ namespace Ingenico.Connect.Sdk
     /// This client and all its child clients are bound to one specific value for the <i>X-GCS-ClientMetaInfo</i> header.
     /// To get a new client with a different header value, use <see cref="WithClientMetaInfo"/>.
     /// </summary>
-    public class Client : ApiResource, IDisposable, ILoggingCapable
+    public class Client : ApiResource, IDisposable, ILoggingCapable, IObfuscationCapable
     {
         public const string ApiVersion = "v1";
 
@@ -76,6 +76,24 @@ namespace Ingenico.Connect.Sdk
         {
             _communicator.CloseIdleConnections(timespan);
         }
+
+        #region IObfuscationCapable support
+        public BodyObfuscator BodyObfuscator
+        {
+            set
+            {
+                _communicator.BodyObfuscator = value;
+            }
+        }
+
+        public HeaderObfuscator HeaderObfuscator
+        {
+            set
+            {
+                _communicator.HeaderObfuscator = value;
+            }
+        }
+        #endregion
 
         #region ILoggingCapable support
         public void EnableLogging(ICommunicatorLogger communicatorLogger)
