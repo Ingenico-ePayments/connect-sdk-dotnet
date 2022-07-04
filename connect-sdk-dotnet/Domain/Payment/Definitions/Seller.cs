@@ -24,6 +24,11 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
         public string Description { get; set; } = null;
 
         /// <summary>
+        /// Seller ID assigned by the Merchant Aggregator
+        /// </summary>
+        public string ExternalReferenceId { get; set; } = null;
+
+        /// <summary>
         /// The sellers geocode
         /// </summary>
         public string Geocode { get; set; } = null;
@@ -47,6 +52,11 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
         /// Name of the seller
         /// </summary>
         public string Name { get; set; } = null;
+
+        /// <summary>
+        /// Main Phone Number
+        /// </summary>
+        public string PhoneNumber { get; set; } = null;
 
         /// <summary>
         /// Seller type. Possible values: 
