@@ -3,8 +3,8 @@
   <PropertyGroup>
     <TargetFrameworks>net45;netstandard2.0;netstandard2.1</TargetFrameworks>
     <RootNamespace>Ingenico.Connect.Sdk</RootNamespace>
-    <AssemblyVersion>3.32.0</AssemblyVersion>
-    <Version>3.32.0</Version>
+    <AssemblyVersion>3.33.0</AssemblyVersion>
+    <Version>3.33.0</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Company>Ingenico ePayments</Company>
     <Product>Ingenico Connect .NET SDK</Product>
@@ -33,14 +33,14 @@
   </PropertyGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0' or '$(TargetFramework)' == 'netstandard2.1'">
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="NLog" Version="4.6.8" />
     <PackageReference Include="System.Collections.Immutable" Version="1.7.0" />
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.7.0" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'net45'">
-    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="NLog" Version="4.3.7" />
     <PackageReference Include="System.Collections.Immutable" Version="1.2.0" />
     <Reference Include="System.Configuration" />

@@ -31,7 +31,7 @@ The .NET SDK supports .NET Framework 4.5 and [.NET Standard](https://docs.micros
 
 When using .NET Framework 4.5, the following packages are rquired:
 
-* [Json.NET](https://www.nuget.org/packages/Newtonsoft.Json/) 10.0.3 or higher
+* [Json.NET](https://www.nuget.org/packages/Newtonsoft.Json/) 13.0.1 or higher
 * [NLog](https://www.nuget.org/packages/NLog/) 4.3.7 or higher
 * [System.Collections.Immutable](https://www.nuget.org/packages/System.Collections.Immutable/) 1.2.0 or higher
 
@@ -43,7 +43,7 @@ In addition, the following references are required, which are part of the .NET F
 
 When using .NET Standard 2.0 or 2.1, the following packages are rquired:
 
-* [Json.NET](https://www.nuget.org/packages/Newtonsoft.Json/) 12.0.3 or higher
+* [Json.NET](https://www.nuget.org/packages/Newtonsoft.Json/) 13.0.1 or higher
 * [NLog](https://www.nuget.org/packages/NLog/) 4.6.8 or higher
 * [System.Collections.Immutable](https://www.nuget.org/packages/System.Collections.Immutable/) 1.6.0 or higher
 * [System.Configuration.ConfigurationManager](https://www.nuget.org/packages/System.Configuration.ConfigurationManager/) 4.6.0 or higher

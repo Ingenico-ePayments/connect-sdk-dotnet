@@ -55,10 +55,14 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
         /// <summary>
         /// Indicates the merchandise delivery timeframe. Possible values: 
         /// <list type="bullet">
-        ///   <item><description>electronic = For electronic delivery (services or digital goods</description></item>
+        ///   <item><description>electronic = For electronic delivery (services or digital goods)</description></item>
         ///   <item><description>same-day = For same day deliveries</description></item>
         ///   <item><description>overnight = For overnight deliveries</description></item>
-        ///   <item><description>2-day-or-more = For two day or more delivery time</description></item>
+        ///   <item><description>2-day-or-more = For two day or more delivery time for payments that are processed by the GlobalCollect platform</description></item>
+        ///   <item><description>2-day-or-more = For two day or more delivery time for payments that are processed by the Ogone platform</description></item>
+        ///   <item><description>priority = For prioritized deliveries for payments that are processed by the WL Online Payment Acceptance platform</description></item>
+        ///   <item><description>ground = For deliveries via ground for payments that are processed by the WL Online Payment Acceptance platform</description></item>
+        ///   <item><description>to-store = For deliveries to a store for payments that are processed by the WL Online Payment Acceptance platform</description></item>
         /// </list>
         /// </summary>
         public string Type { get; set; } = null;

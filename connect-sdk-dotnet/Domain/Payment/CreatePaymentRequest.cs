@@ -59,9 +59,9 @@ namespace Ingenico.Connect.Sdk.Domain.Payment
         /// Object containing the specific input details for mobile payments. 
         /// <p>Mobile payments produce the required payment data in encrypted form.</p>
         /// <list type="bullet">
-        ///   <item><description>For Apple Pay, the encrypted payment data can be found in property data of the 
+        ///   <item><description>For Apple Pay, the encrypted payment data is the 
         ///   <nobr>
-        ///   <a href="https://developer.apple.com/documentation/passkit/pkpayment" target="_blank">PKPayment</a>.token.paymentData</nobr> property.</description></item>
+        ///   <a href="https://developer.apple.com/documentation/passkit/pkpayment" target="_blank">PKPayment</a>.token.paymentData</nobr> object passed as a string (with all quotation marks escaped).</description></item>
         ///   <item><description>For Google Pay, the encrypted payment data can be found in property paymentMethodData.tokenizationData.token of the 
         ///   <nobr>
         ///   <a href="https://developers.google.com/android/reference/com/google/android/gms/wallet/PaymentData" target="_blank">PaymentData</a>.toJson()</nobr> result.</description></item>
