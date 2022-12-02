@@ -7,7 +7,7 @@ namespace Ingenico.Connect.Sdk.Domain.Definitions
     public class Address
     {
         /// <summary>
-        /// Additional address information
+        /// Additional address information. The additionalInfo is truncated after 10 characters for payments, refunds or payouts that are processed by the WL Online Payment Acceptance platform
         /// </summary>
         public string AdditionalInfo { get; set; } = null;
 
@@ -23,7 +23,7 @@ namespace Ingenico.Connect.Sdk.Domain.Definitions
         public string CountryCode { get; set; } = null;
 
         /// <summary>
-        /// House number
+        /// House number. The houseNumber is truncated after 10 characters for payments, refunds or payouts that are processed by the WL Online Payment Acceptance platform
         /// </summary>
         public string HouseNumber { get; set; } = null;
 

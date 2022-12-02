@@ -7,6 +7,11 @@ namespace Ingenico.Connect.Sdk.Domain.Definitions
     public class MicrosoftFraudResults
     {
         /// <summary>
+        /// Name of the clause within the applied policy that was triggered during the evaluation of this transaction.
+        /// </summary>
+        public string ClauseName { get; set; } = null;
+
+        /// <summary>
         /// The country of the customer determined by Microsoft Device Fingerprinting.
         /// </summary>
         public string DeviceCountryCode { get; set; } = null;
@@ -20,6 +25,11 @@ namespace Ingenico.Connect.Sdk.Domain.Definitions
         /// Result of the Microsoft Fraud Protection check. This contains the normalized fraud score from a scale of 0 to 100. A higher score indicates an increased risk of fraud.
         /// </summary>
         public int? FraudScore { get; set; } = null;
+
+        /// <summary>
+        /// Name of the policy that was applied on during the evaluation of this transaction.
+        /// </summary>
+        public string PolicyApplied { get; set; } = null;
 
         /// <summary>
         /// The true IP address as determined by Microsoft Device Fingerprinting.

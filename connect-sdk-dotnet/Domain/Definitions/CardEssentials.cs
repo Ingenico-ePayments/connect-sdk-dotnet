@@ -12,6 +12,11 @@ namespace Ingenico.Connect.Sdk.Domain.Definitions
         public string CardNumber { get; set; } = null;
 
         /// <summary>
+        /// The card holder's name on the card.
+        /// </summary>
+        public string CardholderName { get; set; } = null;
+
+        /// <summary>
         /// Expiry date of the card
         /// <br />Format: MMYY
         /// </summary>

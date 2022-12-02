@@ -12,7 +12,7 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
         public string DisplayName { get; set; } = null;
 
         /// <summary>
-        /// The value of this property must be either or 'vpa', or 'mobile'.
+        /// The value of this property must be 'vpa', 'desktopQRCode', or 'urlIntent'.
         /// </summary>
         public string IntegrationType { get; set; } = null;
 
