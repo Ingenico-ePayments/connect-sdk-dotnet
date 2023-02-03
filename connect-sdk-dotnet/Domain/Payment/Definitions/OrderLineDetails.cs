@@ -33,7 +33,7 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
         public string ProductCode { get; set; } = null;
 
         /// <summary>
-        /// The name of the product.
+        /// The name of the product. The '+' character is not allowed in this property for transactions that are processed by TechProcess Payment Platform.
         /// </summary>
         public string ProductName { get; set; } = null;
 

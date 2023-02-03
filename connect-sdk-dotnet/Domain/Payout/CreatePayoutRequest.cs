@@ -45,6 +45,11 @@ namespace Ingenico.Connect.Sdk.Domain.Payout
         public PayoutCustomer Customer { get; set; } = null;
 
         /// <summary>
+        /// Object containing information on you, the merchant
+        /// </summary>
+        public PayoutMerchant Merchant { get; set; } = null;
+
+        /// <summary>
         /// Date of the payout sent to the bank by us
         /// <br />Format: YYYYMMDD
         /// </summary>

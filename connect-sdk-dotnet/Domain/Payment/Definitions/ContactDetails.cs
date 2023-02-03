@@ -19,7 +19,7 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
         public string MobilePhoneNumber { get; set; } = null;
 
         /// <summary>
-        /// Phone number of the customer
+        /// Phone number of the customer. The '+' character is not allowed in this property for transactions that are processed by TechProcess Payment Platform.
         /// </summary>
         public string PhoneNumber { get; set; } = null;
 

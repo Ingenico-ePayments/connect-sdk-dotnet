@@ -27,7 +27,7 @@ namespace Ingenico.Connect.Sdk.Domain.Definitions
         public Address CardOwnerAddress { get; set; } = null;
 
         /// <summary>
-        /// The IP Address of the customer that is making the payment
+        /// The IP Address of the customer that is making the payment. The '+' character is not allowed in this property for transactions that are processed by TechProcess Payment Platform.
         /// </summary>
         public string CustomerIpAddress { get; set; } = null;
 
@@ -126,7 +126,7 @@ namespace Ingenico.Connect.Sdk.Domain.Definitions
         public bool? IsPreviousCustomer { get; set; } = null;
 
         /// <summary>
-        /// Timezone in which the order was placed
+        /// Timezone in which the order was placed. The '+' character is not allowed in this property for transactions that are processed by TechProcess Payment Platform.
         /// </summary>
         public string OrderTimezone { get; set; } = null;
 

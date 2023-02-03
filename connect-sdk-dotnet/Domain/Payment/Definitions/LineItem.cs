@@ -16,7 +16,7 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
         public AmountOfMoney AmountOfMoney { get; set; } = null;
 
         /// <summary>
-        /// Object containing the line items of the invoice or shopping cart
+        /// Object containing the line items of the invoice or shopping cart. The '+' character is not allowed in this property for transactions that are processed by TechProcess Payment Platform.
         /// </summary>
         public LineItemInvoiceData InvoiceData { get; set; } = null;
 

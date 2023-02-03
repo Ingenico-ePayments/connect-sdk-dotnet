@@ -26,7 +26,8 @@ namespace Ingenico.Connect.Sdk.Domain.Payout.Definitions
         public PayoutRecipient Recipient { get; set; } = null;
 
         /// <summary>
-        /// ID of the token that holds previously stored card data. Note that this is only supported for transactions on the Ogone payment engine.
+        /// ID of the token that holds previously stored card data.
+        /// <br /> If both the token and card are provided, then the card takes precedence over the token.
         /// </summary>
         public string Token { get; set; } = null;
     }
