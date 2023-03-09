@@ -27,6 +27,15 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
         public bool? IsRefundable { get; set; } = null;
 
         /// <summary>
+        /// Flag indicating whether a rejected payment may be retried by the merchant without incurring a fee 
+        /// <list type="bullet">
+        ///   <item><description>true</description></item>
+        ///   <item><description>false</description></item>
+        /// </list>
+        /// </summary>
+        public bool? IsRetriable { get; set; } = null;
+
+        /// <summary>
         /// The 3D Secure status, with the following possible values: 
         /// <list type="bullet">
         ///   <item><description>ENROLLED: the card is enrolled for 3D Secure authentication. The customer can be redirected to a 3D Secure access control server (ACS)</description></item>
