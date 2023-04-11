@@ -44,6 +44,15 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
         public string InvoiceNumber { get; set; } = null;
 
         /// <summary>
+        /// Indicates if the retailer is considered foreign or domestic when compared to the location of the marketplace. Possible values: 
+        /// <list type="bullet">
+        ///   <item><description>true - The retailer is considered foreign because they are located in a different country than the marketplace. For marketplaces located in the European Economic Area (EEA) and UK (and Gibraltar), this includes transactions where the marketplace is within the EEA and UK (and Gibraltar), but the retailer is located outside of the EEA and UK (and Gibraltar)</description></item>
+        ///   <item><description>false - The retailer is considered domestic because they are located in the same country as the marketplace. For marketplaces located in the European Economic Area (EEA) and UK (and Gibraltar), this includes transactions where the retailer is also located within the EEA and UK (and Gibraltar).</description></item>
+        /// </list>
+        /// </summary>
+        public bool? IsForeignRetailer { get; set; } = null;
+
+        /// <summary>
         /// Merchant category code
         /// </summary>
         public string Mcc { get; set; } = null;
