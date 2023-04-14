@@ -40,6 +40,11 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
         public string MerchantInitiatedReasonIndicator { get; set; } = null;
 
         /// <summary>
+        /// Object holding data that describes a network token
+        /// </summary>
+        public SchemeTokenData NetworkTokenData { get; set; } = null;
+
+        /// <summary>
         /// The URL that the customer is redirect to after the payment flow has finished. You can add any number of key value pairs in the query string that, for instance help you to identify the customer when they return to your site. Please note that we will also append some additional key value pairs that will also help you with this identification process.
         /// <br />Note: The provided URL should be absolute and contain the protocol to use, e.g. http:// or https://. For use on mobile devices a custom protocol can be used in the form of 
         /// <i>protocol</i>://. This protocol must be registered on the device first.
