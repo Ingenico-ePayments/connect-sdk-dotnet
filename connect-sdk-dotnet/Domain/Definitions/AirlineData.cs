@@ -85,6 +85,12 @@ namespace Ingenico.Connect.Sdk.Domain.Definitions
         public string Name { get; set; } = null;
 
         /// <summary>
+        /// Total number of passengers in the party. If the the property 
+        /// <span class="property">numberInParty is not present, then the number of passengers will be used</span> on the WL Online Payment Acceptance Platform.
+        /// </summary>
+        public int? NumberInParty { get; set; } = null;
+
+        /// <summary>
         /// Name of passenger
         /// </summary>
         public string PassengerName { get; set; } = null;
@@ -128,8 +134,10 @@ namespace Ingenico.Connect.Sdk.Domain.Definitions
         public string TicketDeliveryMethod { get; set; } = null;
 
         /// <summary>
-        /// The ticket or document number contains:
-        /// <br />
+        /// The ticket or document number. On the 
+        /// <span>Ogone Payment Platform 
+        /// <span>and the</span> GlobalCollect Payment Platform it contains:
+        /// <br /></span>
         /// <list type="bullet">
         ///   <item><description>Airline code: 3-digit airline code number</description></item>
         ///   <item><description>Form code: A maximum of 3 digits indicating the type of document, the source of issue and the number of coupons it contains</description></item>
@@ -155,7 +163,7 @@ namespace Ingenico.Connect.Sdk.Domain.Definitions
         public int? TotalTaxes { get; set; } = null;
 
         /// <summary>
-        /// Name of the travel agency issuing the ticket. For direct airline integration, leave this property blank
+        /// Name of the travel agency issuing the ticket. For direct airline integration, leave this property blank on the Ogone Payment Platform.
         /// </summary>
         public string TravelAgencyName { get; set; } = null;
     }

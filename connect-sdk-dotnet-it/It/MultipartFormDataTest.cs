@@ -18,7 +18,7 @@ namespace Ingenico.Connect.Sdk.It
             var apiEndpoint = configuration.ApiEndpoint;
             try
             {
-                configuration.ApiEndpoint = new Uri("http://httpbin.org");
+                configuration.ApiEndpoint = new Uri(HttpBinUrl());
 
                 using (Communicator communicator = Factory.CreateCommunicator(configuration))
                 {
@@ -58,7 +58,7 @@ namespace Ingenico.Connect.Sdk.It
             var apiEndpoint = configuration.ApiEndpoint;
             try
             {
-                configuration.ApiEndpoint = new Uri("http://httpbin.org");
+                configuration.ApiEndpoint = new Uri(HttpBinUrl());
 
                 using (Communicator communicator = Factory.CreateCommunicator(configuration))
                 {
@@ -98,7 +98,7 @@ namespace Ingenico.Connect.Sdk.It
             var apiEndpoint = configuration.ApiEndpoint;
             try
             {
-                configuration.ApiEndpoint = new Uri("http://httpbin.org");
+                configuration.ApiEndpoint = new Uri(HttpBinUrl());
 
                 using (Communicator communicator = Factory.CreateCommunicator(configuration))
                 {
@@ -140,7 +140,7 @@ namespace Ingenico.Connect.Sdk.It
             var apiEndpoint = configuration.ApiEndpoint;
             try
             {
-                configuration.ApiEndpoint = new Uri("http://httpbin.org");
+                configuration.ApiEndpoint = new Uri(HttpBinUrl());
 
                 using (Communicator communicator = Factory.CreateCommunicator(configuration))
                 {
@@ -182,7 +182,7 @@ namespace Ingenico.Connect.Sdk.It
             var apiEndpoint = configuration.ApiEndpoint;
             try
             {
-                configuration.ApiEndpoint = new Uri("http://httpbin.org");
+                configuration.ApiEndpoint = new Uri(HttpBinUrl());
 
                 using (Communicator communicator = Factory.CreateCommunicator(configuration))
                 {
@@ -222,7 +222,7 @@ namespace Ingenico.Connect.Sdk.It
             var apiEndpoint = configuration.ApiEndpoint;
             try
             {
-                configuration.ApiEndpoint = new Uri("http://httpbin.org");
+                configuration.ApiEndpoint = new Uri(HttpBinUrl());
 
                 using (Communicator communicator = Factory.CreateCommunicator(configuration))
                 {
@@ -262,7 +262,7 @@ namespace Ingenico.Connect.Sdk.It
             var apiEndpoint = configuration.ApiEndpoint;
             try
             {
-                configuration.ApiEndpoint = new Uri("http://httpbin.org");
+                configuration.ApiEndpoint = new Uri(HttpBinUrl());
 
                 using (Communicator communicator = Factory.CreateCommunicator(configuration))
                 {
@@ -304,7 +304,7 @@ namespace Ingenico.Connect.Sdk.It
             var apiEndpoint = configuration.ApiEndpoint;
             try
             {
-                configuration.ApiEndpoint = new Uri("http://httpbin.org");
+                configuration.ApiEndpoint = new Uri(HttpBinUrl());
 
                 using (Communicator communicator = Factory.CreateCommunicator(configuration))
                 {
@@ -336,6 +336,16 @@ namespace Ingenico.Connect.Sdk.It
             {
                 configuration.ApiEndpoint = apiEndpoint;
             }
+        }
+
+        private string HttpBinUrl()
+        {
+            var httpBinUrl = Environment.GetEnvironmentVariable("httpbin_url");
+            if (httpBinUrl == null)
+            {
+                httpBinUrl = "http://httpbin.org";
+            }
+            return httpBinUrl;
         }
 
         sealed class HttpBinResponse

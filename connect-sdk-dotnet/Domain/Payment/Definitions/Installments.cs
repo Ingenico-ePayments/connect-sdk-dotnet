@@ -10,6 +10,7 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
     {
         /// <summary>
         /// The amount that will be paid per installment. The total amount of amountOfMoneyPerInstallment x numberOfInstallments can not be higher than the total amount of this transaction, although we will not validate that.
+        /// <br />For the payment product IDs 8590 (BC Card), 8591 (KEB Hana Card), 8592 (Hyundai Card), 8593 (KB Kookmin Card), 8594 (Lotte Card), 8595 (NH Card), 8596 (Samsung Card) or 8597 (Shinhan Card), this property is not used as the value is decided by the issuer.
         /// </summary>
         public AmountOfMoney AmountOfMoneyPerInstallment { get; set; } = null;
 
@@ -21,6 +22,7 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
         ///   <item><description>monthly (default)</description></item>
         ///   <item><description>quarterly</description></item>
         /// </list>
+        /// <br />For the payment product IDs 8590 (BC Card), 8591 (KEB Hana Card), 8592 (Hyundai Card), 8593 (KB Kookmin Card), 8594 (Lotte Card), 8595 (NH Card), 8596 (Samsung Card) or 8597 (Shinhan Card), only the value monthly is valid.
         /// </summary>
         public string FrequencyOfInstallments { get; set; } = null;
 
@@ -41,11 +43,13 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
 
         /// <summary>
         /// The interest rate paid for installments expressed in percentage. So for example 5.75 means 5.75%
+        /// <br />For the payment product IDs 8590 (BC Card), 8591 (KEB Hana Card), 8592 (Hyundai Card), 8593 (KB Kookmin Card), 8594 (Lotte Card), 8595 (NH Card), 8596 (Samsung Card) or 8597 (Shinhan Card), this property is not used as the value is decided by the issuer.
         /// </summary>
         public string InterestRate { get; set; } = null;
 
         /// <summary>
-        /// The number of installments in which this transaction will be paid, which can be used for card payments. Only used with some acquirers. In case you send in the details of this object, only the combination of card products and acquirers that do support installments will be shown on the MyCheckout hosted payment pages.If this property is not provided the customer will not see details on the installment plan in a HostedCheckout.
+        /// The number of installments in which this transaction will be paid, which can be used for card payments at supported acquirers, or with specific payment products. Only used with some acquirers. In case you send in the details of this object, only the payment products (or combination of card products and acquirers) that support installments will be shown on the MyCheckout hosted payment pages. If this property is not provided the customer will not see details on the installment plan in a HostedCheckout.
+        /// <br />For the payment product IDs 8590 (BC Card), 8591 (KEB Hana Card), 8592 (Hyundai Card), 8593 (KB Kookmin Card), 8594 (Lotte Card), 8595 (NH Card), 8596 (Samsung Card) or 8597 (Shinhan Card), there is a maximum of 12 installments.
         /// </summary>
         public long? NumberOfInstallments { get; set; } = null;
     }

@@ -77,7 +77,7 @@ namespace Ingenico.Connect.Sdk.Domain.Definitions
         public int? Fee { get; set; } = null;
 
         /// <summary>
-        /// The flight number assigned by the airline carrier with no leading spaces
+        /// The flight number assigned by the airline carrier with no leading spaces 
         /// <br />Should be a numeric string
         /// </summary>
         public string FlightNumber { get; set; } = null;
