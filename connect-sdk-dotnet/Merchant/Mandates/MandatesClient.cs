@@ -46,7 +46,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Mandates
                         ClientHeaders,
                         null,
                         body,
-                        context);
+                        context).ConfigureAwait(false);
             }
             catch (ResponseException e)
             {
@@ -84,7 +84,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Mandates
                         ClientHeaders,
                         null,
                         body,
-                        context);
+                        context).ConfigureAwait(false);
             }
             catch (ResponseException e)
             {
@@ -120,7 +120,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Mandates
                         uri,
                         ClientHeaders,
                         null,
-                        context);
+                        context).ConfigureAwait(false);
             }
             catch (ResponseException e)
             {
@@ -157,7 +157,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Mandates
                         ClientHeaders,
                         null,
                         null,
-                        context);
+                        context).ConfigureAwait(false);
             }
             catch (ResponseException e)
             {
@@ -194,7 +194,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Mandates
                         ClientHeaders,
                         null,
                         null,
-                        context);
+                        context).ConfigureAwait(false);
             }
             catch (ResponseException e)
             {
@@ -231,7 +231,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Mandates
                         ClientHeaders,
                         null,
                         null,
-                        context);
+                        context).ConfigureAwait(false);
             }
             catch (ResponseException e)
             {

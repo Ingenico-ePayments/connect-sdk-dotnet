@@ -46,7 +46,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Riskassessments
                         ClientHeaders,
                         null,
                         body,
-                        context);
+                        context).ConfigureAwait(false);
             }
             catch (ResponseException e)
             {
@@ -81,7 +81,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Riskassessments
                         ClientHeaders,
                         null,
                         body,
-                        context);
+                        context).ConfigureAwait(false);
             }
             catch (ResponseException e)
             {

@@ -51,7 +51,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
                         ClientHeaders,
                         null,
                         body,
-                        context);
+                        context).ConfigureAwait(false);
             }
             catch (ResponseException e)
             {
@@ -85,7 +85,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
                         uri,
                         ClientHeaders,
                         query,
-                        context);
+                        context).ConfigureAwait(false);
             }
             catch (ResponseException e)
             {
@@ -121,7 +121,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
                         uri,
                         ClientHeaders,
                         null,
-                        context);
+                        context).ConfigureAwait(false);
             }
             catch (ResponseException e)
             {
@@ -159,7 +159,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
                         ClientHeaders,
                         null,
                         body,
-                        context);
+                        context).ConfigureAwait(false);
             }
             catch (ResponseException e)
             {
@@ -195,7 +195,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
                         uri,
                         ClientHeaders,
                         null,
-                        context);
+                        context).ConfigureAwait(false);
             }
             catch (ResponseException e)
             {
@@ -233,7 +233,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
                         ClientHeaders,
                         null,
                         body,
-                        context);
+                        context).ConfigureAwait(false);
             }
             catch (ResponseException e)
             {
@@ -270,7 +270,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
                         ClientHeaders,
                         null,
                         null,
-                        context);
+                        context).ConfigureAwait(false);
             }
             catch (ResponseException e)
             {
@@ -308,7 +308,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
                         ClientHeaders,
                         null,
                         body,
-                        context);
+                        context).ConfigureAwait(false);
             }
             catch (ResponseException e)
             {
@@ -346,7 +346,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
                         ClientHeaders,
                         null,
                         body,
-                        context);
+                        context).ConfigureAwait(false);
             }
             catch (ResponseException e)
             {
@@ -383,7 +383,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
                         ClientHeaders,
                         null,
                         null,
-                        context);
+                        context).ConfigureAwait(false);
             }
             catch (ResponseException e)
             {
@@ -419,7 +419,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
                         uri,
                         ClientHeaders,
                         null,
-                        context);
+                        context).ConfigureAwait(false);
             }
             catch (ResponseException e)
             {
@@ -458,7 +458,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
                         ClientHeaders,
                         null,
                         body,
-                        context);
+                        context).ConfigureAwait(false);
             }
             catch (ResponseException e)
             {
@@ -494,7 +494,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
                         uri,
                         ClientHeaders,
                         null,
-                        context);
+                        context).ConfigureAwait(false);
             }
             catch (ResponseException e)
             {
@@ -531,7 +531,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
                         ClientHeaders,
                         null,
                         null,
-                        context);
+                        context).ConfigureAwait(false);
             }
             catch (ResponseException e)
             {
@@ -569,7 +569,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
                         ClientHeaders,
                         null,
                         body,
-                        context);
+                        context).ConfigureAwait(false);
             }
             catch (ResponseException e)
             {
@@ -605,7 +605,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
                         uri,
                         ClientHeaders,
                         null,
-                        context);
+                        context).ConfigureAwait(false);
             }
             catch (ResponseException e)
             {
@@ -641,7 +641,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
                         uri,
                         ClientHeaders,
                         null,
-                        context);
+                        context).ConfigureAwait(false);
             }
             catch (ResponseException e)
             {

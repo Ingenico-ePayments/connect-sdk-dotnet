@@ -47,7 +47,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Payouts
                         ClientHeaders,
                         null,
                         body,
-                        context);
+                        context).ConfigureAwait(false);
             }
             catch (ResponseException e)
             {
@@ -81,7 +81,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Payouts
                         uri,
                         ClientHeaders,
                         query,
-                        context);
+                        context).ConfigureAwait(false);
             }
             catch (ResponseException e)
             {
@@ -117,7 +117,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Payouts
                         uri,
                         ClientHeaders,
                         null,
-                        context);
+                        context).ConfigureAwait(false);
             }
             catch (ResponseException e)
             {
@@ -155,7 +155,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Payouts
                         ClientHeaders,
                         null,
                         body,
-                        context);
+                        context).ConfigureAwait(false);
             }
             catch (ResponseException e)
             {
@@ -191,7 +191,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Payouts
                         ClientHeaders,
                         null,
                         null,
-                        context);
+                        context).ConfigureAwait(false);
             }
             catch (ResponseException e)
             {
@@ -227,7 +227,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Payouts
                         ClientHeaders,
                         null,
                         null,
-                        context);
+                        context).ConfigureAwait(false);
             }
             catch (ResponseException e)
             {

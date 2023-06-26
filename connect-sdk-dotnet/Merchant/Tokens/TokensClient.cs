@@ -46,7 +46,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Tokens
                         ClientHeaders,
                         null,
                         body,
-                        context);
+                        context).ConfigureAwait(false);
             }
             catch (ResponseException e)
             {
@@ -82,7 +82,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Tokens
                         uri,
                         ClientHeaders,
                         null,
-                        context);
+                        context).ConfigureAwait(false);
             }
             catch (ResponseException e)
             {
@@ -119,7 +119,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Tokens
                         ClientHeaders,
                         null,
                         body,
-                        context);
+                        context).ConfigureAwait(false);
             }
             catch (ResponseException e)
             {
@@ -155,7 +155,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Tokens
                         uri,
                         ClientHeaders,
                         query,
-                        context);
+                        context).ConfigureAwait(false);
             }
             catch (ResponseException e)
             {
@@ -192,7 +192,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Tokens
                         ClientHeaders,
                         null,
                         body,
-                        context);
+                        context).ConfigureAwait(false);
             }
             catch (ResponseException e)
             {

@@ -45,7 +45,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Services
                         uri,
                         ClientHeaders,
                         query,
-                        context);
+                        context).ConfigureAwait(false);
             }
             catch (ResponseException e)
             {
@@ -80,7 +80,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Services
                         ClientHeaders,
                         null,
                         body,
-                        context);
+                        context).ConfigureAwait(false);
             }
             catch (ResponseException e)
             {
@@ -115,7 +115,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Services
                         ClientHeaders,
                         null,
                         body,
-                        context);
+                        context).ConfigureAwait(false);
             }
             catch (ResponseException e)
             {
@@ -149,7 +149,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Services
                         uri,
                         ClientHeaders,
                         query,
-                        context);
+                        context).ConfigureAwait(false);
             }
             catch (ResponseException e)
             {
@@ -182,7 +182,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Services
                         uri,
                         ClientHeaders,
                         null,
-                        context);
+                        context).ConfigureAwait(false);
             }
             catch (ResponseException e)
             {

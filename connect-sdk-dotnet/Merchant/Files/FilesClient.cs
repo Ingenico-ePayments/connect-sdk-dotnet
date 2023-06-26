@@ -49,7 +49,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Files
                         ClientHeaders,
                         null,
                         bodyHandler,
-                        context);
+                        context).ConfigureAwait(false);
             }
             catch (ResponseException e)
             {

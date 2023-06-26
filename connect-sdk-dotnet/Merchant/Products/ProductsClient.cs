@@ -45,7 +45,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Products
                         uri,
                         ClientHeaders,
                         query,
-                        context);
+                        context).ConfigureAwait(false);
             }
             catch (ResponseException e)
             {
@@ -82,7 +82,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Products
                         uri,
                         ClientHeaders,
                         query,
-                        context);
+                        context).ConfigureAwait(false);
             }
             catch (ResponseException e)
             {
@@ -119,7 +119,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Products
                         uri,
                         ClientHeaders,
                         query,
-                        context);
+                        context).ConfigureAwait(false);
             }
             catch (ResponseException e)
             {
@@ -157,7 +157,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Products
                         ClientHeaders,
                         null,
                         body,
-                        context);
+                        context).ConfigureAwait(false);
             }
             catch (ResponseException e)
             {
@@ -195,7 +195,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Products
                         ClientHeaders,
                         null,
                         body,
-                        context);
+                        context).ConfigureAwait(false);
             }
             catch (ResponseException e)
             {
@@ -232,7 +232,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Products
                         uri,
                         ClientHeaders,
                         query,
-                        context);
+                        context).ConfigureAwait(false);
             }
             catch (ResponseException e)
             {
@@ -270,7 +270,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Products
                         ClientHeaders,
                         null,
                         body,
-                        context);
+                        context).ConfigureAwait(false);
             }
             catch (ResponseException e)
             {

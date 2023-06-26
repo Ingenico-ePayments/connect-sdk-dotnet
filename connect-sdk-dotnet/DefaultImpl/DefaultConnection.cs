@@ -62,7 +62,7 @@ namespace Ingenico.Connect.Sdk.DefaultImpl
         async Task<R> SendHttpMessage<R>(HttpMethod method, Uri uri, IEnumerable<IRequestHeader> requestHeaders, Func<HttpStatusCode, Stream, IEnumerable<IResponseHeader>, R>responseHandler, string body = null)
         {
             var content = (body == null ? null : new StringContent(body));
-            return await SendHttpMessage<R>(method, uri, requestHeaders, responseHandler, content, body);
+            return await SendHttpMessage<R>(method, uri, requestHeaders, responseHandler, content, body).ConfigureAwait(false);
         }
 
         async Task<R> SendHttpMessage<R>(HttpMethod method, Uri uri, IEnumerable<IRequestHeader> requestHeaders, Func<HttpStatusCode, Stream, IEnumerable<IResponseHeader>, R> responseHandler, MultipartFormDataObject multipart)
@@ -91,7 +91,7 @@ namespace Ingenico.Connect.Sdk.DefaultImpl
                 throw new InvalidOperationException("MultipartFormDataContent did not create the expected content type" + contentType);
             }
 
-            return await SendHttpMessage<R>(method, uri, requestHeaders, responseHandler, content, "<binary content>");
+            return await SendHttpMessage<R>(method, uri, requestHeaders, responseHandler, content, "<binary content>").ConfigureAwait(false);
         }
 
         async Task<R> SendHttpMessage<R>(HttpMethod method, Uri uri, IEnumerable<IRequestHeader> requestHeaders, Func<HttpStatusCode, Stream, IEnumerable<IResponseHeader>, R> responseHandler, HttpContent content, string contentString)
@@ -124,14 +124,14 @@ namespace Ingenico.Connect.Sdk.DefaultImpl
                     LogRequest(guid, message, content, contentString);
                     var httpResponseTask = _httpClient.SendAsync(message);
 
-                    using (var httpResponse = await httpResponseTask)
+                    using (var httpResponse = await httpResponseTask.ConfigureAwait(false))
                     {
                         var responseBodyTask = httpResponse?.Content?.ReadAsStreamAsync() ?? Task.FromResult<Stream>(new MemoryStream());
                         var headers = from header in httpResponse.Headers
                                       from value in header.Value
                                       select new ResponseHeader(header.Key, value);
 
-                        var responseBody = await responseBodyTask;
+                        var responseBody = await responseBodyTask.ConfigureAwait(false);
                         var endTime = DateTime.Now;
                         var duration = endTime - startTime;
                         responseBody = LogResponse(guid, httpResponse, httpResponse.Content.Headers, responseBody, duration);
@@ -179,32 +179,32 @@ namespace Ingenico.Connect.Sdk.DefaultImpl
         #region IConnection implementation
         public async Task<R> Get<R>(Uri uri, IEnumerable<IRequestHeader> requestHeaders, Func<HttpStatusCode, Stream, IEnumerable<IResponseHeader>, R> responseHandler)
         {
-            return await SendHttpMessage<R>(HttpMethod.Get, uri, requestHeaders,  responseHandler);
+            return await SendHttpMessage<R>(HttpMethod.Get, uri, requestHeaders,  responseHandler).ConfigureAwait(false);
         }
 
         public async Task<R> Delete<R>(Uri uri, IEnumerable<IRequestHeader> requestHeaders, Func<HttpStatusCode, Stream, IEnumerable<IResponseHeader>, R> responseHandler)
         {
-            return await SendHttpMessage<R>(HttpMethod.Delete, uri, requestHeaders,  responseHandler);
+            return await SendHttpMessage<R>(HttpMethod.Delete, uri, requestHeaders,  responseHandler).ConfigureAwait(false);
         }
 
         public async Task<R> Post<R>(Uri uri, IEnumerable<IRequestHeader> requestHeaders, string body, Func<HttpStatusCode, Stream, IEnumerable<IResponseHeader>, R> responseHandler)
         {
-            return await SendHttpMessage<R>(HttpMethod.Post, uri, requestHeaders, responseHandler, body);
+            return await SendHttpMessage<R>(HttpMethod.Post, uri, requestHeaders, responseHandler, body).ConfigureAwait(false);
         }
 
         public async Task<R> Post<R>(Uri uri, IEnumerable<IRequestHeader> requestHeaders, MultipartFormDataObject multipart, Func<HttpStatusCode, Stream, IEnumerable<IResponseHeader>, R> responseHandler)
         {
-            return await SendHttpMessage<R>(HttpMethod.Post, uri, requestHeaders, responseHandler, multipart);
+            return await SendHttpMessage<R>(HttpMethod.Post, uri, requestHeaders, responseHandler, multipart).ConfigureAwait(false);
         }
 
         public async Task<R> Put<R>(Uri uri, IEnumerable<IRequestHeader> requestHeaders, string body, Func<HttpStatusCode, Stream, IEnumerable<IResponseHeader>, R> responseHandler)
         {
-            return await SendHttpMessage<R>(HttpMethod.Put, uri, requestHeaders,  responseHandler, body);
+            return await SendHttpMessage<R>(HttpMethod.Put, uri, requestHeaders,  responseHandler, body).ConfigureAwait(false);
         }
 
         public async Task<R> Put<R>(Uri uri, IEnumerable<IRequestHeader> requestHeaders, MultipartFormDataObject multipart, Func<HttpStatusCode, Stream, IEnumerable<IResponseHeader>, R> responseHandler)
         {
-            return await SendHttpMessage<R>(HttpMethod.Put, uri, requestHeaders, responseHandler, multipart);
+            return await SendHttpMessage<R>(HttpMethod.Put, uri, requestHeaders, responseHandler, multipart).ConfigureAwait(false);
         }
         #endregion
 

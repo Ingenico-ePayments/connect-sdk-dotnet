@@ -46,7 +46,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Hostedcheckouts
                         ClientHeaders,
                         null,
                         body,
-                        context);
+                        context).ConfigureAwait(false);
             }
             catch (ResponseException e)
             {
@@ -82,7 +82,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Hostedcheckouts
                         uri,
                         ClientHeaders,
                         null,
-                        context);
+                        context).ConfigureAwait(false);
             }
             catch (ResponseException e)
             {
@@ -117,7 +117,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Hostedcheckouts
                         uri,
                         ClientHeaders,
                         null,
-                        context);
+                        context).ConfigureAwait(false);
             }
             catch (ResponseException e)
             {

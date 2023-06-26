@@ -46,7 +46,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Hostedmandatemanagements
                         ClientHeaders,
                         null,
                         body,
-                        context);
+                        context).ConfigureAwait(false);
             }
             catch (ResponseException e)
             {
@@ -82,7 +82,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Hostedmandatemanagements
                         uri,
                         ClientHeaders,
                         null,
-                        context);
+                        context).ConfigureAwait(false);
             }
             catch (ResponseException e)
             {

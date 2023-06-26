@@ -45,7 +45,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Productgroups
                         uri,
                         ClientHeaders,
                         query,
-                        context);
+                        context).ConfigureAwait(false);
             }
             catch (ResponseException e)
             {
@@ -82,7 +82,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Productgroups
                         uri,
                         ClientHeaders,
                         query,
-                        context);
+                        context).ConfigureAwait(false);
             }
             catch (ResponseException e)
             {
@@ -120,7 +120,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Productgroups
                         ClientHeaders,
                         null,
                         body,
-                        context);
+                        context).ConfigureAwait(false);
             }
             catch (ResponseException e)
             {

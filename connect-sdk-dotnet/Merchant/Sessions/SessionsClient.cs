@@ -46,7 +46,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Sessions
                         ClientHeaders,
                         null,
                         body,
-                        context);
+                        context).ConfigureAwait(false);
             }
             catch (ResponseException e)
             {

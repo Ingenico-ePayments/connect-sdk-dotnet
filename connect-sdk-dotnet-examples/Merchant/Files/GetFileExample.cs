@@ -5,6 +5,7 @@
 using Ingenico.Connect.Sdk;
 using System;
 using System.IO;
+using System.Threading;
 
 namespace Ingenico.Connect.Sdk.Merchant.Files
 {
@@ -18,6 +19,13 @@ namespace Ingenico.Connect.Sdk.Merchant.Files
                 await client.Merchant("merchantId").Files().GetFile("fileId", (stream, headers) => {
                     // Do something with stream and headers here.
                 });
+
+                // Note: no SynchronizationContext will be available inside the body handler.
+                // Should your body handler need the current one, you need to capture it first:
+                SynchronizationContext sc = SynchronizationContext.Current;
+                await client.Merchant("merchantId").Files().GetFile("fileId", (stream, headers) => sc.Send(delegate {
+                    // Do something with stream and headers here.
+                }, null));
             }
 #pragma warning restore 0168
         }

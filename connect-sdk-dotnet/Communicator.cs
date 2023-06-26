@@ -104,7 +104,7 @@ namespace Ingenico.Connect.Sdk
             requestHeaders = AddGenericHeaders(HttpMethod.Get, uri, requestHeaders, context);
             return await connection.Get<T>(uri, requestHeaders, (status, body, headers) => {
                 return ProcessResponse<T>(status, body, headers, relativePath, context);
-            });
+            }).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -129,7 +129,7 @@ namespace Ingenico.Connect.Sdk
             requestHeaders = AddGenericHeaders(HttpMethod.Get, uri, requestHeaders, context);
             await connection.Get(uri, requestHeaders, (status, body, headers) => {
                 return ProcessResponse<object>(status, body, headers, relativePath, context, bodyHandler);
-            });
+            }).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -153,7 +153,7 @@ namespace Ingenico.Connect.Sdk
             requestHeaders = AddGenericHeaders(HttpMethod.Delete, uri, requestHeaders, context);
             return await connection.Delete<T>(uri, requestHeaders, (status, body, headers) => {
                 return ProcessResponse<T>(status, body, headers, relativePath, context);
-            });
+            }).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -178,7 +178,7 @@ namespace Ingenico.Connect.Sdk
             requestHeaders = AddGenericHeaders(HttpMethod.Delete, uri, requestHeaders, context);
             await connection.Delete(uri, requestHeaders, (status, body, headers) => {
                 return ProcessResponse<object>(status, body, headers, relativePath, context, bodyHandler);
-            });
+            }).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -198,12 +198,12 @@ namespace Ingenico.Connect.Sdk
         {
             if (requestBody is MultipartFormDataObject)
             {
-                return await Post<T>(relativePath, requestHeaders, requestParameters, (MultipartFormDataObject)requestBody, context);
+                return await Post<T>(relativePath, requestHeaders, requestParameters, (MultipartFormDataObject)requestBody, context).ConfigureAwait(false);
             }
             if (requestBody is IMultipartFormDataRequest)
             {
                 MultipartFormDataObject multipart = ((IMultipartFormDataRequest)requestBody).ToMultipartFormDataObject();
-                return await Post<T>(relativePath, requestHeaders, requestParameters, multipart, context);
+                return await Post<T>(relativePath, requestHeaders, requestParameters, multipart, context).ConfigureAwait(false);
             }
 
             IConnection connection = Session.Connection;
@@ -222,7 +222,7 @@ namespace Ingenico.Connect.Sdk
             requestHeaders = AddGenericHeaders(HttpMethod.Post, uri, requestHeaderList, context);
             return await connection.Post<T>(uri, requestHeaders, requestJson, (status, body, headers) => {
                 return ProcessResponse<T>(status, body, headers, relativePath, context);
-            });
+            }).ConfigureAwait(false);
         }
 
         async Task<T> Post<T>(string relativePath, IEnumerable<IRequestHeader> requestHeaders, AbstractParamRequest requestParameters,
@@ -240,7 +240,7 @@ namespace Ingenico.Connect.Sdk
             requestHeaders = AddGenericHeaders(HttpMethod.Post, uri, requestHeaderList, context);
             return await connection.Post<T>(uri, requestHeaders, multipart, (status, body, headers) => {
                 return ProcessResponse<T>(status, body, headers, relativePath, context);
-            });
+            }).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -261,13 +261,13 @@ namespace Ingenico.Connect.Sdk
         {
             if (requestBody is MultipartFormDataObject)
             {
-                await Post(relativePath, requestHeaders, requestParameters, (MultipartFormDataObject)requestBody, bodyHandler, context);
+                await Post(relativePath, requestHeaders, requestParameters, (MultipartFormDataObject)requestBody, bodyHandler, context).ConfigureAwait(false);
                 return;
             }
             if (requestBody is IMultipartFormDataRequest)
             {
                 MultipartFormDataObject multipart = ((IMultipartFormDataRequest)requestBody).ToMultipartFormDataObject();
-                await Post(relativePath, requestHeaders, requestParameters, multipart, bodyHandler, context);
+                await Post(relativePath, requestHeaders, requestParameters, multipart, bodyHandler, context).ConfigureAwait(false);
                 return;
             }
 
@@ -287,7 +287,7 @@ namespace Ingenico.Connect.Sdk
             requestHeaders = AddGenericHeaders(HttpMethod.Post, uri, requestHeaderList, context);
             await connection.Post(uri, requestHeaders, requestJson, (status, body, headers) => {
                 return ProcessResponse<object>(status, body, headers, relativePath, context, bodyHandler);
-            });
+            }).ConfigureAwait(false);
         }
 
         async Task Post(string relativePath, IEnumerable<IRequestHeader> requestHeaders, AbstractParamRequest requestParameters,
@@ -305,7 +305,7 @@ namespace Ingenico.Connect.Sdk
             requestHeaders = AddGenericHeaders(HttpMethod.Post, uri, requestHeaderList, context);
             await connection.Post(uri, requestHeaders, multipart, (status, body, headers) => {
                 return ProcessResponse<object>(status, body, headers, relativePath, context, bodyHandler);
-            });
+            }).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -325,12 +325,12 @@ namespace Ingenico.Connect.Sdk
         {
             if (requestBody is MultipartFormDataObject)
             {
-                return await Put<T>(relativePath, requestHeaders, requestParameters, (MultipartFormDataObject)requestBody, context);
+                return await Put<T>(relativePath, requestHeaders, requestParameters, (MultipartFormDataObject)requestBody, context).ConfigureAwait(false);
             }
             if (requestBody is IMultipartFormDataRequest)
             {
                 MultipartFormDataObject multipart = ((IMultipartFormDataRequest)requestBody).ToMultipartFormDataObject();
-                return await Put<T>(relativePath, requestHeaders, requestParameters, multipart, context);
+                return await Put<T>(relativePath, requestHeaders, requestParameters, multipart, context).ConfigureAwait(false);
             }
 
             IConnection connection = Session.Connection;
@@ -349,7 +349,7 @@ namespace Ingenico.Connect.Sdk
             requestHeaders = AddGenericHeaders(HttpMethod.Put, uri, requestHeaderList, context);
             return await connection.Put<T>(uri, requestHeaders, requestJson, (status, body, headers) => {
                 return ProcessResponse<T>(status, body, headers, relativePath, context);
-            });
+            }).ConfigureAwait(false);
         }
 
         async Task<T> Put<T>(string relativePath, IEnumerable<IRequestHeader> requestHeaders, AbstractParamRequest requestParameters,
@@ -367,7 +367,7 @@ namespace Ingenico.Connect.Sdk
             requestHeaders = AddGenericHeaders(HttpMethod.Put, uri, requestHeaderList, context);
             return await connection.Put<T>(uri, requestHeaders, multipart, (status, body, headers) => {
                 return ProcessResponse<T>(status, body, headers, relativePath, context);
-            });
+            }).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -388,13 +388,13 @@ namespace Ingenico.Connect.Sdk
         {
             if (requestBody is MultipartFormDataObject)
             {
-                await Put(relativePath, requestHeaders, requestParameters, (MultipartFormDataObject)requestBody, bodyHandler, context);
+                await Put(relativePath, requestHeaders, requestParameters, (MultipartFormDataObject)requestBody, bodyHandler, context).ConfigureAwait(false);
                 return;
             }
             if (requestBody is IMultipartFormDataRequest)
             {
                 MultipartFormDataObject multipart = ((IMultipartFormDataRequest)requestBody).ToMultipartFormDataObject();
-                await Put(relativePath, requestHeaders, requestParameters, multipart, bodyHandler, context);
+                await Put(relativePath, requestHeaders, requestParameters, multipart, bodyHandler, context).ConfigureAwait(false);
                 return;
             }
 
@@ -414,7 +414,7 @@ namespace Ingenico.Connect.Sdk
             requestHeaders = AddGenericHeaders(HttpMethod.Put, uri, requestHeaderList, context);
             await connection.Put(uri, requestHeaders, requestJson, (status, body, headers) => {
                 return ProcessResponse<object>(status, body, headers, relativePath, context, bodyHandler);
-            });
+            }).ConfigureAwait(false);
         }
 
         async Task Put(string relativePath, IEnumerable<IRequestHeader> requestHeaders, AbstractParamRequest requestParameters,
@@ -432,7 +432,7 @@ namespace Ingenico.Connect.Sdk
             requestHeaders = AddGenericHeaders(HttpMethod.Put, uri, requestHeaderList, context);
             await connection.Put(uri, requestHeaders, multipart, (status, body, headers) => {
                 return ProcessResponse<object>(status, body, headers, relativePath, context, bodyHandler);
-            });
+            }).ConfigureAwait(false);
         }
         #endregion
 

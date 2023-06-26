@@ -48,7 +48,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Captures
                         uri,
                         ClientHeaders,
                         null,
-                        context);
+                        context).ConfigureAwait(false);
             }
             catch (ResponseException e)
             {
@@ -87,7 +87,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Captures
                         ClientHeaders,
                         null,
                         body,
-                        context);
+                        context).ConfigureAwait(false);
             }
             catch (ResponseException e)
             {
