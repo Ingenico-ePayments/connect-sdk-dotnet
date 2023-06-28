@@ -29,6 +29,7 @@
     "globalMetadata": {
       "_appTitle": "Ingenico Connect .NET SDK",
       "_appFooter": "Copyright (c) 2016 Global Collect Services B.V.",
+      "_disableContribution": true,
       "_enableSearch": true
     },
     "globalMetadataFiles": [],

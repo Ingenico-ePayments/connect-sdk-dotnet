@@ -7,6 +7,11 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
     public class PaymentCreationOutput : PaymentCreationReferences
     {
         /// <summary>
+        /// Indicates whether the customer ticked the "Remember my details for future purchases" checkbox on the MyCheckout hosted payment pages
+        /// </summary>
+        public bool? IsCheckedRememberMe { get; set; } = null;
+
+        /// <summary>
         /// Indicates if a new token was created 
         /// <list type="bullet">
         ///   <item><description>true - A new token was created</description></item>

@@ -10,7 +10,8 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
     public class CardPaymentMethodSpecificInput : AbstractCardPaymentMethodSpecificInput
     {
         /// <summary>
-        /// Object containing card details
+        /// Object containing card details. The card details will be ignored in case the property 
+        /// <span class="property">networkTokenData is present.</span>
         /// </summary>
         public Card Card { get; set; } = null;
 

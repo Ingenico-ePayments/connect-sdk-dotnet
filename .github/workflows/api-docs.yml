@@ -1,0 +1,57 @@
+name: API docs
+
+on:
+  push:
+    tags: ['[0-9]+.[0-9]+*']
+
+permissions:
+  contents: write
+
+jobs:
+  api-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          path: code
+          persist-credentials: false
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '3.1'
+      - name: Install docfx
+        # Versions after 2.65.1 generate broken links to parent namespaces that don't exist
+        run: dotnet tool update -g docfx --version 2.65.1
+      - name: Build API docs
+        run: docfx docfx.json
+        working-directory: code/documentation
+      - name: Checkout pages
+        uses: actions/checkout@v3
+        with:
+          ref: gh-pages
+          path: pages
+      - name: Deploy pages
+        run: |
+          SDK_VERSION_FOLDER=`echo "$SDK_VERSION" | awk --field-separator '.' '{print $1".x";}'`
+
+          # Create .nojekyll if it doesn't exist yet
+          touch .nojekyll
+
+          mkdir -p "$SDK_VERSION_FOLDER"
+          rsync --quiet --archive --checksum --delete --exclude .git ../code/documentation/_site/ "$SDK_VERSION_FOLDER/"
+          if [ -e latest ]; then rm -r latest; fi
+          ln -s "$SDK_VERSION_FOLDER" latest
+
+          git config user.email "$USER_EMAIL"
+          git config user.name "$USER_NAME"
+          git add --all .
+          # Only commit when there are changes
+          git diff --quiet && git diff --staged --quiet || git commit --message "Generated API docs for version ${SDK_VERSION}"
+          git push
+        shell: bash
+        working-directory: pages
+        env:
+          SDK_VERSION: ${{ github.ref_name }}
+          USER_EMAIL: ${{ github.event.pusher.email }}
+          USER_NAME: ${{ github.event.pusher.name }}

@@ -15,6 +15,11 @@ namespace Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions
         public DisplayedData DisplayedData { get; set; } = null;
 
         /// <summary>
+        /// Indicates whether the customer ticked the "Remember my details for future purchases" checkbox on the MyCheckout hosted payment pages
+        /// </summary>
+        public bool? IsCheckedRememberMe { get; set; } = null;
+
+        /// <summary>
         /// Object that holds the payment data
         /// </summary>
         public Payment.Definitions.Payment Payment { get; set; } = null;

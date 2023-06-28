@@ -20,6 +20,7 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
         /// <list type="bullet">
         ///   <item><description>first = This transaction is the first of a series of recurring transactions</description></item>
         ///   <item><description>recurring = This transaction is a subsequent transaction in a series of recurring transactions</description></item>
+        ///   <item><description>last = This transaction is the last of a series of recurring transactions for payments that are processed by the WL Online Payment Acceptance platform</description></item>
         /// </list>
         /// <br />Note: For any first of a recurring the system will automatically create a token as you will need to use a token for any subsequent recurring transactions. In case a token already exists this is indicated in the response with a value of False for the isNewToken property in the response.
         /// </summary>

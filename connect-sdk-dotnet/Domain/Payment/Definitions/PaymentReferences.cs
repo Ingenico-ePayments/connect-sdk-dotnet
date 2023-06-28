@@ -27,6 +27,11 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
         public string ProviderId { get; set; } = null;
 
         /// <summary>
+        /// Provides an additional means of reconciliation, this is the MerchantId used at the provider
+        /// </summary>
+        public string ProviderMerchantId { get; set; } = null;
+
+        /// <summary>
         /// Provides an additional means of reconciliation for Gateway merchants
         /// </summary>
         public string ProviderReference { get; set; } = null;

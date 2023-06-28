@@ -3,6 +3,8 @@
  * https://epayments-api.developer-ingenico.com/s2sapi/v1/
  */
 using Ingenico.Connect.Sdk.Domain.Definitions;
+using System.Collections.Generic;
+using KeyValuePair = Ingenico.Connect.Sdk.Domain.Definitions.KeyValuePair;
 
 namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
 {
@@ -34,6 +36,11 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
         /// </list>
         /// </summary>
         public bool? IsRetriable { get; set; } = null;
+
+        /// <summary>
+        /// This is the raw response returned by the acquirer. This property contains unprocessed data directly returned by the acquirer. It's recommended for data analysis only due to its dynamic nature, which may undergo future changes.
+        /// </summary>
+        public IList<KeyValuePair> ProviderRawOutput { get; set; } = null;
 
         /// <summary>
         /// The 3D Secure status, with the following possible values: 
