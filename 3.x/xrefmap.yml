@@ -1929,6 +1929,32 @@ references:
   commentId: T:Ingenico.Connect.Sdk.Domain.Capture.Definitions.CaptureStatusOutput
   fullName: Ingenico.Connect.Sdk.Domain.Capture.Definitions.CaptureStatusOutput
   nameWithType: CaptureStatusOutput
+- uid: Ingenico.Connect.Sdk.Domain.Capture.Definitions.CaptureStatusOutput.IsRetriable
+  name: IsRetriable
+  href: api/Ingenico.Connect.Sdk.Domain.Capture.Definitions.CaptureStatusOutput.html#Ingenico_Connect_Sdk_Domain_Capture_Definitions_CaptureStatusOutput_IsRetriable
+  commentId: P:Ingenico.Connect.Sdk.Domain.Capture.Definitions.CaptureStatusOutput.IsRetriable
+  fullName: Ingenico.Connect.Sdk.Domain.Capture.Definitions.CaptureStatusOutput.IsRetriable
+  nameWithType: CaptureStatusOutput.IsRetriable
+- uid: Ingenico.Connect.Sdk.Domain.Capture.Definitions.CaptureStatusOutput.IsRetriable*
+  name: IsRetriable
+  href: api/Ingenico.Connect.Sdk.Domain.Capture.Definitions.CaptureStatusOutput.html#Ingenico_Connect_Sdk_Domain_Capture_Definitions_CaptureStatusOutput_IsRetriable_
+  commentId: Overload:Ingenico.Connect.Sdk.Domain.Capture.Definitions.CaptureStatusOutput.IsRetriable
+  isSpec: "True"
+  fullName: Ingenico.Connect.Sdk.Domain.Capture.Definitions.CaptureStatusOutput.IsRetriable
+  nameWithType: CaptureStatusOutput.IsRetriable
+- uid: Ingenico.Connect.Sdk.Domain.Capture.Definitions.CaptureStatusOutput.ProviderRawOutput
+  name: ProviderRawOutput
+  href: api/Ingenico.Connect.Sdk.Domain.Capture.Definitions.CaptureStatusOutput.html#Ingenico_Connect_Sdk_Domain_Capture_Definitions_CaptureStatusOutput_ProviderRawOutput
+  commentId: P:Ingenico.Connect.Sdk.Domain.Capture.Definitions.CaptureStatusOutput.ProviderRawOutput
+  fullName: Ingenico.Connect.Sdk.Domain.Capture.Definitions.CaptureStatusOutput.ProviderRawOutput
+  nameWithType: CaptureStatusOutput.ProviderRawOutput
+- uid: Ingenico.Connect.Sdk.Domain.Capture.Definitions.CaptureStatusOutput.ProviderRawOutput*
+  name: ProviderRawOutput
+  href: api/Ingenico.Connect.Sdk.Domain.Capture.Definitions.CaptureStatusOutput.html#Ingenico_Connect_Sdk_Domain_Capture_Definitions_CaptureStatusOutput_ProviderRawOutput_
+  commentId: Overload:Ingenico.Connect.Sdk.Domain.Capture.Definitions.CaptureStatusOutput.ProviderRawOutput
+  isSpec: "True"
+  fullName: Ingenico.Connect.Sdk.Domain.Capture.Definitions.CaptureStatusOutput.ProviderRawOutput
+  nameWithType: CaptureStatusOutput.ProviderRawOutput
 - uid: Ingenico.Connect.Sdk.Domain.Capture.Definitions.CaptureStatusOutput.StatusCode
   name: StatusCode
   href: api/Ingenico.Connect.Sdk.Domain.Capture.Definitions.CaptureStatusOutput.html#Ingenico_Connect_Sdk_Domain_Capture_Definitions_CaptureStatusOutput_StatusCode
@@ -4221,6 +4247,32 @@ references:
   isSpec: "True"
   fullName: Ingenico.Connect.Sdk.Domain.Definitions.OrderStatusOutput.IsCancellable
   nameWithType: OrderStatusOutput.IsCancellable
+- uid: Ingenico.Connect.Sdk.Domain.Definitions.OrderStatusOutput.IsRetriable
+  name: IsRetriable
+  href: api/Ingenico.Connect.Sdk.Domain.Definitions.OrderStatusOutput.html#Ingenico_Connect_Sdk_Domain_Definitions_OrderStatusOutput_IsRetriable
+  commentId: P:Ingenico.Connect.Sdk.Domain.Definitions.OrderStatusOutput.IsRetriable
+  fullName: Ingenico.Connect.Sdk.Domain.Definitions.OrderStatusOutput.IsRetriable
+  nameWithType: OrderStatusOutput.IsRetriable
+- uid: Ingenico.Connect.Sdk.Domain.Definitions.OrderStatusOutput.IsRetriable*
+  name: IsRetriable
+  href: api/Ingenico.Connect.Sdk.Domain.Definitions.OrderStatusOutput.html#Ingenico_Connect_Sdk_Domain_Definitions_OrderStatusOutput_IsRetriable_
+  commentId: Overload:Ingenico.Connect.Sdk.Domain.Definitions.OrderStatusOutput.IsRetriable
+  isSpec: "True"
+  fullName: Ingenico.Connect.Sdk.Domain.Definitions.OrderStatusOutput.IsRetriable
+  nameWithType: OrderStatusOutput.IsRetriable
+- uid: Ingenico.Connect.Sdk.Domain.Definitions.OrderStatusOutput.ProviderRawOutput
+  name: ProviderRawOutput
+  href: api/Ingenico.Connect.Sdk.Domain.Definitions.OrderStatusOutput.html#Ingenico_Connect_Sdk_Domain_Definitions_OrderStatusOutput_ProviderRawOutput
+  commentId: P:Ingenico.Connect.Sdk.Domain.Definitions.OrderStatusOutput.ProviderRawOutput
+  fullName: Ingenico.Connect.Sdk.Domain.Definitions.OrderStatusOutput.ProviderRawOutput
+  nameWithType: OrderStatusOutput.ProviderRawOutput
+- uid: Ingenico.Connect.Sdk.Domain.Definitions.OrderStatusOutput.ProviderRawOutput*
+  name: ProviderRawOutput
+  href: api/Ingenico.Connect.Sdk.Domain.Definitions.OrderStatusOutput.html#Ingenico_Connect_Sdk_Domain_Definitions_OrderStatusOutput_ProviderRawOutput_
+  commentId: Overload:Ingenico.Connect.Sdk.Domain.Definitions.OrderStatusOutput.ProviderRawOutput
+  isSpec: "True"
+  fullName: Ingenico.Connect.Sdk.Domain.Definitions.OrderStatusOutput.ProviderRawOutput
+  nameWithType: OrderStatusOutput.ProviderRawOutput
 - uid: Ingenico.Connect.Sdk.Domain.Definitions.OrderStatusOutput.StatusCategory
   name: StatusCategory
   href: api/Ingenico.Connect.Sdk.Domain.Definitions.OrderStatusOutput.html#Ingenico_Connect_Sdk_Domain_Definitions_OrderStatusOutput_StatusCategory
@@ -11391,6 +11443,32 @@ references:
   isSpec: "True"
   fullName: Ingenico.Connect.Sdk.Domain.Payment.Definitions.OrderReferences.MerchantReference
   nameWithType: OrderReferences.MerchantReference
+- uid: Ingenico.Connect.Sdk.Domain.Payment.Definitions.OrderReferences.ProviderId
+  name: ProviderId
+  href: api/Ingenico.Connect.Sdk.Domain.Payment.Definitions.OrderReferences.html#Ingenico_Connect_Sdk_Domain_Payment_Definitions_OrderReferences_ProviderId
+  commentId: P:Ingenico.Connect.Sdk.Domain.Payment.Definitions.OrderReferences.ProviderId
+  fullName: Ingenico.Connect.Sdk.Domain.Payment.Definitions.OrderReferences.ProviderId
+  nameWithType: OrderReferences.ProviderId
+- uid: Ingenico.Connect.Sdk.Domain.Payment.Definitions.OrderReferences.ProviderId*
+  name: ProviderId
+  href: api/Ingenico.Connect.Sdk.Domain.Payment.Definitions.OrderReferences.html#Ingenico_Connect_Sdk_Domain_Payment_Definitions_OrderReferences_ProviderId_
+  commentId: Overload:Ingenico.Connect.Sdk.Domain.Payment.Definitions.OrderReferences.ProviderId
+  isSpec: "True"
+  fullName: Ingenico.Connect.Sdk.Domain.Payment.Definitions.OrderReferences.ProviderId
+  nameWithType: OrderReferences.ProviderId
+- uid: Ingenico.Connect.Sdk.Domain.Payment.Definitions.OrderReferences.ProviderMerchantId
+  name: ProviderMerchantId
+  href: api/Ingenico.Connect.Sdk.Domain.Payment.Definitions.OrderReferences.html#Ingenico_Connect_Sdk_Domain_Payment_Definitions_OrderReferences_ProviderMerchantId
+  commentId: P:Ingenico.Connect.Sdk.Domain.Payment.Definitions.OrderReferences.ProviderMerchantId
+  fullName: Ingenico.Connect.Sdk.Domain.Payment.Definitions.OrderReferences.ProviderMerchantId
+  nameWithType: OrderReferences.ProviderMerchantId
+- uid: Ingenico.Connect.Sdk.Domain.Payment.Definitions.OrderReferences.ProviderMerchantId*
+  name: ProviderMerchantId
+  href: api/Ingenico.Connect.Sdk.Domain.Payment.Definitions.OrderReferences.html#Ingenico_Connect_Sdk_Domain_Payment_Definitions_OrderReferences_ProviderMerchantId_
+  commentId: Overload:Ingenico.Connect.Sdk.Domain.Payment.Definitions.OrderReferences.ProviderMerchantId
+  isSpec: "True"
+  fullName: Ingenico.Connect.Sdk.Domain.Payment.Definitions.OrderReferences.ProviderMerchantId
+  nameWithType: OrderReferences.ProviderMerchantId
 - uid: Ingenico.Connect.Sdk.Domain.Payment.Definitions.OrderReferencesApprovePayment
   name: OrderReferencesApprovePayment
   href: api/Ingenico.Connect.Sdk.Domain.Payment.Definitions.OrderReferencesApprovePayment.html
@@ -12319,32 +12397,6 @@ references:
   isSpec: "True"
   fullName: Ingenico.Connect.Sdk.Domain.Payment.Definitions.PaymentStatusOutput.IsRefundable
   nameWithType: PaymentStatusOutput.IsRefundable
-- uid: Ingenico.Connect.Sdk.Domain.Payment.Definitions.PaymentStatusOutput.IsRetriable
-  name: IsRetriable
-  href: api/Ingenico.Connect.Sdk.Domain.Payment.Definitions.PaymentStatusOutput.html#Ingenico_Connect_Sdk_Domain_Payment_Definitions_PaymentStatusOutput_IsRetriable
-  commentId: P:Ingenico.Connect.Sdk.Domain.Payment.Definitions.PaymentStatusOutput.IsRetriable
-  fullName: Ingenico.Connect.Sdk.Domain.Payment.Definitions.PaymentStatusOutput.IsRetriable
-  nameWithType: PaymentStatusOutput.IsRetriable
-- uid: Ingenico.Connect.Sdk.Domain.Payment.Definitions.PaymentStatusOutput.IsRetriable*
-  name: IsRetriable
-  href: api/Ingenico.Connect.Sdk.Domain.Payment.Definitions.PaymentStatusOutput.html#Ingenico_Connect_Sdk_Domain_Payment_Definitions_PaymentStatusOutput_IsRetriable_
-  commentId: Overload:Ingenico.Connect.Sdk.Domain.Payment.Definitions.PaymentStatusOutput.IsRetriable
-  isSpec: "True"
-  fullName: Ingenico.Connect.Sdk.Domain.Payment.Definitions.PaymentStatusOutput.IsRetriable
-  nameWithType: PaymentStatusOutput.IsRetriable
-- uid: Ingenico.Connect.Sdk.Domain.Payment.Definitions.PaymentStatusOutput.ProviderRawOutput
-  name: ProviderRawOutput
-  href: api/Ingenico.Connect.Sdk.Domain.Payment.Definitions.PaymentStatusOutput.html#Ingenico_Connect_Sdk_Domain_Payment_Definitions_PaymentStatusOutput_ProviderRawOutput
-  commentId: P:Ingenico.Connect.Sdk.Domain.Payment.Definitions.PaymentStatusOutput.ProviderRawOutput
-  fullName: Ingenico.Connect.Sdk.Domain.Payment.Definitions.PaymentStatusOutput.ProviderRawOutput
-  nameWithType: PaymentStatusOutput.ProviderRawOutput
-- uid: Ingenico.Connect.Sdk.Domain.Payment.Definitions.PaymentStatusOutput.ProviderRawOutput*
-  name: ProviderRawOutput
-  href: api/Ingenico.Connect.Sdk.Domain.Payment.Definitions.PaymentStatusOutput.html#Ingenico_Connect_Sdk_Domain_Payment_Definitions_PaymentStatusOutput_ProviderRawOutput_
-  commentId: Overload:Ingenico.Connect.Sdk.Domain.Payment.Definitions.PaymentStatusOutput.ProviderRawOutput
-  isSpec: "True"
-  fullName: Ingenico.Connect.Sdk.Domain.Payment.Definitions.PaymentStatusOutput.ProviderRawOutput
-  nameWithType: PaymentStatusOutput.ProviderRawOutput
 - uid: Ingenico.Connect.Sdk.Domain.Payment.Definitions.PaymentStatusOutput.ThreeDSecureStatus
   name: ThreeDSecureStatus
   href: api/Ingenico.Connect.Sdk.Domain.Payment.Definitions.PaymentStatusOutput.html#Ingenico_Connect_Sdk_Domain_Payment_Definitions_PaymentStatusOutput_ThreeDSecureStatus
@@ -13076,6 +13128,19 @@ references:
   commentId: T:Ingenico.Connect.Sdk.Domain.Payment.Definitions.RefundCardMethodSpecificOutput
   fullName: Ingenico.Connect.Sdk.Domain.Payment.Definitions.RefundCardMethodSpecificOutput
   nameWithType: RefundCardMethodSpecificOutput
+- uid: Ingenico.Connect.Sdk.Domain.Payment.Definitions.RefundCardMethodSpecificOutput.AuthorisationCode
+  name: AuthorisationCode
+  href: api/Ingenico.Connect.Sdk.Domain.Payment.Definitions.RefundCardMethodSpecificOutput.html#Ingenico_Connect_Sdk_Domain_Payment_Definitions_RefundCardMethodSpecificOutput_AuthorisationCode
+  commentId: P:Ingenico.Connect.Sdk.Domain.Payment.Definitions.RefundCardMethodSpecificOutput.AuthorisationCode
+  fullName: Ingenico.Connect.Sdk.Domain.Payment.Definitions.RefundCardMethodSpecificOutput.AuthorisationCode
+  nameWithType: RefundCardMethodSpecificOutput.AuthorisationCode
+- uid: Ingenico.Connect.Sdk.Domain.Payment.Definitions.RefundCardMethodSpecificOutput.AuthorisationCode*
+  name: AuthorisationCode
+  href: api/Ingenico.Connect.Sdk.Domain.Payment.Definitions.RefundCardMethodSpecificOutput.html#Ingenico_Connect_Sdk_Domain_Payment_Definitions_RefundCardMethodSpecificOutput_AuthorisationCode_
+  commentId: Overload:Ingenico.Connect.Sdk.Domain.Payment.Definitions.RefundCardMethodSpecificOutput.AuthorisationCode
+  isSpec: "True"
+  fullName: Ingenico.Connect.Sdk.Domain.Payment.Definitions.RefundCardMethodSpecificOutput.AuthorisationCode
+  nameWithType: RefundCardMethodSpecificOutput.AuthorisationCode
 - uid: Ingenico.Connect.Sdk.Domain.Payment.Definitions.RefundCashMethodSpecificOutput
   name: RefundCashMethodSpecificOutput
   href: api/Ingenico.Connect.Sdk.Domain.Payment.Definitions.RefundCashMethodSpecificOutput.html
