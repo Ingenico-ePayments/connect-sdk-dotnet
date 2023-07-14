@@ -3,8 +3,8 @@
   <PropertyGroup>
     <TargetFrameworks>net45;netstandard2.0;netstandard2.1</TargetFrameworks>
     <RootNamespace>Ingenico.Connect.Sdk</RootNamespace>
-    <AssemblyVersion>3.40.0</AssemblyVersion>
-    <Version>3.40.0</Version>
+    <AssemblyVersion>3.41.0</AssemblyVersion>
+    <Version>3.41.0</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Company>Ingenico ePayments</Company>
     <Product>Ingenico Connect .NET SDK</Product>
@@ -14,6 +14,7 @@
     <Authors>Ingenico ePayments</Authors>
     <PackageProjectUrl>https://epayments.developer-ingenico.com/documentation/sdk/server/dotnet/</PackageProjectUrl>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageIcon>packageIcon.png</PackageIcon>
     <PackageIconUrl>https://github.com/Ingenico-ePayments/connect-sdk-dotnet/blob/master/packageIcon.png</PackageIconUrl>
     <RepositoryUrl>https://github.com/Ingenico-ePayments/connect-sdk-dotnet</RepositoryUrl>

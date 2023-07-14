@@ -4,6 +4,7 @@
  */
 using Ingenico.Connect.Sdk.Domain.Errors.Definitions;
 using System.Collections.Generic;
+using KeyValuePair = Ingenico.Connect.Sdk.Domain.Definitions.KeyValuePair;
 
 namespace Ingenico.Connect.Sdk.Domain.Definitions
 {
@@ -22,6 +23,20 @@ namespace Ingenico.Connect.Sdk.Domain.Definitions
         /// </list>
         /// </summary>
         public bool? IsCancellable { get; set; } = null;
+
+        /// <summary>
+        /// Flag indicating whether a rejected payment may be retried by the merchant without incurring a fee 
+        /// <list type="bullet">
+        ///   <item><description>true</description></item>
+        ///   <item><description>false</description></item>
+        /// </list>
+        /// </summary>
+        public bool? IsRetriable { get; set; } = null;
+
+        /// <summary>
+        /// This is the raw response returned by the acquirer. This property contains unprocessed data directly returned by the acquirer. It's recommended for data analysis only due to its dynamic nature, which may undergo future changes.
+        /// </summary>
+        public IList<KeyValuePair> ProviderRawOutput { get; set; } = null;
 
         /// <summary>
         /// Highlevel status of the payment, payout or refund with the following possible values: 

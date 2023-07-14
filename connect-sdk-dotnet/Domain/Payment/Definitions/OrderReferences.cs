@@ -59,5 +59,15 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
         /// <div class="alert alert-info">Note that the maximum length of this field for transactions processed on the GlobalCollect platform is 30.</div>Your unique reference of the transaction that is also returned in our report files. This is almost always used for your reconciliation of our report files.
         /// </summary>
         public string MerchantReference { get; set; } = null;
+
+        /// <summary>
+        /// Provides an additional means of reconciliation for Gateway merchants
+        /// </summary>
+        public string ProviderId { get; set; } = null;
+
+        /// <summary>
+        /// Provides an additional means of reconciliation, this is the MerchantId used at the provider
+        /// </summary>
+        public string ProviderMerchantId { get; set; } = null;
     }
 }

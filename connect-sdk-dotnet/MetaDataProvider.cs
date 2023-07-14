@@ -96,7 +96,7 @@ namespace Ingenico.Connect.Sdk
             }
         }
 
-        const string SDK_VERSION = "3.40.0";
+        const string SDK_VERSION = "3.41.0";
 
         const string SERVER_META_INFO_HEADER = "X-GCS-ServerMetaInfo";
 
