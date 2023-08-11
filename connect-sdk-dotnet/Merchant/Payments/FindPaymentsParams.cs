@@ -19,7 +19,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Payments
         public string HostedCheckoutId { get; set; } = null;
 
         /// <summary>
-        /// Your unique transaction reference to filter on.
+        /// Your unique transaction reference to filter on. The maximum length is 52 characters for payments that are processed by WL Online Payment Acceptance platform.
         /// </summary>
         public string MerchantReference { get; set; } = null;
 
