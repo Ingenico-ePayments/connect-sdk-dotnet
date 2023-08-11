@@ -13141,6 +13141,19 @@ references:
   isSpec: "True"
   fullName: Ingenico.Connect.Sdk.Domain.Payment.Definitions.RefundCardMethodSpecificOutput.AuthorisationCode
   nameWithType: RefundCardMethodSpecificOutput.AuthorisationCode
+- uid: Ingenico.Connect.Sdk.Domain.Payment.Definitions.RefundCardMethodSpecificOutput.Card
+  name: Card
+  href: api/Ingenico.Connect.Sdk.Domain.Payment.Definitions.RefundCardMethodSpecificOutput.html#Ingenico_Connect_Sdk_Domain_Payment_Definitions_RefundCardMethodSpecificOutput_Card
+  commentId: P:Ingenico.Connect.Sdk.Domain.Payment.Definitions.RefundCardMethodSpecificOutput.Card
+  fullName: Ingenico.Connect.Sdk.Domain.Payment.Definitions.RefundCardMethodSpecificOutput.Card
+  nameWithType: RefundCardMethodSpecificOutput.Card
+- uid: Ingenico.Connect.Sdk.Domain.Payment.Definitions.RefundCardMethodSpecificOutput.Card*
+  name: Card
+  href: api/Ingenico.Connect.Sdk.Domain.Payment.Definitions.RefundCardMethodSpecificOutput.html#Ingenico_Connect_Sdk_Domain_Payment_Definitions_RefundCardMethodSpecificOutput_Card_
+  commentId: Overload:Ingenico.Connect.Sdk.Domain.Payment.Definitions.RefundCardMethodSpecificOutput.Card
+  isSpec: "True"
+  fullName: Ingenico.Connect.Sdk.Domain.Payment.Definitions.RefundCardMethodSpecificOutput.Card
+  nameWithType: RefundCardMethodSpecificOutput.Card
 - uid: Ingenico.Connect.Sdk.Domain.Payment.Definitions.RefundCashMethodSpecificOutput
   name: RefundCashMethodSpecificOutput
   href: api/Ingenico.Connect.Sdk.Domain.Payment.Definitions.RefundCashMethodSpecificOutput.html
