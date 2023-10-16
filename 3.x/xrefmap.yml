@@ -5727,6 +5727,38 @@ references:
   isSpec: "True"
   fullName: Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.DisplayedData.ShowData
   nameWithType: DisplayedData.ShowData
+- uid: Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.Frequency
+  name: Frequency
+  href: api/Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.Frequency.html
+  commentId: T:Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.Frequency
+  fullName: Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.Frequency
+  nameWithType: Frequency
+- uid: Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.Frequency.Interval
+  name: Interval
+  href: api/Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.Frequency.html#Ingenico_Connect_Sdk_Domain_Hostedcheckout_Definitions_Frequency_Interval
+  commentId: P:Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.Frequency.Interval
+  fullName: Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.Frequency.Interval
+  nameWithType: Frequency.Interval
+- uid: Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.Frequency.Interval*
+  name: Interval
+  href: api/Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.Frequency.html#Ingenico_Connect_Sdk_Domain_Hostedcheckout_Definitions_Frequency_Interval_
+  commentId: Overload:Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.Frequency.Interval
+  isSpec: "True"
+  fullName: Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.Frequency.Interval
+  nameWithType: Frequency.Interval
+- uid: Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.Frequency.IntervalFrequency
+  name: IntervalFrequency
+  href: api/Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.Frequency.html#Ingenico_Connect_Sdk_Domain_Hostedcheckout_Definitions_Frequency_IntervalFrequency
+  commentId: P:Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.Frequency.IntervalFrequency
+  fullName: Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.Frequency.IntervalFrequency
+  nameWithType: Frequency.IntervalFrequency
+- uid: Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.Frequency.IntervalFrequency*
+  name: IntervalFrequency
+  href: api/Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.Frequency.html#Ingenico_Connect_Sdk_Domain_Hostedcheckout_Definitions_Frequency_IntervalFrequency_
+  commentId: Overload:Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.Frequency.IntervalFrequency
+  isSpec: "True"
+  fullName: Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.Frequency.IntervalFrequency
+  nameWithType: Frequency.IntervalFrequency
 - uid: Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.HostedCheckoutSpecificInput
   name: HostedCheckoutSpecificInput
   href: api/Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.HostedCheckoutSpecificInput.html
@@ -5772,6 +5804,19 @@ references:
   isSpec: "True"
   fullName: Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.HostedCheckoutSpecificInput.PaymentProductFilters
   nameWithType: HostedCheckoutSpecificInput.PaymentProductFilters
+- uid: Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.HostedCheckoutSpecificInput.RecurringPaymentsData
+  name: RecurringPaymentsData
+  href: api/Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.HostedCheckoutSpecificInput.html#Ingenico_Connect_Sdk_Domain_Hostedcheckout_Definitions_HostedCheckoutSpecificInput_RecurringPaymentsData
+  commentId: P:Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.HostedCheckoutSpecificInput.RecurringPaymentsData
+  fullName: Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.HostedCheckoutSpecificInput.RecurringPaymentsData
+  nameWithType: HostedCheckoutSpecificInput.RecurringPaymentsData
+- uid: Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.HostedCheckoutSpecificInput.RecurringPaymentsData*
+  name: RecurringPaymentsData
+  href: api/Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.HostedCheckoutSpecificInput.html#Ingenico_Connect_Sdk_Domain_Hostedcheckout_Definitions_HostedCheckoutSpecificInput_RecurringPaymentsData_
+  commentId: Overload:Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.HostedCheckoutSpecificInput.RecurringPaymentsData
+  isSpec: "True"
+  fullName: Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.HostedCheckoutSpecificInput.RecurringPaymentsData
+  nameWithType: HostedCheckoutSpecificInput.RecurringPaymentsData
 - uid: Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.HostedCheckoutSpecificInput.ReturnCancelState
   name: ReturnCancelState
   href: api/Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.HostedCheckoutSpecificInput.html#Ingenico_Connect_Sdk_Domain_Hostedcheckout_Definitions_HostedCheckoutSpecificInput_ReturnCancelState
@@ -6043,6 +6088,141 @@ references:
   isSpec: "True"
   fullName: Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.PaymentProductFiltersHostedCheckout.TokensOnly
   nameWithType: PaymentProductFiltersHostedCheckout.TokensOnly
+- uid: Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.RecurringPaymentsData
+  name: RecurringPaymentsData
+  href: api/Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.RecurringPaymentsData.html
+  commentId: T:Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.RecurringPaymentsData
+  fullName: Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.RecurringPaymentsData
+  nameWithType: RecurringPaymentsData
+- uid: Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.RecurringPaymentsData.RecurringInterval
+  name: RecurringInterval
+  href: api/Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.RecurringPaymentsData.html#Ingenico_Connect_Sdk_Domain_Hostedcheckout_Definitions_RecurringPaymentsData_RecurringInterval
+  commentId: P:Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.RecurringPaymentsData.RecurringInterval
+  fullName: Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.RecurringPaymentsData.RecurringInterval
+  nameWithType: RecurringPaymentsData.RecurringInterval
+- uid: Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.RecurringPaymentsData.RecurringInterval*
+  name: RecurringInterval
+  href: api/Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.RecurringPaymentsData.html#Ingenico_Connect_Sdk_Domain_Hostedcheckout_Definitions_RecurringPaymentsData_RecurringInterval_
+  commentId: Overload:Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.RecurringPaymentsData.RecurringInterval
+  isSpec: "True"
+  fullName: Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.RecurringPaymentsData.RecurringInterval
+  nameWithType: RecurringPaymentsData.RecurringInterval
+- uid: Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.RecurringPaymentsData.TrialInformation
+  name: TrialInformation
+  href: api/Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.RecurringPaymentsData.html#Ingenico_Connect_Sdk_Domain_Hostedcheckout_Definitions_RecurringPaymentsData_TrialInformation
+  commentId: P:Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.RecurringPaymentsData.TrialInformation
+  fullName: Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.RecurringPaymentsData.TrialInformation
+  nameWithType: RecurringPaymentsData.TrialInformation
+- uid: Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.RecurringPaymentsData.TrialInformation*
+  name: TrialInformation
+  href: api/Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.RecurringPaymentsData.html#Ingenico_Connect_Sdk_Domain_Hostedcheckout_Definitions_RecurringPaymentsData_TrialInformation_
+  commentId: Overload:Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.RecurringPaymentsData.TrialInformation
+  isSpec: "True"
+  fullName: Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.RecurringPaymentsData.TrialInformation
+  nameWithType: RecurringPaymentsData.TrialInformation
+- uid: Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialInformation
+  name: TrialInformation
+  href: api/Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialInformation.html
+  commentId: T:Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialInformation
+  fullName: Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialInformation
+  nameWithType: TrialInformation
+- uid: Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialInformation.AmountOfMoneyAfterTrial
+  name: AmountOfMoneyAfterTrial
+  href: api/Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialInformation.html#Ingenico_Connect_Sdk_Domain_Hostedcheckout_Definitions_TrialInformation_AmountOfMoneyAfterTrial
+  commentId: P:Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialInformation.AmountOfMoneyAfterTrial
+  fullName: Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialInformation.AmountOfMoneyAfterTrial
+  nameWithType: TrialInformation.AmountOfMoneyAfterTrial
+- uid: Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialInformation.AmountOfMoneyAfterTrial*
+  name: AmountOfMoneyAfterTrial
+  href: api/Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialInformation.html#Ingenico_Connect_Sdk_Domain_Hostedcheckout_Definitions_TrialInformation_AmountOfMoneyAfterTrial_
+  commentId: Overload:Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialInformation.AmountOfMoneyAfterTrial
+  isSpec: "True"
+  fullName: Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialInformation.AmountOfMoneyAfterTrial
+  nameWithType: TrialInformation.AmountOfMoneyAfterTrial
+- uid: Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialInformation.EndDate
+  name: EndDate
+  href: api/Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialInformation.html#Ingenico_Connect_Sdk_Domain_Hostedcheckout_Definitions_TrialInformation_EndDate
+  commentId: P:Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialInformation.EndDate
+  fullName: Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialInformation.EndDate
+  nameWithType: TrialInformation.EndDate
+- uid: Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialInformation.EndDate*
+  name: EndDate
+  href: api/Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialInformation.html#Ingenico_Connect_Sdk_Domain_Hostedcheckout_Definitions_TrialInformation_EndDate_
+  commentId: Overload:Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialInformation.EndDate
+  isSpec: "True"
+  fullName: Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialInformation.EndDate
+  nameWithType: TrialInformation.EndDate
+- uid: Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialInformation.IsRecurring
+  name: IsRecurring
+  href: api/Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialInformation.html#Ingenico_Connect_Sdk_Domain_Hostedcheckout_Definitions_TrialInformation_IsRecurring
+  commentId: P:Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialInformation.IsRecurring
+  fullName: Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialInformation.IsRecurring
+  nameWithType: TrialInformation.IsRecurring
+- uid: Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialInformation.IsRecurring*
+  name: IsRecurring
+  href: api/Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialInformation.html#Ingenico_Connect_Sdk_Domain_Hostedcheckout_Definitions_TrialInformation_IsRecurring_
+  commentId: Overload:Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialInformation.IsRecurring
+  isSpec: "True"
+  fullName: Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialInformation.IsRecurring
+  nameWithType: TrialInformation.IsRecurring
+- uid: Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialInformation.TrialPeriod
+  name: TrialPeriod
+  href: api/Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialInformation.html#Ingenico_Connect_Sdk_Domain_Hostedcheckout_Definitions_TrialInformation_TrialPeriod
+  commentId: P:Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialInformation.TrialPeriod
+  fullName: Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialInformation.TrialPeriod
+  nameWithType: TrialInformation.TrialPeriod
+- uid: Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialInformation.TrialPeriod*
+  name: TrialPeriod
+  href: api/Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialInformation.html#Ingenico_Connect_Sdk_Domain_Hostedcheckout_Definitions_TrialInformation_TrialPeriod_
+  commentId: Overload:Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialInformation.TrialPeriod
+  isSpec: "True"
+  fullName: Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialInformation.TrialPeriod
+  nameWithType: TrialInformation.TrialPeriod
+- uid: Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialInformation.TrialPeriodRecurring
+  name: TrialPeriodRecurring
+  href: api/Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialInformation.html#Ingenico_Connect_Sdk_Domain_Hostedcheckout_Definitions_TrialInformation_TrialPeriodRecurring
+  commentId: P:Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialInformation.TrialPeriodRecurring
+  fullName: Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialInformation.TrialPeriodRecurring
+  nameWithType: TrialInformation.TrialPeriodRecurring
+- uid: Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialInformation.TrialPeriodRecurring*
+  name: TrialPeriodRecurring
+  href: api/Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialInformation.html#Ingenico_Connect_Sdk_Domain_Hostedcheckout_Definitions_TrialInformation_TrialPeriodRecurring_
+  commentId: Overload:Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialInformation.TrialPeriodRecurring
+  isSpec: "True"
+  fullName: Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialInformation.TrialPeriodRecurring
+  nameWithType: TrialInformation.TrialPeriodRecurring
+- uid: Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialPeriod
+  name: TrialPeriod
+  href: api/Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialPeriod.html
+  commentId: T:Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialPeriod
+  fullName: Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialPeriod
+  nameWithType: TrialPeriod
+- uid: Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialPeriod.Duration
+  name: Duration
+  href: api/Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialPeriod.html#Ingenico_Connect_Sdk_Domain_Hostedcheckout_Definitions_TrialPeriod_Duration
+  commentId: P:Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialPeriod.Duration
+  fullName: Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialPeriod.Duration
+  nameWithType: TrialPeriod.Duration
+- uid: Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialPeriod.Duration*
+  name: Duration
+  href: api/Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialPeriod.html#Ingenico_Connect_Sdk_Domain_Hostedcheckout_Definitions_TrialPeriod_Duration_
+  commentId: Overload:Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialPeriod.Duration
+  isSpec: "True"
+  fullName: Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialPeriod.Duration
+  nameWithType: TrialPeriod.Duration
+- uid: Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialPeriod.Interval
+  name: Interval
+  href: api/Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialPeriod.html#Ingenico_Connect_Sdk_Domain_Hostedcheckout_Definitions_TrialPeriod_Interval
+  commentId: P:Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialPeriod.Interval
+  fullName: Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialPeriod.Interval
+  nameWithType: TrialPeriod.Interval
+- uid: Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialPeriod.Interval*
+  name: Interval
+  href: api/Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialPeriod.html#Ingenico_Connect_Sdk_Domain_Hostedcheckout_Definitions_TrialPeriod_Interval_
+  commentId: Overload:Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialPeriod.Interval
+  isSpec: "True"
+  fullName: Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialPeriod.Interval
+  nameWithType: TrialPeriod.Interval
 - uid: Ingenico.Connect.Sdk.Domain.Hostedcheckout.GetHostedCheckoutResponse
   name: GetHostedCheckoutResponse
   href: api/Ingenico.Connect.Sdk.Domain.Hostedcheckout.GetHostedCheckoutResponse.html
@@ -6338,6 +6518,185 @@ references:
   isSpec: "True"
   fullName: Ingenico.Connect.Sdk.Domain.Hostedmandatemanagement.GetHostedMandateManagementResponse.Status
   nameWithType: GetHostedMandateManagementResponse.Status
+- uid: Ingenico.Connect.Sdk.Domain.Installments
+  name: Ingenico.Connect.Sdk.Domain.Installments
+  href: api/Ingenico.Connect.Sdk.Domain.Installments.html
+  commentId: N:Ingenico.Connect.Sdk.Domain.Installments
+  fullName: Ingenico.Connect.Sdk.Domain.Installments
+  nameWithType: Ingenico.Connect.Sdk.Domain.Installments
+- uid: Ingenico.Connect.Sdk.Domain.Installments.Definitions
+  name: Ingenico.Connect.Sdk.Domain.Installments.Definitions
+  href: api/Ingenico.Connect.Sdk.Domain.Installments.Definitions.html
+  commentId: N:Ingenico.Connect.Sdk.Domain.Installments.Definitions
+  fullName: Ingenico.Connect.Sdk.Domain.Installments.Definitions
+  nameWithType: Ingenico.Connect.Sdk.Domain.Installments.Definitions
+- uid: Ingenico.Connect.Sdk.Domain.Installments.Definitions.InstallmentDisplayHints
+  name: InstallmentDisplayHints
+  href: api/Ingenico.Connect.Sdk.Domain.Installments.Definitions.InstallmentDisplayHints.html
+  commentId: T:Ingenico.Connect.Sdk.Domain.Installments.Definitions.InstallmentDisplayHints
+  fullName: Ingenico.Connect.Sdk.Domain.Installments.Definitions.InstallmentDisplayHints
+  nameWithType: InstallmentDisplayHints
+- uid: Ingenico.Connect.Sdk.Domain.Installments.Definitions.InstallmentDisplayHints.DisplayOrder
+  name: DisplayOrder
+  href: api/Ingenico.Connect.Sdk.Domain.Installments.Definitions.InstallmentDisplayHints.html#Ingenico_Connect_Sdk_Domain_Installments_Definitions_InstallmentDisplayHints_DisplayOrder
+  commentId: P:Ingenico.Connect.Sdk.Domain.Installments.Definitions.InstallmentDisplayHints.DisplayOrder
+  fullName: Ingenico.Connect.Sdk.Domain.Installments.Definitions.InstallmentDisplayHints.DisplayOrder
+  nameWithType: InstallmentDisplayHints.DisplayOrder
+- uid: Ingenico.Connect.Sdk.Domain.Installments.Definitions.InstallmentDisplayHints.DisplayOrder*
+  name: DisplayOrder
+  href: api/Ingenico.Connect.Sdk.Domain.Installments.Definitions.InstallmentDisplayHints.html#Ingenico_Connect_Sdk_Domain_Installments_Definitions_InstallmentDisplayHints_DisplayOrder_
+  commentId: Overload:Ingenico.Connect.Sdk.Domain.Installments.Definitions.InstallmentDisplayHints.DisplayOrder
+  isSpec: "True"
+  fullName: Ingenico.Connect.Sdk.Domain.Installments.Definitions.InstallmentDisplayHints.DisplayOrder
+  nameWithType: InstallmentDisplayHints.DisplayOrder
+- uid: Ingenico.Connect.Sdk.Domain.Installments.Definitions.InstallmentDisplayHints.Label
+  name: Label
+  href: api/Ingenico.Connect.Sdk.Domain.Installments.Definitions.InstallmentDisplayHints.html#Ingenico_Connect_Sdk_Domain_Installments_Definitions_InstallmentDisplayHints_Label
+  commentId: P:Ingenico.Connect.Sdk.Domain.Installments.Definitions.InstallmentDisplayHints.Label
+  fullName: Ingenico.Connect.Sdk.Domain.Installments.Definitions.InstallmentDisplayHints.Label
+  nameWithType: InstallmentDisplayHints.Label
+- uid: Ingenico.Connect.Sdk.Domain.Installments.Definitions.InstallmentDisplayHints.Label*
+  name: Label
+  href: api/Ingenico.Connect.Sdk.Domain.Installments.Definitions.InstallmentDisplayHints.html#Ingenico_Connect_Sdk_Domain_Installments_Definitions_InstallmentDisplayHints_Label_
+  commentId: Overload:Ingenico.Connect.Sdk.Domain.Installments.Definitions.InstallmentDisplayHints.Label
+  isSpec: "True"
+  fullName: Ingenico.Connect.Sdk.Domain.Installments.Definitions.InstallmentDisplayHints.Label
+  nameWithType: InstallmentDisplayHints.Label
+- uid: Ingenico.Connect.Sdk.Domain.Installments.Definitions.InstallmentDisplayHints.Logo
+  name: Logo
+  href: api/Ingenico.Connect.Sdk.Domain.Installments.Definitions.InstallmentDisplayHints.html#Ingenico_Connect_Sdk_Domain_Installments_Definitions_InstallmentDisplayHints_Logo
+  commentId: P:Ingenico.Connect.Sdk.Domain.Installments.Definitions.InstallmentDisplayHints.Logo
+  fullName: Ingenico.Connect.Sdk.Domain.Installments.Definitions.InstallmentDisplayHints.Logo
+  nameWithType: InstallmentDisplayHints.Logo
+- uid: Ingenico.Connect.Sdk.Domain.Installments.Definitions.InstallmentDisplayHints.Logo*
+  name: Logo
+  href: api/Ingenico.Connect.Sdk.Domain.Installments.Definitions.InstallmentDisplayHints.html#Ingenico_Connect_Sdk_Domain_Installments_Definitions_InstallmentDisplayHints_Logo_
+  commentId: Overload:Ingenico.Connect.Sdk.Domain.Installments.Definitions.InstallmentDisplayHints.Logo
+  isSpec: "True"
+  fullName: Ingenico.Connect.Sdk.Domain.Installments.Definitions.InstallmentDisplayHints.Logo
+  nameWithType: InstallmentDisplayHints.Logo
+- uid: Ingenico.Connect.Sdk.Domain.Installments.Definitions.InstallmentOptions
+  name: InstallmentOptions
+  href: api/Ingenico.Connect.Sdk.Domain.Installments.Definitions.InstallmentOptions.html
+  commentId: T:Ingenico.Connect.Sdk.Domain.Installments.Definitions.InstallmentOptions
+  fullName: Ingenico.Connect.Sdk.Domain.Installments.Definitions.InstallmentOptions
+  nameWithType: InstallmentOptions
+- uid: Ingenico.Connect.Sdk.Domain.Installments.Definitions.InstallmentOptions.DisplayHints
+  name: DisplayHints
+  href: api/Ingenico.Connect.Sdk.Domain.Installments.Definitions.InstallmentOptions.html#Ingenico_Connect_Sdk_Domain_Installments_Definitions_InstallmentOptions_DisplayHints
+  commentId: P:Ingenico.Connect.Sdk.Domain.Installments.Definitions.InstallmentOptions.DisplayHints
+  fullName: Ingenico.Connect.Sdk.Domain.Installments.Definitions.InstallmentOptions.DisplayHints
+  nameWithType: InstallmentOptions.DisplayHints
+- uid: Ingenico.Connect.Sdk.Domain.Installments.Definitions.InstallmentOptions.DisplayHints*
+  name: DisplayHints
+  href: api/Ingenico.Connect.Sdk.Domain.Installments.Definitions.InstallmentOptions.html#Ingenico_Connect_Sdk_Domain_Installments_Definitions_InstallmentOptions_DisplayHints_
+  commentId: Overload:Ingenico.Connect.Sdk.Domain.Installments.Definitions.InstallmentOptions.DisplayHints
+  isSpec: "True"
+  fullName: Ingenico.Connect.Sdk.Domain.Installments.Definitions.InstallmentOptions.DisplayHints
+  nameWithType: InstallmentOptions.DisplayHints
+- uid: Ingenico.Connect.Sdk.Domain.Installments.Definitions.InstallmentOptions.Id
+  name: Id
+  href: api/Ingenico.Connect.Sdk.Domain.Installments.Definitions.InstallmentOptions.html#Ingenico_Connect_Sdk_Domain_Installments_Definitions_InstallmentOptions_Id
+  commentId: P:Ingenico.Connect.Sdk.Domain.Installments.Definitions.InstallmentOptions.Id
+  fullName: Ingenico.Connect.Sdk.Domain.Installments.Definitions.InstallmentOptions.Id
+  nameWithType: InstallmentOptions.Id
+- uid: Ingenico.Connect.Sdk.Domain.Installments.Definitions.InstallmentOptions.Id*
+  name: Id
+  href: api/Ingenico.Connect.Sdk.Domain.Installments.Definitions.InstallmentOptions.html#Ingenico_Connect_Sdk_Domain_Installments_Definitions_InstallmentOptions_Id_
+  commentId: Overload:Ingenico.Connect.Sdk.Domain.Installments.Definitions.InstallmentOptions.Id
+  isSpec: "True"
+  fullName: Ingenico.Connect.Sdk.Domain.Installments.Definitions.InstallmentOptions.Id
+  nameWithType: InstallmentOptions.Id
+- uid: Ingenico.Connect.Sdk.Domain.Installments.Definitions.InstallmentOptions.InstallmentPlans
+  name: InstallmentPlans
+  href: api/Ingenico.Connect.Sdk.Domain.Installments.Definitions.InstallmentOptions.html#Ingenico_Connect_Sdk_Domain_Installments_Definitions_InstallmentOptions_InstallmentPlans
+  commentId: P:Ingenico.Connect.Sdk.Domain.Installments.Definitions.InstallmentOptions.InstallmentPlans
+  fullName: Ingenico.Connect.Sdk.Domain.Installments.Definitions.InstallmentOptions.InstallmentPlans
+  nameWithType: InstallmentOptions.InstallmentPlans
+- uid: Ingenico.Connect.Sdk.Domain.Installments.Definitions.InstallmentOptions.InstallmentPlans*
+  name: InstallmentPlans
+  href: api/Ingenico.Connect.Sdk.Domain.Installments.Definitions.InstallmentOptions.html#Ingenico_Connect_Sdk_Domain_Installments_Definitions_InstallmentOptions_InstallmentPlans_
+  commentId: Overload:Ingenico.Connect.Sdk.Domain.Installments.Definitions.InstallmentOptions.InstallmentPlans
+  isSpec: "True"
+  fullName: Ingenico.Connect.Sdk.Domain.Installments.Definitions.InstallmentOptions.InstallmentPlans
+  nameWithType: InstallmentOptions.InstallmentPlans
+- uid: Ingenico.Connect.Sdk.Domain.Installments.GetInstallmentRequest
+  name: GetInstallmentRequest
+  href: api/Ingenico.Connect.Sdk.Domain.Installments.GetInstallmentRequest.html
+  commentId: T:Ingenico.Connect.Sdk.Domain.Installments.GetInstallmentRequest
+  fullName: Ingenico.Connect.Sdk.Domain.Installments.GetInstallmentRequest
+  nameWithType: GetInstallmentRequest
+- uid: Ingenico.Connect.Sdk.Domain.Installments.GetInstallmentRequest.AmountOfMoney
+  name: AmountOfMoney
+  href: api/Ingenico.Connect.Sdk.Domain.Installments.GetInstallmentRequest.html#Ingenico_Connect_Sdk_Domain_Installments_GetInstallmentRequest_AmountOfMoney
+  commentId: P:Ingenico.Connect.Sdk.Domain.Installments.GetInstallmentRequest.AmountOfMoney
+  fullName: Ingenico.Connect.Sdk.Domain.Installments.GetInstallmentRequest.AmountOfMoney
+  nameWithType: GetInstallmentRequest.AmountOfMoney
+- uid: Ingenico.Connect.Sdk.Domain.Installments.GetInstallmentRequest.AmountOfMoney*
+  name: AmountOfMoney
+  href: api/Ingenico.Connect.Sdk.Domain.Installments.GetInstallmentRequest.html#Ingenico_Connect_Sdk_Domain_Installments_GetInstallmentRequest_AmountOfMoney_
+  commentId: Overload:Ingenico.Connect.Sdk.Domain.Installments.GetInstallmentRequest.AmountOfMoney
+  isSpec: "True"
+  fullName: Ingenico.Connect.Sdk.Domain.Installments.GetInstallmentRequest.AmountOfMoney
+  nameWithType: GetInstallmentRequest.AmountOfMoney
+- uid: Ingenico.Connect.Sdk.Domain.Installments.GetInstallmentRequest.Bin
+  name: Bin
+  href: api/Ingenico.Connect.Sdk.Domain.Installments.GetInstallmentRequest.html#Ingenico_Connect_Sdk_Domain_Installments_GetInstallmentRequest_Bin
+  commentId: P:Ingenico.Connect.Sdk.Domain.Installments.GetInstallmentRequest.Bin
+  fullName: Ingenico.Connect.Sdk.Domain.Installments.GetInstallmentRequest.Bin
+  nameWithType: GetInstallmentRequest.Bin
+- uid: Ingenico.Connect.Sdk.Domain.Installments.GetInstallmentRequest.Bin*
+  name: Bin
+  href: api/Ingenico.Connect.Sdk.Domain.Installments.GetInstallmentRequest.html#Ingenico_Connect_Sdk_Domain_Installments_GetInstallmentRequest_Bin_
+  commentId: Overload:Ingenico.Connect.Sdk.Domain.Installments.GetInstallmentRequest.Bin
+  isSpec: "True"
+  fullName: Ingenico.Connect.Sdk.Domain.Installments.GetInstallmentRequest.Bin
+  nameWithType: GetInstallmentRequest.Bin
+- uid: Ingenico.Connect.Sdk.Domain.Installments.GetInstallmentRequest.CountryCode
+  name: CountryCode
+  href: api/Ingenico.Connect.Sdk.Domain.Installments.GetInstallmentRequest.html#Ingenico_Connect_Sdk_Domain_Installments_GetInstallmentRequest_CountryCode
+  commentId: P:Ingenico.Connect.Sdk.Domain.Installments.GetInstallmentRequest.CountryCode
+  fullName: Ingenico.Connect.Sdk.Domain.Installments.GetInstallmentRequest.CountryCode
+  nameWithType: GetInstallmentRequest.CountryCode
+- uid: Ingenico.Connect.Sdk.Domain.Installments.GetInstallmentRequest.CountryCode*
+  name: CountryCode
+  href: api/Ingenico.Connect.Sdk.Domain.Installments.GetInstallmentRequest.html#Ingenico_Connect_Sdk_Domain_Installments_GetInstallmentRequest_CountryCode_
+  commentId: Overload:Ingenico.Connect.Sdk.Domain.Installments.GetInstallmentRequest.CountryCode
+  isSpec: "True"
+  fullName: Ingenico.Connect.Sdk.Domain.Installments.GetInstallmentRequest.CountryCode
+  nameWithType: GetInstallmentRequest.CountryCode
+- uid: Ingenico.Connect.Sdk.Domain.Installments.GetInstallmentRequest.PaymentProductId
+  name: PaymentProductId
+  href: api/Ingenico.Connect.Sdk.Domain.Installments.GetInstallmentRequest.html#Ingenico_Connect_Sdk_Domain_Installments_GetInstallmentRequest_PaymentProductId
+  commentId: P:Ingenico.Connect.Sdk.Domain.Installments.GetInstallmentRequest.PaymentProductId
+  fullName: Ingenico.Connect.Sdk.Domain.Installments.GetInstallmentRequest.PaymentProductId
+  nameWithType: GetInstallmentRequest.PaymentProductId
+- uid: Ingenico.Connect.Sdk.Domain.Installments.GetInstallmentRequest.PaymentProductId*
+  name: PaymentProductId
+  href: api/Ingenico.Connect.Sdk.Domain.Installments.GetInstallmentRequest.html#Ingenico_Connect_Sdk_Domain_Installments_GetInstallmentRequest_PaymentProductId_
+  commentId: Overload:Ingenico.Connect.Sdk.Domain.Installments.GetInstallmentRequest.PaymentProductId
+  isSpec: "True"
+  fullName: Ingenico.Connect.Sdk.Domain.Installments.GetInstallmentRequest.PaymentProductId
+  nameWithType: GetInstallmentRequest.PaymentProductId
+- uid: Ingenico.Connect.Sdk.Domain.Installments.InstallmentOptionsResponse
+  name: InstallmentOptionsResponse
+  href: api/Ingenico.Connect.Sdk.Domain.Installments.InstallmentOptionsResponse.html
+  commentId: T:Ingenico.Connect.Sdk.Domain.Installments.InstallmentOptionsResponse
+  fullName: Ingenico.Connect.Sdk.Domain.Installments.InstallmentOptionsResponse
+  nameWithType: InstallmentOptionsResponse
+- uid: Ingenico.Connect.Sdk.Domain.Installments.InstallmentOptionsResponse.InstallmentOptions
+  name: InstallmentOptions
+  href: api/Ingenico.Connect.Sdk.Domain.Installments.InstallmentOptionsResponse.html#Ingenico_Connect_Sdk_Domain_Installments_InstallmentOptionsResponse_InstallmentOptions
+  commentId: P:Ingenico.Connect.Sdk.Domain.Installments.InstallmentOptionsResponse.InstallmentOptions
+  fullName: Ingenico.Connect.Sdk.Domain.Installments.InstallmentOptionsResponse.InstallmentOptions
+  nameWithType: InstallmentOptionsResponse.InstallmentOptions
+- uid: Ingenico.Connect.Sdk.Domain.Installments.InstallmentOptionsResponse.InstallmentOptions*
+  name: InstallmentOptions
+  href: api/Ingenico.Connect.Sdk.Domain.Installments.InstallmentOptionsResponse.html#Ingenico_Connect_Sdk_Domain_Installments_InstallmentOptionsResponse_InstallmentOptions_
+  commentId: Overload:Ingenico.Connect.Sdk.Domain.Installments.InstallmentOptionsResponse.InstallmentOptions
+  isSpec: "True"
+  fullName: Ingenico.Connect.Sdk.Domain.Installments.InstallmentOptionsResponse.InstallmentOptions
+  nameWithType: InstallmentOptionsResponse.InstallmentOptions
 - uid: Ingenico.Connect.Sdk.Domain.Mandates
   name: Ingenico.Connect.Sdk.Domain.Mandates
   href: api/Ingenico.Connect.Sdk.Domain.Mandates.html
@@ -9882,6 +10241,19 @@ references:
   isSpec: "True"
   fullName: Ingenico.Connect.Sdk.Domain.Payment.Definitions.Installments.AmountOfMoneyPerInstallment
   nameWithType: Installments.AmountOfMoneyPerInstallment
+- uid: Ingenico.Connect.Sdk.Domain.Payment.Definitions.Installments.AmountOfMoneyTotal
+  name: AmountOfMoneyTotal
+  href: api/Ingenico.Connect.Sdk.Domain.Payment.Definitions.Installments.html#Ingenico_Connect_Sdk_Domain_Payment_Definitions_Installments_AmountOfMoneyTotal
+  commentId: P:Ingenico.Connect.Sdk.Domain.Payment.Definitions.Installments.AmountOfMoneyTotal
+  fullName: Ingenico.Connect.Sdk.Domain.Payment.Definitions.Installments.AmountOfMoneyTotal
+  nameWithType: Installments.AmountOfMoneyTotal
+- uid: Ingenico.Connect.Sdk.Domain.Payment.Definitions.Installments.AmountOfMoneyTotal*
+  name: AmountOfMoneyTotal
+  href: api/Ingenico.Connect.Sdk.Domain.Payment.Definitions.Installments.html#Ingenico_Connect_Sdk_Domain_Payment_Definitions_Installments_AmountOfMoneyTotal_
+  commentId: Overload:Ingenico.Connect.Sdk.Domain.Payment.Definitions.Installments.AmountOfMoneyTotal
+  isSpec: "True"
+  fullName: Ingenico.Connect.Sdk.Domain.Payment.Definitions.Installments.AmountOfMoneyTotal
+  nameWithType: Installments.AmountOfMoneyTotal
 - uid: Ingenico.Connect.Sdk.Domain.Payment.Definitions.Installments.FrequencyOfInstallments
   name: FrequencyOfInstallments
   href: api/Ingenico.Connect.Sdk.Domain.Payment.Definitions.Installments.html#Ingenico_Connect_Sdk_Domain_Payment_Definitions_Installments_FrequencyOfInstallments
@@ -21966,6 +22338,50 @@ references:
   isSpec: "True"
   fullName: Ingenico.Connect.Sdk.Merchant.Hostedmandatemanagements.HostedmandatemanagementsClient.Get
   nameWithType: HostedmandatemanagementsClient.Get
+- uid: Ingenico.Connect.Sdk.Merchant.Installments
+  name: Ingenico.Connect.Sdk.Merchant.Installments
+  href: api/Ingenico.Connect.Sdk.Merchant.Installments.html
+  commentId: N:Ingenico.Connect.Sdk.Merchant.Installments
+  fullName: Ingenico.Connect.Sdk.Merchant.Installments
+  nameWithType: Ingenico.Connect.Sdk.Merchant.Installments
+- uid: Ingenico.Connect.Sdk.Merchant.Installments.InstallmentsClient
+  name: InstallmentsClient
+  href: api/Ingenico.Connect.Sdk.Merchant.Installments.InstallmentsClient.html
+  commentId: T:Ingenico.Connect.Sdk.Merchant.Installments.InstallmentsClient
+  fullName: Ingenico.Connect.Sdk.Merchant.Installments.InstallmentsClient
+  nameWithType: InstallmentsClient
+- uid: Ingenico.Connect.Sdk.Merchant.Installments.InstallmentsClient.#ctor(Ingenico.Connect.Sdk.ApiResource,System.Collections.Generic.IDictionary{System.String,System.String})
+  name: InstallmentsClient(ApiResource, IDictionary<string, string>)
+  href: api/Ingenico.Connect.Sdk.Merchant.Installments.InstallmentsClient.html#Ingenico_Connect_Sdk_Merchant_Installments_InstallmentsClient__ctor_Ingenico_Connect_Sdk_ApiResource_System_Collections_Generic_IDictionary_System_String_System_String__
+  commentId: M:Ingenico.Connect.Sdk.Merchant.Installments.InstallmentsClient.#ctor(Ingenico.Connect.Sdk.ApiResource,System.Collections.Generic.IDictionary{System.String,System.String})
+  name.vb: New(ApiResource, IDictionary(Of String, String))
+  fullName: Ingenico.Connect.Sdk.Merchant.Installments.InstallmentsClient.InstallmentsClient(Ingenico.Connect.Sdk.ApiResource, System.Collections.Generic.IDictionary<string, string>)
+  fullName.vb: Ingenico.Connect.Sdk.Merchant.Installments.InstallmentsClient.New(Ingenico.Connect.Sdk.ApiResource, System.Collections.Generic.IDictionary(Of String, String))
+  nameWithType: InstallmentsClient.InstallmentsClient(ApiResource, IDictionary<string, string>)
+  nameWithType.vb: InstallmentsClient.New(ApiResource, IDictionary(Of String, String))
+- uid: Ingenico.Connect.Sdk.Merchant.Installments.InstallmentsClient.#ctor*
+  name: InstallmentsClient
+  href: api/Ingenico.Connect.Sdk.Merchant.Installments.InstallmentsClient.html#Ingenico_Connect_Sdk_Merchant_Installments_InstallmentsClient__ctor_
+  commentId: Overload:Ingenico.Connect.Sdk.Merchant.Installments.InstallmentsClient.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Ingenico.Connect.Sdk.Merchant.Installments.InstallmentsClient.InstallmentsClient
+  fullName.vb: Ingenico.Connect.Sdk.Merchant.Installments.InstallmentsClient.New
+  nameWithType: InstallmentsClient.InstallmentsClient
+  nameWithType.vb: InstallmentsClient.New
+- uid: Ingenico.Connect.Sdk.Merchant.Installments.InstallmentsClient.GetInstallmentsInfo(Ingenico.Connect.Sdk.Domain.Installments.GetInstallmentRequest,Ingenico.Connect.Sdk.CallContext)
+  name: GetInstallmentsInfo(GetInstallmentRequest, CallContext)
+  href: api/Ingenico.Connect.Sdk.Merchant.Installments.InstallmentsClient.html#Ingenico_Connect_Sdk_Merchant_Installments_InstallmentsClient_GetInstallmentsInfo_Ingenico_Connect_Sdk_Domain_Installments_GetInstallmentRequest_Ingenico_Connect_Sdk_CallContext_
+  commentId: M:Ingenico.Connect.Sdk.Merchant.Installments.InstallmentsClient.GetInstallmentsInfo(Ingenico.Connect.Sdk.Domain.Installments.GetInstallmentRequest,Ingenico.Connect.Sdk.CallContext)
+  fullName: Ingenico.Connect.Sdk.Merchant.Installments.InstallmentsClient.GetInstallmentsInfo(Ingenico.Connect.Sdk.Domain.Installments.GetInstallmentRequest, Ingenico.Connect.Sdk.CallContext)
+  nameWithType: InstallmentsClient.GetInstallmentsInfo(GetInstallmentRequest, CallContext)
+- uid: Ingenico.Connect.Sdk.Merchant.Installments.InstallmentsClient.GetInstallmentsInfo*
+  name: GetInstallmentsInfo
+  href: api/Ingenico.Connect.Sdk.Merchant.Installments.InstallmentsClient.html#Ingenico_Connect_Sdk_Merchant_Installments_InstallmentsClient_GetInstallmentsInfo_
+  commentId: Overload:Ingenico.Connect.Sdk.Merchant.Installments.InstallmentsClient.GetInstallmentsInfo
+  isSpec: "True"
+  fullName: Ingenico.Connect.Sdk.Merchant.Installments.InstallmentsClient.GetInstallmentsInfo
+  nameWithType: InstallmentsClient.GetInstallmentsInfo
 - uid: Ingenico.Connect.Sdk.Merchant.Mandates
   name: Ingenico.Connect.Sdk.Merchant.Mandates
   href: api/Ingenico.Connect.Sdk.Merchant.Mandates.html
@@ -22180,6 +22596,19 @@ references:
   isSpec: "True"
   fullName: Ingenico.Connect.Sdk.Merchant.MerchantClient.Hostedmandatemanagements
   nameWithType: MerchantClient.Hostedmandatemanagements
+- uid: Ingenico.Connect.Sdk.Merchant.MerchantClient.Installments
+  name: Installments()
+  href: api/Ingenico.Connect.Sdk.Merchant.MerchantClient.html#Ingenico_Connect_Sdk_Merchant_MerchantClient_Installments
+  commentId: M:Ingenico.Connect.Sdk.Merchant.MerchantClient.Installments
+  fullName: Ingenico.Connect.Sdk.Merchant.MerchantClient.Installments()
+  nameWithType: MerchantClient.Installments()
+- uid: Ingenico.Connect.Sdk.Merchant.MerchantClient.Installments*
+  name: Installments
+  href: api/Ingenico.Connect.Sdk.Merchant.MerchantClient.html#Ingenico_Connect_Sdk_Merchant_MerchantClient_Installments_
+  commentId: Overload:Ingenico.Connect.Sdk.Merchant.MerchantClient.Installments
+  isSpec: "True"
+  fullName: Ingenico.Connect.Sdk.Merchant.MerchantClient.Installments
+  nameWithType: MerchantClient.Installments
 - uid: Ingenico.Connect.Sdk.Merchant.MerchantClient.Mandates
   name: Mandates()
   href: api/Ingenico.Connect.Sdk.Merchant.MerchantClient.html#Ingenico_Connect_Sdk_Merchant_MerchantClient_Mandates

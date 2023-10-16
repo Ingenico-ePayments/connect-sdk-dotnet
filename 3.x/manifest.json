@@ -853,6 +853,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.Frequency.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.Frequency.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.HostedCheckoutSpecificInput.yml",
       "output": {
         ".html": {
@@ -897,6 +907,36 @@
       "output": {
         ".html": {
           "relative_path": "api/Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.PaymentProductFiltersHostedCheckout.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.RecurringPaymentsData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.RecurringPaymentsData.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialInformation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialInformation.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialPeriod.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialPeriod.html"
         }
       },
       "version": ""
@@ -997,6 +1037,66 @@
       "output": {
         ".html": {
           "relative_path": "api/Ingenico.Connect.Sdk.Domain.Hostedmandatemanagement.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Ingenico.Connect.Sdk.Domain.Installments.Definitions.InstallmentDisplayHints.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Ingenico.Connect.Sdk.Domain.Installments.Definitions.InstallmentDisplayHints.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Ingenico.Connect.Sdk.Domain.Installments.Definitions.InstallmentOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Ingenico.Connect.Sdk.Domain.Installments.Definitions.InstallmentOptions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Ingenico.Connect.Sdk.Domain.Installments.Definitions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Ingenico.Connect.Sdk.Domain.Installments.Definitions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Ingenico.Connect.Sdk.Domain.Installments.GetInstallmentRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Ingenico.Connect.Sdk.Domain.Installments.GetInstallmentRequest.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Ingenico.Connect.Sdk.Domain.Installments.InstallmentOptionsResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Ingenico.Connect.Sdk.Domain.Installments.InstallmentOptionsResponse.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Ingenico.Connect.Sdk.Domain.Installments.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Ingenico.Connect.Sdk.Domain.Installments.html"
         }
       },
       "version": ""
@@ -4517,6 +4617,26 @@
       "output": {
         ".html": {
           "relative_path": "api/Ingenico.Connect.Sdk.Merchant.Hostedmandatemanagements.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Ingenico.Connect.Sdk.Merchant.Installments.InstallmentsClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Ingenico.Connect.Sdk.Merchant.Installments.InstallmentsClient.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Ingenico.Connect.Sdk.Merchant.Installments.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Ingenico.Connect.Sdk.Merchant.Installments.html"
         }
       },
       "version": ""

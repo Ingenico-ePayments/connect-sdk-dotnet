@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title>Class Installments
+      <title>Class TrialInformation
  | Ingenico Connect .NET SDK </title>
       <meta name="viewport" content="width=device-width">
-      <meta name="title" content="Class Installments
+      <meta name="title" content="Class TrialInformation
  | Ingenico Connect .NET SDK ">
     
       <link rel="shortcut icon" href="../favicon.ico">
@@ -77,18 +77,18 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Ingenico.Connect.Sdk.Domain.Payment.Definitions.Installments">
+            <article class="content wrap" id="_content" data-uid="Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialInformation">
 
 
 
-  <h1 id="Ingenico_Connect_Sdk_Domain_Payment_Definitions_Installments" data-uid="Ingenico.Connect.Sdk.Domain.Payment.Definitions.Installments" class="text-break">Class Installments
+  <h1 id="Ingenico_Connect_Sdk_Domain_Hostedcheckout_Definitions_TrialInformation" data-uid="Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialInformation" class="text-break">Class TrialInformation
 </h1>
   <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-    <div class="level1"><span class="xref">Installments</span></div>
+    <div class="level1"><span class="xref">TrialInformation</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -114,23 +114,26 @@
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
     </div>
   </div>
-  <h6><strong>Namespace</strong>: <span class="xref">Ingenico</span>.<span class="xref">Connect</span>.<a class="xref" href="Ingenico.Connect.Sdk.html">Sdk</a>.<span class="xref">Domain</span>.<a class="xref" href="Ingenico.Connect.Sdk.Domain.Payment.html">Payment</a>.<a class="xref" href="Ingenico.Connect.Sdk.Domain.Payment.Definitions.html">Definitions</a></h6>
+  <h6><strong>Namespace</strong>: <span class="xref">Ingenico</span>.<span class="xref">Connect</span>.<a class="xref" href="Ingenico.Connect.Sdk.html">Sdk</a>.<span class="xref">Domain</span>.<a class="xref" href="Ingenico.Connect.Sdk.Domain.Hostedcheckout.html">Hostedcheckout</a>.<a class="xref" href="Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.html">Definitions</a></h6>
   <h6><strong>Assembly</strong>: connect-sdk-dotnet.dll</h6>
-  <h5 id="Ingenico_Connect_Sdk_Domain_Payment_Definitions_Installments_syntax">Syntax</h5>
+  <h5 id="Ingenico_Connect_Sdk_Domain_Hostedcheckout_Definitions_TrialInformation_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class Installments</code></pre>
+    <pre><code class="lang-csharp hljs">public class TrialInformation</code></pre>
   </div>
   <h3 id="properties">Properties
 </h3>
-  <a id="Ingenico_Connect_Sdk_Domain_Payment_Definitions_Installments_AmountOfMoneyPerInstallment_" data-uid="Ingenico.Connect.Sdk.Domain.Payment.Definitions.Installments.AmountOfMoneyPerInstallment*"></a>
-  <h4 id="Ingenico_Connect_Sdk_Domain_Payment_Definitions_Installments_AmountOfMoneyPerInstallment" data-uid="Ingenico.Connect.Sdk.Domain.Payment.Definitions.Installments.AmountOfMoneyPerInstallment">AmountOfMoneyPerInstallment</h4>
-  <div class="markdown level1 summary"><p>The amount that will be paid per installment. The total amount of amountOfMoneyPerInstallment x numberOfInstallments can not be higher than the total amount of this transaction, although we will not validate that.
-<br>For the payment product IDs BC Card (paymentProductId 8590), Hana Card (paymentProductId 8591), Hyundai Card (paymentProductId 8592), KB Card (paymentProductId 8593), Lotte Card (paymentProductId 8594), NH Card (paymentProductId 8595), Samsung Card (paymentProductId 8596) and Shinhan Card (paymentProductId 8597), this property is not used as the value is decided by the issuer.</p>
+  <a id="Ingenico_Connect_Sdk_Domain_Hostedcheckout_Definitions_TrialInformation_AmountOfMoneyAfterTrial_" data-uid="Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialInformation.AmountOfMoneyAfterTrial*"></a>
+  <h4 id="Ingenico_Connect_Sdk_Domain_Hostedcheckout_Definitions_TrialInformation_AmountOfMoneyAfterTrial" data-uid="Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialInformation.AmountOfMoneyAfterTrial">AmountOfMoneyAfterTrial</h4>
+  <div class="markdown level1 summary"><p>The object containing the amount and ISO currency code attributes of money to be paid after the trial period ends.
+<br>
+<br>Note:
+<br>
+<br>The property order.amountOfMoney should be populated with the amount to be paid during or for the trial period (no-cost or discounted time-constrained trial subscription period).</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public AmountOfMoney AmountOfMoneyPerInstallment { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public AmountOfMoney AmountOfMoneyAfterTrial { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-condensed">
@@ -147,40 +150,14 @@
       </tr>
     </tbody>
   </table>
-  <a id="Ingenico_Connect_Sdk_Domain_Payment_Definitions_Installments_AmountOfMoneyTotal_" data-uid="Ingenico.Connect.Sdk.Domain.Payment.Definitions.Installments.AmountOfMoneyTotal*"></a>
-  <h4 id="Ingenico_Connect_Sdk_Domain_Payment_Definitions_Installments_AmountOfMoneyTotal" data-uid="Ingenico.Connect.Sdk.Domain.Payment.Definitions.Installments.AmountOfMoneyTotal">AmountOfMoneyTotal</h4>
-  <div class="markdown level1 summary"><p>Object containing the total amount and ISO currency code attributes</p>
+  <a id="Ingenico_Connect_Sdk_Domain_Hostedcheckout_Definitions_TrialInformation_EndDate_" data-uid="Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialInformation.EndDate*"></a>
+  <h4 id="Ingenico_Connect_Sdk_Domain_Hostedcheckout_Definitions_TrialInformation_EndDate" data-uid="Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialInformation.EndDate">EndDate</h4>
+  <div class="markdown level1 summary"><p>The date that the trial period ends in YYYYMMDD format.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public AmountOfMoney AmountOfMoneyTotal { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Ingenico.Connect.Sdk.Domain.Definitions.AmountOfMoney.html">AmountOfMoney</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="Ingenico_Connect_Sdk_Domain_Payment_Definitions_Installments_FrequencyOfInstallments_" data-uid="Ingenico.Connect.Sdk.Domain.Payment.Definitions.Installments.FrequencyOfInstallments*"></a>
-  <h4 id="Ingenico_Connect_Sdk_Domain_Payment_Definitions_Installments_FrequencyOfInstallments" data-uid="Ingenico.Connect.Sdk.Domain.Payment.Definitions.Installments.FrequencyOfInstallments">FrequencyOfInstallments</h4>
-  <div class="markdown level1 summary"><p>The frequency in which the installments will be collected from the customer. The possible values are:</p>
-<ul><li>daily</li><li>weekly</li><li>monthly (default)</li><li>quarterly</li></ul>
-<br>For the payment product IDs BC Card (paymentProductId 8590), Hana Card (paymentProductId 8591), Hyundai Card (paymentProductId 8592), KB Card (paymentProductId 8593), Lotte Card (paymentProductId 8594), NH Card (paymentProductId 8595), Samsung Card (paymentProductId 8596) and Shinhan Card (paymentProductId 8597), only the value monthly is valid.
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string FrequencyOfInstallments { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public string EndDate { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-condensed">
@@ -197,19 +174,16 @@
       </tr>
     </tbody>
   </table>
-  <a id="Ingenico_Connect_Sdk_Domain_Payment_Definitions_Installments_InstallmentPlanCode_" data-uid="Ingenico.Connect.Sdk.Domain.Payment.Definitions.Installments.InstallmentPlanCode*"></a>
-  <h4 id="Ingenico_Connect_Sdk_Domain_Payment_Definitions_Installments_InstallmentPlanCode" data-uid="Ingenico.Connect.Sdk.Domain.Payment.Definitions.Installments.InstallmentPlanCode">InstallmentPlanCode</h4>
-  <div class="markdown level1 summary"><p>The code for the installment plan. The possible values are:</p>
-<ul><li>
-  <b>43</b> No-interest, 3 month Installmentplan</li><li>
-  <b>46</b>No-interest, 6 month Installmentplan</li><li>
-  <b>49</b>No-interest, 9 month Installmentplan</li><li>
-  <b>52</b>No-interest, 12 month Installmentplan</li></ul>
+  <a id="Ingenico_Connect_Sdk_Domain_Hostedcheckout_Definitions_TrialInformation_IsRecurring_" data-uid="Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialInformation.IsRecurring*"></a>
+  <h4 id="Ingenico_Connect_Sdk_Domain_Hostedcheckout_Definitions_TrialInformation_IsRecurring" data-uid="Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialInformation.IsRecurring">IsRecurring</h4>
+  <div class="markdown level1 summary"><p>The property specifying if there will be recurring charges throughout the trial period (when the trial period involves a temporary discounted rate).
+<br>True = there will be recurring charges during the trial period
+<br>False = there will not be recurring charges during the trial period</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int? InstallmentPlanCode { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public bool? IsRecurring { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-condensed">
@@ -221,20 +195,19 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <a id="Ingenico_Connect_Sdk_Domain_Payment_Definitions_Installments_InterestRate_" data-uid="Ingenico.Connect.Sdk.Domain.Payment.Definitions.Installments.InterestRate*"></a>
-  <h4 id="Ingenico_Connect_Sdk_Domain_Payment_Definitions_Installments_InterestRate" data-uid="Ingenico.Connect.Sdk.Domain.Payment.Definitions.Installments.InterestRate">InterestRate</h4>
-  <div class="markdown level1 summary"><p>The interest rate paid for installments expressed in percentage. So for example 5.75 means 5.75%
-<br>For the payment product IDs BC Card (paymentProductId 8590), Hana Card (paymentProductId 8591), Hyundai Card (paymentProductId 8592), KB Card (paymentProductId 8593), Lotte Card (paymentProductId 8594), NH Card (paymentProductId 8595), Samsung Card (paymentProductId 8596) and Shinhan Card (paymentProductId 8597), this property is not used as the value is decided by the issuer.</p>
+  <a id="Ingenico_Connect_Sdk_Domain_Hostedcheckout_Definitions_TrialInformation_TrialPeriod_" data-uid="Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialInformation.TrialPeriod*"></a>
+  <h4 id="Ingenico_Connect_Sdk_Domain_Hostedcheckout_Definitions_TrialInformation_TrialPeriod" data-uid="Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialInformation.TrialPeriod">TrialPeriod</h4>
+  <div class="markdown level1 summary"><p>The object containing information on the trial period duration and the interval between payments during that period.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string InterestRate { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public TrialPeriod TrialPeriod { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-condensed">
@@ -246,20 +219,25 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><a class="xref" href="Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialPeriod.html">TrialPeriod</a></td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <a id="Ingenico_Connect_Sdk_Domain_Payment_Definitions_Installments_NumberOfInstallments_" data-uid="Ingenico.Connect.Sdk.Domain.Payment.Definitions.Installments.NumberOfInstallments*"></a>
-  <h4 id="Ingenico_Connect_Sdk_Domain_Payment_Definitions_Installments_NumberOfInstallments" data-uid="Ingenico.Connect.Sdk.Domain.Payment.Definitions.Installments.NumberOfInstallments">NumberOfInstallments</h4>
-  <div class="markdown level1 summary"><p>The number of installments in which this transaction will be paid, which can be used for card payments at supported acquirers, or with specific payment products. Only used with some acquirers. In case you send in the details of this object, only the payment products (or combination of card products and acquirers) that support installments will be shown on the MyCheckout hosted payment pages. If this property is not provided the customer will not see details on the installment plan in a HostedCheckout.
-<br>For the payment product IDs BC Card (paymentProductId 8590), Hana Card (paymentProductId 8591), Hyundai Card (paymentProductId 8592), KB Card (paymentProductId 8593), Lotte Card (paymentProductId 8594), NH Card (paymentProductId 8595), Samsung Card (paymentProductId 8596) and Shinhan Card (paymentProductId 8597), there is a maximum of 12 installments.</p>
+  <a id="Ingenico_Connect_Sdk_Domain_Hostedcheckout_Definitions_TrialInformation_TrialPeriodRecurring_" data-uid="Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialInformation.TrialPeriodRecurring*"></a>
+  <h4 id="Ingenico_Connect_Sdk_Domain_Hostedcheckout_Definitions_TrialInformation_TrialPeriodRecurring" data-uid="Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.TrialInformation.TrialPeriodRecurring">TrialPeriodRecurring</h4>
+  <div class="markdown level1 summary"><p>The object containing the frequency and interval between recurring payments.
+<br>
+<br>Note:
+<br>
+<br>This object should only be populated if the frequency of recurring payments between the trial and regular periods is different.
+<br>
+<br>If you do not populated this object, then the same interval frequency and interval of recurringPaymentsData.recurringInterval will be used</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public long? NumberOfInstallments { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public Frequency TrialPeriodRecurring { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-condensed">
@@ -271,7 +249,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a>?</td>
+        <td><a class="xref" href="Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions.Frequency.html">Frequency</a></td>
         <td></td>
       </tr>
     </tbody>
