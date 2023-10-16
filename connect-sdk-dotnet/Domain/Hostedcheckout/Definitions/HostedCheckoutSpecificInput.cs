@@ -25,6 +25,16 @@ namespace Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions
         public PaymentProductFiltersHostedCheckout PaymentProductFilters { get; set; } = null;
 
         /// <summary>
+        /// The object containing reference data for the text that can be displayed on MyCheckout hosted payment page with subscription information.
+        /// <br />
+        /// <br />Note:
+        /// <br />
+        /// <br />The data in this object is only meant for displaying recurring payments-related data on your checkout page.
+        /// <br />You still need to submit all the recurring payment-related data in the corresponding payment product-specific input. (example: cardPaymentMethodSpecificInput.recurring and cardPaymentMethodSpecificInput.isRecurring)
+        /// </summary>
+        public RecurringPaymentsData RecurringPaymentsData { get; set; } = null;
+
+        /// <summary>
         /// This flag affects the status of a Hosted Checkout when a customer presses the cancel button and is returned to you as a result.
         /// <br />If set to true, then the status will be CANCELLED_BY_CONSUMER. If set to false, then the status will be IN_PROGRESS.
         /// <br />The default value is false. This flag was added to introduce the additional CANCELLED_BY_CONSUMER state as a non-breaking change.

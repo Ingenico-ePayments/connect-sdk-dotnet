@@ -15,6 +15,11 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
         public AmountOfMoney AmountOfMoneyPerInstallment { get; set; } = null;
 
         /// <summary>
+        /// Object containing the total amount and ISO currency code attributes
+        /// </summary>
+        public AmountOfMoney AmountOfMoneyTotal { get; set; } = null;
+
+        /// <summary>
         /// The frequency in which the installments will be collected from the customer. The possible values are: 
         /// <list type="bullet">
         ///   <item><description>daily</description></item>
