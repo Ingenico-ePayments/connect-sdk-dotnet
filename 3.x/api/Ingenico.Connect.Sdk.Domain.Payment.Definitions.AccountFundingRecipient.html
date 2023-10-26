@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title>Class PersonalInformation
+      <title>Class AccountFundingRecipient
  | Ingenico Connect .NET SDK </title>
       <meta name="viewport" content="width=device-width">
-      <meta name="title" content="Class PersonalInformation
+      <meta name="title" content="Class AccountFundingRecipient
  | Ingenico Connect .NET SDK ">
     
       <link rel="shortcut icon" href="../favicon.ico">
@@ -77,18 +77,18 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Ingenico.Connect.Sdk.Domain.Payment.Definitions.PersonalInformation">
+            <article class="content wrap" id="_content" data-uid="Ingenico.Connect.Sdk.Domain.Payment.Definitions.AccountFundingRecipient">
 
 
 
-  <h1 id="Ingenico_Connect_Sdk_Domain_Payment_Definitions_PersonalInformation" data-uid="Ingenico.Connect.Sdk.Domain.Payment.Definitions.PersonalInformation" class="text-break">Class PersonalInformation
+  <h1 id="Ingenico_Connect_Sdk_Domain_Payment_Definitions_AccountFundingRecipient" data-uid="Ingenico.Connect.Sdk.Domain.Payment.Definitions.AccountFundingRecipient" class="text-break">Class AccountFundingRecipient
 </h1>
   <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-    <div class="level1"><span class="xref">PersonalInformation</span></div>
+    <div class="level1"><span class="xref">AccountFundingRecipient</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -116,15 +116,88 @@
   </div>
   <h6><strong>Namespace</strong>: <span class="xref">Ingenico</span>.<span class="xref">Connect</span>.<a class="xref" href="Ingenico.Connect.Sdk.html">Sdk</a>.<span class="xref">Domain</span>.<a class="xref" href="Ingenico.Connect.Sdk.Domain.Payment.html">Payment</a>.<a class="xref" href="Ingenico.Connect.Sdk.Domain.Payment.Definitions.html">Definitions</a></h6>
   <h6><strong>Assembly</strong>: connect-sdk-dotnet.dll</h6>
-  <h5 id="Ingenico_Connect_Sdk_Domain_Payment_Definitions_PersonalInformation_syntax">Syntax</h5>
+  <h5 id="Ingenico_Connect_Sdk_Domain_Payment_Definitions_AccountFundingRecipient_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class PersonalInformation</code></pre>
+    <pre><code class="lang-csharp hljs">public class AccountFundingRecipient</code></pre>
   </div>
   <h3 id="properties">Properties
 </h3>
-  <a id="Ingenico_Connect_Sdk_Domain_Payment_Definitions_PersonalInformation_DateOfBirth_" data-uid="Ingenico.Connect.Sdk.Domain.Payment.Definitions.PersonalInformation.DateOfBirth*"></a>
-  <h4 id="Ingenico_Connect_Sdk_Domain_Payment_Definitions_PersonalInformation_DateOfBirth" data-uid="Ingenico.Connect.Sdk.Domain.Payment.Definitions.PersonalInformation.DateOfBirth">DateOfBirth</h4>
-  <div class="markdown level1 summary"><p>The date of birth of the customer
+  <a id="Ingenico_Connect_Sdk_Domain_Payment_Definitions_AccountFundingRecipient_AccountNumber_" data-uid="Ingenico.Connect.Sdk.Domain.Payment.Definitions.AccountFundingRecipient.AccountNumber*"></a>
+  <h4 id="Ingenico_Connect_Sdk_Domain_Payment_Definitions_AccountFundingRecipient_AccountNumber" data-uid="Ingenico.Connect.Sdk.Domain.Payment.Definitions.AccountFundingRecipient.AccountNumber">AccountNumber</h4>
+  <div class="markdown level1 summary"><p>Should be populated with the value of the corresponding accountNumberType of the recipient.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string AccountNumber { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Ingenico_Connect_Sdk_Domain_Payment_Definitions_AccountFundingRecipient_AccountNumberType_" data-uid="Ingenico.Connect.Sdk.Domain.Payment.Definitions.AccountFundingRecipient.AccountNumberType*"></a>
+  <h4 id="Ingenico_Connect_Sdk_Domain_Payment_Definitions_AccountFundingRecipient_AccountNumberType" data-uid="Ingenico.Connect.Sdk.Domain.Payment.Definitions.AccountFundingRecipient.AccountNumberType">AccountNumberType</h4>
+  <div class="markdown level1 summary"><p>Defines the account number type of the recipient. Possible values are:</p>
+<ul><li>cash = Mode of payment is cash to the recipient.</li><li>walletId = Digital wallet ID.</li><li>routingNumber = Routing Transit Number is a code used by financial institutions to identify other financial institutions.</li><li>iban = International Bank Account Number, is a standard international numbering system for identifying bank accounts.</li><li>bicNumber = Bank Identification Code is a number that is used to identify a specific bank.</li></ul>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string AccountNumberType { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Ingenico_Connect_Sdk_Domain_Payment_Definitions_AccountFundingRecipient_Address_" data-uid="Ingenico.Connect.Sdk.Domain.Payment.Definitions.AccountFundingRecipient.Address*"></a>
+  <h4 id="Ingenico_Connect_Sdk_Domain_Payment_Definitions_AccountFundingRecipient_Address" data-uid="Ingenico.Connect.Sdk.Domain.Payment.Definitions.AccountFundingRecipient.Address">Address</h4>
+  <div class="markdown level1 summary"><p>Object containing the address details of the recipient of an account funding transaction.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Address Address { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Ingenico.Connect.Sdk.Domain.Definitions.Address.html">Address</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Ingenico_Connect_Sdk_Domain_Payment_Definitions_AccountFundingRecipient_DateOfBirth_" data-uid="Ingenico.Connect.Sdk.Domain.Payment.Definitions.AccountFundingRecipient.DateOfBirth*"></a>
+  <h4 id="Ingenico_Connect_Sdk_Domain_Payment_Definitions_AccountFundingRecipient_DateOfBirth" data-uid="Ingenico.Connect.Sdk.Domain.Payment.Definitions.AccountFundingRecipient.DateOfBirth">DateOfBirth</h4>
+  <div class="markdown level1 summary"><p>The date of birth of the recipient
 <br>Format: YYYYMMDD</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -147,15 +220,38 @@
       </tr>
     </tbody>
   </table>
-  <a id="Ingenico_Connect_Sdk_Domain_Payment_Definitions_PersonalInformation_Gender_" data-uid="Ingenico.Connect.Sdk.Domain.Payment.Definitions.PersonalInformation.Gender*"></a>
-  <h4 id="Ingenico_Connect_Sdk_Domain_Payment_Definitions_PersonalInformation_Gender" data-uid="Ingenico.Connect.Sdk.Domain.Payment.Definitions.PersonalInformation.Gender">Gender</h4>
-  <div class="markdown level1 summary"><p>The gender of the customer, possible values are:</p>
-<ul><li>male</li><li>female</li><li>unknown or empty</li></ul>
+  <a id="Ingenico_Connect_Sdk_Domain_Payment_Definitions_AccountFundingRecipient_Name_" data-uid="Ingenico.Connect.Sdk.Domain.Payment.Definitions.AccountFundingRecipient.Name*"></a>
+  <h4 id="Ingenico_Connect_Sdk_Domain_Payment_Definitions_AccountFundingRecipient_Name" data-uid="Ingenico.Connect.Sdk.Domain.Payment.Definitions.AccountFundingRecipient.Name">Name</h4>
+  <div class="markdown level1 summary"><p>Object containing the name details of the recipient of an account funding transaction.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Gender { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public AfrName Name { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Ingenico.Connect.Sdk.Domain.Payment.Definitions.AfrName.html">AfrName</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Ingenico_Connect_Sdk_Domain_Payment_Definitions_AccountFundingRecipient_PartialPan_" data-uid="Ingenico.Connect.Sdk.Domain.Payment.Definitions.AccountFundingRecipient.PartialPan*"></a>
+  <h4 id="Ingenico_Connect_Sdk_Domain_Payment_Definitions_AccountFundingRecipient_PartialPan" data-uid="Ingenico.Connect.Sdk.Domain.Payment.Definitions.AccountFundingRecipient.PartialPan">PartialPan</h4>
+  <div class="markdown level1 summary"><p>Either partialPan or accountnumber is required for merchants that use Merchant Category Code (MCC) 6012 for transactions involving UK costumers.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string PartialPan { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-condensed">
@@ -168,54 +264,6 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="Ingenico_Connect_Sdk_Domain_Payment_Definitions_PersonalInformation_Identification_" data-uid="Ingenico.Connect.Sdk.Domain.Payment.Definitions.PersonalInformation.Identification*"></a>
-  <h4 id="Ingenico_Connect_Sdk_Domain_Payment_Definitions_PersonalInformation_Identification" data-uid="Ingenico.Connect.Sdk.Domain.Payment.Definitions.PersonalInformation.Identification">Identification</h4>
-  <div class="markdown level1 summary"><p>Object containing identification documents information</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public PersonalIdentification Identification { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Ingenico.Connect.Sdk.Domain.Payment.Definitions.PersonalIdentification.html">PersonalIdentification</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="Ingenico_Connect_Sdk_Domain_Payment_Definitions_PersonalInformation_Name_" data-uid="Ingenico.Connect.Sdk.Domain.Payment.Definitions.PersonalInformation.Name*"></a>
-  <h4 id="Ingenico_Connect_Sdk_Domain_Payment_Definitions_PersonalInformation_Name" data-uid="Ingenico.Connect.Sdk.Domain.Payment.Definitions.PersonalInformation.Name">Name</h4>
-  <div class="markdown level1 summary"><p>Object containing the name details of the customer</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public PersonalName Name { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Ingenico.Connect.Sdk.Domain.Payment.Definitions.PersonalName.html">PersonalName</a></td>
         <td></td>
       </tr>
     </tbody>

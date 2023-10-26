@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title>Class PersonalInformation
+      <title>Class PersonalIdentification
  | Ingenico Connect .NET SDK </title>
       <meta name="viewport" content="width=device-width">
-      <meta name="title" content="Class PersonalInformation
+      <meta name="title" content="Class PersonalIdentification
  | Ingenico Connect .NET SDK ">
     
       <link rel="shortcut icon" href="../favicon.ico">
@@ -77,18 +77,18 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Ingenico.Connect.Sdk.Domain.Payment.Definitions.PersonalInformation">
+            <article class="content wrap" id="_content" data-uid="Ingenico.Connect.Sdk.Domain.Payment.Definitions.PersonalIdentification">
 
 
 
-  <h1 id="Ingenico_Connect_Sdk_Domain_Payment_Definitions_PersonalInformation" data-uid="Ingenico.Connect.Sdk.Domain.Payment.Definitions.PersonalInformation" class="text-break">Class PersonalInformation
+  <h1 id="Ingenico_Connect_Sdk_Domain_Payment_Definitions_PersonalIdentification" data-uid="Ingenico.Connect.Sdk.Domain.Payment.Definitions.PersonalIdentification" class="text-break">Class PersonalIdentification
 </h1>
   <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-    <div class="level1"><span class="xref">PersonalInformation</span></div>
+    <div class="level1"><span class="xref">PersonalIdentification</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -116,21 +116,20 @@
   </div>
   <h6><strong>Namespace</strong>: <span class="xref">Ingenico</span>.<span class="xref">Connect</span>.<a class="xref" href="Ingenico.Connect.Sdk.html">Sdk</a>.<span class="xref">Domain</span>.<a class="xref" href="Ingenico.Connect.Sdk.Domain.Payment.html">Payment</a>.<a class="xref" href="Ingenico.Connect.Sdk.Domain.Payment.Definitions.html">Definitions</a></h6>
   <h6><strong>Assembly</strong>: connect-sdk-dotnet.dll</h6>
-  <h5 id="Ingenico_Connect_Sdk_Domain_Payment_Definitions_PersonalInformation_syntax">Syntax</h5>
+  <h5 id="Ingenico_Connect_Sdk_Domain_Payment_Definitions_PersonalIdentification_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class PersonalInformation</code></pre>
+    <pre><code class="lang-csharp hljs">public class PersonalIdentification</code></pre>
   </div>
   <h3 id="properties">Properties
 </h3>
-  <a id="Ingenico_Connect_Sdk_Domain_Payment_Definitions_PersonalInformation_DateOfBirth_" data-uid="Ingenico.Connect.Sdk.Domain.Payment.Definitions.PersonalInformation.DateOfBirth*"></a>
-  <h4 id="Ingenico_Connect_Sdk_Domain_Payment_Definitions_PersonalInformation_DateOfBirth" data-uid="Ingenico.Connect.Sdk.Domain.Payment.Definitions.PersonalInformation.DateOfBirth">DateOfBirth</h4>
-  <div class="markdown level1 summary"><p>The date of birth of the customer
-<br>Format: YYYYMMDD</p>
+  <a id="Ingenico_Connect_Sdk_Domain_Payment_Definitions_PersonalIdentification_IdIssuingCountryCode_" data-uid="Ingenico.Connect.Sdk.Domain.Payment.Definitions.PersonalIdentification.IdIssuingCountryCode*"></a>
+  <h4 id="Ingenico_Connect_Sdk_Domain_Payment_Definitions_PersonalIdentification_IdIssuingCountryCode" data-uid="Ingenico.Connect.Sdk.Domain.Payment.Definitions.PersonalIdentification.IdIssuingCountryCode">IdIssuingCountryCode</h4>
+  <div class="markdown level1 summary"><p>ISO 3166-1 alpha-2 country code of the country that issued the identification document</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string DateOfBirth { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public string IdIssuingCountryCode { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-condensed">
@@ -147,15 +146,15 @@
       </tr>
     </tbody>
   </table>
-  <a id="Ingenico_Connect_Sdk_Domain_Payment_Definitions_PersonalInformation_Gender_" data-uid="Ingenico.Connect.Sdk.Domain.Payment.Definitions.PersonalInformation.Gender*"></a>
-  <h4 id="Ingenico_Connect_Sdk_Domain_Payment_Definitions_PersonalInformation_Gender" data-uid="Ingenico.Connect.Sdk.Domain.Payment.Definitions.PersonalInformation.Gender">Gender</h4>
-  <div class="markdown level1 summary"><p>The gender of the customer, possible values are:</p>
-<ul><li>male</li><li>female</li><li>unknown or empty</li></ul>
+  <a id="Ingenico_Connect_Sdk_Domain_Payment_Definitions_PersonalIdentification_IdType_" data-uid="Ingenico.Connect.Sdk.Domain.Payment.Definitions.PersonalIdentification.IdType*"></a>
+  <h4 id="Ingenico_Connect_Sdk_Domain_Payment_Definitions_PersonalIdentification_IdType" data-uid="Ingenico.Connect.Sdk.Domain.Payment.Definitions.PersonalIdentification.IdType">IdType</h4>
+  <div class="markdown level1 summary"><p>Indicates the type of identification</p>
+<ul><li>nationalIdentification = The provided idValue is a national identification number.</li><li>passportNumber = The provided idValue is a passport number.</li><li>driverLicense = The provided idValue is driving License of the individual.</li><li>companyRegistrationNumber = The provided idValue is a company identifier. It verifies its legal existence as an incorporated entity.</li><li>socialSecurityNumber =n The provided idValue is a social security number, issued to an individual by the individual's government.</li><li>alienRegistrationNumber = The provided idValue is an alien registration number, provided by immigration services of a country.</li><li>lawEnforcementIdentification = The provided idValue is an alien registration number, provided by immigration services of a country.</li><li>militaryIdentification = The provided idValue is an identification issued to military personnel of a country.</li></ul>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Gender { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public string IdType { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-condensed">
@@ -172,14 +171,14 @@
       </tr>
     </tbody>
   </table>
-  <a id="Ingenico_Connect_Sdk_Domain_Payment_Definitions_PersonalInformation_Identification_" data-uid="Ingenico.Connect.Sdk.Domain.Payment.Definitions.PersonalInformation.Identification*"></a>
-  <h4 id="Ingenico_Connect_Sdk_Domain_Payment_Definitions_PersonalInformation_Identification" data-uid="Ingenico.Connect.Sdk.Domain.Payment.Definitions.PersonalInformation.Identification">Identification</h4>
-  <div class="markdown level1 summary"><p>Object containing identification documents information</p>
+  <a id="Ingenico_Connect_Sdk_Domain_Payment_Definitions_PersonalIdentification_IdValue_" data-uid="Ingenico.Connect.Sdk.Domain.Payment.Definitions.PersonalIdentification.IdValue*"></a>
+  <h4 id="Ingenico_Connect_Sdk_Domain_Payment_Definitions_PersonalIdentification_IdValue" data-uid="Ingenico.Connect.Sdk.Domain.Payment.Definitions.PersonalIdentification.IdValue">IdValue</h4>
+  <div class="markdown level1 summary"><p>The value of the identification</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public PersonalIdentification Identification { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public string IdValue { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-condensed">
@@ -191,31 +190,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Ingenico.Connect.Sdk.Domain.Payment.Definitions.PersonalIdentification.html">PersonalIdentification</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="Ingenico_Connect_Sdk_Domain_Payment_Definitions_PersonalInformation_Name_" data-uid="Ingenico.Connect.Sdk.Domain.Payment.Definitions.PersonalInformation.Name*"></a>
-  <h4 id="Ingenico_Connect_Sdk_Domain_Payment_Definitions_PersonalInformation_Name" data-uid="Ingenico.Connect.Sdk.Domain.Payment.Definitions.PersonalInformation.Name">Name</h4>
-  <div class="markdown level1 summary"><p>Object containing the name details of the customer</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public PersonalName Name { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Ingenico.Connect.Sdk.Domain.Payment.Definitions.PersonalName.html">PersonalName</a></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
         <td></td>
       </tr>
     </tbody>

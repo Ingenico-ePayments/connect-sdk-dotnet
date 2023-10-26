@@ -1443,6 +1443,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Ingenico.Connect.Sdk.Domain.Payment.Definitions.AccountFundingRecipient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Ingenico.Connect.Sdk.Domain.Payment.Definitions.AccountFundingRecipient.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Ingenico.Connect.Sdk.Domain.Payment.Definitions.AdditionalOrderInput.yml",
       "output": {
         ".html": {
@@ -1457,6 +1467,16 @@
       "output": {
         ".html": {
           "relative_path": "api/Ingenico.Connect.Sdk.Domain.Payment.Definitions.AddressPersonal.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Ingenico.Connect.Sdk.Domain.Payment.Definitions.AfrName.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Ingenico.Connect.Sdk.Domain.Payment.Definitions.AfrName.html"
         }
       },
       "version": ""
@@ -2357,6 +2377,16 @@
       "output": {
         ".html": {
           "relative_path": "api/Ingenico.Connect.Sdk.Domain.Payment.Definitions.PaymentStatusOutput.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Ingenico.Connect.Sdk.Domain.Payment.Definitions.PersonalIdentification.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Ingenico.Connect.Sdk.Domain.Payment.Definitions.PersonalIdentification.html"
         }
       },
       "version": ""

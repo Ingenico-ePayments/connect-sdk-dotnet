@@ -8122,12 +8122,109 @@ references:
   isSpec: "True"
   fullName: Ingenico.Connect.Sdk.Domain.Payment.Definitions.AbstractThreeDSecure.TransactionRiskLevel
   nameWithType: AbstractThreeDSecure.TransactionRiskLevel
+- uid: Ingenico.Connect.Sdk.Domain.Payment.Definitions.AccountFundingRecipient
+  name: AccountFundingRecipient
+  href: api/Ingenico.Connect.Sdk.Domain.Payment.Definitions.AccountFundingRecipient.html
+  commentId: T:Ingenico.Connect.Sdk.Domain.Payment.Definitions.AccountFundingRecipient
+  fullName: Ingenico.Connect.Sdk.Domain.Payment.Definitions.AccountFundingRecipient
+  nameWithType: AccountFundingRecipient
+- uid: Ingenico.Connect.Sdk.Domain.Payment.Definitions.AccountFundingRecipient.AccountNumber
+  name: AccountNumber
+  href: api/Ingenico.Connect.Sdk.Domain.Payment.Definitions.AccountFundingRecipient.html#Ingenico_Connect_Sdk_Domain_Payment_Definitions_AccountFundingRecipient_AccountNumber
+  commentId: P:Ingenico.Connect.Sdk.Domain.Payment.Definitions.AccountFundingRecipient.AccountNumber
+  fullName: Ingenico.Connect.Sdk.Domain.Payment.Definitions.AccountFundingRecipient.AccountNumber
+  nameWithType: AccountFundingRecipient.AccountNumber
+- uid: Ingenico.Connect.Sdk.Domain.Payment.Definitions.AccountFundingRecipient.AccountNumber*
+  name: AccountNumber
+  href: api/Ingenico.Connect.Sdk.Domain.Payment.Definitions.AccountFundingRecipient.html#Ingenico_Connect_Sdk_Domain_Payment_Definitions_AccountFundingRecipient_AccountNumber_
+  commentId: Overload:Ingenico.Connect.Sdk.Domain.Payment.Definitions.AccountFundingRecipient.AccountNumber
+  isSpec: "True"
+  fullName: Ingenico.Connect.Sdk.Domain.Payment.Definitions.AccountFundingRecipient.AccountNumber
+  nameWithType: AccountFundingRecipient.AccountNumber
+- uid: Ingenico.Connect.Sdk.Domain.Payment.Definitions.AccountFundingRecipient.AccountNumberType
+  name: AccountNumberType
+  href: api/Ingenico.Connect.Sdk.Domain.Payment.Definitions.AccountFundingRecipient.html#Ingenico_Connect_Sdk_Domain_Payment_Definitions_AccountFundingRecipient_AccountNumberType
+  commentId: P:Ingenico.Connect.Sdk.Domain.Payment.Definitions.AccountFundingRecipient.AccountNumberType
+  fullName: Ingenico.Connect.Sdk.Domain.Payment.Definitions.AccountFundingRecipient.AccountNumberType
+  nameWithType: AccountFundingRecipient.AccountNumberType
+- uid: Ingenico.Connect.Sdk.Domain.Payment.Definitions.AccountFundingRecipient.AccountNumberType*
+  name: AccountNumberType
+  href: api/Ingenico.Connect.Sdk.Domain.Payment.Definitions.AccountFundingRecipient.html#Ingenico_Connect_Sdk_Domain_Payment_Definitions_AccountFundingRecipient_AccountNumberType_
+  commentId: Overload:Ingenico.Connect.Sdk.Domain.Payment.Definitions.AccountFundingRecipient.AccountNumberType
+  isSpec: "True"
+  fullName: Ingenico.Connect.Sdk.Domain.Payment.Definitions.AccountFundingRecipient.AccountNumberType
+  nameWithType: AccountFundingRecipient.AccountNumberType
+- uid: Ingenico.Connect.Sdk.Domain.Payment.Definitions.AccountFundingRecipient.Address
+  name: Address
+  href: api/Ingenico.Connect.Sdk.Domain.Payment.Definitions.AccountFundingRecipient.html#Ingenico_Connect_Sdk_Domain_Payment_Definitions_AccountFundingRecipient_Address
+  commentId: P:Ingenico.Connect.Sdk.Domain.Payment.Definitions.AccountFundingRecipient.Address
+  fullName: Ingenico.Connect.Sdk.Domain.Payment.Definitions.AccountFundingRecipient.Address
+  nameWithType: AccountFundingRecipient.Address
+- uid: Ingenico.Connect.Sdk.Domain.Payment.Definitions.AccountFundingRecipient.Address*
+  name: Address
+  href: api/Ingenico.Connect.Sdk.Domain.Payment.Definitions.AccountFundingRecipient.html#Ingenico_Connect_Sdk_Domain_Payment_Definitions_AccountFundingRecipient_Address_
+  commentId: Overload:Ingenico.Connect.Sdk.Domain.Payment.Definitions.AccountFundingRecipient.Address
+  isSpec: "True"
+  fullName: Ingenico.Connect.Sdk.Domain.Payment.Definitions.AccountFundingRecipient.Address
+  nameWithType: AccountFundingRecipient.Address
+- uid: Ingenico.Connect.Sdk.Domain.Payment.Definitions.AccountFundingRecipient.DateOfBirth
+  name: DateOfBirth
+  href: api/Ingenico.Connect.Sdk.Domain.Payment.Definitions.AccountFundingRecipient.html#Ingenico_Connect_Sdk_Domain_Payment_Definitions_AccountFundingRecipient_DateOfBirth
+  commentId: P:Ingenico.Connect.Sdk.Domain.Payment.Definitions.AccountFundingRecipient.DateOfBirth
+  fullName: Ingenico.Connect.Sdk.Domain.Payment.Definitions.AccountFundingRecipient.DateOfBirth
+  nameWithType: AccountFundingRecipient.DateOfBirth
+- uid: Ingenico.Connect.Sdk.Domain.Payment.Definitions.AccountFundingRecipient.DateOfBirth*
+  name: DateOfBirth
+  href: api/Ingenico.Connect.Sdk.Domain.Payment.Definitions.AccountFundingRecipient.html#Ingenico_Connect_Sdk_Domain_Payment_Definitions_AccountFundingRecipient_DateOfBirth_
+  commentId: Overload:Ingenico.Connect.Sdk.Domain.Payment.Definitions.AccountFundingRecipient.DateOfBirth
+  isSpec: "True"
+  fullName: Ingenico.Connect.Sdk.Domain.Payment.Definitions.AccountFundingRecipient.DateOfBirth
+  nameWithType: AccountFundingRecipient.DateOfBirth
+- uid: Ingenico.Connect.Sdk.Domain.Payment.Definitions.AccountFundingRecipient.Name
+  name: Name
+  href: api/Ingenico.Connect.Sdk.Domain.Payment.Definitions.AccountFundingRecipient.html#Ingenico_Connect_Sdk_Domain_Payment_Definitions_AccountFundingRecipient_Name
+  commentId: P:Ingenico.Connect.Sdk.Domain.Payment.Definitions.AccountFundingRecipient.Name
+  fullName: Ingenico.Connect.Sdk.Domain.Payment.Definitions.AccountFundingRecipient.Name
+  nameWithType: AccountFundingRecipient.Name
+- uid: Ingenico.Connect.Sdk.Domain.Payment.Definitions.AccountFundingRecipient.Name*
+  name: Name
+  href: api/Ingenico.Connect.Sdk.Domain.Payment.Definitions.AccountFundingRecipient.html#Ingenico_Connect_Sdk_Domain_Payment_Definitions_AccountFundingRecipient_Name_
+  commentId: Overload:Ingenico.Connect.Sdk.Domain.Payment.Definitions.AccountFundingRecipient.Name
+  isSpec: "True"
+  fullName: Ingenico.Connect.Sdk.Domain.Payment.Definitions.AccountFundingRecipient.Name
+  nameWithType: AccountFundingRecipient.Name
+- uid: Ingenico.Connect.Sdk.Domain.Payment.Definitions.AccountFundingRecipient.PartialPan
+  name: PartialPan
+  href: api/Ingenico.Connect.Sdk.Domain.Payment.Definitions.AccountFundingRecipient.html#Ingenico_Connect_Sdk_Domain_Payment_Definitions_AccountFundingRecipient_PartialPan
+  commentId: P:Ingenico.Connect.Sdk.Domain.Payment.Definitions.AccountFundingRecipient.PartialPan
+  fullName: Ingenico.Connect.Sdk.Domain.Payment.Definitions.AccountFundingRecipient.PartialPan
+  nameWithType: AccountFundingRecipient.PartialPan
+- uid: Ingenico.Connect.Sdk.Domain.Payment.Definitions.AccountFundingRecipient.PartialPan*
+  name: PartialPan
+  href: api/Ingenico.Connect.Sdk.Domain.Payment.Definitions.AccountFundingRecipient.html#Ingenico_Connect_Sdk_Domain_Payment_Definitions_AccountFundingRecipient_PartialPan_
+  commentId: Overload:Ingenico.Connect.Sdk.Domain.Payment.Definitions.AccountFundingRecipient.PartialPan
+  isSpec: "True"
+  fullName: Ingenico.Connect.Sdk.Domain.Payment.Definitions.AccountFundingRecipient.PartialPan
+  nameWithType: AccountFundingRecipient.PartialPan
 - uid: Ingenico.Connect.Sdk.Domain.Payment.Definitions.AdditionalOrderInput
   name: AdditionalOrderInput
   href: api/Ingenico.Connect.Sdk.Domain.Payment.Definitions.AdditionalOrderInput.html
   commentId: T:Ingenico.Connect.Sdk.Domain.Payment.Definitions.AdditionalOrderInput
   fullName: Ingenico.Connect.Sdk.Domain.Payment.Definitions.AdditionalOrderInput
   nameWithType: AdditionalOrderInput
+- uid: Ingenico.Connect.Sdk.Domain.Payment.Definitions.AdditionalOrderInput.AccountFundingRecipient
+  name: AccountFundingRecipient
+  href: api/Ingenico.Connect.Sdk.Domain.Payment.Definitions.AdditionalOrderInput.html#Ingenico_Connect_Sdk_Domain_Payment_Definitions_AdditionalOrderInput_AccountFundingRecipient
+  commentId: P:Ingenico.Connect.Sdk.Domain.Payment.Definitions.AdditionalOrderInput.AccountFundingRecipient
+  fullName: Ingenico.Connect.Sdk.Domain.Payment.Definitions.AdditionalOrderInput.AccountFundingRecipient
+  nameWithType: AdditionalOrderInput.AccountFundingRecipient
+- uid: Ingenico.Connect.Sdk.Domain.Payment.Definitions.AdditionalOrderInput.AccountFundingRecipient*
+  name: AccountFundingRecipient
+  href: api/Ingenico.Connect.Sdk.Domain.Payment.Definitions.AdditionalOrderInput.html#Ingenico_Connect_Sdk_Domain_Payment_Definitions_AdditionalOrderInput_AccountFundingRecipient_
+  commentId: Overload:Ingenico.Connect.Sdk.Domain.Payment.Definitions.AdditionalOrderInput.AccountFundingRecipient
+  isSpec: "True"
+  fullName: Ingenico.Connect.Sdk.Domain.Payment.Definitions.AdditionalOrderInput.AccountFundingRecipient
+  nameWithType: AdditionalOrderInput.AccountFundingRecipient
 - uid: Ingenico.Connect.Sdk.Domain.Payment.Definitions.AdditionalOrderInput.AirlineData
   name: AirlineData
   href: api/Ingenico.Connect.Sdk.Domain.Payment.Definitions.AdditionalOrderInput.html#Ingenico_Connect_Sdk_Domain_Payment_Definitions_AdditionalOrderInput_AirlineData
@@ -8251,6 +8348,38 @@ references:
   isSpec: "True"
   fullName: Ingenico.Connect.Sdk.Domain.Payment.Definitions.AddressPersonal.Name
   nameWithType: AddressPersonal.Name
+- uid: Ingenico.Connect.Sdk.Domain.Payment.Definitions.AfrName
+  name: AfrName
+  href: api/Ingenico.Connect.Sdk.Domain.Payment.Definitions.AfrName.html
+  commentId: T:Ingenico.Connect.Sdk.Domain.Payment.Definitions.AfrName
+  fullName: Ingenico.Connect.Sdk.Domain.Payment.Definitions.AfrName
+  nameWithType: AfrName
+- uid: Ingenico.Connect.Sdk.Domain.Payment.Definitions.AfrName.FirstName
+  name: FirstName
+  href: api/Ingenico.Connect.Sdk.Domain.Payment.Definitions.AfrName.html#Ingenico_Connect_Sdk_Domain_Payment_Definitions_AfrName_FirstName
+  commentId: P:Ingenico.Connect.Sdk.Domain.Payment.Definitions.AfrName.FirstName
+  fullName: Ingenico.Connect.Sdk.Domain.Payment.Definitions.AfrName.FirstName
+  nameWithType: AfrName.FirstName
+- uid: Ingenico.Connect.Sdk.Domain.Payment.Definitions.AfrName.FirstName*
+  name: FirstName
+  href: api/Ingenico.Connect.Sdk.Domain.Payment.Definitions.AfrName.html#Ingenico_Connect_Sdk_Domain_Payment_Definitions_AfrName_FirstName_
+  commentId: Overload:Ingenico.Connect.Sdk.Domain.Payment.Definitions.AfrName.FirstName
+  isSpec: "True"
+  fullName: Ingenico.Connect.Sdk.Domain.Payment.Definitions.AfrName.FirstName
+  nameWithType: AfrName.FirstName
+- uid: Ingenico.Connect.Sdk.Domain.Payment.Definitions.AfrName.Surname
+  name: Surname
+  href: api/Ingenico.Connect.Sdk.Domain.Payment.Definitions.AfrName.html#Ingenico_Connect_Sdk_Domain_Payment_Definitions_AfrName_Surname
+  commentId: P:Ingenico.Connect.Sdk.Domain.Payment.Definitions.AfrName.Surname
+  fullName: Ingenico.Connect.Sdk.Domain.Payment.Definitions.AfrName.Surname
+  nameWithType: AfrName.Surname
+- uid: Ingenico.Connect.Sdk.Domain.Payment.Definitions.AfrName.Surname*
+  name: Surname
+  href: api/Ingenico.Connect.Sdk.Domain.Payment.Definitions.AfrName.html#Ingenico_Connect_Sdk_Domain_Payment_Definitions_AfrName_Surname_
+  commentId: Overload:Ingenico.Connect.Sdk.Domain.Payment.Definitions.AfrName.Surname
+  isSpec: "True"
+  fullName: Ingenico.Connect.Sdk.Domain.Payment.Definitions.AfrName.Surname
+  nameWithType: AfrName.Surname
 - uid: Ingenico.Connect.Sdk.Domain.Payment.Definitions.AmountBreakdown
   name: AmountBreakdown
   href: api/Ingenico.Connect.Sdk.Domain.Payment.Definitions.AmountBreakdown.html
@@ -9197,6 +9326,19 @@ references:
   isSpec: "True"
   fullName: Ingenico.Connect.Sdk.Domain.Payment.Definitions.Customer.FiscalNumber
   nameWithType: Customer.FiscalNumber
+- uid: Ingenico.Connect.Sdk.Domain.Payment.Definitions.Customer.IsCompany
+  name: IsCompany
+  href: api/Ingenico.Connect.Sdk.Domain.Payment.Definitions.Customer.html#Ingenico_Connect_Sdk_Domain_Payment_Definitions_Customer_IsCompany
+  commentId: P:Ingenico.Connect.Sdk.Domain.Payment.Definitions.Customer.IsCompany
+  fullName: Ingenico.Connect.Sdk.Domain.Payment.Definitions.Customer.IsCompany
+  nameWithType: Customer.IsCompany
+- uid: Ingenico.Connect.Sdk.Domain.Payment.Definitions.Customer.IsCompany*
+  name: IsCompany
+  href: api/Ingenico.Connect.Sdk.Domain.Payment.Definitions.Customer.html#Ingenico_Connect_Sdk_Domain_Payment_Definitions_Customer_IsCompany_
+  commentId: Overload:Ingenico.Connect.Sdk.Domain.Payment.Definitions.Customer.IsCompany
+  isSpec: "True"
+  fullName: Ingenico.Connect.Sdk.Domain.Payment.Definitions.Customer.IsCompany
+  nameWithType: Customer.IsCompany
 - uid: Ingenico.Connect.Sdk.Domain.Payment.Definitions.Customer.IsPreviousCustomer
   name: IsPreviousCustomer
   href: api/Ingenico.Connect.Sdk.Domain.Payment.Definitions.Customer.html#Ingenico_Connect_Sdk_Domain_Payment_Definitions_Customer_IsPreviousCustomer
@@ -11866,6 +12008,19 @@ references:
   commentId: T:Ingenico.Connect.Sdk.Domain.Payment.Definitions.OrderTypeInformation
   fullName: Ingenico.Connect.Sdk.Domain.Payment.Definitions.OrderTypeInformation
   nameWithType: OrderTypeInformation
+- uid: Ingenico.Connect.Sdk.Domain.Payment.Definitions.OrderTypeInformation.FundingType
+  name: FundingType
+  href: api/Ingenico.Connect.Sdk.Domain.Payment.Definitions.OrderTypeInformation.html#Ingenico_Connect_Sdk_Domain_Payment_Definitions_OrderTypeInformation_FundingType
+  commentId: P:Ingenico.Connect.Sdk.Domain.Payment.Definitions.OrderTypeInformation.FundingType
+  fullName: Ingenico.Connect.Sdk.Domain.Payment.Definitions.OrderTypeInformation.FundingType
+  nameWithType: OrderTypeInformation.FundingType
+- uid: Ingenico.Connect.Sdk.Domain.Payment.Definitions.OrderTypeInformation.FundingType*
+  name: FundingType
+  href: api/Ingenico.Connect.Sdk.Domain.Payment.Definitions.OrderTypeInformation.html#Ingenico_Connect_Sdk_Domain_Payment_Definitions_OrderTypeInformation_FundingType_
+  commentId: Overload:Ingenico.Connect.Sdk.Domain.Payment.Definitions.OrderTypeInformation.FundingType
+  isSpec: "True"
+  fullName: Ingenico.Connect.Sdk.Domain.Payment.Definitions.OrderTypeInformation.FundingType
+  nameWithType: OrderTypeInformation.FundingType
 - uid: Ingenico.Connect.Sdk.Domain.Payment.Definitions.OrderTypeInformation.PurchaseType
   name: PurchaseType
   href: api/Ingenico.Connect.Sdk.Domain.Payment.Definitions.OrderTypeInformation.html#Ingenico_Connect_Sdk_Domain_Payment_Definitions_OrderTypeInformation_PurchaseType
@@ -12782,6 +12937,51 @@ references:
   isSpec: "True"
   fullName: Ingenico.Connect.Sdk.Domain.Payment.Definitions.PaymentStatusOutput.ThreeDSecureStatus
   nameWithType: PaymentStatusOutput.ThreeDSecureStatus
+- uid: Ingenico.Connect.Sdk.Domain.Payment.Definitions.PersonalIdentification
+  name: PersonalIdentification
+  href: api/Ingenico.Connect.Sdk.Domain.Payment.Definitions.PersonalIdentification.html
+  commentId: T:Ingenico.Connect.Sdk.Domain.Payment.Definitions.PersonalIdentification
+  fullName: Ingenico.Connect.Sdk.Domain.Payment.Definitions.PersonalIdentification
+  nameWithType: PersonalIdentification
+- uid: Ingenico.Connect.Sdk.Domain.Payment.Definitions.PersonalIdentification.IdIssuingCountryCode
+  name: IdIssuingCountryCode
+  href: api/Ingenico.Connect.Sdk.Domain.Payment.Definitions.PersonalIdentification.html#Ingenico_Connect_Sdk_Domain_Payment_Definitions_PersonalIdentification_IdIssuingCountryCode
+  commentId: P:Ingenico.Connect.Sdk.Domain.Payment.Definitions.PersonalIdentification.IdIssuingCountryCode
+  fullName: Ingenico.Connect.Sdk.Domain.Payment.Definitions.PersonalIdentification.IdIssuingCountryCode
+  nameWithType: PersonalIdentification.IdIssuingCountryCode
+- uid: Ingenico.Connect.Sdk.Domain.Payment.Definitions.PersonalIdentification.IdIssuingCountryCode*
+  name: IdIssuingCountryCode
+  href: api/Ingenico.Connect.Sdk.Domain.Payment.Definitions.PersonalIdentification.html#Ingenico_Connect_Sdk_Domain_Payment_Definitions_PersonalIdentification_IdIssuingCountryCode_
+  commentId: Overload:Ingenico.Connect.Sdk.Domain.Payment.Definitions.PersonalIdentification.IdIssuingCountryCode
+  isSpec: "True"
+  fullName: Ingenico.Connect.Sdk.Domain.Payment.Definitions.PersonalIdentification.IdIssuingCountryCode
+  nameWithType: PersonalIdentification.IdIssuingCountryCode
+- uid: Ingenico.Connect.Sdk.Domain.Payment.Definitions.PersonalIdentification.IdType
+  name: IdType
+  href: api/Ingenico.Connect.Sdk.Domain.Payment.Definitions.PersonalIdentification.html#Ingenico_Connect_Sdk_Domain_Payment_Definitions_PersonalIdentification_IdType
+  commentId: P:Ingenico.Connect.Sdk.Domain.Payment.Definitions.PersonalIdentification.IdType
+  fullName: Ingenico.Connect.Sdk.Domain.Payment.Definitions.PersonalIdentification.IdType
+  nameWithType: PersonalIdentification.IdType
+- uid: Ingenico.Connect.Sdk.Domain.Payment.Definitions.PersonalIdentification.IdType*
+  name: IdType
+  href: api/Ingenico.Connect.Sdk.Domain.Payment.Definitions.PersonalIdentification.html#Ingenico_Connect_Sdk_Domain_Payment_Definitions_PersonalIdentification_IdType_
+  commentId: Overload:Ingenico.Connect.Sdk.Domain.Payment.Definitions.PersonalIdentification.IdType
+  isSpec: "True"
+  fullName: Ingenico.Connect.Sdk.Domain.Payment.Definitions.PersonalIdentification.IdType
+  nameWithType: PersonalIdentification.IdType
+- uid: Ingenico.Connect.Sdk.Domain.Payment.Definitions.PersonalIdentification.IdValue
+  name: IdValue
+  href: api/Ingenico.Connect.Sdk.Domain.Payment.Definitions.PersonalIdentification.html#Ingenico_Connect_Sdk_Domain_Payment_Definitions_PersonalIdentification_IdValue
+  commentId: P:Ingenico.Connect.Sdk.Domain.Payment.Definitions.PersonalIdentification.IdValue
+  fullName: Ingenico.Connect.Sdk.Domain.Payment.Definitions.PersonalIdentification.IdValue
+  nameWithType: PersonalIdentification.IdValue
+- uid: Ingenico.Connect.Sdk.Domain.Payment.Definitions.PersonalIdentification.IdValue*
+  name: IdValue
+  href: api/Ingenico.Connect.Sdk.Domain.Payment.Definitions.PersonalIdentification.html#Ingenico_Connect_Sdk_Domain_Payment_Definitions_PersonalIdentification_IdValue_
+  commentId: Overload:Ingenico.Connect.Sdk.Domain.Payment.Definitions.PersonalIdentification.IdValue
+  isSpec: "True"
+  fullName: Ingenico.Connect.Sdk.Domain.Payment.Definitions.PersonalIdentification.IdValue
+  nameWithType: PersonalIdentification.IdValue
 - uid: Ingenico.Connect.Sdk.Domain.Payment.Definitions.PersonalInformation
   name: PersonalInformation
   href: api/Ingenico.Connect.Sdk.Domain.Payment.Definitions.PersonalInformation.html
@@ -12814,6 +13014,19 @@ references:
   isSpec: "True"
   fullName: Ingenico.Connect.Sdk.Domain.Payment.Definitions.PersonalInformation.Gender
   nameWithType: PersonalInformation.Gender
+- uid: Ingenico.Connect.Sdk.Domain.Payment.Definitions.PersonalInformation.Identification
+  name: Identification
+  href: api/Ingenico.Connect.Sdk.Domain.Payment.Definitions.PersonalInformation.html#Ingenico_Connect_Sdk_Domain_Payment_Definitions_PersonalInformation_Identification
+  commentId: P:Ingenico.Connect.Sdk.Domain.Payment.Definitions.PersonalInformation.Identification
+  fullName: Ingenico.Connect.Sdk.Domain.Payment.Definitions.PersonalInformation.Identification
+  nameWithType: PersonalInformation.Identification
+- uid: Ingenico.Connect.Sdk.Domain.Payment.Definitions.PersonalInformation.Identification*
+  name: Identification
+  href: api/Ingenico.Connect.Sdk.Domain.Payment.Definitions.PersonalInformation.html#Ingenico_Connect_Sdk_Domain_Payment_Definitions_PersonalInformation_Identification_
+  commentId: Overload:Ingenico.Connect.Sdk.Domain.Payment.Definitions.PersonalInformation.Identification
+  isSpec: "True"
+  fullName: Ingenico.Connect.Sdk.Domain.Payment.Definitions.PersonalInformation.Identification
+  nameWithType: PersonalInformation.Identification
 - uid: Ingenico.Connect.Sdk.Domain.Payment.Definitions.PersonalInformation.Name
   name: Name
   href: api/Ingenico.Connect.Sdk.Domain.Payment.Definitions.PersonalInformation.html#Ingenico_Connect_Sdk_Domain_Payment_Definitions_PersonalInformation_Name
