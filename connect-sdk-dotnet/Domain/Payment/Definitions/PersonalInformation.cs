@@ -23,6 +23,11 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
         public string Gender { get; set; } = null;
 
         /// <summary>
+        /// Object containing identification documents information
+        /// </summary>
+        public PersonalIdentification Identification { get; set; } = null;
+
+        /// <summary>
         /// Object containing the name details of the customer
         /// </summary>
         public PersonalName Name { get; set; } = null;

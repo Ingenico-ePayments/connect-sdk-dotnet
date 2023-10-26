@@ -10,6 +10,11 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
     public class AdditionalOrderInput
     {
         /// <summary>
+        /// Object containing specific data regarding the recipient of an account funding transaction
+        /// </summary>
+        public AccountFundingRecipient AccountFundingRecipient { get; set; } = null;
+
+        /// <summary>
         /// Object that holds airline specific data
         /// </summary>
         public AirlineData AirlineData { get; set; } = null;
@@ -28,6 +33,7 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
         /// <summary>
         /// Object containing specific data regarding the recipient of a loan in the UK
         /// </summary>
+        [ObsoleteAttribute("No replacement")]
         public LoanRecipient LoanRecipient { get; set; } = null;
 
         /// <summary>

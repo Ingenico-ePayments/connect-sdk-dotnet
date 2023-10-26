@@ -65,6 +65,15 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
         public string FiscalNumber { get; set; } = null;
 
         /// <summary>
+        /// Indicates if the payer is a company or an individual 
+        /// <list type="bullet">
+        ///   <item><description>true = This is a company</description></item>
+        ///   <item><description>false = This is an individual</description></item>
+        /// </list>
+        /// </summary>
+        public bool? IsCompany { get; set; } = null;
+
+        /// <summary>
         /// Specifies if the customer has a history of online shopping with the merchant 
         /// <list type="bullet">
         ///   <item><description>true - The customer is a known returning customer</description></item>

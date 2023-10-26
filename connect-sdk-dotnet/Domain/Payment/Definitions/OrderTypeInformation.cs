@@ -7,6 +7,18 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
     public class OrderTypeInformation
     {
         /// <summary>
+        /// Identifies the funding type being authenticated. Possible values are:
+        /// <list type="bullet">
+        ///   <item><description>personToPerson = When it is person to person funding (P2P)</description></item>
+        ///   <item><description>agentCashOut = When fund is being paid out to final recipient in Cash by company's agent.</description></item>
+        ///   <item><description>businessToConsumer = When fund is being transferred from business to consumer (B2C)</description></item>
+        ///   <item><description>businessToBusiness = When fund is being transferred from business to business (B2B)</description></item>
+        ///   <item><description>prefundingStagedWallet = When funding is being used to load the funds into the wallet account.</description></item>
+        /// </list>
+        /// </summary>
+        public string FundingType { get; set; } = null;
+
+        /// <summary>
         /// Possible values are:
         /// <list type="bullet">
         ///   <item><description>physical</description></item>
