@@ -100,6 +100,11 @@ namespace Ingenico.Connect.Sdk.Domain.Product.Definitions
         public int? Id { get; set; } = null;
 
         /// <summary>
+        /// Indicates if the payment product supports 3D-Secure.
+        /// </summary>
+        public bool? IsAuthenticationSupported { get; set; } = null;
+
+        /// <summary>
         /// This property indicates if the payment product requires JavaScript to be enabled on the customer's browser. This is usually only true if the payment product depends on a third party JavaScript integration. 
         /// <list type="bullet">
         ///   <item><description>true - the payment product requires JavaScript to be enabled.</description></item>

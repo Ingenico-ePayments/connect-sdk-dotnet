@@ -22,5 +22,10 @@ namespace Ingenico.Connect.Sdk.Domain.Definitions
         /// Object containing device fingerprinting details from InAuth
         /// </summary>
         public InAuth InAuth { get; set; } = null;
+
+        /// <summary>
+        /// This object contains the results of Microsoft Fraud Protection risk assessment. Microsoft collects transaction data points and uses Adaptive AI that continuously learns to protect you against payment fraud, and the device fingerprinting details from the Microsoft Device Fingerprinting service.
+        /// </summary>
+        public MicrosoftFraudResults MicrosoftFraudProtection { get; set; } = null;
     }
 }
