@@ -3085,19 +3085,6 @@ references:
   isSpec: "True"
   fullName: Ingenico.Connect.Sdk.Domain.Definitions.CardFraudResults.Fraugster
   nameWithType: CardFraudResults.Fraugster
-- uid: Ingenico.Connect.Sdk.Domain.Definitions.CardFraudResults.MicrosoftFraudProtection
-  name: MicrosoftFraudProtection
-  href: api/Ingenico.Connect.Sdk.Domain.Definitions.CardFraudResults.html#Ingenico_Connect_Sdk_Domain_Definitions_CardFraudResults_MicrosoftFraudProtection
-  commentId: P:Ingenico.Connect.Sdk.Domain.Definitions.CardFraudResults.MicrosoftFraudProtection
-  fullName: Ingenico.Connect.Sdk.Domain.Definitions.CardFraudResults.MicrosoftFraudProtection
-  nameWithType: CardFraudResults.MicrosoftFraudProtection
-- uid: Ingenico.Connect.Sdk.Domain.Definitions.CardFraudResults.MicrosoftFraudProtection*
-  name: MicrosoftFraudProtection
-  href: api/Ingenico.Connect.Sdk.Domain.Definitions.CardFraudResults.html#Ingenico_Connect_Sdk_Domain_Definitions_CardFraudResults_MicrosoftFraudProtection_
-  commentId: Overload:Ingenico.Connect.Sdk.Domain.Definitions.CardFraudResults.MicrosoftFraudProtection
-  isSpec: "True"
-  fullName: Ingenico.Connect.Sdk.Domain.Definitions.CardFraudResults.MicrosoftFraudProtection
-  nameWithType: CardFraudResults.MicrosoftFraudProtection
 - uid: Ingenico.Connect.Sdk.Domain.Definitions.CardFraudResults.RetailDecisions
   name: RetailDecisions
   href: api/Ingenico.Connect.Sdk.Domain.Definitions.CardFraudResults.html#Ingenico_Connect_Sdk_Domain_Definitions_CardFraudResults_RetailDecisions
@@ -3556,6 +3543,19 @@ references:
   isSpec: "True"
   fullName: Ingenico.Connect.Sdk.Domain.Definitions.FraudResults.InAuth
   nameWithType: FraudResults.InAuth
+- uid: Ingenico.Connect.Sdk.Domain.Definitions.FraudResults.MicrosoftFraudProtection
+  name: MicrosoftFraudProtection
+  href: api/Ingenico.Connect.Sdk.Domain.Definitions.FraudResults.html#Ingenico_Connect_Sdk_Domain_Definitions_FraudResults_MicrosoftFraudProtection
+  commentId: P:Ingenico.Connect.Sdk.Domain.Definitions.FraudResults.MicrosoftFraudProtection
+  fullName: Ingenico.Connect.Sdk.Domain.Definitions.FraudResults.MicrosoftFraudProtection
+  nameWithType: FraudResults.MicrosoftFraudProtection
+- uid: Ingenico.Connect.Sdk.Domain.Definitions.FraudResults.MicrosoftFraudProtection*
+  name: MicrosoftFraudProtection
+  href: api/Ingenico.Connect.Sdk.Domain.Definitions.FraudResults.html#Ingenico_Connect_Sdk_Domain_Definitions_FraudResults_MicrosoftFraudProtection_
+  commentId: Overload:Ingenico.Connect.Sdk.Domain.Definitions.FraudResults.MicrosoftFraudProtection
+  isSpec: "True"
+  fullName: Ingenico.Connect.Sdk.Domain.Definitions.FraudResults.MicrosoftFraudProtection
+  nameWithType: FraudResults.MicrosoftFraudProtection
 - uid: Ingenico.Connect.Sdk.Domain.Definitions.FraudResultsRetailDecisions
   name: FraudResultsRetailDecisions
   href: api/Ingenico.Connect.Sdk.Domain.Definitions.FraudResultsRetailDecisions.html
@@ -9971,6 +9971,19 @@ references:
   commentId: T:Ingenico.Connect.Sdk.Domain.Payment.Definitions.EInvoicePaymentMethodSpecificOutput
   fullName: Ingenico.Connect.Sdk.Domain.Payment.Definitions.EInvoicePaymentMethodSpecificOutput
   nameWithType: EInvoicePaymentMethodSpecificOutput
+- uid: Ingenico.Connect.Sdk.Domain.Payment.Definitions.EInvoicePaymentMethodSpecificOutput.FraudResults
+  name: FraudResults
+  href: api/Ingenico.Connect.Sdk.Domain.Payment.Definitions.EInvoicePaymentMethodSpecificOutput.html#Ingenico_Connect_Sdk_Domain_Payment_Definitions_EInvoicePaymentMethodSpecificOutput_FraudResults
+  commentId: P:Ingenico.Connect.Sdk.Domain.Payment.Definitions.EInvoicePaymentMethodSpecificOutput.FraudResults
+  fullName: Ingenico.Connect.Sdk.Domain.Payment.Definitions.EInvoicePaymentMethodSpecificOutput.FraudResults
+  nameWithType: EInvoicePaymentMethodSpecificOutput.FraudResults
+- uid: Ingenico.Connect.Sdk.Domain.Payment.Definitions.EInvoicePaymentMethodSpecificOutput.FraudResults*
+  name: FraudResults
+  href: api/Ingenico.Connect.Sdk.Domain.Payment.Definitions.EInvoicePaymentMethodSpecificOutput.html#Ingenico_Connect_Sdk_Domain_Payment_Definitions_EInvoicePaymentMethodSpecificOutput_FraudResults_
+  commentId: Overload:Ingenico.Connect.Sdk.Domain.Payment.Definitions.EInvoicePaymentMethodSpecificOutput.FraudResults
+  isSpec: "True"
+  fullName: Ingenico.Connect.Sdk.Domain.Payment.Definitions.EInvoicePaymentMethodSpecificOutput.FraudResults
+  nameWithType: EInvoicePaymentMethodSpecificOutput.FraudResults
 - uid: Ingenico.Connect.Sdk.Domain.Payment.Definitions.EInvoicePaymentMethodSpecificOutput.PaymentProduct9000SpecificOutput
   name: PaymentProduct9000SpecificOutput
   href: api/Ingenico.Connect.Sdk.Domain.Payment.Definitions.EInvoicePaymentMethodSpecificOutput.html#Ingenico_Connect_Sdk_Domain_Payment_Definitions_EInvoicePaymentMethodSpecificOutput_PaymentProduct9000SpecificOutput
@@ -14085,19 +14098,6 @@ references:
   commentId: T:Ingenico.Connect.Sdk.Domain.Payment.Definitions.SdkDataInput
   fullName: Ingenico.Connect.Sdk.Domain.Payment.Definitions.SdkDataInput
   nameWithType: SdkDataInput
-- uid: Ingenico.Connect.Sdk.Domain.Payment.Definitions.SdkDataInput.DeviceInfo
-  name: DeviceInfo
-  href: api/Ingenico.Connect.Sdk.Domain.Payment.Definitions.SdkDataInput.html#Ingenico_Connect_Sdk_Domain_Payment_Definitions_SdkDataInput_DeviceInfo
-  commentId: P:Ingenico.Connect.Sdk.Domain.Payment.Definitions.SdkDataInput.DeviceInfo
-  fullName: Ingenico.Connect.Sdk.Domain.Payment.Definitions.SdkDataInput.DeviceInfo
-  nameWithType: SdkDataInput.DeviceInfo
-- uid: Ingenico.Connect.Sdk.Domain.Payment.Definitions.SdkDataInput.DeviceInfo*
-  name: DeviceInfo
-  href: api/Ingenico.Connect.Sdk.Domain.Payment.Definitions.SdkDataInput.html#Ingenico_Connect_Sdk_Domain_Payment_Definitions_SdkDataInput_DeviceInfo_
-  commentId: Overload:Ingenico.Connect.Sdk.Domain.Payment.Definitions.SdkDataInput.DeviceInfo
-  isSpec: "True"
-  fullName: Ingenico.Connect.Sdk.Domain.Payment.Definitions.SdkDataInput.DeviceInfo
-  nameWithType: SdkDataInput.DeviceInfo
 - uid: Ingenico.Connect.Sdk.Domain.Payment.Definitions.SdkDataInput.DeviceRenderOptions
   name: DeviceRenderOptions
   href: api/Ingenico.Connect.Sdk.Domain.Payment.Definitions.SdkDataInput.html#Ingenico_Connect_Sdk_Domain_Payment_Definitions_SdkDataInput_DeviceRenderOptions
@@ -16709,6 +16709,19 @@ references:
   isSpec: "True"
   fullName: Ingenico.Connect.Sdk.Domain.Product.Definitions.PaymentProduct.Id
   nameWithType: PaymentProduct.Id
+- uid: Ingenico.Connect.Sdk.Domain.Product.Definitions.PaymentProduct.IsAuthenticationSupported
+  name: IsAuthenticationSupported
+  href: api/Ingenico.Connect.Sdk.Domain.Product.Definitions.PaymentProduct.html#Ingenico_Connect_Sdk_Domain_Product_Definitions_PaymentProduct_IsAuthenticationSupported
+  commentId: P:Ingenico.Connect.Sdk.Domain.Product.Definitions.PaymentProduct.IsAuthenticationSupported
+  fullName: Ingenico.Connect.Sdk.Domain.Product.Definitions.PaymentProduct.IsAuthenticationSupported
+  nameWithType: PaymentProduct.IsAuthenticationSupported
+- uid: Ingenico.Connect.Sdk.Domain.Product.Definitions.PaymentProduct.IsAuthenticationSupported*
+  name: IsAuthenticationSupported
+  href: api/Ingenico.Connect.Sdk.Domain.Product.Definitions.PaymentProduct.html#Ingenico_Connect_Sdk_Domain_Product_Definitions_PaymentProduct_IsAuthenticationSupported_
+  commentId: Overload:Ingenico.Connect.Sdk.Domain.Product.Definitions.PaymentProduct.IsAuthenticationSupported
+  isSpec: "True"
+  fullName: Ingenico.Connect.Sdk.Domain.Product.Definitions.PaymentProduct.IsAuthenticationSupported
+  nameWithType: PaymentProduct.IsAuthenticationSupported
 - uid: Ingenico.Connect.Sdk.Domain.Product.Definitions.PaymentProduct.IsJavaScriptRequired
   name: IsJavaScriptRequired
   href: api/Ingenico.Connect.Sdk.Domain.Product.Definitions.PaymentProduct.html#Ingenico_Connect_Sdk_Domain_Product_Definitions_PaymentProduct_IsJavaScriptRequired
