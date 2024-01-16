@@ -281,6 +281,30 @@ the HTTP request and is also used to identify the correct account.</p>
       </tr>
     </tbody>
   </table>
+  <a id="Ingenico_Connect_Sdk_CommunicatorConfiguration_HttpClientHandler_" data-uid="Ingenico.Connect.Sdk.CommunicatorConfiguration.HttpClientHandler*"></a>
+  <h4 id="Ingenico_Connect_Sdk_CommunicatorConfiguration_HttpClientHandler" data-uid="Ingenico.Connect.Sdk.CommunicatorConfiguration.HttpClientHandler">HttpClientHandler</h4>
+  <div class="markdown level1 summary"><p>Gets or sets a custom HttpClientHandler to be used by <a class="xref" href="Ingenico.Connect.Sdk.DefaultImpl.DefaultConnection.html">DefaultConnection</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public HttpClientHandler HttpClientHandler { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.net.http.httpclienthandler">HttpClientHandler</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <a id="Ingenico_Connect_Sdk_CommunicatorConfiguration_Integrator_" data-uid="Ingenico.Connect.Sdk.CommunicatorConfiguration.Integrator*"></a>
   <h4 id="Ingenico_Connect_Sdk_CommunicatorConfiguration_Integrator" data-uid="Ingenico.Connect.Sdk.CommunicatorConfiguration.Integrator">Integrator</h4>
   <div class="markdown level1 summary"><p>Gets or sets the integrator.</p>
@@ -655,6 +679,49 @@ algorithm.</p>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
         <td><span class="parametername">connectTimeout</span></td>
         <td><p>The connect timeout.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Ingenico.Connect.Sdk.CommunicatorConfiguration.html">CommunicatorConfiguration</a></td>
+        <td><p>This.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Ingenico_Connect_Sdk_CommunicatorConfiguration_WithHttpClientHandler_" data-uid="Ingenico.Connect.Sdk.CommunicatorConfiguration.WithHttpClientHandler*"></a>
+  <h4 id="Ingenico_Connect_Sdk_CommunicatorConfiguration_WithHttpClientHandler_System_Net_Http_HttpClientHandler_" data-uid="Ingenico.Connect.Sdk.CommunicatorConfiguration.WithHttpClientHandler(System.Net.Http.HttpClientHandler)">WithHttpClientHandler(HttpClientHandler)</h4>
+  <div class="markdown level1 summary"><p>Returns this with a custom HttpClientHandler assigned.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CommunicatorConfiguration WithHttpClientHandler(HttpClientHandler httpClientHandler)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.net.http.httpclienthandler">HttpClientHandler</a></td>
+        <td><span class="parametername">httpClientHandler</span></td>
+        <td><p>The custom HttpClientHandler.</p>
 </td>
       </tr>
     </tbody>

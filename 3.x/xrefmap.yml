@@ -875,6 +875,19 @@ references:
   commentId: F:Ingenico.Connect.Sdk.CommunicatorConfiguration.DefaultMaxConnections
   fullName: Ingenico.Connect.Sdk.CommunicatorConfiguration.DefaultMaxConnections
   nameWithType: CommunicatorConfiguration.DefaultMaxConnections
+- uid: Ingenico.Connect.Sdk.CommunicatorConfiguration.HttpClientHandler
+  name: HttpClientHandler
+  href: api/Ingenico.Connect.Sdk.CommunicatorConfiguration.html#Ingenico_Connect_Sdk_CommunicatorConfiguration_HttpClientHandler
+  commentId: P:Ingenico.Connect.Sdk.CommunicatorConfiguration.HttpClientHandler
+  fullName: Ingenico.Connect.Sdk.CommunicatorConfiguration.HttpClientHandler
+  nameWithType: CommunicatorConfiguration.HttpClientHandler
+- uid: Ingenico.Connect.Sdk.CommunicatorConfiguration.HttpClientHandler*
+  name: HttpClientHandler
+  href: api/Ingenico.Connect.Sdk.CommunicatorConfiguration.html#Ingenico_Connect_Sdk_CommunicatorConfiguration_HttpClientHandler_
+  commentId: Overload:Ingenico.Connect.Sdk.CommunicatorConfiguration.HttpClientHandler
+  isSpec: "True"
+  fullName: Ingenico.Connect.Sdk.CommunicatorConfiguration.HttpClientHandler
+  nameWithType: CommunicatorConfiguration.HttpClientHandler
 - uid: Ingenico.Connect.Sdk.CommunicatorConfiguration.Integrator
   name: Integrator
   href: api/Ingenico.Connect.Sdk.CommunicatorConfiguration.html#Ingenico_Connect_Sdk_CommunicatorConfiguration_Integrator
@@ -1050,6 +1063,19 @@ references:
   isSpec: "True"
   fullName: Ingenico.Connect.Sdk.CommunicatorConfiguration.WithConnectTimeout
   nameWithType: CommunicatorConfiguration.WithConnectTimeout
+- uid: Ingenico.Connect.Sdk.CommunicatorConfiguration.WithHttpClientHandler(System.Net.Http.HttpClientHandler)
+  name: WithHttpClientHandler(HttpClientHandler)
+  href: api/Ingenico.Connect.Sdk.CommunicatorConfiguration.html#Ingenico_Connect_Sdk_CommunicatorConfiguration_WithHttpClientHandler_System_Net_Http_HttpClientHandler_
+  commentId: M:Ingenico.Connect.Sdk.CommunicatorConfiguration.WithHttpClientHandler(System.Net.Http.HttpClientHandler)
+  fullName: Ingenico.Connect.Sdk.CommunicatorConfiguration.WithHttpClientHandler(System.Net.Http.HttpClientHandler)
+  nameWithType: CommunicatorConfiguration.WithHttpClientHandler(HttpClientHandler)
+- uid: Ingenico.Connect.Sdk.CommunicatorConfiguration.WithHttpClientHandler*
+  name: WithHttpClientHandler
+  href: api/Ingenico.Connect.Sdk.CommunicatorConfiguration.html#Ingenico_Connect_Sdk_CommunicatorConfiguration_WithHttpClientHandler_
+  commentId: Overload:Ingenico.Connect.Sdk.CommunicatorConfiguration.WithHttpClientHandler
+  isSpec: "True"
+  fullName: Ingenico.Connect.Sdk.CommunicatorConfiguration.WithHttpClientHandler
+  nameWithType: CommunicatorConfiguration.WithHttpClientHandler
 - uid: Ingenico.Connect.Sdk.CommunicatorConfiguration.WithIntegrator(System.String)
   name: WithIntegrator(string)
   href: api/Ingenico.Connect.Sdk.CommunicatorConfiguration.html#Ingenico_Connect_Sdk_CommunicatorConfiguration_WithIntegrator_System_String_
@@ -1414,15 +1440,15 @@ references:
   commentId: T:Ingenico.Connect.Sdk.DefaultImpl.DefaultConnection
   fullName: Ingenico.Connect.Sdk.DefaultImpl.DefaultConnection
   nameWithType: DefaultConnection
-- uid: Ingenico.Connect.Sdk.DefaultImpl.DefaultConnection.#ctor(System.Nullable{System.TimeSpan},System.Int32,Ingenico.Connect.Sdk.Proxy)
-  name: DefaultConnection(TimeSpan?, int, Proxy)
-  href: api/Ingenico.Connect.Sdk.DefaultImpl.DefaultConnection.html#Ingenico_Connect_Sdk_DefaultImpl_DefaultConnection__ctor_System_Nullable_System_TimeSpan__System_Int32_Ingenico_Connect_Sdk_Proxy_
-  commentId: M:Ingenico.Connect.Sdk.DefaultImpl.DefaultConnection.#ctor(System.Nullable{System.TimeSpan},System.Int32,Ingenico.Connect.Sdk.Proxy)
-  name.vb: New(TimeSpan?, Integer, Proxy)
-  fullName: Ingenico.Connect.Sdk.DefaultImpl.DefaultConnection.DefaultConnection(System.TimeSpan?, int, Ingenico.Connect.Sdk.Proxy)
-  fullName.vb: Ingenico.Connect.Sdk.DefaultImpl.DefaultConnection.New(System.TimeSpan?, Integer, Ingenico.Connect.Sdk.Proxy)
-  nameWithType: DefaultConnection.DefaultConnection(TimeSpan?, int, Proxy)
-  nameWithType.vb: DefaultConnection.New(TimeSpan?, Integer, Proxy)
+- uid: Ingenico.Connect.Sdk.DefaultImpl.DefaultConnection.#ctor(System.Nullable{System.TimeSpan},System.Int32,Ingenico.Connect.Sdk.Proxy,System.Net.Http.HttpClientHandler)
+  name: DefaultConnection(TimeSpan?, int, Proxy, HttpClientHandler)
+  href: api/Ingenico.Connect.Sdk.DefaultImpl.DefaultConnection.html#Ingenico_Connect_Sdk_DefaultImpl_DefaultConnection__ctor_System_Nullable_System_TimeSpan__System_Int32_Ingenico_Connect_Sdk_Proxy_System_Net_Http_HttpClientHandler_
+  commentId: M:Ingenico.Connect.Sdk.DefaultImpl.DefaultConnection.#ctor(System.Nullable{System.TimeSpan},System.Int32,Ingenico.Connect.Sdk.Proxy,System.Net.Http.HttpClientHandler)
+  name.vb: New(TimeSpan?, Integer, Proxy, HttpClientHandler)
+  fullName: Ingenico.Connect.Sdk.DefaultImpl.DefaultConnection.DefaultConnection(System.TimeSpan?, int, Ingenico.Connect.Sdk.Proxy, System.Net.Http.HttpClientHandler)
+  fullName.vb: Ingenico.Connect.Sdk.DefaultImpl.DefaultConnection.New(System.TimeSpan?, Integer, Ingenico.Connect.Sdk.Proxy, System.Net.Http.HttpClientHandler)
+  nameWithType: DefaultConnection.DefaultConnection(TimeSpan?, int, Proxy, HttpClientHandler)
+  nameWithType.vb: DefaultConnection.New(TimeSpan?, Integer, Proxy, HttpClientHandler)
 - uid: Ingenico.Connect.Sdk.DefaultImpl.DefaultConnection.#ctor*
   name: DefaultConnection
   href: api/Ingenico.Connect.Sdk.DefaultImpl.DefaultConnection.html#Ingenico_Connect_Sdk_DefaultImpl_DefaultConnection__ctor_
@@ -7652,6 +7678,19 @@ references:
   commentId: T:Ingenico.Connect.Sdk.Domain.Payment.Definitions.AbstractCardPaymentMethodSpecificInput
   fullName: Ingenico.Connect.Sdk.Domain.Payment.Definitions.AbstractCardPaymentMethodSpecificInput
   nameWithType: AbstractCardPaymentMethodSpecificInput
+- uid: Ingenico.Connect.Sdk.Domain.Payment.Definitions.AbstractCardPaymentMethodSpecificInput.AcquirerPromotionCode
+  name: AcquirerPromotionCode
+  href: api/Ingenico.Connect.Sdk.Domain.Payment.Definitions.AbstractCardPaymentMethodSpecificInput.html#Ingenico_Connect_Sdk_Domain_Payment_Definitions_AbstractCardPaymentMethodSpecificInput_AcquirerPromotionCode
+  commentId: P:Ingenico.Connect.Sdk.Domain.Payment.Definitions.AbstractCardPaymentMethodSpecificInput.AcquirerPromotionCode
+  fullName: Ingenico.Connect.Sdk.Domain.Payment.Definitions.AbstractCardPaymentMethodSpecificInput.AcquirerPromotionCode
+  nameWithType: AbstractCardPaymentMethodSpecificInput.AcquirerPromotionCode
+- uid: Ingenico.Connect.Sdk.Domain.Payment.Definitions.AbstractCardPaymentMethodSpecificInput.AcquirerPromotionCode*
+  name: AcquirerPromotionCode
+  href: api/Ingenico.Connect.Sdk.Domain.Payment.Definitions.AbstractCardPaymentMethodSpecificInput.html#Ingenico_Connect_Sdk_Domain_Payment_Definitions_AbstractCardPaymentMethodSpecificInput_AcquirerPromotionCode_
+  commentId: Overload:Ingenico.Connect.Sdk.Domain.Payment.Definitions.AbstractCardPaymentMethodSpecificInput.AcquirerPromotionCode
+  isSpec: "True"
+  fullName: Ingenico.Connect.Sdk.Domain.Payment.Definitions.AbstractCardPaymentMethodSpecificInput.AcquirerPromotionCode
+  nameWithType: AbstractCardPaymentMethodSpecificInput.AcquirerPromotionCode
 - uid: Ingenico.Connect.Sdk.Domain.Payment.Definitions.AbstractCardPaymentMethodSpecificInput.AuthorizationMode
   name: AuthorizationMode
   href: api/Ingenico.Connect.Sdk.Domain.Payment.Definitions.AbstractCardPaymentMethodSpecificInput.html#Ingenico_Connect_Sdk_Domain_Payment_Definitions_AbstractCardPaymentMethodSpecificInput_AuthorizationMode
@@ -21434,14 +21473,7 @@ references:
 - uid: Ingenico.Connect.Sdk.Logging.BodyObfuscator.DefaultObfuscator
   name: DefaultObfuscator
   href: api/Ingenico.Connect.Sdk.Logging.BodyObfuscator.html#Ingenico_Connect_Sdk_Logging_BodyObfuscator_DefaultObfuscator
-  commentId: P:Ingenico.Connect.Sdk.Logging.BodyObfuscator.DefaultObfuscator
-  fullName: Ingenico.Connect.Sdk.Logging.BodyObfuscator.DefaultObfuscator
-  nameWithType: BodyObfuscator.DefaultObfuscator
-- uid: Ingenico.Connect.Sdk.Logging.BodyObfuscator.DefaultObfuscator*
-  name: DefaultObfuscator
-  href: api/Ingenico.Connect.Sdk.Logging.BodyObfuscator.html#Ingenico_Connect_Sdk_Logging_BodyObfuscator_DefaultObfuscator_
-  commentId: Overload:Ingenico.Connect.Sdk.Logging.BodyObfuscator.DefaultObfuscator
-  isSpec: "True"
+  commentId: F:Ingenico.Connect.Sdk.Logging.BodyObfuscator.DefaultObfuscator
   fullName: Ingenico.Connect.Sdk.Logging.BodyObfuscator.DefaultObfuscator
   nameWithType: BodyObfuscator.DefaultObfuscator
 - uid: Ingenico.Connect.Sdk.Logging.BodyObfuscator.ObfuscateBody(System.String)
@@ -21581,14 +21613,7 @@ references:
 - uid: Ingenico.Connect.Sdk.Logging.HeaderObfuscator.DefaultObfuscator
   name: DefaultObfuscator
   href: api/Ingenico.Connect.Sdk.Logging.HeaderObfuscator.html#Ingenico_Connect_Sdk_Logging_HeaderObfuscator_DefaultObfuscator
-  commentId: P:Ingenico.Connect.Sdk.Logging.HeaderObfuscator.DefaultObfuscator
-  fullName: Ingenico.Connect.Sdk.Logging.HeaderObfuscator.DefaultObfuscator
-  nameWithType: HeaderObfuscator.DefaultObfuscator
-- uid: Ingenico.Connect.Sdk.Logging.HeaderObfuscator.DefaultObfuscator*
-  name: DefaultObfuscator
-  href: api/Ingenico.Connect.Sdk.Logging.HeaderObfuscator.html#Ingenico_Connect_Sdk_Logging_HeaderObfuscator_DefaultObfuscator_
-  commentId: Overload:Ingenico.Connect.Sdk.Logging.HeaderObfuscator.DefaultObfuscator
-  isSpec: "True"
+  commentId: F:Ingenico.Connect.Sdk.Logging.HeaderObfuscator.DefaultObfuscator
   fullName: Ingenico.Connect.Sdk.Logging.HeaderObfuscator.DefaultObfuscator
   nameWithType: HeaderObfuscator.DefaultObfuscator
 - uid: Ingenico.Connect.Sdk.Logging.HeaderObfuscator.ObfuscateHeader(System.String,System.String)
@@ -26365,6 +26390,56 @@ references:
   fullName.vb: Ingenico.Connect.Sdk.Webhooks.SignatureValidationException.New
   nameWithType: SignatureValidationException.SignatureValidationException
   nameWithType.vb: SignatureValidationException.New
+- uid: Ingenico.Connect.Sdk.Webhooks.SignatureValidator
+  name: SignatureValidator
+  href: api/Ingenico.Connect.Sdk.Webhooks.SignatureValidator.html
+  commentId: T:Ingenico.Connect.Sdk.Webhooks.SignatureValidator
+  fullName: Ingenico.Connect.Sdk.Webhooks.SignatureValidator
+  nameWithType: SignatureValidator
+- uid: Ingenico.Connect.Sdk.Webhooks.SignatureValidator.#ctor(Ingenico.Connect.Sdk.Webhooks.ISecretKeyStore)
+  name: SignatureValidator(ISecretKeyStore)
+  href: api/Ingenico.Connect.Sdk.Webhooks.SignatureValidator.html#Ingenico_Connect_Sdk_Webhooks_SignatureValidator__ctor_Ingenico_Connect_Sdk_Webhooks_ISecretKeyStore_
+  commentId: M:Ingenico.Connect.Sdk.Webhooks.SignatureValidator.#ctor(Ingenico.Connect.Sdk.Webhooks.ISecretKeyStore)
+  name.vb: New(ISecretKeyStore)
+  fullName: Ingenico.Connect.Sdk.Webhooks.SignatureValidator.SignatureValidator(Ingenico.Connect.Sdk.Webhooks.ISecretKeyStore)
+  fullName.vb: Ingenico.Connect.Sdk.Webhooks.SignatureValidator.New(Ingenico.Connect.Sdk.Webhooks.ISecretKeyStore)
+  nameWithType: SignatureValidator.SignatureValidator(ISecretKeyStore)
+  nameWithType.vb: SignatureValidator.New(ISecretKeyStore)
+- uid: Ingenico.Connect.Sdk.Webhooks.SignatureValidator.#ctor*
+  name: SignatureValidator
+  href: api/Ingenico.Connect.Sdk.Webhooks.SignatureValidator.html#Ingenico_Connect_Sdk_Webhooks_SignatureValidator__ctor_
+  commentId: Overload:Ingenico.Connect.Sdk.Webhooks.SignatureValidator.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Ingenico.Connect.Sdk.Webhooks.SignatureValidator.SignatureValidator
+  fullName.vb: Ingenico.Connect.Sdk.Webhooks.SignatureValidator.New
+  nameWithType: SignatureValidator.SignatureValidator
+  nameWithType.vb: SignatureValidator.New
+- uid: Ingenico.Connect.Sdk.Webhooks.SignatureValidator.Validate(System.Byte[],System.Collections.Generic.IEnumerable{Ingenico.Connect.Sdk.IRequestHeader})
+  name: Validate(byte[], IEnumerable<IRequestHeader>)
+  href: api/Ingenico.Connect.Sdk.Webhooks.SignatureValidator.html#Ingenico_Connect_Sdk_Webhooks_SignatureValidator_Validate_System_Byte___System_Collections_Generic_IEnumerable_Ingenico_Connect_Sdk_IRequestHeader__
+  commentId: M:Ingenico.Connect.Sdk.Webhooks.SignatureValidator.Validate(System.Byte[],System.Collections.Generic.IEnumerable{Ingenico.Connect.Sdk.IRequestHeader})
+  name.vb: Validate(Byte(), IEnumerable(Of IRequestHeader))
+  fullName: Ingenico.Connect.Sdk.Webhooks.SignatureValidator.Validate(byte[], System.Collections.Generic.IEnumerable<Ingenico.Connect.Sdk.IRequestHeader>)
+  fullName.vb: Ingenico.Connect.Sdk.Webhooks.SignatureValidator.Validate(Byte(), System.Collections.Generic.IEnumerable(Of Ingenico.Connect.Sdk.IRequestHeader))
+  nameWithType: SignatureValidator.Validate(byte[], IEnumerable<IRequestHeader>)
+  nameWithType.vb: SignatureValidator.Validate(Byte(), IEnumerable(Of IRequestHeader))
+- uid: Ingenico.Connect.Sdk.Webhooks.SignatureValidator.Validate(System.String,System.Collections.Generic.IEnumerable{Ingenico.Connect.Sdk.IRequestHeader})
+  name: Validate(string, IEnumerable<IRequestHeader>)
+  href: api/Ingenico.Connect.Sdk.Webhooks.SignatureValidator.html#Ingenico_Connect_Sdk_Webhooks_SignatureValidator_Validate_System_String_System_Collections_Generic_IEnumerable_Ingenico_Connect_Sdk_IRequestHeader__
+  commentId: M:Ingenico.Connect.Sdk.Webhooks.SignatureValidator.Validate(System.String,System.Collections.Generic.IEnumerable{Ingenico.Connect.Sdk.IRequestHeader})
+  name.vb: Validate(String, IEnumerable(Of IRequestHeader))
+  fullName: Ingenico.Connect.Sdk.Webhooks.SignatureValidator.Validate(string, System.Collections.Generic.IEnumerable<Ingenico.Connect.Sdk.IRequestHeader>)
+  fullName.vb: Ingenico.Connect.Sdk.Webhooks.SignatureValidator.Validate(String, System.Collections.Generic.IEnumerable(Of Ingenico.Connect.Sdk.IRequestHeader))
+  nameWithType: SignatureValidator.Validate(string, IEnumerable<IRequestHeader>)
+  nameWithType.vb: SignatureValidator.Validate(String, IEnumerable(Of IRequestHeader))
+- uid: Ingenico.Connect.Sdk.Webhooks.SignatureValidator.Validate*
+  name: Validate
+  href: api/Ingenico.Connect.Sdk.Webhooks.SignatureValidator.html#Ingenico_Connect_Sdk_Webhooks_SignatureValidator_Validate_
+  commentId: Overload:Ingenico.Connect.Sdk.Webhooks.SignatureValidator.Validate
+  isSpec: "True"
+  fullName: Ingenico.Connect.Sdk.Webhooks.SignatureValidator.Validate
+  nameWithType: SignatureValidator.Validate
 - uid: Ingenico.Connect.Sdk.Webhooks.Webhooks
   name: Webhooks
   href: api/Ingenico.Connect.Sdk.Webhooks.Webhooks.html
