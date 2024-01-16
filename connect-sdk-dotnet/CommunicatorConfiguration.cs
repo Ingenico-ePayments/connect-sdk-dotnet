@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Net.Http;
 using Ingenico.Connect.Sdk.DefaultImpl;
 
 namespace Ingenico.Connect.Sdk
@@ -224,6 +225,11 @@ namespace Ingenico.Connect.Sdk
             }
         }
 
+        /// <summary>
+        /// Gets or sets a custom HttpClientHandler to be used by <see cref="DefaultConnection"/>.
+        /// </summary>
+        public HttpClientHandler HttpClientHandler { get; set; }
+
         public CommunicatorConfiguration()
         {
 
@@ -387,6 +393,17 @@ namespace Ingenico.Connect.Sdk
         public CommunicatorConfiguration WithShoppingCartExtension(ShoppingCartExtension shoppingCartExtension)
         {
             ShoppingCartExtension = shoppingCartExtension;
+            return this;
+        }
+
+        /// <summary>
+        /// Returns this with a custom HttpClientHandler assigned.
+        /// </summary>
+        /// <param name="httpClientHandler">The custom HttpClientHandler.</param>
+        /// <returns>This.</returns>
+        public CommunicatorConfiguration WithHttpClientHandler(HttpClientHandler httpClientHandler)
+        {
+            HttpClientHandler = httpClientHandler;
             return this;
         }
 

@@ -2,7 +2,7 @@ namespace Ingenico.Connect.Sdk.Logging
 {
     class ValueObfuscator
     {
-        internal static readonly ValueObfuscator ALL = new ValueObfuscator(0, 0, 0);
+        internal static readonly ValueObfuscator All = new ValueObfuscator(0, 0, 0);
 
         internal static ValueObfuscator FixedLength(int fixedLength)
         {

@@ -15,9 +15,9 @@ namespace Ingenico.Connect.Sdk.DefaultImpl
     /// </summary>
     public class DefaultConnection : IPooledConnection, ILoggingCapable, IObfuscationCapable
     {
-        public DefaultConnection(TimeSpan? socketTimeout, int maxConnections = 2, Proxy proxy = null)
+        public DefaultConnection(TimeSpan? socketTimeout, int maxConnections = 2, Proxy proxy = null, HttpClientHandler httpClientHandler = null)
         {
-            var handler = new HttpClientHandler();
+            var handler = httpClientHandler != null ? httpClientHandler : new HttpClientHandler();
             if (proxy != null)
             {
                 handler.Proxy = new WebProxy(proxy.Uri);
@@ -37,9 +37,9 @@ namespace Ingenico.Connect.Sdk.DefaultImpl
             }
         }
 
-        internal DefaultConnection(TimeSpan? socketTimeout,ProxyConfiguration proxyConfig, int maxConnections = 2)
+        internal DefaultConnection(TimeSpan? socketTimeout,ProxyConfiguration proxyConfig, int maxConnections = 2, HttpClientHandler httpClientHandler = null)
         {
-            var handler = new HttpClientHandler();
+            var handler = httpClientHandler != null ? httpClientHandler : new HttpClientHandler();
             if (proxyConfig != null)
             {
                 handler.Proxy = new WebProxy(proxyConfig.Uri);

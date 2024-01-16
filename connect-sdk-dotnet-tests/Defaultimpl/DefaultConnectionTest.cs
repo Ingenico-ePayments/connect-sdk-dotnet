@@ -16,11 +16,9 @@ namespace Ingenico.Connect.Sdk.DefaultImpl
         public void TestConstructWithoutProxy()
         {
             DefaultConnection connection = new DefaultConnection(SOCKET_TIMEOUT, MAX_CONNECTIONS);
-            //assertMaxConnections(connection, CommunicatorConfiguration.DEFAULT_MAX_CONNECTIONS, null);
             AssertConnectTimeout(connection);
             AssertNoProxy(connection);
-            // TODO: check max connections
-
+            AssertNonCustomHandler(connection);
         }
 
         static void AssertConnectTimeout(DefaultConnection connection)
@@ -37,6 +35,7 @@ namespace Ingenico.Connect.Sdk.DefaultImpl
             {
                 handler = (HttpClientHandler)httpClient.GetPrivateField<HttpMessageInvoker>("_handler");
             }
+            Assert.NotNull(handler);
             Assert.Null(handler.Proxy);
         }
 
@@ -48,6 +47,7 @@ namespace Ingenico.Connect.Sdk.DefaultImpl
             {
                 handler = (HttpClientHandler)httpClient.GetPrivateField<HttpMessageInvoker>("_handler");
             }
+            Assert.NotNull(handler);
             Assert.That(handler.UseProxy, Is.True);
             Assert.That(((WebProxy)handler.Proxy).Address, Is.EqualTo(proxy.Uri));
             Assert.That(((NetworkCredential)handler.Proxy.Credentials), Is.Null);
@@ -61,11 +61,34 @@ namespace Ingenico.Connect.Sdk.DefaultImpl
             {
                 handler = (HttpClientHandler)httpClient.GetPrivateField<HttpMessageInvoker>("_handler");
             }
+            Assert.NotNull(handler);
             Assert.That(handler.UseProxy, Is.True);
             Assert.That(((WebProxy)handler.Proxy).Address, Is.EqualTo(proxy.Uri));
             Assert.That(((NetworkCredential)handler.Proxy.Credentials), Is.Not.Null);
             Assert.That(((NetworkCredential)handler.Proxy.Credentials).UserName, Is.EqualTo(proxy.Username));
             Assert.That(((NetworkCredential)handler.Proxy.Credentials).Password, Is.EqualTo(proxy.Password));
+        }
+
+        void AssertNonCustomHandler(DefaultConnection connection)
+        {
+            HttpClient httpClient = (HttpClient)connection.GetPrivateField("_httpClient");
+            HttpClientHandler handler = (HttpClientHandler)httpClient.GetPrivateField<HttpMessageInvoker>("handler");
+            if (handler == null)
+            {
+                handler = (HttpClientHandler)httpClient.GetPrivateField<HttpMessageInvoker>("_handler");
+            }
+            Assert.IsNotInstanceOf<CustomHttpClientHandler>(handler);
+        }
+
+        void AssertCustomHandler(DefaultConnection connection)
+        {
+            HttpClient httpClient = (HttpClient)connection.GetPrivateField("_httpClient");
+            HttpClientHandler handler = (HttpClientHandler)httpClient.GetPrivateField<HttpMessageInvoker>("handler");
+            if (handler == null)
+            {
+                handler = (HttpClientHandler)httpClient.GetPrivateField<HttpMessageInvoker>("_handler");
+            }
+            Assert.IsInstanceOf<CustomHttpClientHandler>(handler);
         }
 
         [TestCase]
@@ -75,8 +98,8 @@ namespace Ingenico.Connect.Sdk.DefaultImpl
 
             DefaultConnection connection = new DefaultConnection(SOCKET_TIMEOUT, MAX_CONNECTIONS, proxy);
             AssertConnectTimeout(connection);
-            //assertMaxConnections(connection, CommunicatorConfiguration.DEFAULT_MAX_CONNECTIONS, proxyConfiguration);
             AssertProxy(connection, proxy);
+            AssertNonCustomHandler(connection);
         }
 
         [TestCase]
@@ -86,10 +109,22 @@ namespace Ingenico.Connect.Sdk.DefaultImpl
 
             DefaultConnection connection = new DefaultConnection(SOCKET_TIMEOUT, MAX_CONNECTIONS, proxy);
             AssertConnectTimeout(connection);
-            //assertMaxConnections(connection, CommunicatorConfiguration.DEFAULT_MAX_CONNECTIONS, proxyConfiguration);
             AssertProxyAndAuthentication(connection, proxy);
+            AssertNonCustomHandler(connection);
         }
 
+        [TestCase]
+        public void TestConstructWithProxyWithAuthenticationWithHandler()
+        {
+            var proxy = new Proxy { Uri = new Uri("http://test-proxy"), Username = "test-username", Password = "test-password" };
+
+            var handler = new CustomHttpClientHandler();
+
+            DefaultConnection connection = new DefaultConnection(SOCKET_TIMEOUT, MAX_CONNECTIONS, proxy, handler);
+            AssertConnectTimeout(connection);
+            AssertProxyAndAuthentication(connection, proxy);
+            AssertCustomHandler(connection);
+        }
 
         [TestCase, Ignore("Not implemented because max connections is not testable")]
         public void TestConstructWithMaxConnectionsWithoutProxy()

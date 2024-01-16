@@ -1,8 +1,7 @@
 /*
  * This class was auto-generated from the API references found at
- * https://epayments-api.developer-ingenico.com/s2sapi/v1/
+ * https://epayments-api.developer-ingenico.com/
  */
-using Ingenico.Connect.Sdk;
 using Ingenico.Connect.Sdk.Domain.Errors;
 using Ingenico.Connect.Sdk.Domain.Installments;
 using System.Collections.Generic;
@@ -22,7 +21,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Installments
 
         /// <summary>
         /// Resource /{merchantId}/installments/getInstallmentsInfo
-        /// - <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/installments/getInstallmentsInfo.html">Get Installment Info</a>
+        /// - <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/installments/getInstallmentsInfo.html">Get installment information</a>
         /// </summary>
         /// <param name="body">GetInstallmentRequest</param>
         /// <param name="context">CallContext</param>

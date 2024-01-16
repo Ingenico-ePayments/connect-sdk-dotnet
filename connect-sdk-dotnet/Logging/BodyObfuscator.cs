@@ -11,8 +11,6 @@ namespace Ingenico.Connect.Sdk.Logging
     /// </summary>
     public class BodyObfuscator
     {
-        static readonly BodyObfuscator DEFAULT_OBFUSCATOR = Custom().Build();
-
         readonly IDictionary<string, ObfuscationRule> _obfuscationRules;
         readonly Regex _propertyRegex;
 
@@ -133,10 +131,10 @@ namespace Ingenico.Connect.Sdk.Logging
         }
 
         /// <summary>
-        /// Returns a default body obfuscator.
-        /// The result will be equivalent to calling Custom().Build().
+        /// A default body obfuscator.
+        /// This is equivalent to calling Custom().Build().
         /// </summary>
-        public static BodyObfuscator DefaultObfuscator => DEFAULT_OBFUSCATOR;
+        public static readonly BodyObfuscator DefaultObfuscator = Custom().Build();
 
         public class Builder
         {
@@ -145,7 +143,7 @@ namespace Ingenico.Connect.Sdk.Logging
             /// </summary>
             public Builder ObfuscateAll(string propertyName)
             {
-                ObfuscationRules[propertyName] = ValueObfuscator.ALL.ObfuscateValue;
+                ObfuscationRules[propertyName] = ValueObfuscator.All.ObfuscateValue;
                 return this;
             }
 

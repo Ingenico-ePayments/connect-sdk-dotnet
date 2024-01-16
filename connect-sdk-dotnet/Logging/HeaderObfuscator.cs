@@ -9,8 +9,6 @@ namespace Ingenico.Connect.Sdk.Logging
     /// </summary>
     public class HeaderObfuscator
     {
-        static readonly HeaderObfuscator DEFAULT_OBFUSCATOR = Custom().Build();
-
         readonly IDictionary<string, ObfuscationRule> _obfuscationRules;
 
         HeaderObfuscator(IDictionary<string, ObfuscationRule> obfuscationRules)
@@ -47,10 +45,10 @@ namespace Ingenico.Connect.Sdk.Logging
         }
 
         /// <summary>
-        /// Returns a default header obfuscator.
-        /// The result will be equivalent to calling Custom().Build().
+        /// A default header obfuscator.
+        /// This is equivalent to calling Custom().Build().
         /// </summary>
-        public static HeaderObfuscator DefaultObfuscator => DEFAULT_OBFUSCATOR;
+        public static readonly HeaderObfuscator DefaultObfuscator = Custom().Build();
 
         public class Builder
         {
@@ -59,7 +57,7 @@ namespace Ingenico.Connect.Sdk.Logging
             /// </summary>
             public Builder ObfuscateAll(string headerName)
             {
-                ObfuscationRules[headerName] = ValueObfuscator.ALL.ObfuscateValue;
+                ObfuscationRules[headerName] = ValueObfuscator.All.ObfuscateValue;
                 return this;
             }
 

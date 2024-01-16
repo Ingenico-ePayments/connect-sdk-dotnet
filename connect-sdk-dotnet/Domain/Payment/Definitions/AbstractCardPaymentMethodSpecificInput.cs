@@ -1,6 +1,6 @@
 /*
  * This class was auto-generated from the API references found at
- * https://epayments-api.developer-ingenico.com/s2sapi/v1/
+ * https://epayments-api.developer-ingenico.com/
  */
 using Ingenico.Connect.Sdk.Domain.Definitions;
 using System;
@@ -9,6 +9,8 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
 {
     public class AbstractCardPaymentMethodSpecificInput : AbstractPaymentMethodSpecificInput
     {
+        public string AcquirerPromotionCode { get; set; } = null;
+
         public string AuthorizationMode { get; set; } = null;
 
         public string CustomerReference { get; set; } = null;

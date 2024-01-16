@@ -92,7 +92,8 @@ namespace Ingenico.Connect.Sdk
                             configuration.SocketTimeout,
                             // connect timeout not supported
                             configuration.ProxyConfiguration,
-                            configuration.MaxConnections
+                            configuration.MaxConnections,
+                            configuration.HttpClientHandler
                     ))
                     .WithMetaDataProvider(
                         new MetaDataProviderBuilder(configuration.Integrator)
