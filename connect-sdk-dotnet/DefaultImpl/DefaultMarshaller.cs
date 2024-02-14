@@ -12,13 +12,13 @@ namespace Ingenico.Connect.Sdk.DefaultImpl
         public static DefaultMarshaller Instance { get; } = new DefaultMarshaller();
 
         #region IMarshaller Implementation
-        public string Marshal(object requestObject) => JsonConvert.SerializeObject(requestObject, _jsonSerializerSettings);
+        public string Marshal(object requestObject) => JsonConvert.SerializeObject(requestObject, JsonSerializerSettings);
 
         public T Unmarshal<T>(string responseJson)
         {
             try
             {
-                T anObject = (T)JsonConvert.DeserializeObject(responseJson, typeof(T), _jsonSerializerSettings);
+                T anObject = (T)JsonConvert.DeserializeObject(responseJson, typeof(T), JsonSerializerSettings);
                 return anObject;
             }
             catch (JsonReaderException exception)
@@ -33,7 +33,7 @@ namespace Ingenico.Connect.Sdk.DefaultImpl
             {
                 var sr = new StreamReader(responseJson);
                 JsonReader jr = new JsonTextReader(sr);
-                var serializer = JsonSerializer.Create(_jsonSerializerSettings);
+                var serializer = JsonSerializer.Create(JsonSerializerSettings);
 
                 T anObject = serializer.Deserialize<T>(jr);
                 return anObject;
@@ -47,7 +47,7 @@ namespace Ingenico.Connect.Sdk.DefaultImpl
 
         #endregion
 
-        static readonly JsonSerializerSettings _jsonSerializerSettings = new JsonSerializerSettings
+        static readonly JsonSerializerSettings JsonSerializerSettings = new JsonSerializerSettings
         {
             ContractResolver = new DefaultContractResolver
             {

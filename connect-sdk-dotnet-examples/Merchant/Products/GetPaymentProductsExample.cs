@@ -3,7 +3,6 @@
  * https://epayments-api.developer-ingenico.com/
  */
 using Ingenico.Connect.Sdk.Domain.Product;
-using Ingenico.Connect.Sdk.Merchant.Products;
 
 namespace Ingenico.Connect.Sdk.Merchant.Products
 {
@@ -20,6 +19,7 @@ namespace Ingenico.Connect.Sdk.Merchant.Products
                 query.Locale = "en_US";
                 query.Amount = 1000L;
                 query.IsRecurring = true;
+                query.IsInstallments = true;
                 query.AddHide("fields");
 
                 PaymentProducts response = await client.Merchant("merchantId").Products().Find(query);

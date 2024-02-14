@@ -28,7 +28,7 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
         /// <summary>
         /// Shopping cart data
         /// </summary>
-        [ObsoleteAttribute("Use shoppingCart.items instead")]
+        [Obsolete("Use shoppingCart.items instead")]
         public IList<LineItem> Items { get; set; } = null;
 
         /// <summary>
@@ -39,7 +39,7 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
         /// <summary>
         /// Object containing seller details
         /// </summary>
-        [ObsoleteAttribute("Use Merchant.seller instead")]
+        [Obsolete("Use Merchant.seller instead")]
         public Seller Seller { get; set; } = null;
 
         /// <summary>

@@ -3,7 +3,7 @@ using System.Configuration;
 
 namespace Ingenico.Connect.Sdk
 {
-    class ProxyConfiguration : UriConfiguration
+    internal class ProxyConfiguration : UriConfiguration
     {
         public ProxyConfiguration(Uri address)
             : this(address, null, null)

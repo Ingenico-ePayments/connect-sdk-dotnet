@@ -21,7 +21,7 @@ namespace Ingenico.Connect.Sdk.Domain.Definitions
         /// <summary>
         /// Local VAT number of the company
         /// </summary>
-        [ObsoleteAttribute("Use companyInformation.vatNumber instead")]
+        [Obsolete("Use companyInformation.vatNumber instead")]
         public string VatNumber { get; set; } = null;
     }
 }

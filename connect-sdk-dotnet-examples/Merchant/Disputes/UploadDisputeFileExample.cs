@@ -3,7 +3,6 @@
  * https://epayments-api.developer-ingenico.com/
  */
 using Ingenico.Connect.Sdk.Domain.Dispute;
-using Ingenico.Connect.Sdk.Merchant.Disputes;
 using System.IO;
 
 namespace Ingenico.Connect.Sdk.Merchant.Disputes

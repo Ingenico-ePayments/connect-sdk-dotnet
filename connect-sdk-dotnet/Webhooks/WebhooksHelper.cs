@@ -63,7 +63,7 @@ namespace Ingenico.Connect.Sdk.Webhooks
             _signatureValidator.Validate(body, requestHeaders);
         }
 
-        private void ValidateApiVersion(WebhooksEvent unmarshalledEvent)
+        private static void ValidateApiVersion(WebhooksEvent unmarshalledEvent)
         {
             if (!Client.ApiVersion.Equals(unmarshalledEvent.ApiVersion))
             {

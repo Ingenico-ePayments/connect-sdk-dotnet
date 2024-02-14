@@ -18,7 +18,7 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
         /// <summary>
         /// Object containing 3D secure details.
         /// </summary>
-        [ObsoleteAttribute("Use threeDSecure.externalCardholderAuthenticationData instead")]
+        [Obsolete("Use threeDSecure.externalCardholderAuthenticationData instead")]
         public ExternalCardholderAuthenticationData ExternalCardholderAuthenticationData { get; set; } = null;
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
         /// <i>protocol</i>://. This protocol must be registered on the device first.
         /// <br />URLs without a protocol will be rejected.
         /// </summary>
-        [ObsoleteAttribute("Use threeDSecure.redirectionData.returnUrl instead")]
+        [Obsolete("Use threeDSecure.redirectionData.returnUrl instead")]
         public string ReturnUrl { get; set; } = null;
 
         /// <summary>

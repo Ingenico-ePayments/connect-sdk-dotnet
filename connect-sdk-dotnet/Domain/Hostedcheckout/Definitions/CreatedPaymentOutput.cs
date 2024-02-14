@@ -68,7 +68,7 @@ namespace Ingenico.Connect.Sdk.Domain.Hostedcheckout.Definitions
         /// <br />Please see 
         /// <a href="https://epayments-api.developer-ingenico.com/s2sapi/v1/en_US/dotnet/statuses.html">Statuses</a> for a full overview of possible values.
         /// </summary>
-        [ObsoleteAttribute("Use Payment.statusOutput.statusCategory instead")]
+        [Obsolete("Use Payment.statusOutput.statusCategory instead")]
         public string PaymentStatusCategory { get; set; } = null;
 
         /// <summary>

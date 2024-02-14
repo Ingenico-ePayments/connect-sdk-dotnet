@@ -107,7 +107,7 @@ namespace Ingenico.Connect.Sdk.Domain.Definitions
         ///   <item><description>first</description></item>
         /// </list>
         /// </summary>
-        [ObsoleteAttribute("Use passengerClass instead")]
+        [Obsolete("Use passengerClass instead")]
         public string ServiceClass { get; set; } = null;
 
         /// <summary>

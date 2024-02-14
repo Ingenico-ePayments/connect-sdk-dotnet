@@ -6,7 +6,7 @@ namespace Ingenico.Connect.Sdk
     /// <summary>
     /// A header that specifies metadata about the content of the request or response. Immutable.
     /// </summary>
-    class EntityHeader : IRequestHeader, IResponseHeader
+    internal class EntityHeader : IRequestHeader, IResponseHeader
     {
         public EntityHeader(string name, string value)
         {
@@ -18,7 +18,7 @@ namespace Ingenico.Connect.Sdk
             Value = NormalizeValue(value);
         }
 
-        private string NormalizeValue(string value)
+        private static string NormalizeValue(string value)
         {
             if (string.IsNullOrEmpty(value))
             {
@@ -50,11 +50,8 @@ namespace Ingenico.Connect.Sdk
         public override int GetHashCode()
             => Tuple.Create(Name, Value).GetHashCode();
 
-        public bool Equals(EntityHeader obj)
-            => (obj?.Name?.Equals(Name) ?? false)
-                && (obj?.Value?.Equals(Value) ?? false);
+        public bool Equals(EntityHeader obj) => (obj?.Name?.Equals(Name) ?? false) && (obj.Value?.Equals(Value) ?? false);
 
-        public override bool Equals(object obj)
-            => obj is EntityHeader && Equals(obj as EntityHeader);
+        public override bool Equals(object obj) => Equals(obj as EntityHeader);
     }
 }

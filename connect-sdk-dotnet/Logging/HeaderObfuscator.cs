@@ -13,13 +13,13 @@ namespace Ingenico.Connect.Sdk.Logging
 
         HeaderObfuscator(IDictionary<string, ObfuscationRule> obfuscationRules)
         {
-            _obfuscationRules = ImmutableDictionary.ToImmutableDictionary(obfuscationRules, StringComparer.OrdinalIgnoreCase);
+            _obfuscationRules = obfuscationRules.ToImmutableDictionary(StringComparer.OrdinalIgnoreCase);
         }
 
         /// <summary>
         /// Obfuscates the value for the given header as necessary.
         /// </summary>
-        public String ObfuscateHeader(String name, String value)
+        public string ObfuscateHeader(string name, string value)
         {
             if (_obfuscationRules.TryGetValue(name, out ObfuscationRule obfuscationRule))
             {
@@ -101,7 +101,7 @@ namespace Ingenico.Connect.Sdk.Logging
 
             public HeaderObfuscator Build()
             {
-                return new HeaderObfuscator(this.ObfuscationRules);
+                return new HeaderObfuscator(ObfuscationRules);
             }
 
             internal Builder()

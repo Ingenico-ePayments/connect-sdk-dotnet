@@ -2,7 +2,6 @@
  * This class was auto-generated from the API references found at
  * https://epayments-api.developer-ingenico.com/
  */
-using Ingenico.Connect.Sdk;
 using System.Collections.Generic;
 
 namespace Ingenico.Connect.Sdk.Merchant.Products
@@ -41,6 +40,15 @@ namespace Ingenico.Connect.Sdk.Merchant.Products
         /// </list>If this is omitted all payment products are returned.
         /// </summary>
         public bool? IsRecurring { get; set; } = null;
+
+        /// <summary>
+        /// This allows you to filter payment products based on their support for installments or not 
+        /// <list type="bullet">
+        ///   <item><description>true</description></item>
+        ///   <item><description>false</description></item>
+        /// </list>If this is omitted all payment products are returned.
+        /// </summary>
+        public bool? IsInstallments { get; set; } = null;
 
         /// <summary>
         /// Allows you to hide elements from the response, reducing the amount of data that needs to be returned to your client. Possible options are: 
@@ -90,6 +98,10 @@ namespace Ingenico.Connect.Sdk.Merchant.Products
             if (IsRecurring != null)
             {
                 result.Add(new RequestParam("isRecurring", IsRecurring.ToString().ToLower()));
+            }
+            if (IsInstallments != null)
+            {
+                result.Add(new RequestParam("isInstallments", IsInstallments.ToString().ToLower()));
             }
             if (Hide != null)
             {

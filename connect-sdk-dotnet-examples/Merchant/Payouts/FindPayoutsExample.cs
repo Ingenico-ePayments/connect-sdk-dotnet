@@ -3,7 +3,6 @@
  * https://epayments-api.developer-ingenico.com/
  */
 using Ingenico.Connect.Sdk.Domain.Payout;
-using Ingenico.Connect.Sdk.Merchant.Payouts;
 
 namespace Ingenico.Connect.Sdk.Merchant.Payouts
 {

@@ -3,7 +3,6 @@
  * https://epayments-api.developer-ingenico.com/
  */
 using Ingenico.Connect.Sdk.Domain.Refund;
-using Ingenico.Connect.Sdk.Merchant.Refunds;
 
 namespace Ingenico.Connect.Sdk.Merchant.Refunds
 {

@@ -3,7 +3,7 @@ using System.Text;
 
 namespace Ingenico.Connect.Sdk
 {
-    static class UriBuilderExtensions
+    internal static class UriBuilderExtensions
     {
         public static void AddParameter(this UriBuilder builder, string name, string value)
         {

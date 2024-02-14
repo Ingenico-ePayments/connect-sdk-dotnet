@@ -2,7 +2,7 @@ using System.Configuration;
 
 namespace Ingenico.Connect.Sdk
 {
-    class ShoppingCartExtensionConfiguration : ConfigurationElement
+    internal class ShoppingCartExtensionConfiguration : ConfigurationElement
     {
         public ShoppingCartExtension ShoppingCartExtension
         {

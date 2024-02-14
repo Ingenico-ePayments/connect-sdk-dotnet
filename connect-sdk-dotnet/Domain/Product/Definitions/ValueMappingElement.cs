@@ -17,7 +17,7 @@ namespace Ingenico.Connect.Sdk.Domain.Product.Definitions
         /// <summary>
         /// Key name
         /// </summary>
-        [ObsoleteAttribute("Use displayElements instead with ID 'displayName'")]
+        [Obsolete("Use displayElements instead with ID 'displayName'")]
         public string DisplayName { get; set; } = null;
 
         /// <summary>

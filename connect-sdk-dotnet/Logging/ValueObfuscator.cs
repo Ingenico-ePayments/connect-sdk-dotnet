@@ -1,6 +1,6 @@
 namespace Ingenico.Connect.Sdk.Logging
 {
-    class ValueObfuscator
+    internal class ValueObfuscator
     {
         internal static readonly ValueObfuscator All = new ValueObfuscator(0, 0, 0);
 

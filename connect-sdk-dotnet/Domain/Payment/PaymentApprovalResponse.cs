@@ -28,7 +28,7 @@ namespace Ingenico.Connect.Sdk.Domain.Payment
         /// Object containing additional payment method specific details
         /// <br />Deprecated: this property does not support different outputs for payment methods other than cards. Please use cardPaymentMethodSpecificOutput instead.
         /// </summary>
-        [ObsoleteAttribute("Use cardPaymentMethodSpecificOutput instead")]
+        [Obsolete("Use cardPaymentMethodSpecificOutput instead")]
         public ApprovePaymentCardPaymentMethodSpecificOutput PaymentMethodSpecificOutput { get; set; } = null;
     }
 }

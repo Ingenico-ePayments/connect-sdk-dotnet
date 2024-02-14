@@ -12,7 +12,7 @@ namespace Ingenico.Connect.Sdk.Domain.Definitions
         /// <summary>
         /// Indicates that invoice and shipping addresses are equal.
         /// </summary>
-        [ObsoleteAttribute("For risk assessments there is no replacement. For other calls, use Order.shipping.addressIndicator instead")]
+        [Obsolete("For risk assessments there is no replacement. For other calls, use Order.shipping.addressIndicator instead")]
         public bool? AddressesAreIdentical { get; set; } = null;
 
         /// <summary>
@@ -23,7 +23,7 @@ namespace Ingenico.Connect.Sdk.Domain.Definitions
         /// <summary>
         /// The address that belongs to the owner of the card
         /// </summary>
-        [ObsoleteAttribute("This should be the same as Order.customer.billingAddress")]
+        [Obsolete("This should be the same as Order.customer.billingAddress")]
         public Address CardOwnerAddress { get; set; } = null;
 
         /// <summary>
@@ -39,19 +39,19 @@ namespace Ingenico.Connect.Sdk.Domain.Definitions
         ///   <item><description>manually - All fields were entered manually</description></item>
         /// </list>
         /// </summary>
-        [ObsoleteAttribute("Use Order.customer.device.defaultFormFill instead")]
+        [Obsolete("Use Order.customer.device.defaultFormFill instead")]
         public string DefaultFormFill { get; set; } = null;
 
         /// <summary>
         /// Indicates that the device fingerprint has been used while processing the order.
         /// </summary>
-        [ObsoleteAttribute("No replacement")]
+        [Obsolete("No replacement")]
         public bool? DeviceFingerprintActivated { get; set; } = null;
 
         /// <summary>
         /// One must set the deviceFingerprintTransactionId received by the response of the endpoint /{merchant}/products/{paymentProductId}/deviceFingerprint
         /// </summary>
-        [ObsoleteAttribute("Use Order.customer.device.deviceFingerprintTransactionId instead")]
+        [Obsolete("Use Order.customer.device.deviceFingerprintTransactionId instead")]
         public string DeviceFingerprintTransactionId { get; set; } = null;
 
         /// <summary>
@@ -102,7 +102,7 @@ namespace Ingenico.Connect.Sdk.Domain.Definitions
         ///   <item><description>false - The customer has not forgotten their password</description></item>
         /// </list>
         /// </summary>
-        [ObsoleteAttribute("Use Order.customer.account.hasForgottenPassword instead")]
+        [Obsolete("Use Order.customer.account.hasForgottenPassword instead")]
         public bool? HasForgottenPwd { get; set; } = null;
 
         /// <summary>
@@ -112,7 +112,7 @@ namespace Ingenico.Connect.Sdk.Domain.Definitions
         ///   <item><description>false - The customer has not used a password to gain access</description></item>
         /// </list>
         /// </summary>
-        [ObsoleteAttribute("Use Order.customer.account.hasPassword instead")]
+        [Obsolete("Use Order.customer.account.hasPassword instead")]
         public bool? HasPassword { get; set; } = null;
 
         /// <summary>
@@ -122,7 +122,7 @@ namespace Ingenico.Connect.Sdk.Domain.Definitions
         ///   <item><description>false - The customer is new/unknown customer</description></item>
         /// </list>
         /// </summary>
-        [ObsoleteAttribute("Use Order.customer.isPreviousCustomer instead")]
+        [Obsolete("Use Order.customer.isPreviousCustomer instead")]
         public bool? IsPreviousCustomer { get; set; } = null;
 
         /// <summary>
@@ -133,19 +133,19 @@ namespace Ingenico.Connect.Sdk.Domain.Definitions
         /// <summary>
         /// Comments included during shipping
         /// </summary>
-        [ObsoleteAttribute("Use Order.shipping.comments instead")]
+        [Obsolete("Use Order.shipping.comments instead")]
         public string ShipComments { get; set; } = null;
 
         /// <summary>
         /// Shipment tracking number
         /// </summary>
-        [ObsoleteAttribute("Use Order.shipping.trackingNumber instead")]
+        [Obsolete("Use Order.shipping.trackingNumber instead")]
         public string ShipmentTrackingNumber { get; set; } = null;
 
         /// <summary>
         /// Details on how the order is shipped to the customer
         /// </summary>
-        [ObsoleteAttribute("No replacement")]
+        [Obsolete("No replacement")]
         public FraudFieldsShippingDetails ShippingDetails { get; set; } = null;
 
         /// <summary>
@@ -156,7 +156,7 @@ namespace Ingenico.Connect.Sdk.Domain.Definitions
         /// <summary>
         /// The website from which the purchase was made
         /// </summary>
-        [ObsoleteAttribute("Use Merchant.websiteUrl instead")]
+        [Obsolete("Use Merchant.websiteUrl instead")]
         public string Website { get; set; } = null;
     }
 }

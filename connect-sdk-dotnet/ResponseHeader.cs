@@ -28,11 +28,8 @@ namespace Ingenico.Connect.Sdk
         public override int GetHashCode()
             => Tuple.Create(Name, Value).GetHashCode();
 
-        public bool Equals(ResponseHeader obj)
-            => (obj?.Name?.Equals(Name) ?? false)
-                && (obj?.Value?.Equals(Value) ?? false);
+        public bool Equals(ResponseHeader obj) => (obj?.Name?.Equals(Name) ?? false) && (obj.Value?.Equals(Value) ?? false);
 
-        public override bool Equals(object obj)
-            => obj is ResponseHeader && Equals(obj as ResponseHeader);
+        public override bool Equals(object obj) => Equals(obj as ResponseHeader);
     }
 }

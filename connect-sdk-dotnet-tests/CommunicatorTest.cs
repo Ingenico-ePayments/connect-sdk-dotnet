@@ -17,8 +17,8 @@ namespace Ingenico.Connect.Sdk
             sessionMock.SetupGet(x => x.ApiEndpoint).Returns(baseUri);
             Communicator communicator = 
                 new Communicator(sessionMock.Object, DefaultImpl.DefaultMarshaller.Instance);
-            Uri uri = communicator.ToAbsoluteURI("v1/merchant/20000/convertamount", new List<RequestParam>());
-            Uri uri2 = communicator.ToAbsoluteURI("/v1/merchant/20000/convertamount", new List<RequestParam>());
+            Uri uri = communicator.ToAbsoluteUri("v1/merchant/20000/convertamount", new List<RequestParam>());
+            Uri uri2 = communicator.ToAbsoluteUri("/v1/merchant/20000/convertamount", new List<RequestParam>());
 
             Assert.That(uri, Is.EqualTo(new Uri("https://eu.sandbox.api-ingenico.com/v1/merchant/20000/convertamount")));
             Assert.That(uri2, Is.EqualTo(new Uri("https://eu.sandbox.api-ingenico.com/v1/merchant/20000/convertamount")));
@@ -34,8 +34,8 @@ namespace Ingenico.Connect.Sdk
             list.Add(new RequestParam("dummy", "é&%="));
             sessionMock.SetupGet(x => x.ApiEndpoint).Returns(baseUri);
             var communicator = new Communicator(sessionMock.Object, DefaultImpl.DefaultMarshaller.Instance);
-            Uri uri = communicator.ToAbsoluteURI("v1/merchant/20000/convertamount", list);
-            Uri uri2 = communicator.ToAbsoluteURI("/v1/merchant/20000/convertamount", list);
+            Uri uri = communicator.ToAbsoluteUri("v1/merchant/20000/convertamount", list);
+            Uri uri2 = communicator.ToAbsoluteUri("/v1/merchant/20000/convertamount", list);
 
             Assert.AreEqual(new Uri("https://eu.sandbox.api-ingenico.com/v1/merchant/20000/convertamount?amount=123&source=USD&target=EUR&dummy=%C3%A9%26%25%3D"), uri);
             Assert.AreEqual(new Uri("https://eu.sandbox.api-ingenico.com/v1/merchant/20000/convertamount?amount=123&source=USD&target=EUR&dummy=%C3%A9%26%25%3D"), uri2);

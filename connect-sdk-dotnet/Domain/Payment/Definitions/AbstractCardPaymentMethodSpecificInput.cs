@@ -19,12 +19,12 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
 
         public CardRecurrenceDetails Recurring { get; set; } = null;
 
-        [ObsoleteAttribute("Use recurring.recurringPaymentSequenceIndicator instead")]
+        [Obsolete("Use recurring.recurringPaymentSequenceIndicator instead")]
         public string RecurringPaymentSequenceIndicator { get; set; } = null;
 
         public bool? RequiresApproval { get; set; } = null;
 
-        [ObsoleteAttribute("Use threeDSecure.skipAuthentication instead")]
+        [Obsolete("Use threeDSecure.skipAuthentication instead")]
         public bool? SkipAuthentication { get; set; } = null;
 
         public bool? SkipFraudService { get; set; } = null;
@@ -35,7 +35,7 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
 
         public string TransactionChannel { get; set; } = null;
 
-        [ObsoleteAttribute("Use unscheduledCardOnFileSequenceIndicator instead")]
+        [Obsolete("Use unscheduledCardOnFileSequenceIndicator instead")]
         public string UnscheduledCardOnFileIndicator { get; set; } = null;
 
         public string UnscheduledCardOnFileRequestor { get; set; } = null;

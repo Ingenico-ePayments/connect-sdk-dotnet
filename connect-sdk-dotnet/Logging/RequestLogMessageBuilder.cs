@@ -7,12 +7,12 @@ namespace Ingenico.Connect.Sdk.Logging
     /// </summary>
     public class RequestLogMessageBuilder : LogMessageBuilder
     {
-        const string messageTemplateWithoutBody = @"Outgoing request (requestId='{0}'):
+        const string MessageTemplateWithoutBody = @"Outgoing request (requestId='{0}'):
   method:       '{1}'
   uri:          '{2}'
   headers:      '{3}'";
 
-        const string messageTemplateWithBody = messageTemplateWithoutBody + @"
+        const string MessageTemplateWithBody = MessageTemplateWithoutBody + @"
   content-type: '{4}'
   body:         '{5}'";
 
@@ -23,7 +23,7 @@ namespace Ingenico.Connect.Sdk.Logging
             _uri = uri;
         }
 
-        [ObsoleteAttribute("Use the constructor that takes a BodyObfuscator and HeaderObfuscator instead")]
+        [Obsolete("Use the constructor that takes a BodyObfuscator and HeaderObfuscator instead")]
         public RequestLogMessageBuilder(string requestId, string method, string uri)
             : base(requestId)
         {
@@ -39,14 +39,14 @@ namespace Ingenico.Connect.Sdk.Logging
                 string body = Body;
                 if (body == null)
                 {
-                    return string.Format(messageTemplateWithoutBody, RequestId,
+                    return string.Format(MessageTemplateWithoutBody, RequestId,
                         EmptyIfNull(_method),
                         EmptyIfNull(_uri),
                         Headers);
 
                 }
 
-                return string.Format(messageTemplateWithBody, RequestId,
+                return string.Format(MessageTemplateWithBody, RequestId,
                     EmptyIfNull(_method),
                     EmptyIfNull(_uri),
                     Headers,

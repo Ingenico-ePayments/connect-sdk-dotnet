@@ -23,7 +23,7 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
         /// <summary>
         /// Object containing additional information that when supplied can have a beneficial effect on the discountrates
         /// </summary>
-        [ObsoleteAttribute("Use orderLineDetails instead")]
+        [Obsolete("Use orderLineDetails instead")]
         public LineItemLevel3InterchangeInformation Level3InterchangeInformation { get; set; } = null;
 
         /// <summary>

@@ -41,7 +41,7 @@ namespace Ingenico.Connect.Sdk
 
         protected ApiResource(ApiResource parent, IDictionary<string, string> pathContext)
         {
-            _parent = parent ?? throw new ArgumentException("parent is required"); ;
+            _parent = parent ?? throw new ArgumentException("parent is required");
             _communicator = parent._communicator;
             _pathContext = pathContext;
             _clientMetaInfo = parent._clientMetaInfo;
@@ -50,7 +50,7 @@ namespace Ingenico.Connect.Sdk
         protected ApiResource(Communicator communicator, string clientMetaInfo, IDictionary<string, string> pathContext)
         {
             _parent = null;
-            _communicator = communicator ?? throw new ArgumentException("communicator is required"); ;
+            _communicator = communicator ?? throw new ArgumentException("communicator is required");
             _pathContext = pathContext;
             _clientMetaInfo = clientMetaInfo;
         }
@@ -63,49 +63,48 @@ namespace Ingenico.Connect.Sdk
             return uri;
         }
 
-        protected Exception CreateException(System.Net.HttpStatusCode statusCode, string responseBody, object errorObject, CallContext context)
+        protected Exception CreateException(HttpStatusCode statusCode, string responseBody, object errorObject, CallContext context)
         {
-            if (errorObject is PaymentErrorResponse && ((PaymentErrorResponse)errorObject).PaymentResult != null)
+            PaymentErrorResponse paymentErrorResponse = errorObject as PaymentErrorResponse;
+            if (paymentErrorResponse?.PaymentResult != null)
             {
                 return new DeclinedPaymentException(statusCode, responseBody, (PaymentErrorResponse)errorObject);
             }
-            if (errorObject is PayoutErrorResponse && ((PayoutErrorResponse)errorObject).PayoutResult != null)
+            PayoutErrorResponse payoutErrorResponse = errorObject as PayoutErrorResponse;
+            if (payoutErrorResponse?.PayoutResult != null)
             {
                 return new DeclinedPayoutException(statusCode, responseBody, (PayoutErrorResponse)errorObject);
             }
-            if (errorObject is RefundErrorResponse && ((RefundErrorResponse)errorObject).RefundResult != null)
+            RefundErrorResponse refundErrorResponse = errorObject as RefundErrorResponse;
+            if (refundErrorResponse?.RefundResult != null)
             {
                 return new DeclinedRefundException(statusCode, responseBody, (RefundErrorResponse)errorObject);
             }
 
             string errorId;
             IList<APIError> errors;
-            if (errorObject is PaymentErrorResponse)
+            if (paymentErrorResponse != null)
             {
-                PaymentErrorResponse paymentErrorResponse = (PaymentErrorResponse)errorObject;
                 errorId = paymentErrorResponse.ErrorId;
                 errors = paymentErrorResponse.Errors;
             }
-            else if (errorObject is PayoutErrorResponse)
+            else if (payoutErrorResponse != null)
             {
-                PayoutErrorResponse payoutErrorResponse = (PayoutErrorResponse)errorObject;
                 errorId = payoutErrorResponse.ErrorId;
                 errors = payoutErrorResponse.Errors;
             }
-            else if (errorObject is RefundErrorResponse)
+            else if (refundErrorResponse != null)
             {
-                RefundErrorResponse refundErrorResponse = (RefundErrorResponse)errorObject;
                 errorId = refundErrorResponse.ErrorId;
                 errors = refundErrorResponse.Errors;
             }
-            else if (errorObject is ErrorResponse)
+            else if (errorObject is ErrorResponse errorResponse)
             {
-                ErrorResponse errorResponse = (ErrorResponse)errorObject;
                 errorId = errorResponse.ErrorId;
                 errors = errorResponse.Errors;
             }
             else {
-                throw new ArgumentException("unsupported error object type: " + errorObject.GetType().ToString());
+                throw new ArgumentException("unsupported error object type: " + errorObject.GetType());
             }
 
             switch (statusCode)
@@ -164,8 +163,7 @@ namespace Ingenico.Connect.Sdk
 
         static bool IsIdempotenceError(IEnumerable<APIError> errors, CallContext context)
         {
-            return context != null
-                    && context.IdempotenceKey != null
+            return context?.IdempotenceKey != null
                     && errors.Count() == 1
                     && "1409".Equals(errors.ElementAt(0).Code);
         }

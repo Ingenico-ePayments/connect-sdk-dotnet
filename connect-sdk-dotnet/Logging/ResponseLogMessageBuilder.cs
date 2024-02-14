@@ -8,7 +8,7 @@ namespace Ingenico.Connect.Sdk.Logging
     /// </summary>
     public class ResponseLogMessageBuilder : LogMessageBuilder
     {
-        const string messageTemplate = @"Incoming response (requestId='{0}' + '{1}' ms):
+        const string MessageTemplate = @"Incoming response (requestId='{0}' + '{1}' ms):
   status-code:  '{2}'
   headers:      '{3}'
   content-type: '{4}'
@@ -21,31 +21,25 @@ namespace Ingenico.Connect.Sdk.Logging
             Duration = duration;
         }
 
-        [ObsoleteAttribute("Use the constructor that takes a BodyObfuscator and HeaderObfuscator instead")]
+        [Obsolete("Use the constructor that takes a BodyObfuscator and HeaderObfuscator instead")]
         public ResponseLogMessageBuilder(string requestId, HttpStatusCode statusCode)
             : base(requestId)
         {
             _statusCode = statusCode;
         }
 
-        [ObsoleteAttribute("Ignores the duration argument. Set the Duration property instead")]
+        [Obsolete("Ignores the duration argument. Set the Duration property instead")]
         public ResponseLogMessageBuilder(string requestId, HttpStatusCode statusCode, long duration)
             : base(requestId)
         {
             _statusCode = statusCode;
         }
 
-        public override string Message
-        {
-            get
-            {
-                return string.Format(messageTemplate, RequestId, (long)Duration.TotalMilliseconds,
-                    (int)_statusCode,
-                    Headers,
-                    EmptyIfNull(ContentType),
-                    EmptyIfNull(Body));
-            }
-        }
+        public override string Message => string.Format(MessageTemplate, RequestId, (long)Duration.TotalMilliseconds,
+            (int)_statusCode,
+            Headers,
+            EmptyIfNull(ContentType),
+            EmptyIfNull(Body));
 
         public TimeSpan Duration { get; set; }
 

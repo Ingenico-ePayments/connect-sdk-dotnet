@@ -22,7 +22,7 @@ namespace Ingenico.Connect.Sdk.Domain.Payout.Definitions
         /// <summary>
         /// Object containing the details of the customer.
         /// </summary>
-        [ObsoleteAttribute("Moved to PayoutDetails")]
+        [Obsolete("Moved to PayoutDetails")]
         public PayoutCustomer Customer { get; set; } = null;
 
         /// <summary>

@@ -13,11 +13,11 @@ namespace Ingenico.Connect.Sdk.DefaultImpl
     /// <summary>
     /// The default implementation for the connection interface. Supports Pooling, and is thread safe.
     /// </summary>
-    public class DefaultConnection : IPooledConnection, ILoggingCapable, IObfuscationCapable
+    public class DefaultConnection : IPooledConnection, IObfuscationCapable
     {
         public DefaultConnection(TimeSpan? socketTimeout, int maxConnections = 2, Proxy proxy = null, HttpClientHandler httpClientHandler = null)
         {
-            var handler = httpClientHandler != null ? httpClientHandler : new HttpClientHandler();
+            var handler = httpClientHandler ?? new HttpClientHandler();
             if (proxy != null)
             {
                 handler.Proxy = new WebProxy(proxy.Uri);
@@ -39,7 +39,7 @@ namespace Ingenico.Connect.Sdk.DefaultImpl
 
         internal DefaultConnection(TimeSpan? socketTimeout,ProxyConfiguration proxyConfig, int maxConnections = 2, HttpClientHandler httpClientHandler = null)
         {
-            var handler = httpClientHandler != null ? httpClientHandler : new HttpClientHandler();
+            var handler = httpClientHandler ?? new HttpClientHandler();
             if (proxyConfig != null)
             {
                 handler.Proxy = new WebProxy(proxyConfig.Uri);
@@ -61,7 +61,7 @@ namespace Ingenico.Connect.Sdk.DefaultImpl
 
         async Task<R> SendHttpMessage<R>(HttpMethod method, Uri uri, IEnumerable<IRequestHeader> requestHeaders, Func<HttpStatusCode, Stream, IEnumerable<IResponseHeader>, R>responseHandler, string body = null)
         {
-            var content = (body == null ? null : new StringContent(body));
+            var content = body == null ? null : new StringContent(body);
             return await SendHttpMessage<R>(method, uri, requestHeaders, responseHandler, content, body).ConfigureAwait(false);
         }
 
@@ -86,7 +86,7 @@ namespace Ingenico.Connect.Sdk.DefaultImpl
             }
 
             var contentType = content.Headers.ContentType;
-            if (contentType == null || !(multipart.ContentType).Equals(contentType.ToString()))
+            if (contentType == null || !multipart.ContentType.Equals(contentType.ToString()))
             {
                 throw new InvalidOperationException("MultipartFormDataContent did not create the expected content type" + contentType);
             }
@@ -160,7 +160,7 @@ namespace Ingenico.Connect.Sdk.DefaultImpl
             catch (CommunicationException exception)
             {
                 LogException(guid, exception);
-                throw exception;
+                throw;
             }
         }
 
@@ -211,18 +211,12 @@ namespace Ingenico.Connect.Sdk.DefaultImpl
         #region IObfuscationCapable implementation
         public BodyObfuscator BodyObfuscator
         {
-            set
-            {
-                _bodyObfuscator = value ?? throw new ArgumentException("bodyObfuscator is required");
-            }
+            set => _bodyObfuscator = value ?? throw new ArgumentException("bodyObfuscator is required");
         }
 
         public HeaderObfuscator HeaderObfuscator
         {
-            set
-            {
-                _headerObfuscator = value ?? throw new ArgumentException("headerObfuscator is required");
-            }
+            set => _headerObfuscator = value ?? throw new ArgumentException("headerObfuscator is required");
         }
         #endregion
 
@@ -323,12 +317,12 @@ namespace Ingenico.Connect.Sdk.DefaultImpl
             _communicatorLogger?.Log("Error occurred for outgoing request (requestId='" + guid + "')", exception);
         }
 
-        bool IsBinaryContent(string contentType)
+        static bool IsBinaryContent(string contentType)
         {
             return contentType != null
                 && !contentType.StartsWith("text/", StringComparison.OrdinalIgnoreCase)
-                               && (contentType.IndexOf("json", StringComparison.OrdinalIgnoreCase) < 0)
-                               && (contentType.IndexOf("xml", StringComparison.OrdinalIgnoreCase) < 0);
+                               && contentType.IndexOf("json", StringComparison.OrdinalIgnoreCase) < 0
+                               && contentType.IndexOf("xml", StringComparison.OrdinalIgnoreCase) < 0;
         }
         #endregion
 

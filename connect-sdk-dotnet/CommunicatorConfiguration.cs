@@ -242,20 +242,20 @@ namespace Ingenico.Connect.Sdk
                 ApiEndpoint = GetApiEndpoint(properties);
                 AuthorizationType = AuthorizationType.GetValueOf(GetProperty(properties, "connect.api.authorizationType"));
                 
-                var connectTimout = int.Parse(GetProperty(properties, "connect.api.connectTimeout"));
-                ConnectTimeout = (connectTimout < 0) ? (TimeSpan?)TimeSpan.FromMilliseconds(connectTimout) : null;
+                var connectTimeout = int.Parse(GetProperty(properties, "connect.api.connectTimeout"));
+                ConnectTimeout = connectTimeout >= 0 ? (TimeSpan?)TimeSpan.FromMilliseconds(connectTimeout) : null;
 
-                var socketTimout = int.Parse(GetProperty(properties, "connect.api.socketTimeout"));
-                SocketTimeout = (socketTimout < 0) ? (TimeSpan?)TimeSpan.FromMilliseconds(socketTimout) : null;
+                var socketTimeout = int.Parse(GetProperty(properties, "connect.api.socketTimeout"));
+                SocketTimeout = socketTimeout >= 0 ? (TimeSpan?)TimeSpan.FromMilliseconds(socketTimeout) : null;
                 
                 MaxConnections = GetProperty(properties, "connect.api.maxConnections", DefaultMaxConnections);
 
-                var proxyURI = GetProperty(properties, "connect.api.proxy.uri");
+                var proxyUri = GetProperty(properties, "connect.api.proxy.uri");
                 var proxyUser = GetProperty(properties, "connect.api.proxy.username");
                 var proxyPass = GetProperty(properties, "connect.api.proxy.password");
-                if (proxyURI != null)
+                if (proxyUri != null)
                 {
-                    ProxyConfiguration.Uri = new Uri(proxyURI);
+                    ProxyConfiguration.Uri = new Uri(proxyUri);
                     ProxyConfiguration.Username = proxyUser;
                     ProxyConfiguration.Password = proxyPass;
                 }
@@ -414,9 +414,9 @@ namespace Ingenico.Connect.Sdk
 
         static string GetProperty(IDictionary<string, string> properties, string name, string defaultValue = null)
         {
-            if (properties.ContainsKey(name))
+            if (properties.TryGetValue(name, out string value))
             {
-                return properties[name];
+                return value;
             }
             return defaultValue;
         }
@@ -431,17 +431,17 @@ namespace Ingenico.Connect.Sdk
             return defaultValue;
         }
 
-        Uri GetApiEndpoint(IDictionary<string, string> properties)
+        static Uri GetApiEndpoint(IDictionary<string, string> properties)
         {
             var host = GetProperty(properties, "connect.api.endpoint.host", "");
             var scheme = GetProperty(properties, "connect.api.endpoint.scheme", "https");
             var port = GetProperty(properties, "connect.api.endpoint.port", -1);
 
-            return CreateURI(scheme, host, port);
+            return CreateUri(scheme, host, port);
 
         }
 
-        Uri CreateURI(string scheme, string host, int port)
+        static Uri CreateUri(string scheme, string host, int port)
         {
             try
             {

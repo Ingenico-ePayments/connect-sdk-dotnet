@@ -1,5 +1,3 @@
-using System;
-
 namespace Ingenico.Connect.Sdk.Logging
 {
     /// <summary>

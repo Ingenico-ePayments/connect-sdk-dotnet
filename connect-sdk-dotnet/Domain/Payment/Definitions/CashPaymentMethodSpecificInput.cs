@@ -11,7 +11,7 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
         /// <summary>
         /// Object that holds the specific data for Boleto Bancario in Brazil (payment product 1503)
         /// </summary>
-        [ObsoleteAttribute("No replacement")]
+        [Obsolete("No replacement")]
         public CashPaymentProduct1503SpecificInput PaymentProduct1503SpecificInput { get; set; } = null;
 
         /// <summary>

@@ -26,7 +26,7 @@ namespace Ingenico.Connect.Sdk
         /// </summary>
         public IEnumerable<IResponseHeader> Headers { get; }
 
-        public ResponseException(HttpStatusCode statusCode, string body, IEnumerable<IResponseHeader> headers) : base()
+        public ResponseException(HttpStatusCode statusCode, string body, IEnumerable<IResponseHeader> headers)
         {
             Body = body;
             StatusCode = statusCode;
@@ -46,7 +46,7 @@ namespace Ingenico.Connect.Sdk
                 sb.Append("; statusCode=").Append(statusCode);
             }
             string responseBody = Body;
-            if (responseBody != null && responseBody.Length > 0)
+            if (!string.IsNullOrEmpty(responseBody))
             {
                 sb.Append("; responseBody='").Append(responseBody).Append("'");
             }

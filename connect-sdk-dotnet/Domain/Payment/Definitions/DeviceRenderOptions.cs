@@ -29,7 +29,7 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
         ///   <item><description>html-other = HTML Other (only valid when cardPaymentMethodSpecificInput.threeDSecure.sdkData.deviceRenderOptions.sdkInterface is set to html)</description></item>
         /// </list>
         /// </summary>
-        [ObsoleteAttribute("Use deviceRenderOptions.sdkUiTypes instead")]
+        [Obsolete("Use deviceRenderOptions.sdkUiTypes instead")]
         public string SdkUiType { get; set; } = null;
 
         /// <summary>

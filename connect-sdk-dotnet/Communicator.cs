@@ -49,10 +49,9 @@ namespace Ingenico.Connect.Sdk
         {
             set
             {
-                IConnection connection = Session.Connection;
-                if (typeof(IObfuscationCapable).IsAssignableFrom(connection.GetType()))
+                if (Session.Connection is IObfuscationCapable obfuscationCapable)
                 {
-                    ((IObfuscationCapable)connection).BodyObfuscator = value;
+                    obfuscationCapable.BodyObfuscator = value;
                 }
             }
         }
@@ -61,10 +60,9 @@ namespace Ingenico.Connect.Sdk
         {
             set
             {
-                IConnection connection = Session.Connection;
-                if (typeof(IObfuscationCapable).IsAssignableFrom(connection.GetType()))
+                if (Session.Connection is IObfuscationCapable obfuscationCapable)
                 {
-                    ((IObfuscationCapable)connection).HeaderObfuscator = value;
+                    obfuscationCapable.HeaderObfuscator = value;
                 }
             }
         }
@@ -99,12 +97,12 @@ namespace Ingenico.Connect.Sdk
         {
             IConnection connection = Session.Connection;
             IEnumerable<RequestParam> requestParameterList = requestParameters?.ToRequestParameters();
-            Uri uri = ToAbsoluteURI(relativePath, requestParameterList);
+            Uri uri = ToAbsoluteUri(relativePath, requestParameterList);
             requestHeaders = requestHeaders ?? new List<IRequestHeader>();
             requestHeaders = AddGenericHeaders(HttpMethod.Get, uri, requestHeaders, context);
-            return await connection.Get<T>(uri, requestHeaders, (status, body, headers) => {
-                return ProcessResponse<T>(status, body, headers, relativePath, context);
-            }).ConfigureAwait(false);
+            return await connection.Get<T>(uri, requestHeaders, (status, body, headers) =>
+                ProcessResponse<T>(status, body, headers, relativePath, context)
+            ).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -124,12 +122,12 @@ namespace Ingenico.Connect.Sdk
         {
             IConnection connection = Session.Connection;
             IEnumerable<RequestParam> requestParameterList = requestParameters?.ToRequestParameters();
-            Uri uri = ToAbsoluteURI(relativePath, requestParameterList);
+            Uri uri = ToAbsoluteUri(relativePath, requestParameterList);
             requestHeaders = requestHeaders ?? new List<IRequestHeader>();
             requestHeaders = AddGenericHeaders(HttpMethod.Get, uri, requestHeaders, context);
-            await connection.Get(uri, requestHeaders, (status, body, headers) => {
-                return ProcessResponse<object>(status, body, headers, relativePath, context, bodyHandler);
-            }).ConfigureAwait(false);
+            await connection.Get(uri, requestHeaders, (status, body, headers) =>
+                ProcessResponse<object>(status, body, headers, relativePath, context, bodyHandler)
+            ).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -148,12 +146,12 @@ namespace Ingenico.Connect.Sdk
         {
             IConnection connection = Session.Connection;
             IEnumerable<RequestParam> requestParameterList = requestParameters?.ToRequestParameters();
-            Uri uri = ToAbsoluteURI(relativePath, requestParameterList);
+            Uri uri = ToAbsoluteUri(relativePath, requestParameterList);
             requestHeaders = requestHeaders ?? new List<IRequestHeader>();
             requestHeaders = AddGenericHeaders(HttpMethod.Delete, uri, requestHeaders, context);
-            return await connection.Delete<T>(uri, requestHeaders, (status, body, headers) => {
-                return ProcessResponse<T>(status, body, headers, relativePath, context);
-            }).ConfigureAwait(false);
+            return await connection.Delete<T>(uri, requestHeaders, (status, body, headers) =>
+                ProcessResponse<T>(status, body, headers, relativePath, context)
+            ).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -173,12 +171,12 @@ namespace Ingenico.Connect.Sdk
         {
             IConnection connection = Session.Connection;
             IEnumerable<RequestParam> requestParameterList = requestParameters?.ToRequestParameters();
-            Uri uri = ToAbsoluteURI(relativePath, requestParameterList);
+            Uri uri = ToAbsoluteUri(relativePath, requestParameterList);
             requestHeaders = requestHeaders ?? new List<IRequestHeader>();
             requestHeaders = AddGenericHeaders(HttpMethod.Delete, uri, requestHeaders, context);
-            await connection.Delete(uri, requestHeaders, (status, body, headers) => {
-                return ProcessResponse<object>(status, body, headers, relativePath, context, bodyHandler);
-            }).ConfigureAwait(false);
+            await connection.Delete(uri, requestHeaders, (status, body, headers) =>
+                ProcessResponse<object>(status, body, headers, relativePath, context, bodyHandler)
+            ).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -196,19 +194,19 @@ namespace Ingenico.Connect.Sdk
         public async Task<T> Post<T>(string relativePath, IEnumerable<IRequestHeader> requestHeaders, AbstractParamRequest requestParameters,
                                      object requestBody, CallContext context)
         {
-            if (requestBody is MultipartFormDataObject)
+            if (requestBody is MultipartFormDataObject multipartFormDataObject)
             {
-                return await Post<T>(relativePath, requestHeaders, requestParameters, (MultipartFormDataObject)requestBody, context).ConfigureAwait(false);
+                return await Post<T>(relativePath, requestHeaders, requestParameters, multipartFormDataObject, context).ConfigureAwait(false);
             }
-            if (requestBody is IMultipartFormDataRequest)
+            if (requestBody is IMultipartFormDataRequest multipartFormDataRequest)
             {
-                MultipartFormDataObject multipart = ((IMultipartFormDataRequest)requestBody).ToMultipartFormDataObject();
+                MultipartFormDataObject multipart = multipartFormDataRequest.ToMultipartFormDataObject();
                 return await Post<T>(relativePath, requestHeaders, requestParameters, multipart, context).ConfigureAwait(false);
             }
 
             IConnection connection = Session.Connection;
             IEnumerable<RequestParam> requestParameterList = requestParameters?.ToRequestParameters();
-            Uri uri = ToAbsoluteURI(relativePath, requestParameterList);
+            Uri uri = ToAbsoluteUri(relativePath, requestParameterList);
             requestHeaders = requestHeaders ?? new List<IRequestHeader>();
 
             string requestJson = null;
@@ -220,9 +218,9 @@ namespace Ingenico.Connect.Sdk
             }
 
             requestHeaders = AddGenericHeaders(HttpMethod.Post, uri, requestHeaderList, context);
-            return await connection.Post<T>(uri, requestHeaders, requestJson, (status, body, headers) => {
-                return ProcessResponse<T>(status, body, headers, relativePath, context);
-            }).ConfigureAwait(false);
+            return await connection.Post<T>(uri, requestHeaders, requestJson, (status, body, headers) =>
+                ProcessResponse<T>(status, body, headers, relativePath, context)
+            ).ConfigureAwait(false);
         }
 
         async Task<T> Post<T>(string relativePath, IEnumerable<IRequestHeader> requestHeaders, AbstractParamRequest requestParameters,
@@ -230,7 +228,7 @@ namespace Ingenico.Connect.Sdk
         {
             IConnection connection = Session.Connection;
             IEnumerable<RequestParam> requestParameterList = requestParameters?.ToRequestParameters();
-            Uri uri = ToAbsoluteURI(relativePath, requestParameterList);
+            Uri uri = ToAbsoluteUri(relativePath, requestParameterList);
             requestHeaders = requestHeaders ?? new List<IRequestHeader>();
 
             IList<IRequestHeader> requestHeaderList = requestHeaders.ToList();
@@ -238,9 +236,9 @@ namespace Ingenico.Connect.Sdk
             requestHeaderList.Add(new EntityHeader("Content-Type", multipart.ContentType));
 
             requestHeaders = AddGenericHeaders(HttpMethod.Post, uri, requestHeaderList, context);
-            return await connection.Post<T>(uri, requestHeaders, multipart, (status, body, headers) => {
-                return ProcessResponse<T>(status, body, headers, relativePath, context);
-            }).ConfigureAwait(false);
+            return await connection.Post<T>(uri, requestHeaders, multipart, (status, body, headers) =>
+                ProcessResponse<T>(status, body, headers, relativePath, context)
+            ).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -259,21 +257,21 @@ namespace Ingenico.Connect.Sdk
         public async Task Post(string relativePath, IEnumerable<IRequestHeader> requestHeaders, AbstractParamRequest requestParameters,
                                object requestBody, Action<Stream, IEnumerable<IResponseHeader>> bodyHandler, CallContext context)
         {
-            if (requestBody is MultipartFormDataObject)
+            if (requestBody is MultipartFormDataObject multipartFormDataObject)
             {
-                await Post(relativePath, requestHeaders, requestParameters, (MultipartFormDataObject)requestBody, bodyHandler, context).ConfigureAwait(false);
+                await Post(relativePath, requestHeaders, requestParameters, multipartFormDataObject, bodyHandler, context).ConfigureAwait(false);
                 return;
             }
-            if (requestBody is IMultipartFormDataRequest)
+            if (requestBody is IMultipartFormDataRequest multipartFormDataRequest)
             {
-                MultipartFormDataObject multipart = ((IMultipartFormDataRequest)requestBody).ToMultipartFormDataObject();
+                MultipartFormDataObject multipart = multipartFormDataRequest.ToMultipartFormDataObject();
                 await Post(relativePath, requestHeaders, requestParameters, multipart, bodyHandler, context).ConfigureAwait(false);
                 return;
             }
 
             IConnection connection = Session.Connection;
             IEnumerable<RequestParam> requestParameterList = requestParameters?.ToRequestParameters();
-            Uri uri = ToAbsoluteURI(relativePath, requestParameterList);
+            Uri uri = ToAbsoluteUri(relativePath, requestParameterList);
             requestHeaders = requestHeaders ?? new List<IRequestHeader>();
 
             string requestJson = null;
@@ -285,9 +283,9 @@ namespace Ingenico.Connect.Sdk
             }
 
             requestHeaders = AddGenericHeaders(HttpMethod.Post, uri, requestHeaderList, context);
-            await connection.Post(uri, requestHeaders, requestJson, (status, body, headers) => {
-                return ProcessResponse<object>(status, body, headers, relativePath, context, bodyHandler);
-            }).ConfigureAwait(false);
+            await connection.Post(uri, requestHeaders, requestJson, (status, body, headers) =>
+                ProcessResponse<object>(status, body, headers, relativePath, context, bodyHandler)
+            ).ConfigureAwait(false);
         }
 
         async Task Post(string relativePath, IEnumerable<IRequestHeader> requestHeaders, AbstractParamRequest requestParameters,
@@ -295,7 +293,7 @@ namespace Ingenico.Connect.Sdk
         {
             IConnection connection = Session.Connection;
             IEnumerable<RequestParam> requestParameterList = requestParameters?.ToRequestParameters();
-            Uri uri = ToAbsoluteURI(relativePath, requestParameterList);
+            Uri uri = ToAbsoluteUri(relativePath, requestParameterList);
             requestHeaders = requestHeaders ?? new List<IRequestHeader>();
 
             IList<IRequestHeader> requestHeaderList = requestHeaders.ToList();
@@ -303,9 +301,9 @@ namespace Ingenico.Connect.Sdk
             requestHeaderList.Add(new EntityHeader("Content-Type", multipart.ContentType));
 
             requestHeaders = AddGenericHeaders(HttpMethod.Post, uri, requestHeaderList, context);
-            await connection.Post(uri, requestHeaders, multipart, (status, body, headers) => {
-                return ProcessResponse<object>(status, body, headers, relativePath, context, bodyHandler);
-            }).ConfigureAwait(false);
+            await connection.Post(uri, requestHeaders, multipart, (status, body, headers) =>
+                ProcessResponse<object>(status, body, headers, relativePath, context, bodyHandler)
+            ).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -323,19 +321,19 @@ namespace Ingenico.Connect.Sdk
         public async Task<T> Put<T>(string relativePath, IEnumerable<IRequestHeader> requestHeaders, AbstractParamRequest requestParameters,
                                     object requestBody, CallContext context)
         {
-            if (requestBody is MultipartFormDataObject)
+            if (requestBody is MultipartFormDataObject multipartFormDataObject)
             {
-                return await Put<T>(relativePath, requestHeaders, requestParameters, (MultipartFormDataObject)requestBody, context).ConfigureAwait(false);
+                return await Put<T>(relativePath, requestHeaders, requestParameters, multipartFormDataObject, context).ConfigureAwait(false);
             }
-            if (requestBody is IMultipartFormDataRequest)
+            if (requestBody is IMultipartFormDataRequest multipartFormDataRequest)
             {
-                MultipartFormDataObject multipart = ((IMultipartFormDataRequest)requestBody).ToMultipartFormDataObject();
+                MultipartFormDataObject multipart = multipartFormDataRequest.ToMultipartFormDataObject();
                 return await Put<T>(relativePath, requestHeaders, requestParameters, multipart, context).ConfigureAwait(false);
             }
 
             IConnection connection = Session.Connection;
             IEnumerable<RequestParam> requestParameterList = requestParameters?.ToRequestParameters();
-            Uri uri = ToAbsoluteURI(relativePath, requestParameterList);
+            Uri uri = ToAbsoluteUri(relativePath, requestParameterList);
             requestHeaders = requestHeaders ?? new List<IRequestHeader>();
 
             string requestJson = null;
@@ -347,9 +345,9 @@ namespace Ingenico.Connect.Sdk
             }
 
             requestHeaders = AddGenericHeaders(HttpMethod.Put, uri, requestHeaderList, context);
-            return await connection.Put<T>(uri, requestHeaders, requestJson, (status, body, headers) => {
-                return ProcessResponse<T>(status, body, headers, relativePath, context);
-            }).ConfigureAwait(false);
+            return await connection.Put<T>(uri, requestHeaders, requestJson, (status, body, headers) =>
+                ProcessResponse<T>(status, body, headers, relativePath, context)
+            ).ConfigureAwait(false);
         }
 
         async Task<T> Put<T>(string relativePath, IEnumerable<IRequestHeader> requestHeaders, AbstractParamRequest requestParameters,
@@ -357,7 +355,7 @@ namespace Ingenico.Connect.Sdk
         {
             IConnection connection = Session.Connection;
             IEnumerable<RequestParam> requestParameterList = requestParameters?.ToRequestParameters();
-            Uri uri = ToAbsoluteURI(relativePath, requestParameterList);
+            Uri uri = ToAbsoluteUri(relativePath, requestParameterList);
             requestHeaders = requestHeaders ?? new List<IRequestHeader>();
 
             IList<IRequestHeader> requestHeaderList = requestHeaders.ToList();
@@ -365,9 +363,9 @@ namespace Ingenico.Connect.Sdk
             requestHeaderList.Add(new EntityHeader("Content-Type", multipart.ContentType));
 
             requestHeaders = AddGenericHeaders(HttpMethod.Put, uri, requestHeaderList, context);
-            return await connection.Put<T>(uri, requestHeaders, multipart, (status, body, headers) => {
-                return ProcessResponse<T>(status, body, headers, relativePath, context);
-            }).ConfigureAwait(false);
+            return await connection.Put<T>(uri, requestHeaders, multipart, (status, body, headers) =>
+                ProcessResponse<T>(status, body, headers, relativePath, context)
+            ).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -386,21 +384,21 @@ namespace Ingenico.Connect.Sdk
         public async Task Put(string relativePath, IEnumerable<IRequestHeader> requestHeaders, AbstractParamRequest requestParameters,
                               object requestBody, Action<Stream, IEnumerable<IResponseHeader>> bodyHandler, CallContext context)
         {
-            if (requestBody is MultipartFormDataObject)
+            if (requestBody is MultipartFormDataObject multipartFormDataObject)
             {
-                await Put(relativePath, requestHeaders, requestParameters, (MultipartFormDataObject)requestBody, bodyHandler, context).ConfigureAwait(false);
+                await Put(relativePath, requestHeaders, requestParameters, multipartFormDataObject, bodyHandler, context).ConfigureAwait(false);
                 return;
             }
-            if (requestBody is IMultipartFormDataRequest)
+            if (requestBody is IMultipartFormDataRequest multipartFormDataRequest)
             {
-                MultipartFormDataObject multipart = ((IMultipartFormDataRequest)requestBody).ToMultipartFormDataObject();
+                MultipartFormDataObject multipart = multipartFormDataRequest.ToMultipartFormDataObject();
                 await Put(relativePath, requestHeaders, requestParameters, multipart, bodyHandler, context).ConfigureAwait(false);
                 return;
             }
 
             IConnection connection = Session.Connection;
             IEnumerable<RequestParam> requestParameterList = requestParameters?.ToRequestParameters();
-            Uri uri = ToAbsoluteURI(relativePath, requestParameterList);
+            Uri uri = ToAbsoluteUri(relativePath, requestParameterList);
             requestHeaders = requestHeaders ?? new List<IRequestHeader>();
 
             string requestJson = null;
@@ -412,9 +410,9 @@ namespace Ingenico.Connect.Sdk
             }
 
             requestHeaders = AddGenericHeaders(HttpMethod.Put, uri, requestHeaderList, context);
-            await connection.Put(uri, requestHeaders, requestJson, (status, body, headers) => {
-                return ProcessResponse<object>(status, body, headers, relativePath, context, bodyHandler);
-            }).ConfigureAwait(false);
+            await connection.Put(uri, requestHeaders, requestJson, (status, body, headers) =>
+                ProcessResponse<object>(status, body, headers, relativePath, context, bodyHandler)
+            ).ConfigureAwait(false);
         }
 
         async Task Put(string relativePath, IEnumerable<IRequestHeader> requestHeaders, AbstractParamRequest requestParameters,
@@ -422,7 +420,7 @@ namespace Ingenico.Connect.Sdk
         {
             IConnection connection = Session.Connection;
             IEnumerable<RequestParam> requestParameterList = requestParameters?.ToRequestParameters();
-            Uri uri = ToAbsoluteURI(relativePath, requestParameterList);
+            Uri uri = ToAbsoluteUri(relativePath, requestParameterList);
             requestHeaders = requestHeaders ?? new List<IRequestHeader>();
 
             IList<IRequestHeader> requestHeaderList = requestHeaders.ToList();
@@ -430,9 +428,9 @@ namespace Ingenico.Connect.Sdk
             requestHeaderList.Add(new EntityHeader("Content-Type", multipart.ContentType));
 
             requestHeaders = AddGenericHeaders(HttpMethod.Put, uri, requestHeaderList, context);
-            await connection.Put(uri, requestHeaders, multipart, (status, body, headers) => {
-                return ProcessResponse<object>(status, body, headers, relativePath, context, bodyHandler);
-            }).ConfigureAwait(false);
+            await connection.Put(uri, requestHeaders, multipart, (status, body, headers) =>
+                ProcessResponse<object>(status, body, headers, relativePath, context, bodyHandler)
+            ).ConfigureAwait(false);
         }
         #endregion
 
@@ -443,10 +441,9 @@ namespace Ingenico.Connect.Sdk
         /// </summary>
         public void CloseExpiredConnections()
         {
-            IConnection connection = Session.Connection;
-            if (typeof(IPooledConnection).IsAssignableFrom(connection.GetType()))
+            if (Session.Connection is IPooledConnection pooledConnection)
             {
-                ((IPooledConnection)connection).CloseExpiredConnections();
+                pooledConnection.CloseExpiredConnections();
             }
         }
 
@@ -457,18 +454,16 @@ namespace Ingenico.Connect.Sdk
         /// <param name="timespan">Idle time.</param>
         public void CloseIdleConnections(TimeSpan timespan)
         {
-            IConnection connection = Session.Connection;
-            if (connection is IPooledConnection)
+            if (Session.Connection is IPooledConnection pooledConnection)
             {
-                ((IPooledConnection)connection).CloseIdleConnections(timespan);
+                pooledConnection.CloseIdleConnections(timespan);
             }
         }
 
         internal Session Session { get; }
 
-        internal Uri ToAbsoluteURI(string relativePath, IEnumerable<RequestParam> requestParameters)
+        internal Uri ToAbsoluteUri(string relativePath, IEnumerable<RequestParam> requestParameters)
         {
-
             Uri apiEndpoint = Session.ApiEndpoint;
 
             if (apiEndpoint.HasPath())
@@ -495,7 +490,7 @@ namespace Ingenico.Connect.Sdk
                 Scheme = apiEndpoint.Scheme,
                 Host = apiEndpoint.Host,
                 Port = apiEndpoint.Port,
-                Path = absolutePath,
+                Path = absolutePath
             };
 
             if (requestParameters != null)
@@ -525,7 +520,7 @@ namespace Ingenico.Connect.Sdk
             requestHeaderList.Add(new RequestHeader("Date", GetHeaderDateString()));
 
             // add context specific headers
-            if (context != null && context.IdempotenceKey != null)
+            if (context?.IdempotenceKey != null)
             {
                 requestHeaderList.Add(new RequestHeader("X-GCS-Idempotence-Key", context.IdempotenceKey));
             }
@@ -602,7 +597,7 @@ namespace Ingenico.Connect.Sdk
             return null;
         }
 
-        bool IsJson(IEnumerable<IResponseHeader> headers)
+        static bool IsJson(IEnumerable<IResponseHeader> headers)
         {
             string contentType = headers?.GetHeaderValue("Content-Type")?.ToLower();
             return contentType == null || "application/json".Equals(contentType) || contentType.StartsWith("application/json", StringComparison.Ordinal);

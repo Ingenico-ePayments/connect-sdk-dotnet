@@ -18,7 +18,7 @@ namespace Ingenico.Connect.Sdk
             Value = NormalizeValue(value);
         }
 
-        private string NormalizeValue(string value)
+        private static string NormalizeValue(string value)
         {
             if (string.IsNullOrEmpty(value))
             {
@@ -43,11 +43,8 @@ namespace Ingenico.Connect.Sdk
         public override int GetHashCode()
             => Tuple.Create(Name, Value).GetHashCode();
 
-        public bool Equals(RequestHeader obj)
-            => (obj?.Name?.Equals(Name) ?? false)
-                && (obj?.Value?.Equals(Value) ?? false);
+        public bool Equals(RequestHeader obj) => (obj?.Name?.Equals(Name) ?? false) && (obj.Value?.Equals(Value) ?? false);
 
-        public override bool Equals(object obj)
-            => obj is RequestHeader && Equals(obj as RequestHeader);
+        public override bool Equals(object obj) => Equals(obj as RequestHeader);
     }
 }

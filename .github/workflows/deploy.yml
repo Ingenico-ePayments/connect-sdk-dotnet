@@ -1,0 +1,38 @@
+name: Deploy
+
+on:
+  push:
+    tags: ['[0-9]+.[0-9]+*']
+
+env:
+  SDK_VERSION: ${{ github.ref_name }}
+
+jobs:
+  deploy:
+    # Build on Windows 2022 to support .NET Framework 4.5
+    runs-on: windows-2022
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          persist-credentials: false
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: |
+            2.1
+            3.1
+      - name: Build
+        run: |
+          dotnet restore connect-sdk-dotnet
+          dotnet build -c Release connect-sdk-dotnet
+          dotnet pack -c Release connect-sdk-dotnet
+          dotnet restore connect-sdk-dotnet.StrongName
+          dotnet build -c Release connect-sdk-dotnet.StrongName
+          dotnet pack -c Release connect-sdk-dotnet.StrongName
+      - name: Deploy
+        run: |
+          dotnet nuget push connect-sdk-dotnet/bin/Release/connect-sdk-dotnet.${env:SDK_VERSION}.nupkg                       --api-key "${env:NUGET_API_KEY}" --source https://api.nuget.org/v3/index.json
+          dotnet nuget push connect-sdk-dotnet.StrongName/bin/Release/connect-sdk-dotnet.StrongName.${env:SDK_VERSION}.nupkg --api-key "${env:NUGET_API_KEY}" --source https://api.nuget.org/v3/index.json
+        env:
+          NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}

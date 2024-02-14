@@ -26,7 +26,7 @@ namespace Ingenico.Connect.Sdk.Logging
         /// <param name="errorLogLevel">The level to use when logging through <see cref="Log(string, Exception)"/></param>
         public NLogCommunicatorLogger(ILogger logger, LogLevel logLevel, LogLevel errorLogLevel)
         {
-            _logger = logger ?? throw new ArgumentNullException(); ;
+            _logger = logger ?? throw new ArgumentNullException();
             _logLevel = logLevel ?? LogLevel.Debug;
             _errorLogLevel = errorLogLevel ?? LogLevel.Error;
         }

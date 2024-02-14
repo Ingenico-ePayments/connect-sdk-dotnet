@@ -11,7 +11,7 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
         /// <summary>
         /// A free text string that you can send to PayPal. With a special agreement between PayPal and you, PayPal uses the data in that property, for custom services they offer to you.
         /// </summary>
-        [ObsoleteAttribute("Use Order.references.descriptor instead")]
+        [Obsolete("Use Order.references.descriptor instead")]
         public string Custom { get; set; } = null;
 
         /// <summary>

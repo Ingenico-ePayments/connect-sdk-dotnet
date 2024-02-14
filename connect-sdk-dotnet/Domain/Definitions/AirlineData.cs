@@ -49,7 +49,7 @@ namespace Ingenico.Connect.Sdk.Domain.Definitions
         ///   <item><description>false = unknown customer</description></item>
         /// </list>
         /// </summary>
-        [ObsoleteAttribute("Use Order.customer.accountType instead")]
+        [Obsolete("Use Order.customer.accountType instead")]
         public bool? IsRegisteredCustomer { get; set; } = null;
 
         /// <summary>

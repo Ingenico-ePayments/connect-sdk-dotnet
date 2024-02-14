@@ -67,7 +67,7 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
         /// <summary>
         /// The 3-D Secure Server transaction ID that is used for the 3-D Secure version 2 Authentication.
         /// </summary>
-        [ObsoleteAttribute("No replacement")]
+        [Obsolete("No replacement")]
         public string ThreeDServerTransactionId { get; set; } = null;
 
         /// <summary>

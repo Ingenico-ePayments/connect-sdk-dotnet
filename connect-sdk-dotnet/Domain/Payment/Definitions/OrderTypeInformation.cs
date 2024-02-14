@@ -14,6 +14,9 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
         ///   <item><description>businessToConsumer = When fund is being transferred from business to consumer (B2C)</description></item>
         ///   <item><description>businessToBusiness = When fund is being transferred from business to business (B2B)</description></item>
         ///   <item><description>prefundingStagedWallet = When funding is being used to load the funds into the wallet account.</description></item>
+        ///   <item><description>storedValueDigitalWallet = When funding is being used to load the funds into a stored value digital wallet.</description></item>
+        ///   <item><description>fundingGiftCardForPersonalUse = When funding a gift card for personal use.</description></item>
+        ///   <item><description>fundingGiftCardForSomeoneElse = When funding a gift card for someone else.</description></item>
         /// </list>
         /// </summary>
         public string FundingType { get; set; } = null;

@@ -55,7 +55,8 @@ namespace Ingenico.Connect.Sdk.Logging
             {
                 ICommunicatorLogger logger = SystemConsoleCommunicatorLogger.Instance;
                 var exception = new Exception();
-                try{
+                try
+                {
                     throw exception;
                 }
                 catch (Exception e) {

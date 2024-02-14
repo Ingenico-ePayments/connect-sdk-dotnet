@@ -2,7 +2,7 @@ using Newtonsoft.Json.Serialization;
 
 namespace Ingenico.Connect.Sdk.DefaultImpl
 {
-    sealed class CamelCaseKeepFullCapsNamingStrategy : CamelCaseNamingStrategy
+    internal sealed class CamelCaseKeepFullCapsNamingStrategy : CamelCaseNamingStrategy
     {
         public CamelCaseKeepFullCapsNamingStrategy()
         {

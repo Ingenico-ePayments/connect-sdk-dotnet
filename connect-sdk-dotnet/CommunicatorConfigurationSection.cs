@@ -3,12 +3,12 @@ using System.Configuration;
 
 namespace Ingenico.Connect.Sdk
 {
-    class CommunicatorConfigurationSection : ConfigurationSection
+    internal class CommunicatorConfigurationSection : ConfigurationSection
     {
         /// <summary>
         /// The default number of maximum connections
         /// </summary>
-        public const int DEFAULT_MAX_CONNECTIONS = 10;
+        public const int DefaultMaxConnections = 10;
 
         [ConfigurationProperty("apiEndpoint", IsRequired = true)]
         public UriConfiguration ApiEndpointConfig
@@ -96,7 +96,7 @@ namespace Ingenico.Connect.Sdk
             }
         }
 
-        [ConfigurationProperty("maxConnections", IsRequired = false, DefaultValue = DEFAULT_MAX_CONNECTIONS)]
+        [ConfigurationProperty("maxConnections", IsRequired = false, DefaultValue = DefaultMaxConnections)]
         public int MaxConnections
         {
             get

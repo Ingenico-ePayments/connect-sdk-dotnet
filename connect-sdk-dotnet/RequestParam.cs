@@ -32,11 +32,8 @@ namespace Ingenico.Connect.Sdk
         public override int GetHashCode()
             => Tuple.Create(Name, Value).GetHashCode();
 
-        public bool Equals(RequestParam obj)
-            => (obj?.Name?.Equals(Name) ?? false)
-                && (obj?.Value?.Equals(Value) ?? false);
+        public bool Equals(RequestParam obj) => (obj?.Name?.Equals(Name) ?? false) && (obj.Value?.Equals(Value) ?? false);
 
-        public override bool Equals(object obj)
-            => obj is RequestParam && Equals(obj as RequestParam);
+        public override bool Equals(object obj) => Equals(obj as RequestParam);
     }
 }

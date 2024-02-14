@@ -3,7 +3,7 @@ using System.Configuration;
 
 namespace Ingenico.Connect.Sdk
 {
-    class UriConfiguration : ConfigurationElement
+    internal class UriConfiguration : ConfigurationElement
     {
         public Uri Uri
         {

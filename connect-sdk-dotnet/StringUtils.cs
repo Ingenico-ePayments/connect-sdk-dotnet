@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace Ingenico.Connect.Sdk
 {
-    static class StringUtils
+    internal static class StringUtils
     {
         internal static string FromBase64String(this string input)
             => Encoding.GetString(Convert.FromBase64String(input));

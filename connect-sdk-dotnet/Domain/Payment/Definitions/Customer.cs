@@ -95,7 +95,7 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
         /// <summary>
         /// Object containing shipping address details
         /// </summary>
-        [ObsoleteAttribute("Use Order.shipping.address instead")]
+        [Obsolete("Use Order.shipping.address instead")]
         public AddressPersonal ShippingAddress { get; set; } = null;
     }
 }

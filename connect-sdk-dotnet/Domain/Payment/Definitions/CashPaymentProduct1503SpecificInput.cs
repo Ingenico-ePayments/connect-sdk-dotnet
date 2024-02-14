@@ -6,7 +6,7 @@ using System;
 
 namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
 {
-    [ObsoleteAttribute("No replacement")]
+    [Obsolete("No replacement")]
     public class CashPaymentProduct1503SpecificInput
     {
         /// <summary>
@@ -15,7 +15,7 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
         /// <i>protocol</i>://. This protocol must be registered on the device first.
         /// <br />URLs without a protocol will be rejected.
         /// </summary>
-        [ObsoleteAttribute("No replacement, since Boleto Bancario no longer needs a return URL")]
+        [Obsolete("No replacement, since Boleto Bancario no longer needs a return URL")]
         public string ReturnUrl { get; set; } = null;
     }
 }

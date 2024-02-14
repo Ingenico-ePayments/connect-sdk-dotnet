@@ -33,10 +33,7 @@ namespace Ingenico.Connect.Sdk
         /// </summary>
         public IEnumerable<RequestHeader> AdditionalRequestHeaders
         {
-            get
-            {
-                return _additionalRequestHeaders;
-            }
+            get => _additionalRequestHeaders;
             set
             {
                 MetaDataProvider.ValidateAdditionalRequestHeaders(value);

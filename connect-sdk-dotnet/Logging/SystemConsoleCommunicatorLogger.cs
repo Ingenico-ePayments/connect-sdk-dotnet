@@ -37,6 +37,6 @@ namespace Ingenico.Connect.Sdk.Logging
             
         }
 
-        string DatePrefix => DateTime.Now.ToString("s") + " ";
+        static string DatePrefix => DateTime.Now.ToString("s") + " ";
     }
 }

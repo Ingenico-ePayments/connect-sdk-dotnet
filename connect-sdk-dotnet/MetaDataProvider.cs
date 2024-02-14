@@ -40,7 +40,7 @@ namespace Ingenico.Connect.Sdk
         public static readonly IEnumerable<string> ProhibitedHeaders
             = new ReadOnlyCollection<string>(new List<string>
         {
-            SERVER_META_INFO_HEADER,
+            ServerMetaInfoHeader,
             "X-GCS-Idempotence-Key",
             "Date",
             "Content-Type",
@@ -61,10 +61,10 @@ namespace Ingenico.Connect.Sdk
             };
 
             string serverMetaInfoString = DefaultMarshaller.Instance.Marshal(serverMetaInfo);
-            RequestHeader serverMetaInfoHeader = new RequestHeader(SERVER_META_INFO_HEADER, serverMetaInfoString.ToBase64String());
+            RequestHeader serverMetaInfoHeader = new RequestHeader(ServerMetaInfoHeader, serverMetaInfoString.ToBase64String());
 
             ServerMetaDataHeaders = new List<RequestHeader> { serverMetaInfoHeader }
-                .Concat(additionalRequestHeaders ?? Enumerable.Empty<RequestHeader>()); ;
+                .Concat(additionalRequestHeaders ?? Enumerable.Empty<RequestHeader>());
         }
 
         internal class ServerMetaInfo
@@ -80,25 +80,19 @@ namespace Ingenico.Connect.Sdk
             public ShoppingCartExtension ShoppingCartExtension { get; set; }
         }
 
-        internal string SdkIdentifier => "DotnetServerSDK/v" + SDK_VERSION;
+        internal string SdkIdentifier => "DotnetServerSDK/v" + SdkVersion;
 
-        internal string PlatformIdentifier
-        {
-            get
-            {
-                StringBuilder sb = new StringBuilder();
-                sb.Append(Environment.OSVersion.Platform);
-                sb.Append("/");
-                sb.Append(Environment.OSVersion.Version);
-                sb.Append(" .NET/");
-                sb.Append(Environment.Version);
-                return sb.ToString();
-            }
-        }
+        internal string PlatformIdentifier => new StringBuilder()
+            .Append(Environment.OSVersion.Platform)
+            .Append("/")
+            .Append(Environment.OSVersion.Version)
+            .Append(" .NET/")
+            .Append(Environment.Version)
+            .ToString();
 
-        const string SDK_VERSION = "3.46.0";
+        const string SdkVersion = "3.47.0";
 
-        const string SERVER_META_INFO_HEADER = "X-GCS-ServerMetaInfo";
+        const string ServerMetaInfoHeader = "X-GCS-ServerMetaInfo";
 
         internal static void ValidateAdditionalRequestHeaders(IEnumerable<RequestHeader> additionalRequestHeaders)
         {

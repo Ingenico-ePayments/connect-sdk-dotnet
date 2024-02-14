@@ -21,6 +21,7 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
         ///   <item><description>routingNumber = Routing Transit Number is a code used by financial institutions to identify other financial institutions.</description></item>
         ///   <item><description>iban = International Bank Account Number, is a standard international numbering system for identifying bank accounts.</description></item>
         ///   <item><description>bicNumber = Bank Identification Code is a number that is used to identify a specific bank.</description></item>
+        ///   <item><description>giftCard = Gift card is a type of prepaid card that contains a specific amount of money that can be used at participating stores and marketplaces.</description></item>
         /// </list>
         /// </summary>
         public string AccountNumberType { get; set; } = null;

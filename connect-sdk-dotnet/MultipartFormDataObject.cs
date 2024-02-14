@@ -21,21 +21,9 @@ namespace Ingenico.Connect.Sdk
 
         public string ContentType { get; }
 
-        public IDictionary<string, string> Values
-        {
-            get
-            {
-                return ImmutableDictionary.ToImmutableDictionary(_values);
-            }
-        }
+        public IDictionary<string, string> Values => _values.ToImmutableDictionary();
 
-        public IDictionary<string, UploadableFile> Files
-        {
-            get
-            {
-                return ImmutableDictionary.ToImmutableDictionary(_files);
-            }
-        }
+        public IDictionary<string, UploadableFile> Files => _files.ToImmutableDictionary();
 
         public void AddValue(string parameterName, string value)
         {

@@ -98,7 +98,7 @@ namespace Ingenico.Connect.Sdk.DefaultImpl
             return retVal;
         }
 
-        internal string ToCanonicalizeHeaderValue(string originalValue)
+        internal static string ToCanonicalizeHeaderValue(string originalValue)
         {
             var pattern = "\r?\n[\\s-[\r\n]]*";
             var newString = new Regex(pattern, RegexOptions.Multiline | RegexOptions.CultureInvariant).Replace(originalValue, " ").Trim();
@@ -111,7 +111,7 @@ namespace Ingenico.Connect.Sdk.DefaultImpl
 
         readonly AuthorizationType _authorizationType;
 
-        string CanonicalizedResource(Uri uri)
+        static string CanonicalizedResource(Uri uri)
         {
             var sb = new StringBuilder();
             sb.Append(Uri.EscapeUriString(uri.LocalPath));

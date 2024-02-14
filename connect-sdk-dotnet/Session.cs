@@ -45,8 +45,8 @@ namespace Ingenico.Connect.Sdk
             }
             ApiEndpoint = apiEndpoint;
             Connection = connection ?? throw new ArgumentException("connection is required");
-            Authenticator = authenticator ?? throw new ArgumentException("authenticator is required"); ;
-            MetaDataProvider = metaDataProvider ?? throw new ArgumentException("metaDataProvider is required"); ;
+            Authenticator = authenticator ?? throw new ArgumentException("authenticator is required");
+            MetaDataProvider = metaDataProvider ?? throw new ArgumentException("metaDataProvider is required");
         }
 
         // Only for unit testing, will result in an invalid object

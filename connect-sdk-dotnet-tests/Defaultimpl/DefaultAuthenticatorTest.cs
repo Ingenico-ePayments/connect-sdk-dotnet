@@ -11,16 +11,14 @@ namespace Ingenico.Connect.Sdk.DefaultImpl
         [TestCase]
         public void TestToCanonicalizeHeaderValue()
         {
-            DefaultAuthenticator authenticator = new DefaultAuthenticator(AuthorizationType.V1HMAC, "apiKeyId", "secretApiKey");
-            Assert.AreEqual("aap noot", authenticator.ToCanonicalizeHeaderValue("aap\nnoot  "));
-            Assert.AreEqual("aap noot", authenticator.ToCanonicalizeHeaderValue(" aap\r\n  noot"));
+            Assert.AreEqual("aap noot", DefaultAuthenticator.ToCanonicalizeHeaderValue("aap\nnoot  "));
+            Assert.AreEqual("aap noot", DefaultAuthenticator.ToCanonicalizeHeaderValue(" aap\r\n  noot"));
         }
 
         [TestCase]
         public void TestToCanonicalizeHeaderValue2()
         {
-            DefaultAuthenticator authenticator = new DefaultAuthenticator(AuthorizationType.V1HMAC, "apiKeyId", "secretApiKey");
-            var val1 = authenticator.ToCanonicalizeHeaderValue(" some value  \r\n \n with  some \r\n  spaces ");
+            var val1 = DefaultAuthenticator.ToCanonicalizeHeaderValue(" some value  \r\n \n with  some \r\n  spaces ");
             Assert.AreEqual("some value    with  some  spaces", val1);
         }
 

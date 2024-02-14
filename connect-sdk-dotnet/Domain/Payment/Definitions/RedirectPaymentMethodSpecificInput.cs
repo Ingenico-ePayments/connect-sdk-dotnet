@@ -67,7 +67,7 @@ namespace Ingenico.Connect.Sdk.Domain.Payment.Definitions
         /// <i>protocol</i>://. This protocol must be registered on the device first.
         /// <br />URLs without a protocol will be rejected.
         /// </summary>
-        [ObsoleteAttribute("Use redirectionData.returnUrl instead")]
+        [Obsolete("Use redirectionData.returnUrl instead")]
         public string ReturnUrl { get; set; } = null;
     }
 }

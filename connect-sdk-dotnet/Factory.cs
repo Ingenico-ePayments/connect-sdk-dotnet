@@ -7,7 +7,7 @@ namespace Ingenico.Connect.Sdk
     /// <summary>
     /// Ingenico ePayments platform factory for several SDK components.
     /// </summary>
-    public sealed class Factory
+    public static class Factory
     {
         /// <summary>
         /// Creates a <see cref="CommunicatorConfiguration"/> based on the configuration values in
@@ -200,7 +200,5 @@ namespace Ingenico.Connect.Sdk
         {
             return new Client(communicator);
         }
-
-        Factory() { }
     }
 }

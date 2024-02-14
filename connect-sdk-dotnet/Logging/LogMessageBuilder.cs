@@ -66,7 +66,7 @@ namespace Ingenico.Connect.Sdk.Logging
             HeaderObfuscator = headerObfuscator ?? throw new ArgumentException("headerObfuscator is required");
         }
 
-        [ObsoleteAttribute("Use the constructor that takes a BodyObfuscator and HeaderObfuscator instead")]
+        [Obsolete("Use the constructor that takes a BodyObfuscator and HeaderObfuscator instead")]
         protected LogMessageBuilder(string requestId)
             : this(requestId, BodyObfuscator.DefaultObfuscator, HeaderObfuscator.DefaultObfuscator)
         {
@@ -77,12 +77,12 @@ namespace Ingenico.Connect.Sdk.Logging
             return value ?? "";
         }
 
-        bool IsBinaryContent(string contentType)
+        static bool IsBinaryContent(string contentType)
         {
             return contentType != null
                 && !contentType.StartsWith("text/", StringComparison.OrdinalIgnoreCase)
-                               && (contentType.IndexOf("json", StringComparison.OrdinalIgnoreCase) < 0)
-                               && (contentType.IndexOf("xml", StringComparison.OrdinalIgnoreCase) < 0);
+                               && contentType.IndexOf("json", StringComparison.OrdinalIgnoreCase) < 0
+                               && contentType.IndexOf("xml", StringComparison.OrdinalIgnoreCase) < 0;
         }
     }
 }

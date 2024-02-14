@@ -16,11 +16,11 @@ namespace Ingenico.Connect.Sdk.Logging
 
         BodyObfuscator(IDictionary<string, ObfuscationRule> obfuscationRules)
         {
-            _obfuscationRules = ImmutableDictionary.ToImmutableDictionary(obfuscationRules);
+            _obfuscationRules = obfuscationRules.ToImmutableDictionary();
             _propertyRegex = BuildPropertyPattern(obfuscationRules.Keys);
         }
 
-        Regex BuildPropertyPattern(IEnumerable<string> propertyNames)
+        static Regex BuildPropertyPattern(IEnumerable<string> propertyNames)
         {
             if (propertyNames.IsEmpty())
             {
@@ -187,7 +187,7 @@ namespace Ingenico.Connect.Sdk.Logging
 
             public BodyObfuscator Build()
             {
-                return new BodyObfuscator(this.ObfuscationRules);
+                return new BodyObfuscator(ObfuscationRules);
             }
 
             internal Builder()

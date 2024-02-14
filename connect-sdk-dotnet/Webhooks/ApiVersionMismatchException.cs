@@ -5,7 +5,7 @@ namespace Ingenico.Connect.Sdk.Webhooks
     /// <summary>
     /// Represents an error because a webhooks event has an API version that this version of the SDK does not support.
     /// </summary>
-    class ApiVersionMismatchException : Exception
+    public class ApiVersionMismatchException : Exception
     {
         /// <summary>
         /// The Api version from the webhooks event.

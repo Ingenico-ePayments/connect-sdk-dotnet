@@ -1,4 +1,3 @@
-using System;
 using Ingenico.Connect.Sdk.Domain.Dispute;
 using Ingenico.Connect.Sdk.Domain.Payment;
 using Ingenico.Connect.Sdk.Domain.Refund;

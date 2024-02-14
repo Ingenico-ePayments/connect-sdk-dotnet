@@ -14,7 +14,7 @@ namespace Ingenico.Connect.Sdk.Webhooks
         /// Sets the <see cref="IMarshaller"/> to use.
         /// </summary>
         public WebhooksHelperBuilder WithMarshaller(IMarshaller marshaller) {
-            this.Marshaller = marshaller;
+            Marshaller = marshaller;
             return this;
         }
 
@@ -22,7 +22,7 @@ namespace Ingenico.Connect.Sdk.Webhooks
         /// Sets the <see cref="ISecretKeyStore"/> to use.
         /// </summary>
         public WebhooksHelperBuilder WithSecretKeyStore(ISecretKeyStore secretKeyStore) {
-            this.SecretKeyStore = secretKeyStore;
+            SecretKeyStore = secretKeyStore;
             return this;
         }
 
