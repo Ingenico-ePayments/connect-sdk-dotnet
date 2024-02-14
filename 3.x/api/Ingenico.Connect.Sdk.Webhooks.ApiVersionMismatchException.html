@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title>Class SignatureValidator
+      <title>Class ApiVersionMismatchException
  | Ingenico Connect .NET SDK </title>
       <meta name="viewport" content="width=device-width">
-      <meta name="title" content="Class SignatureValidator
+      <meta name="title" content="Class ApiVersionMismatchException
  | Ingenico Connect .NET SDK ">
     
       <link rel="shortcut icon" href="../favicon.ico">
@@ -77,24 +77,66 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Ingenico.Connect.Sdk.Webhooks.SignatureValidator">
+            <article class="content wrap" id="_content" data-uid="Ingenico.Connect.Sdk.Webhooks.ApiVersionMismatchException">
 
 
 
-  <h1 id="Ingenico_Connect_Sdk_Webhooks_SignatureValidator" data-uid="Ingenico.Connect.Sdk.Webhooks.SignatureValidator" class="text-break">Class SignatureValidator
+  <h1 id="Ingenico_Connect_Sdk_Webhooks_ApiVersionMismatchException" data-uid="Ingenico.Connect.Sdk.Webhooks.ApiVersionMismatchException" class="text-break">Class ApiVersionMismatchException
 </h1>
-  <div class="markdown level0 summary"><p>Validator for webhooks signatures. Thread-safe.</p>
+  <div class="markdown level0 summary"><p>Represents an error because a webhooks event has an API version that this version of the SDK does not support.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-    <div class="level1"><span class="xref">SignatureValidator</span></div>
+    <div class="level1"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.exception">Exception</a></div>
+    <div class="level2"><span class="xref">ApiVersionMismatchException</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.runtime.serialization.iserializable">ISerializable</a></div>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.runtime.interopservices._exception">_Exception</a></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.exception.getbaseexception">Exception.GetBaseException()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.exception.tostring">Exception.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.exception.getobjectdata">Exception.GetObjectData(SerializationInfo, StreamingContext)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.exception.gettype">Exception.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.exception.message">Exception.Message</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.exception.data">Exception.Data</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.exception.innerexception">Exception.InnerException</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.exception.targetsite">Exception.TargetSite</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.exception.stacktrace">Exception.StackTrace</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.exception.helplink">Exception.HelpLink</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.exception.source">Exception.Source</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.exception.hresult">Exception.HResult</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.exception.serializeobjectstate">Exception.SerializeObjectState</a>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
@@ -109,107 +151,24 @@
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
-    </div>
-    <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
     </div>
   </div>
   <h6><strong>Namespace</strong>: <span class="xref">Ingenico</span>.<span class="xref">Connect</span>.<a class="xref" href="Ingenico.Connect.Sdk.html">Sdk</a>.<a class="xref" href="Ingenico.Connect.Sdk.Webhooks.html">Webhooks</a></h6>
   <h6><strong>Assembly</strong>: connect-sdk-dotnet.dll</h6>
-  <h5 id="Ingenico_Connect_Sdk_Webhooks_SignatureValidator_syntax">Syntax</h5>
+  <h5 id="Ingenico_Connect_Sdk_Webhooks_ApiVersionMismatchException_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class SignatureValidator</code></pre>
+    <pre><code class="lang-csharp hljs">public class ApiVersionMismatchException : Exception, ISerializable, _Exception</code></pre>
   </div>
   <h3 id="constructors">Constructors
 </h3>
-  <a id="Ingenico_Connect_Sdk_Webhooks_SignatureValidator__ctor_" data-uid="Ingenico.Connect.Sdk.Webhooks.SignatureValidator.#ctor*"></a>
-  <h4 id="Ingenico_Connect_Sdk_Webhooks_SignatureValidator__ctor_Ingenico_Connect_Sdk_Webhooks_ISecretKeyStore_" data-uid="Ingenico.Connect.Sdk.Webhooks.SignatureValidator.#ctor(Ingenico.Connect.Sdk.Webhooks.ISecretKeyStore)">SignatureValidator(ISecretKeyStore)</h4>
+  <a id="Ingenico_Connect_Sdk_Webhooks_ApiVersionMismatchException__ctor_" data-uid="Ingenico.Connect.Sdk.Webhooks.ApiVersionMismatchException.#ctor*"></a>
+  <h4 id="Ingenico_Connect_Sdk_Webhooks_ApiVersionMismatchException__ctor_System_String_System_String_" data-uid="Ingenico.Connect.Sdk.Webhooks.ApiVersionMismatchException.#ctor(System.String,System.String)">ApiVersionMismatchException(string, string)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public SignatureValidator(ISecretKeyStore secretKeyStore)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Ingenico.Connect.Sdk.Webhooks.ISecretKeyStore.html">ISecretKeyStore</a></td>
-        <td><span class="parametername">secretKeyStore</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="methods">Methods
-</h3>
-  <a id="Ingenico_Connect_Sdk_Webhooks_SignatureValidator_Validate_" data-uid="Ingenico.Connect.Sdk.Webhooks.SignatureValidator.Validate*"></a>
-  <h4 id="Ingenico_Connect_Sdk_Webhooks_SignatureValidator_Validate_System_Byte___System_Collections_Generic_IEnumerable_Ingenico_Connect_Sdk_IRequestHeader__" data-uid="Ingenico.Connect.Sdk.Webhooks.SignatureValidator.Validate(System.Byte[],System.Collections.Generic.IEnumerable{Ingenico.Connect.Sdk.IRequestHeader})">Validate(byte[], IEnumerable&lt;IRequestHeader&gt;)</h4>
-  <div class="markdown level1 summary"><p>Validates the given body using the given request headers.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Validate(byte[] body, IEnumerable&lt;IRequestHeader&gt; requestHeaders)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</td>
-        <td><span class="parametername">body</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="Ingenico.Connect.Sdk.IRequestHeader.html">IRequestHeader</a>&gt;</td>
-        <td><span class="parametername">requestHeaders</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Ingenico.Connect.Sdk.Webhooks.SignatureValidationException.html">SignatureValidationException</a></td>
-        <td><p>If the body could not be validated sucessfully</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Ingenico.Connect.Sdk.Webhooks.ApiVersionMismatchException.html">ApiVersionMismatchException</a></td>
-        <td><p>If the resulting event has an API version that this version of the SDK does not support.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="Ingenico_Connect_Sdk_Webhooks_SignatureValidator_Validate_" data-uid="Ingenico.Connect.Sdk.Webhooks.SignatureValidator.Validate*"></a>
-  <h4 id="Ingenico_Connect_Sdk_Webhooks_SignatureValidator_Validate_System_String_System_Collections_Generic_IEnumerable_Ingenico_Connect_Sdk_IRequestHeader__" data-uid="Ingenico.Connect.Sdk.Webhooks.SignatureValidator.Validate(System.String,System.Collections.Generic.IEnumerable{Ingenico.Connect.Sdk.IRequestHeader})">Validate(string, IEnumerable&lt;IRequestHeader&gt;)</h4>
-  <div class="markdown level1 summary"><p>Validates the given body using the given request headers.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Validate(string body, IEnumerable&lt;IRequestHeader&gt; requestHeaders)</code></pre>
+    <pre><code class="lang-csharp hljs">public ApiVersionMismatchException(string eventApiVersion, string sdkApiVersion)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -223,37 +182,73 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">body</span></td>
+        <td><span class="parametername">eventApiVersion</span></td>
         <td></td>
       </tr>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="Ingenico.Connect.Sdk.IRequestHeader.html">IRequestHeader</a>&gt;</td>
-        <td><span class="parametername">requestHeaders</span></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">sdkApiVersion</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <h5 class="exceptions">Exceptions</h5>
+  <h3 id="properties">Properties
+</h3>
+  <a id="Ingenico_Connect_Sdk_Webhooks_ApiVersionMismatchException_EventApiVersion_" data-uid="Ingenico.Connect.Sdk.Webhooks.ApiVersionMismatchException.EventApiVersion*"></a>
+  <h4 id="Ingenico_Connect_Sdk_Webhooks_ApiVersionMismatchException_EventApiVersion" data-uid="Ingenico.Connect.Sdk.Webhooks.ApiVersionMismatchException.EventApiVersion">EventApiVersion</h4>
+  <div class="markdown level1 summary"><p>The Api version from the webhooks event.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string EventApiVersion { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
-        <th>Condition</th>
+        <th>Description</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Ingenico.Connect.Sdk.Webhooks.SignatureValidationException.html">SignatureValidationException</a></td>
-        <td><p>If the body could not be validated sucessfully</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Ingenico.Connect.Sdk.Webhooks.ApiVersionMismatchException.html">ApiVersionMismatchException</a></td>
-        <td><p>If the resulting event has an API version that this version of the SDK does not support.</p>
-</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
       </tr>
     </tbody>
   </table>
+  <a id="Ingenico_Connect_Sdk_Webhooks_ApiVersionMismatchException_SdkApiVersion_" data-uid="Ingenico.Connect.Sdk.Webhooks.ApiVersionMismatchException.SdkApiVersion*"></a>
+  <h4 id="Ingenico_Connect_Sdk_Webhooks_ApiVersionMismatchException_SdkApiVersion" data-uid="Ingenico.Connect.Sdk.Webhooks.ApiVersionMismatchException.SdkApiVersion">SdkApiVersion</h4>
+  <div class="markdown level1 summary"><p>The Api version that this version of the SDK supports.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string SdkApiVersion { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.runtime.serialization.iserializable">ISerializable</a>
+  </div>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.runtime.interopservices._exception">_Exception</a>
+  </div>
 
 </article>
           </div>

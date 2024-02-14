@@ -23643,6 +23643,19 @@ references:
   isSpec: "True"
   fullName: Ingenico.Connect.Sdk.Merchant.Productgroups.FindProductgroupsParams.Hide
   nameWithType: FindProductgroupsParams.Hide
+- uid: Ingenico.Connect.Sdk.Merchant.Productgroups.FindProductgroupsParams.IsInstallments
+  name: IsInstallments
+  href: api/Ingenico.Connect.Sdk.Merchant.Productgroups.FindProductgroupsParams.html#Ingenico_Connect_Sdk_Merchant_Productgroups_FindProductgroupsParams_IsInstallments
+  commentId: P:Ingenico.Connect.Sdk.Merchant.Productgroups.FindProductgroupsParams.IsInstallments
+  fullName: Ingenico.Connect.Sdk.Merchant.Productgroups.FindProductgroupsParams.IsInstallments
+  nameWithType: FindProductgroupsParams.IsInstallments
+- uid: Ingenico.Connect.Sdk.Merchant.Productgroups.FindProductgroupsParams.IsInstallments*
+  name: IsInstallments
+  href: api/Ingenico.Connect.Sdk.Merchant.Productgroups.FindProductgroupsParams.html#Ingenico_Connect_Sdk_Merchant_Productgroups_FindProductgroupsParams_IsInstallments_
+  commentId: Overload:Ingenico.Connect.Sdk.Merchant.Productgroups.FindProductgroupsParams.IsInstallments
+  isSpec: "True"
+  fullName: Ingenico.Connect.Sdk.Merchant.Productgroups.FindProductgroupsParams.IsInstallments
+  nameWithType: FindProductgroupsParams.IsInstallments
 - uid: Ingenico.Connect.Sdk.Merchant.Productgroups.FindProductgroupsParams.IsRecurring
   name: IsRecurring
   href: api/Ingenico.Connect.Sdk.Merchant.Productgroups.FindProductgroupsParams.html#Ingenico_Connect_Sdk_Merchant_Productgroups_FindProductgroupsParams_IsRecurring
@@ -23756,6 +23769,19 @@ references:
   isSpec: "True"
   fullName: Ingenico.Connect.Sdk.Merchant.Productgroups.GetProductgroupParams.Hide
   nameWithType: GetProductgroupParams.Hide
+- uid: Ingenico.Connect.Sdk.Merchant.Productgroups.GetProductgroupParams.IsInstallments
+  name: IsInstallments
+  href: api/Ingenico.Connect.Sdk.Merchant.Productgroups.GetProductgroupParams.html#Ingenico_Connect_Sdk_Merchant_Productgroups_GetProductgroupParams_IsInstallments
+  commentId: P:Ingenico.Connect.Sdk.Merchant.Productgroups.GetProductgroupParams.IsInstallments
+  fullName: Ingenico.Connect.Sdk.Merchant.Productgroups.GetProductgroupParams.IsInstallments
+  nameWithType: GetProductgroupParams.IsInstallments
+- uid: Ingenico.Connect.Sdk.Merchant.Productgroups.GetProductgroupParams.IsInstallments*
+  name: IsInstallments
+  href: api/Ingenico.Connect.Sdk.Merchant.Productgroups.GetProductgroupParams.html#Ingenico_Connect_Sdk_Merchant_Productgroups_GetProductgroupParams_IsInstallments_
+  commentId: Overload:Ingenico.Connect.Sdk.Merchant.Productgroups.GetProductgroupParams.IsInstallments
+  isSpec: "True"
+  fullName: Ingenico.Connect.Sdk.Merchant.Productgroups.GetProductgroupParams.IsInstallments
+  nameWithType: GetProductgroupParams.IsInstallments
 - uid: Ingenico.Connect.Sdk.Merchant.Productgroups.GetProductgroupParams.IsRecurring
   name: IsRecurring
   href: api/Ingenico.Connect.Sdk.Merchant.Productgroups.GetProductgroupParams.html#Ingenico_Connect_Sdk_Merchant_Productgroups_GetProductgroupParams_IsRecurring
@@ -23990,6 +24016,19 @@ references:
   isSpec: "True"
   fullName: Ingenico.Connect.Sdk.Merchant.Products.FindProductsParams.Hide
   nameWithType: FindProductsParams.Hide
+- uid: Ingenico.Connect.Sdk.Merchant.Products.FindProductsParams.IsInstallments
+  name: IsInstallments
+  href: api/Ingenico.Connect.Sdk.Merchant.Products.FindProductsParams.html#Ingenico_Connect_Sdk_Merchant_Products_FindProductsParams_IsInstallments
+  commentId: P:Ingenico.Connect.Sdk.Merchant.Products.FindProductsParams.IsInstallments
+  fullName: Ingenico.Connect.Sdk.Merchant.Products.FindProductsParams.IsInstallments
+  nameWithType: FindProductsParams.IsInstallments
+- uid: Ingenico.Connect.Sdk.Merchant.Products.FindProductsParams.IsInstallments*
+  name: IsInstallments
+  href: api/Ingenico.Connect.Sdk.Merchant.Products.FindProductsParams.html#Ingenico_Connect_Sdk_Merchant_Products_FindProductsParams_IsInstallments_
+  commentId: Overload:Ingenico.Connect.Sdk.Merchant.Products.FindProductsParams.IsInstallments
+  isSpec: "True"
+  fullName: Ingenico.Connect.Sdk.Merchant.Products.FindProductsParams.IsInstallments
+  nameWithType: FindProductsParams.IsInstallments
 - uid: Ingenico.Connect.Sdk.Merchant.Products.FindProductsParams.IsRecurring
   name: IsRecurring
   href: api/Ingenico.Connect.Sdk.Merchant.Products.FindProductsParams.html#Ingenico_Connect_Sdk_Merchant_Products_FindProductsParams_IsRecurring
@@ -24116,6 +24155,19 @@ references:
   isSpec: "True"
   fullName: Ingenico.Connect.Sdk.Merchant.Products.GetProductParams.Hide
   nameWithType: GetProductParams.Hide
+- uid: Ingenico.Connect.Sdk.Merchant.Products.GetProductParams.IsInstallments
+  name: IsInstallments
+  href: api/Ingenico.Connect.Sdk.Merchant.Products.GetProductParams.html#Ingenico_Connect_Sdk_Merchant_Products_GetProductParams_IsInstallments
+  commentId: P:Ingenico.Connect.Sdk.Merchant.Products.GetProductParams.IsInstallments
+  fullName: Ingenico.Connect.Sdk.Merchant.Products.GetProductParams.IsInstallments
+  nameWithType: GetProductParams.IsInstallments
+- uid: Ingenico.Connect.Sdk.Merchant.Products.GetProductParams.IsInstallments*
+  name: IsInstallments
+  href: api/Ingenico.Connect.Sdk.Merchant.Products.GetProductParams.html#Ingenico_Connect_Sdk_Merchant_Products_GetProductParams_IsInstallments_
+  commentId: Overload:Ingenico.Connect.Sdk.Merchant.Products.GetProductParams.IsInstallments
+  isSpec: "True"
+  fullName: Ingenico.Connect.Sdk.Merchant.Products.GetProductParams.IsInstallments
+  nameWithType: GetProductParams.IsInstallments
 - uid: Ingenico.Connect.Sdk.Merchant.Products.GetProductParams.IsRecurring
   name: IsRecurring
   href: api/Ingenico.Connect.Sdk.Merchant.Products.GetProductParams.html#Ingenico_Connect_Sdk_Merchant_Products_GetProductParams_IsRecurring
@@ -26232,6 +26284,57 @@ references:
   commentId: N:Ingenico.Connect.Sdk.Webhooks
   fullName: Ingenico.Connect.Sdk.Webhooks
   nameWithType: Ingenico.Connect.Sdk.Webhooks
+- uid: Ingenico.Connect.Sdk.Webhooks.ApiVersionMismatchException
+  name: ApiVersionMismatchException
+  href: api/Ingenico.Connect.Sdk.Webhooks.ApiVersionMismatchException.html
+  commentId: T:Ingenico.Connect.Sdk.Webhooks.ApiVersionMismatchException
+  fullName: Ingenico.Connect.Sdk.Webhooks.ApiVersionMismatchException
+  nameWithType: ApiVersionMismatchException
+- uid: Ingenico.Connect.Sdk.Webhooks.ApiVersionMismatchException.#ctor(System.String,System.String)
+  name: ApiVersionMismatchException(string, string)
+  href: api/Ingenico.Connect.Sdk.Webhooks.ApiVersionMismatchException.html#Ingenico_Connect_Sdk_Webhooks_ApiVersionMismatchException__ctor_System_String_System_String_
+  commentId: M:Ingenico.Connect.Sdk.Webhooks.ApiVersionMismatchException.#ctor(System.String,System.String)
+  name.vb: New(String, String)
+  fullName: Ingenico.Connect.Sdk.Webhooks.ApiVersionMismatchException.ApiVersionMismatchException(string, string)
+  fullName.vb: Ingenico.Connect.Sdk.Webhooks.ApiVersionMismatchException.New(String, String)
+  nameWithType: ApiVersionMismatchException.ApiVersionMismatchException(string, string)
+  nameWithType.vb: ApiVersionMismatchException.New(String, String)
+- uid: Ingenico.Connect.Sdk.Webhooks.ApiVersionMismatchException.#ctor*
+  name: ApiVersionMismatchException
+  href: api/Ingenico.Connect.Sdk.Webhooks.ApiVersionMismatchException.html#Ingenico_Connect_Sdk_Webhooks_ApiVersionMismatchException__ctor_
+  commentId: Overload:Ingenico.Connect.Sdk.Webhooks.ApiVersionMismatchException.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Ingenico.Connect.Sdk.Webhooks.ApiVersionMismatchException.ApiVersionMismatchException
+  fullName.vb: Ingenico.Connect.Sdk.Webhooks.ApiVersionMismatchException.New
+  nameWithType: ApiVersionMismatchException.ApiVersionMismatchException
+  nameWithType.vb: ApiVersionMismatchException.New
+- uid: Ingenico.Connect.Sdk.Webhooks.ApiVersionMismatchException.EventApiVersion
+  name: EventApiVersion
+  href: api/Ingenico.Connect.Sdk.Webhooks.ApiVersionMismatchException.html#Ingenico_Connect_Sdk_Webhooks_ApiVersionMismatchException_EventApiVersion
+  commentId: P:Ingenico.Connect.Sdk.Webhooks.ApiVersionMismatchException.EventApiVersion
+  fullName: Ingenico.Connect.Sdk.Webhooks.ApiVersionMismatchException.EventApiVersion
+  nameWithType: ApiVersionMismatchException.EventApiVersion
+- uid: Ingenico.Connect.Sdk.Webhooks.ApiVersionMismatchException.EventApiVersion*
+  name: EventApiVersion
+  href: api/Ingenico.Connect.Sdk.Webhooks.ApiVersionMismatchException.html#Ingenico_Connect_Sdk_Webhooks_ApiVersionMismatchException_EventApiVersion_
+  commentId: Overload:Ingenico.Connect.Sdk.Webhooks.ApiVersionMismatchException.EventApiVersion
+  isSpec: "True"
+  fullName: Ingenico.Connect.Sdk.Webhooks.ApiVersionMismatchException.EventApiVersion
+  nameWithType: ApiVersionMismatchException.EventApiVersion
+- uid: Ingenico.Connect.Sdk.Webhooks.ApiVersionMismatchException.SdkApiVersion
+  name: SdkApiVersion
+  href: api/Ingenico.Connect.Sdk.Webhooks.ApiVersionMismatchException.html#Ingenico_Connect_Sdk_Webhooks_ApiVersionMismatchException_SdkApiVersion
+  commentId: P:Ingenico.Connect.Sdk.Webhooks.ApiVersionMismatchException.SdkApiVersion
+  fullName: Ingenico.Connect.Sdk.Webhooks.ApiVersionMismatchException.SdkApiVersion
+  nameWithType: ApiVersionMismatchException.SdkApiVersion
+- uid: Ingenico.Connect.Sdk.Webhooks.ApiVersionMismatchException.SdkApiVersion*
+  name: SdkApiVersion
+  href: api/Ingenico.Connect.Sdk.Webhooks.ApiVersionMismatchException.html#Ingenico_Connect_Sdk_Webhooks_ApiVersionMismatchException_SdkApiVersion_
+  commentId: Overload:Ingenico.Connect.Sdk.Webhooks.ApiVersionMismatchException.SdkApiVersion
+  isSpec: "True"
+  fullName: Ingenico.Connect.Sdk.Webhooks.ApiVersionMismatchException.SdkApiVersion
+  nameWithType: ApiVersionMismatchException.SdkApiVersion
 - uid: Ingenico.Connect.Sdk.Webhooks.InMemorySecretKeyStore
   name: InMemorySecretKeyStore
   href: api/Ingenico.Connect.Sdk.Webhooks.InMemorySecretKeyStore.html
