@@ -1,5 +1,7 @@
 # Ingenico Connect .NET SDK
 
+**This SDK has been rebranded to Worldline. As part of the rebranding the SDK has moved to https://github.com/Worldline-Global-Collect/connect-sdk-dotnet.**
+
 ## Introduction
 
 The .NET SDK helps you to communicate with the [Ingenico Connect](https://epayments.developer-ingenico.com/) Server API. Its primary features are:
